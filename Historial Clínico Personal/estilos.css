@@ -1,19 +1,19 @@
-
-.logo{
+.fondoLogo{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0px;
-    position: relative;
-    width: 1440px;
-    height: 1040px;
+    padding: 0%;
+    position:relative;
     background: #FBFFFF;
+}
+
+.fondoLogo img{
     width: 50%;
     height: 50%;
-    top: 10%;
-    left: 20%;
-    right: 20%;
+    margin-top: 25%;
+    margin-left: 30%;
+    margin-right: 30%;
 }
 
 .seleccionDePerfil{
@@ -24,4 +24,163 @@
     /* ALTO */
 
     background: #FBFFFF;
+}
+
+.fondo{
+    background-image:url(imagenes/pc/fondo.png);
+    margin: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.bienvenida{
+    /* ¡Bienvenido! */
+justify-content: center;
+width: 320px;
+height: 23px;
+
+font-family: 'Raleway';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 23px;
+/* identical to box height, or 96% */
+text-align: center;
+text-transform: uppercase;
+
+/* SECUNDARIO */
+color: #7DB9FF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+}
+
+.textoComoIngresar{
+    /* ¿Cómo querés ingresar? */
+
+width: 469px;
+height: 23px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 23px;
+/* identical to box height, or 115% */
+
+/* PRIMARIO */
+color: #01CDBB;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+}
+
+.paciente{
+    /* BOTONES */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 16px;
+gap: 8px;
+
+width: 200px;
+height: 55px;
+
+/* SECUNDARIO */
+background: #7DB9FF;
+border-radius: 4px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* LABEL */
+
+width: 115px;
+height: 23px;
+
+font-family: 'Raleway';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 23px;
+/* identical to box height, or 96% */
+
+/* ALTO */
+color: #FBFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+}
+
+.profesional{
+    /* BOTONES */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 16px;
+gap: 8px;
+
+width: 200px;
+height: 55px;
+
+/* PRIMARIO */
+background: #01CDBB;
+border-radius: 4px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* LABEL */
+
+width: 166px;
+height: 23px;
+
+font-family: 'Raleway';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 23px;
+/* identical to box height, or 96% */
+
+/* ALTO */
+color: #FBFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+
+
+.logoSeleccion img{
+    width: 122px;
+    height: 128px;
+    top: 63px;
+    left: 174px;
 }
