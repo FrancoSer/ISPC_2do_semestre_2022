@@ -17,28 +17,25 @@
 }
 
 .seleccionDePerfil{
-    position: relative;
-    width: 1440px;
-    height: 1024px;
-
-    /* ALTO */
-
-    background: #FBFFFF;
+    position: relative;   
 }
 
 .fondo{
     background-image:url(imagenes/pc/fondo.png);
-    margin: auto;
-    margin-top: auto;
-    margin-bottom: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bienvenidaYlogo{
+justify-content: center;
+margin-left: 0%;
+margin-top: 8%;
 }
 
 .bienvenida{
     /* ¡Bienvenido! */
 justify-content: center;
-width: 320px;
-height: 23px;
-
+margin: 0%;
 font-family: 'Raleway';
 font-style: normal;
 font-weight: 700;
@@ -59,128 +56,106 @@ flex-grow: 0;
 
 }
 
-.textoComoIngresar{
-    /* ¿Cómo querés ingresar? */
-
-width: 469px;
-height: 23px;
-
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 23px;
-/* identical to box height, or 115% */
-
-/* PRIMARIO */
-color: #01CDBB;
+.botonesYtexto{
+    
+    font-size: 20px;
+    line-height: 23px;
+    color: #01CDBB;
+    
+    }
 
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 0;
-
+.botones{
+margin:auto;
+flex-direction:row;
+justify-content: center;
+display:flex;
+height: 10%;
+width: 10%;
 }
 
-.paciente{
-    /* BOTONES */
+.textoComoIngresar{
+    justify-content: center;
+    display: flex;
+}
 
-/* Auto layout */
+.botonPaciente{
+
+margin: 5%;
 display: flex;
-flex-direction: row;
 justify-content: center;
 align-items: center;
 padding: 16px;
-gap: 8px;
-
-width: 200px;
-height: 55px;
-
-/* SECUNDARIO */
 background: #7DB9FF;
 border-radius: 4px;
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
-
-
-/* LABEL */
-
 width: 115px;
 height: 23px;
-
 font-family: 'Raleway';
 font-style: normal;
 font-weight: 700;
 font-size: 24px;
 line-height: 23px;
-/* identical to box height, or 96% */
-
-/* ALTO */
 color: #FBFFFF;
-
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
-
 }
 
-.profesional{
-    /* BOTONES */
+.botonProfesional{
+    margin: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background: #01CDBB;
+    border-radius: 4px;
+    
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 23px;
+    color: #FBFFFF;
+    order: 1;
+}
 
-/* Auto layout */
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-padding: 16px;
-gap: 8px;
+.botonPaciente, .botonProfesional{
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 4px #999;
+}
 
-width: 200px;
-height: 55px;
+.botonProfesional:hover{
+    background-color:#04a699;
+}
+.botonProfesional:active{
+    background-color: #05b8a9;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
 
-/* PRIMARIO */
-background: #01CDBB;
-border-radius: 4px;
+.botonPaciente:hover{
+    background-color:#4f97e9;
+}
+.botonPaciente:active{
+    background-color: #2789f8;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
 
-/* Inside auto layout */
-flex: none;
-order: 1;
-flex-grow: 0;
-
-
-/* LABEL */
-
-width: 166px;
-height: 23px;
-
-font-family: 'Raleway';
-font-style: normal;
-font-weight: 700;
-font-size: 24px;
-line-height: 23px;
-/* identical to box height, or 96% */
-
-/* ALTO */
-color: #FBFFFF;
-
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
+.logoSeleccion{
+    margin: 0px auto;
+    display: flex;
+    width: 15%;
+    height: 20%;
+    top: 5%;
+    left: 5%;
 }
 
 
-.logoSeleccion img{
+/*.logoSeleccion{
+    margin: 0px auto;
+    display: flex;
     width: 122px;
     height: 128px;
     top: 63px;
     left: 174px;
 }
+
