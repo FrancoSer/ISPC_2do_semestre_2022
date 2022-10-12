@@ -1,51 +1,27 @@
 
-.fondo{
+.logo{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 0px;
-
     position: relative;
     width: 1440px;
     height: 1040px;
     background: #FBFFFF;
+    width: 50%;
+    height: 50%;
+    top: 10%;
+    left: 20%;
+    right: 20%;
 }
 
-.imagenFondo{
-    position: absolute;
-    width: 1537.22px;
-    height: 1920px;
-    left: -48.61px;
-    top: -460px;
-    background: url(imagenes/pc/fondo.png);
-    opacity: 0.2;
-    filter: blur(10px);
-}
+.seleccionDePerfil{
+    position: relative;
+    width: 1440px;
+    height: 1024px;
 
-.encabezado{
-    * ¡Bienvenido! */
-width: 320px;
-height: 23px;
+    /* ALTO */
 
-font-family: 'Raleway';
-font-style: normal;
-font-weight: 700;
-font-size: 24px;
-line-height: 23px;
-/* identical to box height, or 96% */
-
-text-align: center;
-text-transform: uppercase;
-
-/* SECUNDARIO */
-
-color: #7DB9FF;
-
-
-/* Inside auto layout */
-
-flex: none;
-order: 0;
-flex-grow: 0;
+    background: #FBFFFF;
 }
