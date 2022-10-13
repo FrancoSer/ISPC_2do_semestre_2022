@@ -16,6 +16,11 @@
     margin-right: 30%;
 }
 
+.contenedorLogo{
+    justify-content: center;
+    display: flex;
+
+}
 .seleccionDePerfil{
     position: relative;   
 }
