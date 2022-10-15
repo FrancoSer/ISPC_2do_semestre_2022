@@ -22,7 +22,7 @@
 
 <body>
 
-  <div class="container-fluid">
+  <div class="container-lg">
     <div class="row">
 
       <div class="menu-lateral col-sm-3 d-flex nav flex-column">
@@ -31,32 +31,34 @@
           <div class="cont-logo">
             <li class="nav-item">
               <a class="navbar-brand" href="#">
-                <img src="/Assets/Component 2logo nav-bar expanidida.svg" alt="Logo"
+                <img src="/Assets/Group 4logo.png" alt="Logo"
                   class="logo d-inline-block align-text-top">
               </a>
             </li>
-            <li class="nav-item">
-              <a class="navbar-brand" href="#">
-                <i class="icono bi bi-caret-right-fill"></i>
+           
+              
+                <button class="icono btn bi bi-caret-right-fill accordion-button show" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="true" aria-controls="collapseWidthExample"></button>
+                 
 
-              </a>
-            </li>
+            
 
           </div>
 
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../1 Home/home.html">
-              <i class="icono active bi bi-house-door-fill"></i>Home</a>
+            <i class="icono active bi bi-house-door-fill"></i>
+            <a class="nav-link active collapse-horizontal" aria-current="page" href="../1 Home/home.html"  id="collapseWidthExample">Home</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="../2 Historial/historial.html">
-              <i class="icono bi bi-clipboard2-fill"></i>Historial</a>
+            <i class="icono bi bi-clipboard2-fill"></i>
+            <a class="nav-link collapse-horizontal" href="../2 Historial/historial.html"  id="collapseWidthExample">
+              Historial</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="../4 Agenda/agenda.html">
-              <i class=" icono bi bi-calendar-event"></i>Agenda</a>
+            <i class=" icono bi bi-calendar-event"></i>
+            <a class="nav-link collapse-horizontal" href="../4 Agenda/agenda.html"  id="collapseWidthExample">
+              Agenda</a>
           </li>
         </ul>
       </div>
@@ -70,27 +72,28 @@
           </a>
         </div>
 
-        <div class="row">
+        <div class="row-fluid">
 
           <div class="contenido col">
 
 
 
 
-            <form class="buscador" novalidate>
+            <form class="buscador input-group" novalidate>
         
 
 
-              <div class="buscador-input input-group mb-3">
+              <div class="buscador-input  mb-3">
                 
                 <label class="incuil" for="incuil" >Cuil</label>
 
                 <div class="input-cont">
                   <i class="bi-buscar bi bi-search"></i>
                   <input type="*" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                  
+                 
                 </div>
-                <button class="btn " type="submit">BUSCAR</button>
+                <label class="help-text" for="input" >Ingresar números sin guiones.</label>
+                <button class="boton btn" type="submit">BUSCAR</button>
                 
               </div>
               
@@ -119,117 +122,6 @@
   </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <!--
-
-
-    <div class="menu-lateral">
-
-    </div>
-
-<div class="cabecera">
-    <nav class="navbar bg-light">
-        <div class="container-fluid">
-          <span class="navbar-brand mb-0 h1">INICIO</span>
-          <a href="#">
-            <i class="bi bi-person-fill"></i>
-        </a>
-        </div>
-      </nav>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class=" container-fluid">
-    <nav class="navbar  bg-light">
-        <div class="container-fluid">
-          <a class="navbar-top" href="#">Sticky top</a>
-        </div>
-      </nav>
-  
-    <nav class="menu d-flex nav flex-column flex-shrink-0 bg-light">
-
-       
-        
-
-
-            <button class="btn btn-outline-success me-2" type="button">Main button</button>
-        
-          <ul class="nav flex-column mb-auto">
-            <div class="cont-logo">
-                <li class="nav-item">
-                    <a class="navbar-brand" href="#">
-                        <img src="/Assets/Component 2logo nav-bar expanidida.svg" alt="Logo"  class="logo d-inline-block align-text-top">
-                      </a>
-                </li>
-                <li class="nav-item">
-                    <a class="navbar-brand" href="#">
-                        <i class="icono bi bi-caret-right-fill"></i>
-                   
-                      </a>
-                </li>
-
-            </div>
-            
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">
-                <i class="icono active bi bi-house-door-fill"></i>Home</a>
-            </li>
-           
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <i class="icono bi bi-clipboard2-fill"></i>Historial</a>
-            </li>
-           
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class=" icono bi bi-calendar-event"></i>Agenda</a>
-              </li>
-          </ul>
-        </div>
-      </nav>
-
-    
-    -->
 </body>
 
 </html>

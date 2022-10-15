@@ -10,14 +10,16 @@
     --bs-dark: #334241 !important;
     --bs-nav-pills-link-active-color: #FBFFFF !important;
     --bs-nav-pills-link-active-bg: #01CDBB !important;
+
+    
 }
 
-* {
-    margin: 8px;
-    padding: 0px;
-   
-  
-}
+
+
+.container{
+    height: 1007px;
+    
+  }
 .buscador {
     display: flex;
     flex-direction: column;
@@ -126,8 +128,18 @@ input {
     flex-direction: row;
     align-items: center;
     padding: 0px;
-    justify-content: space-between;
+    justify-content: space-around;
     height: 50px;
+    width: 153px;
+
+}
+
+
+
+.logo{
+  
+    width: 24px;
+    margin-left: 8px;
 }
 
 .nav-link {
@@ -136,22 +148,47 @@ input {
 }
 
 
-.bi {
-    height: 40px;
-    width: 40px;
-    left: 16px;
-    top: 8px;
-
-    color: #01CDBB;
-    margin-right: 16px;
+.nav-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+   
+    width: 153px;
+    height: 56px;
+    
 }
 
-.active {
+li.nav-item .active{
     color: #FBFFFF !important;
     background-color: #01CDBB !important;
+   
+
 }
 
-button {
+
+
+.bi{
+    height: 40px;
+    width: 40px;
+ 
+
+    color: #01CDBB;
+  
+   
+    /* margin-right: 16px; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+
+
+
+
+.boton {
     color: #FBFFFF !important;
     background-color: #01CDBB !important;
     border-style: none;
@@ -166,6 +203,10 @@ button {
     padding: 16px;
     width: 160px;
     height: 55px;
+
+    font-weight: 700;
+    font-family: 'Raleway', sans-serif;
+    border-radius: 7px;
    
 }
 
