@@ -1,3 +1,20 @@
+.perfil-paciente {
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+
+.perfil-paciente, img {
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+
+
+
+
 :root {
 
     --bs-primary: #01CDBB !important;
@@ -18,7 +35,9 @@
 
 .container{
     height: 1007px;
-    
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+
   }
 .buscador {
     display: flex;
@@ -246,7 +265,9 @@ border-radius: 4px;
 
     height: 950px;
 
-    display: flex;
+   
     gap: 24px;
     
 }
+
+
