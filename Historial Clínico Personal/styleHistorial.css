@@ -1,3 +1,20 @@
+.perfil-paciente {
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+
+.perfil-paciente, img {
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+
+
+
+
 :root {
 
     --bs-primary: #01CDBB !important;
@@ -18,7 +35,9 @@
 
 .container{
     height: 1007px;
-    
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+
   }
 .buscador {
     display: flex;
@@ -246,95 +265,9 @@ border-radius: 4px;
 
     height: 950px;
 
-    display: flex;
+   
     gap: 24px;
     
 }
 
 
-
-
-
-
-
-
-/*
-.menu {
-    width: 185px;
-    height: 1024px;
-    
-}
-
-.navbar{
-    display: flex;
-flex-direction: row;
-align-items: center;
-padding: 8px 16px;
-gap: 477px;
-
-position: absolute;
-width: 1133px;
-height: 72px;
-left: 0px;
-top: 0px;
-
-
-}
-
-.logo{
-  
-    height: 40px;
-left: 16px;
-top: 8px;
-border-radius: 0px;
-
-
-}
-
-.nav-link{
-    padding: 8px 16px;
-    color: #01CDBB !important;
-    
-}
-
-
-
-
-a.navbar-brand {
-    height: 400px;
-    width: 40px;
-    left: 16px;
-    top: 8px;
-}
-
-.icono{
-    height: 40px;
-width: 40px;
-left: 16px;
-top: 8px;
-border-radius: 0px;
-color: #01CDBB;
-margin-right: 16px;
-}
-
-.cont-logo{
-    color: #01CDBB;
-    display: flex;
-flex-direction: row;
-align-items: center;
-padding: 0px;
-}
-
-
-.cont-logo .icono{
-    
-    top:6px;
-    left:106px;
- 
-}
-
-.nav-link.active{
-    color: #FBFFFF !important;
-    background-color: #01CDBB !important;
-}
-*/
