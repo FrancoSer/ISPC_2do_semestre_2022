@@ -6,7 +6,7 @@
 }
 
 
-.perfil-paciente, img {
+.perfil-paciente > img {
     margin-right: 8px;
     margin-bottom: 8px;
 }
@@ -130,6 +130,7 @@ input {
     line-height: 1.2;
 }
 
+
 .menu-lateral {
     margin-top: 0px;
     padding: 0px;
@@ -183,6 +184,8 @@ li.nav-item .active{
    
 
 }
+
+
 
 
 
