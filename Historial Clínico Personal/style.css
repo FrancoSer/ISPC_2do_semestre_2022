@@ -11,22 +11,40 @@
     --bs-nav-pills-link-active-color: #FBFFFF !important;
     --bs-nav-pills-link-active-bg: #01CDBB !important;
 
-    
+
 }
 
 
 
-.container{
+.container {
     height: 1007px;
-    
-  }
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+
+}
+
+.perfil-paciente {
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+
+.perfil-paciente,
+img {
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+
 .buscador {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     padding: 0px;
-    
+
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
 }
@@ -46,10 +64,10 @@
 input {
     border-style: none;
     font-family: 'Roboto', sans-serif;
- 
+
 }
 
-.incuil{
+.incuil {
     font-family: 'Raleway', sans-serif;
     font-weight: 500;
 
@@ -72,15 +90,15 @@ input {
 
     width: 1028px;
     height: 52px;
-   
-   
+
+
     /* MEDIO */
 
-   
+
     border-radius: 4px;
 }
 
-.form-control{
+.form-control {
     border: none !important;
 }
 
@@ -136,8 +154,8 @@ input {
 
 
 
-.logo{
-  
+.logo {
+
     width: 24px;
     margin-left: 8px;
 }
@@ -148,33 +166,33 @@ input {
 }
 
 
-.nav-item{
+.nav-item {
     display: flex;
     flex-direction: row;
     align-items: center;
-   
+
     width: 153px;
     height: 56px;
-    
+
 }
 
-li.nav-item .active{
+li.nav-item .active {
     color: #FBFFFF !important;
     background-color: #01CDBB !important;
-   
+
 
 }
 
 
 
-.bi{
+.bi {
     height: 40px;
     width: 40px;
- 
+
 
     color: #01CDBB;
-  
-   
+
+
     /* margin-right: 16px; */
     display: flex;
     flex-direction: row;
@@ -207,34 +225,34 @@ li.nav-item .active{
     font-weight: 700;
     font-family: 'Raleway', sans-serif;
     border-radius: 7px;
-   
+
 }
 
 button:disabled {
     /* BOTONES */
 
 
-box-sizing: border-box;
+    box-sizing: border-box;
 
-/* Auto layout */
+    /* Auto layout */
 
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-padding: 16px;
-gap: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    gap: 8px;
 
-width: 160px;
-height: 55px;
+    width: 160px;
+    height: 55px;
 
-/* PRIMARIO/INACTIVO */
+    /* PRIMARIO/INACTIVO */
 
-background: #7FE5DC;
-/* PRIMARIO */
+    background: #7FE5DC;
+    /* PRIMARIO */
 
-border: 1px solid #01CDBB;
-border-radius: 4px;
+    border: 1px solid #01CDBB;
+    border-radius: 4px;
 }
 
 
@@ -244,97 +262,12 @@ border-radius: 4px;
 
 .contenido {
 
-    height: 950px;
-
+   
     display: flex;
-    gap: 24px;
-    
-}
-
-
-
-
-
-
-
-
-/*
-.menu {
-    width: 185px;
-    height: 1024px;
-    
-}
-
-.navbar{
-    display: flex;
-flex-direction: row;
-align-items: center;
-padding: 8px 16px;
-gap: 477px;
-
-position: absolute;
-width: 1133px;
-height: 72px;
-left: 0px;
-top: 0px;
-
-
-}
-
-.logo{
   
-    height: 40px;
-left: 16px;
-top: 8px;
-border-radius: 0px;
-
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: flex-start;
 
 }
-
-.nav-link{
-    padding: 8px 16px;
-    color: #01CDBB !important;
-    
-}
-
-
-
-
-a.navbar-brand {
-    height: 400px;
-    width: 40px;
-    left: 16px;
-    top: 8px;
-}
-
-.icono{
-    height: 40px;
-width: 40px;
-left: 16px;
-top: 8px;
-border-radius: 0px;
-color: #01CDBB;
-margin-right: 16px;
-}
-
-.cont-logo{
-    color: #01CDBB;
-    display: flex;
-flex-direction: row;
-align-items: center;
-padding: 0px;
-}
-
-
-.cont-logo .icono{
-    
-    top:6px;
-    left:106px;
- 
-}
-
-.nav-link.active{
-    color: #FBFFFF !important;
-    background-color: #01CDBB !important;
-}
-*/
