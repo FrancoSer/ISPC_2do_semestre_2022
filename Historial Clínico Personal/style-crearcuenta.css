@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #92949457;
-    background-image: url(../Assets/fondo.png);
+    background-image: url(Assets/fondo.png);
     background-size: cover;
     font-family: 'Raleway';
     height: 100vh;
