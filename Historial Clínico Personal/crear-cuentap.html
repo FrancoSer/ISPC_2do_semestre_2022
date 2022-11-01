@@ -14,11 +14,11 @@
         <h2>CREAR CUENTA PACIENTE</h2>
         <form> 
             <label for="nombre">Nombre: </label><br>
-            <input class="atributos" type="text" name="nombre" id="nombre" maxlength="60" placeholder="Ingrese su nombre" required><br>
+            <input class="atributos" type="text" pattern="[A-Za-z]{2-60}" title="No es un nombre" name="nombre" id="nombre" placeholder="Ingrese su nombre" required><br>
             <label for="apellido">Apellido: </label><br>
-            <input class="atributos" type="text" name="apellido" id="apellido"  maxlength="55" placeholder="Ingrese su apellido" required="true"><br>
+            <input class="atributos" type="text" pattern="[A-Za-z]{2-60}" name="apellido" id="apellido" placeholder="Ingrese su apellido" required><br>
             <label for="cuil">CUIL: </label><br>
-            <input class="atributos" type="number" name="cuil" id="cuil" min="10000000000" max="99999999999" placeholder="Ingrese su número de CUIL" required><br>
+            <input class="atributos" type="number" name="cuil" id="cuil" placeholder="Ingrese su número de CUIL" required><br>
             <label for="email">Correo electronico: </label><br>
             <input class="atributos" type="email" name="email" id="email" placeholder="Ingrese tu correo electronico" required><br>
             
@@ -37,7 +37,7 @@
                 <option value="masculino">Hombre</option>
                 <option value="otro">Otro</option>
             </select><br><br>
-            <input class="button" type="submit" value="Crear cuenta" onclick="comprobarContrasena()"><br>
+            <input class="button" type="submit" value="Crear cuenta" onclick="comprobarContrasenaYcuil()"><br>
             <a href="#">¿Ya tienes una cuenta?</a>
         </form>
     </div>
