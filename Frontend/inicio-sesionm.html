@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recuperar contraseña</title>
+    <title>Iniciar sesión | Medico</title>
     <link rel="stylesheet" href="style-cuenta.css">
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
     <script src="funciones.js"></script>
@@ -15,31 +16,33 @@
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
 </head>
-<body style="background-color: #92949457;"> 
+
+<body style=" background-color: #92949457;">
     <div class="register-box">
         <img src="Assets\1665725213812.png" id="logohcp">
-        <h2>RECUPERAR CONTRASEÑA</h2>
+        <h2>INICIAR SESION COMO MEDICO</h2>
         <form class="needs-validation row g-3 " name='formulario' id='formulario' novalidate>
             <div class="col-md-12">
-                <label class="form-label" for="cuil">CUIL: </label>
-                <input class="form-control atributos" type="number" name="cuil" id="cuil" min="10000000000"
-                    max="99999999999" placeholder="Ingrese su número de CUIL" autofocus required>
+                <label class="form-label" for="cuil">Matrícula: </label>
+                <input class="form-control atributos" type="number" name="matricula" id="matricula" min="10000000000"
+                    max="99999999999" placeholder="Ingrese su matricula" autofocus required>
                 <div class="invalid-feedback">
-                    Ingrese un CUIL válido
+                    Ingrese un nro. de matrícula válido
                 </div>
             </div>
             <div class="col-md-12">
-                <label class="form-label" for="email">Correo electronico: </label>
-                <input class="form-control atributos" type="email" name="email" id="email"
-                    placeholder="Ingrese su correo electronico" required>
-                <div class="invalid-feedback">
-                    Ingrese un email válido
-                </div>
+                <label class="form-label" for=" contraseña">Contraseña: </label>
+                <input class=" form-control atributos" type="password" name="crearContrasena" id="crearContrasena"
+                    minlength="8" maxlength="25" placeholder="Ingrese su contraseña" required>
+                    <div class="invalid-feedback">
+                        Contraseña incorrecta
+                    </div>
+                    <a href="recuperar-contraseña.html">¿Olvidaste tu contraseña?</a>
             </div>
             <br>
-                <input  id="botonEnviar" type="submit" value="Crear cuenta" onclick="comprobarContrasena()"><br>
+                <input  id="botonEnviar" type="submit" value="Iniciar sesión" onclick=""><br>
             
-            <a class="text-center" href="index.html">Inicio</a>
+            <a class="text-center" href="crear-cuentam.html">¿No tienes una cuenta? Click aquí</a>
             <script>
                 // Ejemplo de JavaScript inicial para deshabilitar el envío de formularios si hay campos no válidos
                 (function () {
@@ -65,4 +68,5 @@
         </form>
     </div>
 </body>
+
 </html>

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear cuenta medica</title>
-    <link rel="stylesheet" href="style-crearcuenta.css">
+    <link rel="stylesheet" href="style-cuenta.css">
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
     <script src="funciones.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -17,8 +17,9 @@
         crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body style=" background-color: #92949457;">
     <div class="register-box">
+        <img src="Assets\1665725213812.png" id="logohcp">
         <h2>CREAR CUENTA MEDICA</h2>
         <form class="needs-validation row g-3 " name='formulario' id='formulario' novalidate>
             <div class="col-md-6">
@@ -98,10 +99,9 @@
                 </div>
             </div>
             <br>
-         
                 <input  id="botonEnviar" type="submit" value="Crear cuenta" onclick="comprobarContrasena()"><br>
             
-            <a class="text-center" href="#">¿Ya tienes una cuenta?</a>
+            <a class="text-center" href="inicio-sesionm.html">¿Ya tienes una cuenta? Click aquí</a>
             <script>
                 // Ejemplo de JavaScript inicial para deshabilitar el envío de formularios si hay campos no válidos
                 (function () {
@@ -118,7 +118,6 @@
                                     event.preventDefault()
                                     event.stopPropagation()
                                 }
-
                                 form.classList.add('was-validated')
                             }, false)
                         })
