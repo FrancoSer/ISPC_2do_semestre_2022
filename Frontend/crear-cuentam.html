@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear cuenta medica</title>
-    <link rel="stylesheet" href="style-cuenta.css">
+    <link rel="stylesheet" href="style-crearcuenta.css">
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
     <script src="funciones.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -17,25 +17,24 @@
         crossorigin="anonymous"></script>
 </head>
 
-<body style=" background-color: #92949457;">
+<body>
     <div class="register-box">
-        <img src="Assets\1665725213812.png" id="logohcp">
         <h2>CREAR CUENTA MEDICA</h2>
         <form class="needs-validation row g-3 " name='formulario' id='formulario' novalidate>
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <label class="form-label" for="nombre">Nombre: </label>
                 <input class="form-control atributos" type="text" name="nombre" id="nombre" maxlength="60"
                     placeholder="Ingrese su nombre" required autofocus>
                 
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <label class="form-label" for="apellido">Apellido: </label>
                 <input class="form-control atributos" type="text" name="apellido" id="apellido" maxlength="55"
                     placeholder="Ingrese su apellido" required>
                 
             </div>
 
-            <div class="col-md-7">
+            <div class="col-md-12">
                 <label class="form-label" for="cuil">CUIL: </label>
                 <input class="form-control atributos" type="number" name="cuil" id="cuil" min="10000000000"
                     max="99999999999" placeholder="Ingrese su número de CUIL" required>
@@ -44,7 +43,7 @@
                 </div>
             </div>
 
-            <div class="col-md-5">
+            <div class="col-md-12">
                 <label class="form-label" for="cuil">Matrícula: </label>
                 <input class="form-control atributos" type="number" name="matricula" id="matricula" min="10000000000"
                     max="99999999999" placeholder="Ingrese su matricula" required>
@@ -78,7 +77,7 @@
                         Las contraseñas no coinciden
                     </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <label class="form-label" for="nacimiento">Fecha de nacimiento: </label>
                 <input class=" form-control atributos" type="date" name="nacimiento" id="nacimiento" min="1907-01-01"
                     max="2022-12-31" required>
@@ -86,7 +85,7 @@
                     Ingrese una fecha de nacimiento válida
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <label class="form-label atributos" for="sexo">Sexo</label>
                 <select class="atributos" name="sexo" id="sexo" required>
                     <option selected disabled value="">Seleccione su sexo</option>
@@ -99,9 +98,10 @@
                 </div>
             </div>
             <br>
+         
                 <input  id="botonEnviar" type="submit" value="Crear cuenta" onclick="comprobarContrasena()"><br>
             
-            <a class="text-center" href="inicio-sesionm.html">¿Ya tienes una cuenta? Click aquí</a>
+            <a class="text-center" href="#">¿Ya tienes una cuenta?</a>
             <script>
                 // Ejemplo de JavaScript inicial para deshabilitar el envío de formularios si hay campos no válidos
                 (function () {
@@ -118,6 +118,7 @@
                                     event.preventDefault()
                                     event.stopPropagation()
                                 }
+
                                 form.classList.add('was-validated')
                             }, false)
                         })
