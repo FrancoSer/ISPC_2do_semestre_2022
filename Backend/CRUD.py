@@ -83,6 +83,8 @@ def eliminarPaciente(self,cuit):
 ###########################################################################################################################################################
 
 # TABLA MEDICO
+
+###########################################################################################################################################################
 #Crear cuenta medico - INSERT
     def registrarMedico(self,matricula, cuit, nombre, apellido, email, fechaNacimiento, telefono, direccion, genero, especialidad, password):
         if self.conexion.is_connected():
@@ -146,13 +148,14 @@ def eliminarMedico(self,matricula):
 ######################################################################################################
 #CONSULTA
 
+
 #Registrar Consulta - INSERT
-def registrarConsulta(self,fecha, tipoConsulta, observaciones, diagnostico, receta, proximaCita, matriculaMedico, idHistoriaClinica):
+def registrarConsulta(self,fecha, tipoConsulta, observaciones, diagnostico, receta, proximaCita, medico_matricula, historia_clinica_id):
         if self.conexion.is_connected():
             try:
                 cursor = self.conexion.cursor()
                 sentenciaSQL= "INSERT INTO consulta VALUES(%s,%s,%s,%s,%s,%s,%s,%s)"
-                data= (fecha, tipoConsulta, observaciones, diagnostico, receta, proximaCita, matriculaMedico, idHistoriaClinica)
+                data= (fecha, tipoConsulta, observaciones, diagnostico, receta, proximaCita, medico_matricula, historia_clinica_id)
                 cursor.execute(sentenciaSQL,data)
                 self.conexion.commit()
                 self.conexion.close()
@@ -163,11 +166,91 @@ def registrarConsulta(self,fecha, tipoConsulta, observaciones, diagnostico, rece
 
 #Buscar Consulta - SELECT
 
-def buscarConsulta(self, matricula):
+def buscarConsultaPorId(self, id_consulta):
             if self.conexion.is_connected():
                 try:
                     cursor = self.conexion.cursor()
-                    sentenciaSQL= "SELECT * from medico where matricula="+matricula
+                    sentenciaSQL= "SELECT * from consulta where id_consulta="+id_consulta
+                    cursor.execute(sentenciaSQL)
+                    resultadoREAD = cursor.fetchall()
+                    self.conexion.close()
+                    return resultadoREAD
+
+                except:
+                    print("No se pudo consultar a la base de datos")
+
+def buscarConsultaPorHistoriaClinica(self, historia_clinica_id):
+            if self.conexion.is_connected():
+                try:
+                    cursor = self.conexion.cursor()
+                    sentenciaSQL= "SELECT * from consulta where historia_clinica_id="+historia_clinica_id
+                    cursor.execute(sentenciaSQL)
+                    resultadoREAD = cursor.fetchall()
+                    self.conexion.close()
+                    return resultadoREAD
+
+                except:
+                    print("No se pudo consultar a la base de datos")
+
+#Modificar Consulta - UPDATE
+
+def modificarConsulta(self,id_consulta, fecha, tipoConsulta, observaciones, diagnostico, receta, proximaCita, medico_matricula, historia_clinica_id):
+        if self.conexion.is_connected():
+            try:
+                cursor = self.conexion.cursor()
+                sentenciaSQL= "UPDATE consulta WHERE id_consulta="+id_consulta+" VALUES(%s,%s,%s,%s,%s,%s,%s,%s)"
+                data= (fecha, tipoConsulta, observaciones, diagnostico, receta, proximaCita, medico_matricula, historia_clinica_id)
+                cursor.execute(sentenciaSQL,data)
+                self.conexion.commit()
+                self.conexion.close()
+
+            except:
+                print("No se pudo modificar los datos de la consulta") 
+
+
+
+#Borrar Consulta - DELETE
+def eliminarConsulta(self,id_consulta):
+        if self.conexion.is_connected():
+            try:
+                cursor = self.conexion.cursor()
+                sentenciaSQL = "DELETE from consulta where id_consulta="+id_consulta
+                cursor.execute(sentenciaSQL)
+
+                self.conexion.commit()                
+                self.conexion.close()
+            except:
+                print("No se pudo eliminar la consulta")
+
+
+###########################################################################################################################################################
+
+# TABLA TRATAMIENTO
+
+###########################################################################################################################################################
+
+#Registrar Tratamiento - INSERT
+def registrarTratamiento(self,medicacion, dieta, cuidados_especiales, observaciones, estado, historia_clinica_id, medico_matricula):
+        if self.conexion.is_connected():
+            try:
+                cursor = self.conexion.cursor()
+                sentenciaSQL= "INSERT INTO tratamiento VALUES(%s,%s,%s,%s,%s,%s,%s,%s)"
+                data= (medicacion, dieta, cuidados_especiales, observaciones, estado, historia_clinica_id, medico_matricula)
+                cursor.execute(sentenciaSQL,data)
+                self.conexion.commit()
+                self.conexion.close()
+
+            except:
+                print("No se pudo registrar la consulta")
+
+
+#Buscar Tratamiento - SELECT
+
+def buscarTratamiento(self, idTratamiento):
+            if self.conexion.is_connected():
+                try:
+                    cursor = self.conexion.cursor()
+                    sentenciaSQL= "SELECT * from tratamiento where id="+idTratamiento
                     cursor.execute(sentenciaSQL)
                     resultadoREAD = cursor.fetchall()
                     self.conexion.close()
@@ -177,33 +260,105 @@ def buscarConsulta(self, matricula):
                     print("No se pudo consultar a la base de datos")
 
 
-#Modificar Consulta - UPDATE
-
-
-
-#SEGUNDA OPERACION DEL CRUD: READ O LEER
-    def BuscarObjeto(self, nombre):
+#Modificar Tratamiento
+def modificarTratamiento(self,idTratamiento, medicacion, dieta, cuidados_especiales, observaciones, estado, historia_clinica_id, medico_matricula):
         if self.conexion.is_connected():
             try:
                 cursor = self.conexion.cursor()
-                sentenciaSQL= "SELECT * from tablaDeEjemplo where nombre like '%MAR%' "
-                cursor.execute(sentenciaSQL)
-                resultadoREAD = cursor.fetchall()
+                sentenciaSQL= "UPDATE tratamiento WHERE id="+idTratamiento+" VALUES(%s,%s,%s,%s,%s,%s,%s)"
+                data= (medicacion, dieta, cuidados_especiales, observaciones, estado, historia_clinica_id, medico_matricula)
+                cursor.execute(sentenciaSQL,data)
+                self.conexion.commit()
                 self.conexion.close()
-                return resultadoREAD
 
             except:
-                print("No se pudo concectar a la base de datos")
+                print("No se pudo modificar los datos del tratamiento") 
 
-#CUARTA OPERACION DEL CRUD: DELETE O ELIMINAR
-    def EliminarObjeto(self,ID):
+
+
+#Borrar Tratamiento - DELETE
+def eliminarConsulta(self,idTratamiento):
         if self.conexion.is_connected():
             try:
                 cursor = self.conexion.cursor()
-                sentenciaSQL = "DELETE from tablaDeEjemplo where id = ID"
+                sentenciaSQL = "DELETE from tratamiento where id="+idTratamiento
                 cursor.execute(sentenciaSQL)
 
                 self.conexion.commit()                
                 self.conexion.close()
             except:
-                print("No se pudo concectar a la base de datos")
+                print("No se pudo eliminar el tratamiento")
+
+
+###########################################################################################################################################################
+
+# TABLA ESTUDIO REALIZADO
+
+###########################################################################################################################################################
+
+#Registrar Estudio - INSERT
+def registrarEstudioRealizado(self,tipo, nombre, resultado, fecha, archivo, historia_clinica_id, medico_matricula):
+        if self.conexion.is_connected():
+            try:
+                cursor = self.conexion.cursor()
+                sentenciaSQL= "INSERT INTO estudio_realizado VALUES(%s,%s,%s,%s,%s,%s,%s)"
+                data= (tipo, nombre, resultado, fecha, archivo, historia_clinica_id, medico_matricula)
+                cursor.execute(sentenciaSQL,data)
+                self.conexion.commit()
+                self.conexion.close()
+
+            except:
+                print("No se pudo registrar el estudio")
+
+
+#Buscar Estudio Realizado - SELECT
+
+def buscarEstudioRealizado(self, idEstudio):
+            if self.conexion.is_connected():
+                try:
+                    cursor = self.conexion.cursor()
+                    sentenciaSQL= "SELECT * from estudio_realizado where id_estudio="+idEstudio
+                    cursor.execute(sentenciaSQL)
+                    resultadoREAD = cursor.fetchall()
+                    self.conexion.close()
+                    return resultadoREAD
+
+                except:
+                    print("No se pudo consultar a la base de datos")
+
+
+#Modificar Estudio Realizado
+def modificarEstudioRealizado(self,id_estudio, tipo, nombre, resultado, fecha, archivo, historia_clinica_id, medico_matricula):
+        if self.conexion.is_connected():
+            try:
+                cursor = self.conexion.cursor()
+                sentenciaSQL= "UPDATE estudio_realizado WHERE id_estudio="+id_estudio+" VALUES(%s,%s,%s,%s,%s,%s,%s)"
+                data= (tipo, nombre, resultado, fecha, archivo, historia_clinica_id, medico_matricula)
+                cursor.execute(sentenciaSQL,data)
+                self.conexion.commit()
+                self.conexion.close()
+
+            except:
+                print("No se pudo modificar los datos del estudio realizado") 
+
+
+
+#Borrar Estudio Realizado - DELETE
+def eliminarConsulta(self,idEstudio):
+        if self.conexion.is_connected():
+            try:
+                cursor = self.conexion.cursor()
+                sentenciaSQL = "DELETE from estudio_realizado where id_estudio="+idEstudio
+                cursor.execute(sentenciaSQL)
+
+                self.conexion.commit()                
+                self.conexion.close()
+            except:
+                print("No se pudo eliminar el estudio realizado")
+
+
+
+
+
+
+
