@@ -28,7 +28,7 @@ INSERT INTO medico VALUES(matricula, cuit, nombre, apellido, email, fechaNacimie
 SELECT * from medico where matricula="matricula"
 
 #Actualizar Médico
-UPDATE medico WHERE matricula="+matricula+" VALUES(cuit, nombre, apellido, email, fechaNacimiento, telefono, direccion, genero, especialidad, password)
+UPDATE medico WHERE matricula="matricula" VALUES(cuit, nombre, apellido, email, fechaNacimiento, telefono, direccion, genero, especialidad, password)
 
 #Eliminar Médico
 DELETE from medico where matricula="matricula"
