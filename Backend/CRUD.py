@@ -277,7 +277,7 @@ def modificarTratamiento(self,idTratamiento, medicacion, dieta, cuidados_especia
 
 
 #Borrar Tratamiento - DELETE
-def eliminarConsulta(self,idTratamiento):
+def eliminarTratamiento(self,idTratamiento):
         if self.conexion.is_connected():
             try:
                 cursor = self.conexion.cursor()
@@ -344,7 +344,7 @@ def modificarEstudioRealizado(self,id_estudio, tipo, nombre, resultado, fecha, a
 
 
 #Borrar Estudio Realizado - DELETE
-def eliminarConsulta(self,idEstudio):
+def eliminarEstudioRealizado(self,idEstudio):
         if self.conexion.is_connected():
             try:
                 cursor = self.conexion.cursor()
