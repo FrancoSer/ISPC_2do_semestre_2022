@@ -61,6 +61,13 @@ justify-content: center;
 display:flex;
 height: 10%;
 width: 10%;
+text-decoration: none;
+border: 1px solid #ffffff34;
+}
+
+#botonmp {
+text-decoration: none;
+border: 1px solid #ffffff00;
 }
 
 .textoComoIngresar{

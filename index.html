@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="Frontend/View/estilos.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <title>HCP</title>
 </head>
@@ -16,7 +16,7 @@
                     <p>¡Bienvenido/a!</p>
                 </div>
                 
-                    <img src= "Assets/Frame 30logo-siglas.png" alt="logo" class="logoSeleccion">
+                    <img src= "Frontend\View\Assets/Frame 30logo-siglas.png" alt="logo" class="logoSeleccion">
             
             </div>
             <div class = "botonesYtexto">
@@ -24,8 +24,8 @@
                     <p>¿Cómo querés ingresar?</p>
                 </div>
                 <div class ='botones'>
-                    <button style="border: 1px solid #ffffff34;" type="button" class="botonPaciente" onclick="window.open('crear-cuentap.html')" >Paciente</button>
-                    <button style="border: 1px solid #ffffff34;" type="button" class="botonProfesional" onclick="window.open('crear-cuentam.html')">Profesional</button>
+                    <a class="botonPaciente" id="botonmp" href="Frontend\View\crear-cuentap.html">Paciente</a> 
+                    <a class="botonProfesional" id="botonmp" href="Frontend\View\crear-cuentam.html">Profesional</a> 
                 </div>
             </div>
         </div>
