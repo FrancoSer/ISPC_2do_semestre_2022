@@ -1,0 +1,3 @@
+#registrarHistoriaClinica()
+#actualizarHistoriaClinica()
+#eliminarHistoriaClinica()

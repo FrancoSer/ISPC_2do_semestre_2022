@@ -1,0 +1,4 @@
+#crearMedico()
+#modificarMedico()
+#buscarMedico()
+#eliminarMedico()
