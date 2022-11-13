@@ -70,6 +70,19 @@ text-decoration: none;
 border: 1px solid #ffffff00;
 }
 
+
+.botonPaciente:hover {
+    cursor: pointer;
+    background: #7DB9FF;
+    color: #FBFFFF;
+}
+
+.botonProfesional:hover {
+    cursor: pointer;
+    background: #7DB9FF;
+    color: #FBFFFF;
+}
+
 .textoComoIngresar{
     margin-top: 2%;
     justify-content: center;
