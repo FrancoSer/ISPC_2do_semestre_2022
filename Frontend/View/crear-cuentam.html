@@ -21,42 +21,50 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
-              <a class="navbar-brand" href="/index.html">HCP</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/index.html">Inicio</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Registrarse
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="/Frontend/View/crear-cuentap.html">Como Paciente</a></li>
-                      <li><a class="dropdown-item" href="/Frontend/View/crear-cuentam.html">Como Medico</a></li>
-                    </ul>
-                  </li>
+                <a class="navbar-brand" href="/index.html">HCP</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Registrarse
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/Frontend/View/crear-cuentap.html">Como Paciente</a>
+                                </li>
+                                <li><a class="dropdown-item" href="/Frontend/View/crear-cuentam.html">Como Medico</a>
+                                </li>
+                            </ul>
+                        </li>
 
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Iniciar sesión
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="/Frontend/View/inicio-sesionp.html">Como Paciente</a></li>
-                      <li><a class="dropdown-item" href="/Frontend/View/inicio-sesionm.html">Como Medico</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Iniciar sesión
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/Frontend/View/inicio-sesionp.html">Como Paciente</a>
+                                </li>
+                                <li><a class="dropdown-item" href="/Frontend/View/inicio-sesionm.html">Como Medico</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://c1721711.ferozo.com/">Grupo 79- Portfolio</a>
+                        </li>
+
                     </ul>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="http://c1721711.ferozo.com/">Grupo 79- Portfolio</a>
-                  </li>
-                  
-                </ul>
-              </div>
+                </div>
             </div>
-          </nav>
+        </nav>
     </header>
 
     <section>
@@ -68,27 +76,27 @@
                     <label class="form-label" for="nombre">Nombre: </label>
                     <input class="form-control atributos" type="text" name="nombre" id="nombre" maxlength="60"
                         placeholder="Ingrese su nombre" required autofocus>
-                    
+
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="apellido">Apellido: </label>
                     <input class="form-control atributos" type="text" name="apellido" id="apellido" maxlength="55"
                         placeholder="Ingrese su apellido" required>
-                    
+
                 </div>
-    
-                
-    
+
+
+
                 <div class="col-md-6">
                     <label class="form-label" for="cuil">Matrícula: </label>
-                    <input class="form-control atributos" type="number" name="matricula" id="matricula" min="10000000000"
-                        max="99999999999" placeholder="Ingrese su número de matricula" required>
+                    <input class="form-control atributos" type="number" name="matricula" id="matricula"
+                        min="10000000000" max="99999999999" placeholder="Ingrese su número de matricula" required>
                     <div class="invalid-feedback">
                         Ingrese un nro. de matrícula válido
                     </div>
                     <div id="cuilHelp" class="form-text">Sin puntos ni diagonales.</div>
                 </div>
-    
+
                 <div class="col-md-6">
                     <label class="form-label" for="email">Correo electronico: </label>
                     <input class="form-control atributos" type="email" name="email" id="email"
@@ -101,23 +109,23 @@
                     <label class="form-label" for=" contraseña">Crea tu contraseña: </label>
                     <input class=" form-control atributos" type="password" name="crearContrasena" id="crearContrasena"
                         minlength="8" maxlength="25" placeholder="Ingrese su contraseña" required>
-                        <div class="invalid-feedback">
-                            La contraseña debe tener una longitud mínima de 8 caracteres.
-                        </div>
+                    <div class="invalid-feedback">
+                        La contraseña debe tener una longitud mínima de 8 caracteres.
+                    </div>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="contraseña">Confirma tu contraseña: </label>
                     <input class=" form-control atributos" type="password" name="confirmarContrasena"
-                        id="confirmarContrasena" minlength="8" maxlength="25" placeholder="Ingrese nuevamente la contraseña"
-                        required>
-                        <div class="invalid-feedback">
-                            Las contraseñas no coinciden
-                        </div>
+                        id="confirmarContrasena" minlength="8" maxlength="25"
+                        placeholder="Ingrese nuevamente la contraseña" required>
+                    <div class="invalid-feedback">
+                        Las contraseñas no coinciden
+                    </div>
                 </div>
                 <div class="col-md-3">
                     <label class="form-label" for="nacimiento">Fecha de nacimiento: </label>
-                    <input class=" form-control atributos" type="date" name="nacimiento" id="nacimiento" min="1907-01-01"
-                        max="2022-12-31" required>
+                    <input class=" form-control atributos" type="date" name="nacimiento" id="nacimiento"
+                        min="1907-01-01" max="2022-12-31" required>
                     <div class="invalid-feedback">
                         Ingrese una fecha de nacimiento válida
                     </div>
@@ -135,18 +143,18 @@
                     </div>
                 </div>
                 <br>
-             
-                    <input  id="botonEnviar" type="submit" value="Crear cuenta" onclick="comprobarContrasena()"><br>
-                
-                    <a class="text-center" href="inicio-sesionm.html">¿Ya tienes una cuenta? Click aquí</a>
+
+                <input id="botonEnviar" type="submit" value="Crear cuenta" onclick="comprobarContrasena()"><br>
+
+                <a class="text-center" href="inicio-sesionm.html">¿Ya tienes una cuenta? Click aquí</a>
                 <script>
                     // Ejemplo de JavaScript inicial para deshabilitar el envío de formularios si hay campos no válidos
                     (function () {
                         'use strict'
-    
+
                         // Obtener todos los formularios a los que queremos aplicar estilos de validación de Bootstrap personalizados
                         var forms = document.querySelectorAll('.needs-validation')
-    
+
                         // Bucle sobre ellos y evitar el envío
                         Array.prototype.slice.call(forms)
                             .forEach(function (form) {
@@ -155,7 +163,11 @@
                                         event.preventDefault()
                                         event.stopPropagation()
                                     }
-    
+                                    else {
+
+                                        event.preventDefault();
+                                        window.location.href = "home.html";
+                                    }
                                     form.classList.add('was-validated')
                                 }, false)
                             })
@@ -164,11 +176,11 @@
             </form>
         </div>
     </section>
-    
+
     <footer>
-        
+
     </footer>
-    
+
 </body>
 
 </html>
