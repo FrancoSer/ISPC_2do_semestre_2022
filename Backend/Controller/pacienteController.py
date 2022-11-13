@@ -1,4 +1,4 @@
-from usuario import *
+from Model.usuarioClase import *
 from Model.pacienteModel import *
 
 
