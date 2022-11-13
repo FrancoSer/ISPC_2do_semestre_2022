@@ -17,3 +17,10 @@
 .container {
     color: var(--bs-primary);
 }
+
+.btn-search {
+    background: #01CDBB;
+    border-radius: 10px;
+    width: 100%;
+    height: 40px;
+}
