@@ -20,7 +20,7 @@ class Conectar():
         if self.conexion.is_connected():
             try:
                 cursor = self.conexion.cursor()
-                sentenciaSQL= "INSERT INTO paciente VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+                sentenciaSQL= "INSERT INTO paciente (cuit, nombre, apellido, email, fecha_nacimiento, telefono, direccion, tipoSangre, genero, sexo, peso, altura, password) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
                 data= (cuit, nombre, apellido, email, fecha_nacimiento, telefono, direccion, tipoSangre, genero, sexo, peso, altura, password)
                 cursor.execute(sentenciaSQL,data)
                 self.conexion.commit()
@@ -49,14 +49,13 @@ def modificarPaciente(self, cuit, nombre, apellido, email, fecha_nacimiento, tel
         if self.conexion.is_connected():
             try:
                 cursor = self.conexion.cursor()
-                sentenciaSQL= "UPDATE paciente WHERE cuit="+cuit+" VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
-                data= (nombre, apellido, email, fecha_nacimiento, telefono, direccion, tipoSangre, genero, sexo, peso, altura, password)
-                cursor.execute(sentenciaSQL,data)
+                sentenciaSQL= "UPDATE paciente SET nombre="+nombre+", apellido="+apellido+", email="+email+", fecha_nacimiento="+fecha_nacimiento+", telefono="+telefono+", direccion="+direccion+", tipoSangre="+tipoSangre+", genero="+genero+", sexo="+sexo+", peso="+peso+", altura="+altura+", password="+password+" WHERE cuit="+cuit
+                cursor.execute(sentenciaSQL)
                 self.conexion.commit()
                 self.conexion.close()
 
             except:
-                print("No se pudo registrar al Paciente") 
+                print("No se pudo actualizar los datos del Paciente") 
                    
 
 #Eliminar Paciente - DELETE

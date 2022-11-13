@@ -21,7 +21,7 @@ class Conectar():
         if self.conexion.is_connected():
             try:
                 cursor = self.conexion.cursor()
-                sentenciaSQL= "INSERT INTO medico VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+                sentenciaSQL= "INSERT INTO medico (matricula, cuit, nombre, apellido, email, fechaNacimiento, telefono, direccion, genero, especialidad, password) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
                 data= (matricula, cuit, nombre, apellido, email, fechaNacimiento, telefono, direccion, genero, especialidad, password)
                 cursor.execute(sentenciaSQL,data)
                 self.conexion.commit()
@@ -50,9 +50,8 @@ def modificarMedico(self,matricula, cuit, nombre, apellido, email, fechaNacimien
         if self.conexion.is_connected():
             try:
                 cursor = self.conexion.cursor()
-                sentenciaSQL= "UPDATE medico WHERE matricula="+matricula+" VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
-                data= (cuit, nombre, apellido, email, fechaNacimiento, telefono, direccion, genero, especialidad, password)
-                cursor.execute(sentenciaSQL,data)
+                sentenciaSQL= "UPDATE medico SET cuit="+cuit+", nombre="+nombre+", apellido="+apellido+", email="+email+", fechaNacimiento="+fechaNacimiento+", telefono="+telefono+", direccion="+direccion+", genero="+genero+", especialidad="+especialidad+", password="+password+"  WHERE matricula="+matricula
+                cursor.execute(sentenciaSQL)
                 self.conexion.commit()
                 self.conexion.close()
 

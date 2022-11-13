@@ -20,7 +20,7 @@ def registrarEstudioRealizado(self,tipo, nombre, resultado, fecha, archivo, hist
         if self.conexion.is_connected():
             try:
                 cursor = self.conexion.cursor()
-                sentenciaSQL= "INSERT INTO estudio_realizado VALUES(%s,%s,%s,%s,%s,%s,%s)"
+                sentenciaSQL= "INSERT INTO estudio_realizado (tipo, nombre, resultado, fecha, archivo, historia_clinica_id, medico_matricula) VALUES(%s,%s,%s,%s,%s,%s,%s)"
                 data= (tipo, nombre, resultado, fecha, archivo, historia_clinica_id, medico_matricula)
                 cursor.execute(sentenciaSQL,data)
                 self.conexion.commit()
@@ -51,7 +51,7 @@ def modificarEstudioRealizado(self,id_estudio, tipo, nombre, resultado, fecha, a
         if self.conexion.is_connected():
             try:
                 cursor = self.conexion.cursor()
-                sentenciaSQL= "UPDATE estudio_realizado WHERE id_estudio="+id_estudio+" VALUES(%s,%s,%s,%s,%s,%s,%s)"
+                sentenciaSQL= "UPDATE estudio_realizado SET tipo="+ tipo +", nombre="+ nombre +", resultado="+ resultado +", fecha="+ fecha+", archivo="+archivo+", historia_clinica_id="+historia_clinica_id+", medico_matricula="+medico_matricula+" WHERE id_estudio="+id_estudio
                 data= (tipo, nombre, resultado, fecha, archivo, historia_clinica_id, medico_matricula)
                 cursor.execute(sentenciaSQL,data)
                 self.conexion.commit()

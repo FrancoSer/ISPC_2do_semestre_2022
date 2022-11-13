@@ -51,9 +51,8 @@ def modificarTratamiento(self,idTratamiento, medicacion, dieta, cuidados_especia
         if self.conexion.is_connected():
             try:
                 cursor = self.conexion.cursor()
-                sentenciaSQL= "UPDATE tratamiento WHERE id="+idTratamiento+" VALUES(%s,%s,%s,%s,%s,%s,%s)"
-                data= (medicacion, dieta, cuidados_especiales, observaciones, estado, historia_clinica_id, medico_matricula)
-                cursor.execute(sentenciaSQL,data)
+                sentenciaSQL= "UPDATE tratamiento SET medicacion="+medicacion+", dieta="+ dieta +", cuidados_especiales="+cuidados_especiales+", observaciones="+ observaciones + ",estado="+ estado + ", historia_clinica_id=" + historia_clinica_id +", medico_matricula=" + medico_matricula + "WHERE id="+idTratamiento
+                cursor.execute(sentenciaSQL)
                 self.conexion.commit()
                 self.conexion.close()
 
