@@ -4,11 +4,15 @@ body {
   }
 
 #bodyhtml {
-  background-color: #92949431
+  background-color: #E5EFF7;
+  background-image:  radial-gradient(#7dbaff5e 2px, transparent 2px), radial-gradient(#7dbaff00 2px, #e5eff7 2px);
+  background-size: 80px 80px;
+  background-position: 0 0,40px 40px;
 }
   
   .register-box {
-    width: 700px;
+    width: 100%;
+    max-width: 700px;
     height: auto;
     top: 50%;
     left: 50%;
@@ -18,6 +22,7 @@ body {
     background-color: rgb(255, 255, 255);
     border-radius: 15px;
     padding: 70px 30px;
+    z-index: 1;
   }
   
   .register-box h2 {
@@ -85,6 +90,7 @@ body {
     border: 1px solid #01CDBB;
     border-radius: 4px;
     color: #01CDBB;
+    background-color: #FBFFFF;
     font-size: 18px;
     padding: 4px;
     
@@ -121,11 +127,9 @@ body {
     color: #7DB9FF;
   }
 
-  .register-box #logohcp{
-    height: 120px;
-    width: 90px;
-    position: absolute;
-    top: -90px;
-    left: calc(50% - 50px);
+  
+
+  #navbar{
+    z-index: 2;
   }
   

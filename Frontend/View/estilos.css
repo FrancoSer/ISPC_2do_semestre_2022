@@ -19,14 +19,15 @@
 }
 
 .seleccionDePerfil{
-    position: relative; 
-     
+    position: relative;
+
 }
 
 .fondo{
-    background-image:url(imagenes/pc/fondo.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: #E5EFF7;
+    background-image:  radial-gradient(#7dbaff5e 2px, transparent 2px), radial-gradient(#7dbaff00 2px, #e5eff7 2px);
+    background-size: 80px 80px;
+    background-position: 0 0,40px 40px;
 }
 
 .bienvenidaYlogo{
