@@ -55,3 +55,38 @@ UPDATE tratamiento  SET medicacion="medicacion", dieta="dieta", cuidados_especia
 
 #Eliminar Tratamiento
 DELETE from tratamiento where id="idTratamiento"
+
+###################################################
+#CONSULTAS TABLA EXAMEN FISICO
+###################################################
+
+#Insertar EXAMEN FISICO
+INSERT INTO examen_fisico (presion, peso, altura, fecha, historia_clinica_id, medico_matricula) 
+VALUES ("presion", "peso", "altura", "fecha", "historia_clinica_id", "medico_matricula")
+
+#Buscar Examen fisico por id
+SELECT * from examen_fisico where id="id"
+
+#Actualizar Examen fisico
+UPDATE examen_fisico  SET presion="presion", peso="peso", altura="altura", fecha="fecha", historia_clinica_id="historia_clinica_id", medico_matricula="medico_matricula", WHERE id="id"
+
+#Eliminar Examen fisico
+DELETE from examen_fisico where id="id"
+
+###################################################
+#CONSULTAS TABLA VACUNA COLOCACION
+###################################################
+
+#Insertar COLOCACIONES DE VACUNA
+INSERT INTO vacuna_colocacion (nombre, fecha_colocacion, historia_clinica_id, medico_matricula) 
+VALUES ("nombre", "fecha_colocacion", "historia_clinica_id", "medico_matricula")
+
+#Buscar Examen fisico por id
+SELECT * from vacuna_colocacion where id="id"
+
+#Actualizar Examen fisico
+UPDATE vacuna_colocacion  SET nombre="nombre", fecha_colocacion="nombre", historia_clinica_id="historia_clinica_id", medico_matricula="medico_matricula", WHERE id="id"
+
+#Eliminar Examen fisico
+DELETE from vacuna_colocacion where id="id"
+
