@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700;800&family=Roboto:wght@100;400;700;900&display=swap" rel="stylesheet">
+    <title>Agenda</title>
+</head>
+<body>
+
+  <div class="container-lg">
+    <div class="row">
+
+      <div class="menu-lateral col-sm-3 d-flex nav flex-column">
+        <ul class="nav nav-content flex-column mb-auto">
+
+          <div class="cont-logo">
+            <li class="nav-item">
+              <a class="navbar-brand" href="#">
+                <img src="Assets/logohcpblanco.jpeg" alt="Logo"
+                  class="logo d-inline-block align-text-top">
+              </a>
+            </li>
+           
+              
+                <button class="icono btn bi bi-caret-right-fill accordion-button show" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="true" aria-controls="collapseWidthExample"></button>
+                 
+
+            
+
+          </div>
+
+          <li class="nav-item">
+            <i class="icono  bi bi-house-door-fill"></i>
+            <a class="nav-link  collapse-horizontal" aria-current="page" href="home.html"  id="collapseWidthExample">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <i class="icono bi bi-clipboard2-fill"></i>
+            <a class="nav-link collapse-horizontal" href="historial.html"  id="collapseWidthExample">
+              Historial</a>
+          </li>
+
+          <li class="nav-item">
+            <i class=" icono active bi bi-calendar-event"></i>
+            <a class="nav-link active collapse-horizontal" href="../4 Agenda/agenda.html"  id="collapseWidthExample">
+              Agenda</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="contenedor col">
+
+        <div class="cabecera  col ">
+          <span class="navbar-brand  h1">INICIO</span>
+          <a class="nav-link " href="perfil.html">
+            <i class="icono bi bi-person-fill"></i>
+          </a>
+        </div>
+
+        <div class="row">
+            
+            <div class="contenido col">
+              
+              
+
+                
+              
+                <!-- Calendar -->
+                <div class="calendar shadow bg-white p-5">
+                  <div class="d-flex align-items-center"><i class="fa fa-calendar fa-3x mr-3"></i>
+                    <h2 class="month font-weight-bold mb-0 text-uppercase">Noviembre 2022</h2>
+                  </div>
+                  <p class="font-italic text-muted mb-5">No hay eventos para hoy</p>
+                  <ol class="day-names list-unstyled">
+                    <li class="font-weight-bold text-uppercase">Sun</li>
+                    <li class="font-weight-bold text-uppercase">Mon</li>
+                    <li class="font-weight-bold text-uppercase">Tue</li>
+                    <li class="font-weight-bold text-uppercase">Wed</li>
+                    <li class="font-weight-bold text-uppercase">Thu</li>
+                    <li class="font-weight-bold text-uppercase">Fri</li>
+                    <li class="font-weight-bold text-uppercase">Sat</li>
+                  </ol>
+              
+                  <ol class="days list-unstyled">
+                    <li>
+                      <div class="date">1</div>
+                      <div class="event bg-success">Event with Long Name</div>
+                    </li>
+                    <li>
+                      <div class="date">2</div>
+                    </li>
+                    <li>
+                      <div class="date">3</div>
+                    </li>
+                    <li>
+                      <div class="date">4</div>
+                    </li>
+                    <li>
+                      <div class="date">5</div>
+                    </li>
+                    <li>
+                      <div class="date">6</div>
+                    </li>
+                    <li>
+                      <div class="date">7</div>
+                    </li>
+                    <li>
+                      <div class="date">8</div>
+                    </li>
+                    <li>
+                      <div class="date">9</div>
+                    </li>
+                    <li>
+                      <div class="date">10</div>
+                    </li>
+                    <li>
+                      <div class="date">11</div>
+                    </li>
+                    <li>
+                      <div class="date">12</div>
+                    </li>
+                    <li>
+                      <div class="date">13</div>
+                      <div class="event all-day begin span-2 bg-warning">Event Name</div>
+                    </li>
+                    <li>
+                      <div class="date">14</div>
+                    </li>
+                    <li>
+                      <div class="date">15</div>
+                      <div class="event all-day end bg-success">Event Name</div>
+                    </li>
+                    <li>
+                      <div class="date">16</div>
+                    </li>
+                    <li>
+                      <div class="date">17</div>
+                    </li>
+                    <li>
+                      <div class="date">18</div>
+                    </li>
+                    <li>
+                      <div class="date">19</div>
+                    </li>
+                    <li>
+                      <div class="date">20</div>
+                    </li>
+                    <li>
+                      <div class="date">21</div>
+                      <div class="event bg-primary">Event Name</div>
+                      <div class="event bg-success">Event Name</div>
+                    </li>
+                    <li>
+                      <div class="date">22</div>
+                      <div class="event bg-info">Event with Longer Name</div>
+                    </li>
+                    <li>
+                      <div class="date">23</div>
+                    </li>
+                    <li>
+                      <div class="date">24</div>
+                    </li>
+                    <li>
+                      <div class="date">25</div>
+                    </li>
+                    <li>
+                      <div class="date">26</div>
+                    </li>
+                    <li>
+                      <div class="date">27</div>
+                    </li>
+                    <li>
+                      <div class="date">28</div>
+                    </li>
+                    <li>
+                      <div class="date">29</div>
+                    </li>
+                    <li>
+                      <div class="date">30</div>
+                    </li>
+                    <li>
+                      <div class="date">31</div>
+                    </li>
+                    <li class="outside">
+                      <div class="date">1</div>
+                    </li>
+                    <li class="outside">
+                      <div class="date">2</div>
+                    </li>
+                    <li class="outside">
+                      <div class="date">3</div>
+                    </li>
+                    <li class="outside">
+                      <div class="date">4</div>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+              
+
+            </div>
+           
+          </div>
+
+
+          </div>
+
+        </div>
+
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+
+    <div class="menu-lateral">
+
+    </div>
+
+<div class="cabecera">
+    <nav class="navbar bg-light">
+        <div class="container-fluid">
+          <span class="navbar-brand mb-0 h1">INICIO</span>
+          <a href="#">
+            <i class="bi bi-person-fill"></i>
+        </a>
+        </div>
+      </nav>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class=" container-fluid">
+    <nav class="navbar  bg-light">
+        <div class="container-fluid">
+          <a class="navbar-top" href="#">Sticky top</a>
+        </div>
+      </nav>
+  
+    <nav class="menu d-flex nav flex-column flex-shrink-0 bg-light">
+
+       
+        
+
+
+            <button class="btn btn-outline-success me-2" type="button">Main button</button>
+        
+          <ul class="nav flex-column mb-auto">
+            <div class="cont-logo">
+                <li class="nav-item">
+                    <a class="navbar-brand" href="#">
+                        <img src="/Assets/Component 2logo nav-bar expanidida.svg" alt="Logo"  class="logo d-inline-block align-text-top">
+                      </a>
+                </li>
+                <li class="nav-item">
+                    <a class="navbar-brand" href="#">
+                        <i class="icono bi bi-caret-right-fill"></i>
+                   
+                      </a>
+                </li>
+
+            </div>
+            
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">
+                <i class="icono active bi bi-house-door-fill"></i>Home</a>
+            </li>
+           
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="icono bi bi-clipboard2-fill"></i>Historial</a>
+            </li>
+           
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class=" icono bi bi-calendar-event"></i>Agenda</a>
+              </li>
+          </ul>
+        </div>
+      </nav>
+
+    
+    -->
+</body>
+</html>
