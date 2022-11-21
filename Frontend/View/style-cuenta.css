@@ -1,0 +1,135 @@
+body {
+    font-family: 'Raleway';
+    height: 100vh;
+  }
+
+#bodyhtml {
+  background-color: #E5EFF7;
+  background-image:  radial-gradient(#7dbaff5e 2px, transparent 2px), radial-gradient(#7dbaff00 2px, #e5eff7 2px);
+  background-size: 80px 80px;
+  background-position: 0 0,40px 40px;
+}
+  
+  .register-box {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    padding: 70px 30px;
+    z-index: 1;
+  }
+  
+  .register-box h2 {
+    margin: 0;
+    color: #7DB9FF;
+    padding: 0 0 20px;
+    text-align: center;
+  }
+  
+  .register-box label {
+    width: 610px;
+    height: 19px;
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19px;
+    color: #334241;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+  
+  .register-box input, select {
+    width: 100%;
+    font-family: "Raleway";
+    font-style: normal;
+    font-size: 15px;
+    border: 1px solid #E5EFF7;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .atributos {
+    outline: none;
+    height: 25px;
+    color: #7DB9FF;
+  }
+
+  #sexo {
+    border-color: rgba(0, 0, 0, 0.075); 
+    color: #334241;
+    font-family: 'Raleway'; 
+    font-size: 15px;
+  }
+  
+  #botonEnviar{
+    border: 1px solid #01CDBB;
+    border-radius: 4px;
+    color: #01CDBB;
+    font-size: 18px;
+    width: 100%;
+    height: 10%;
+    background: #FBFFFF;
+  }
+  #botonIniciar{
+    text-align: center;
+    width: 100%;
+    height: 10%;
+    font-family: "Raleway";
+    font-style: normal;
+    border-radius: 4px;
+    box-sizing: border-box;
+    border: 1px solid #01CDBB;
+    border-radius: 4px;
+    color: #01CDBB;
+    background-color: #FBFFFF;
+    font-size: 18px;
+    padding: 4px;
+    
+  }
+  #botonIniciar:hover{
+    cursor: pointer;
+    background: #7FE5DC;
+    color: #FBFFFF;
+  }
+  #botonEnviar:hover{
+    cursor: pointer;
+    background: #7FE5DC;
+    color: #FBFFFF;
+  }
+
+  .register-box input[type="submit"]:hover {
+    cursor: pointer;
+    background: #7FE5DC;
+    color: #FBFFFF;
+  }
+  
+  .register-box a {
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(0, 0, 0);
+  }
+  
+  .register-box a:hover {
+    color: rgb(93, 196, 190);
+  }
+
+  ::placeholder {
+    color: #7DB9FF;
+  }
+
+  
+
+  #navbar{
+    z-index: 2;
+  }
+  

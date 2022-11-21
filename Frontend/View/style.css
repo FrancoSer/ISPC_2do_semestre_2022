@@ -1,0 +1,360 @@
+:root {
+
+    --bs-primary: #01CDBB !important;
+    --bs-secondary: #7DB9FF !important;
+    --bs-success: #82C619 !important;
+    --bs-info: #196AFC;
+    --bs-warning: #FFB600;
+    --bs-danger: #FF522A;
+    --bs-light: #FBFFFF !important;
+    --bs-dark: #334241 !important;
+    --bs-nav-pills-link-active-color: #FBFFFF !important;
+    --bs-nav-pills-link-active-bg: #01CDBB !important;
+
+
+}
+
+
+
+.container {
+    height: 1007px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+
+}
+
+.perfil-paciente {
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+
+.perfil-paciente,
+img {
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+
+.buscador {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px;
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+
+.buscador-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px;
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+input {
+    border-style: none;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.incuil {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+
+}
+
+.input-cont {
+    /* INPUT */
+
+    border: 1px solid #E5EFF7;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px;
+    gap: 8px;
+
+    width: 1028px;
+    height: 52px;
+
+
+    /* MEDIO */
+
+
+    border-radius: 4px;
+}
+
+.form-control {
+    border: none !important;
+}
+
+.bi-buscar {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+}
+
+.cabecera {
+    top: 0px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    background-color: #FBFFFF !important;
+}
+
+.h1 {
+    margin-top: 0;
+    margin-left: 25%;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.menu-lateral {
+    margin-top: 0px;
+    padding: 0px;
+    background-color: #FBFFFF !important;
+    width: 185px;
+    gap: 40px;
+
+
+}
+
+
+.cont-logo {
+    color: #01CDBB;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    justify-content: space-around;
+    height: 50px;
+    width: 153px;
+
+}
+
+
+
+.logo {
+
+    width: 24px;
+    margin-left: 8px;
+}
+
+.nav-link {
+
+    color: #01CDBB !important;
+}
+
+
+.nav-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    width: 153px;
+    height: 56px;
+
+}
+
+li.nav-item .active {
+    color: #FBFFFF !important;
+    background-color: #01CDBB !important;
+
+
+}
+
+
+
+.bi {
+    height: 40px;
+    width: 40px;
+
+
+    color: #01CDBB;
+
+
+    /* margin-right: 16px; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+
+
+
+
+.boton {
+    color: #FBFFFF !important;
+    background-color: #01CDBB !important;
+    border-style: none;
+    /* BOTONES */
+    box-sizing: border-box;
+
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    width: 160px;
+    height: 55px;
+
+    font-weight: 700;
+    font-family: 'Raleway', sans-serif;
+    border-radius: 7px;
+
+}
+
+button:disabled {
+    /* BOTONES */
+
+
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    gap: 8px;
+
+    width: 160px;
+    height: 55px;
+
+    /* PRIMARIO/INACTIVO */
+
+    background: #7FE5DC;
+    /* PRIMARIO */
+
+    border: 1px solid #01CDBB;
+    border-radius: 4px;
+}
+
+
+.col-sm-3 {
+    width: 185px !important;
+}
+
+.contenido {
+
+   
+    display: flex;
+  
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: flex-start;
+
+}
+
+
+
+.clearfix::after,
+.calendar ol::after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* ================
+Calendar Styling */
+.calendar {
+  border-radius: 10px;
+}
+
+.month {
+  font-size: 2rem;
+}
+
+@media (min-width: 992px) {
+  .month {
+    font-size: 2 rem;
+  }
+}
+
+.calendar ol li {
+  float: left;
+  width: 14.28571%;
+}
+
+.calendar .day-names {
+  border-bottom: 1px solid #eee;
+}
+
+.calendar .day-names li {
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.calendar .days li {
+  border-bottom: 1px solid #eee;
+  min-height: 8rem;
+}
+
+.calendar .days li .date {
+  margin: 0.5rem 0;
+}
+
+.calendar .days li .event {
+  font-size: 0.75rem;
+  padding: 0.4rem;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-radius: 4rem;
+  margin-bottom: 1px;
+}
+
+.calendar .days li .event.span-2 {
+  width: 200%;
+}
+
+.calendar .days li .event.begin {
+  border-radius: 1rem 0 0 1rem;
+}
+
+.calendar .days li .event.end {
+  border-radius: 0 1rem 1rem 0;
+}
+
+.calendar .days li .event.clear {
+  background: none;
+}
+
+.calendar .days li:nth-child(n+29) {
+  border-bottom: none;
+}
+
+.calendar .days li.outside .date {
+  color: #ddd;
+}
+
+/*
