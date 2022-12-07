@@ -1,3 +1,4 @@
+
 .fondoLogo{
     display: flex;
     justify-content: center;
@@ -163,13 +164,82 @@ order: 1;
     left: 5%;
 }
 
+/*movil pequeno*/
+@media (min-width: 360px) and (max-width: 390px){
+    .seleccionDePerfil{
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
+    .textoComoIngresar{
+        font-size: 1.5rem;
+    }
+    .logoSeleccion{
+        width: 15rem;
+    }
+    .bienvenida p{
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+    .botonProfesional, .botonPaciente{
+        padding: 1rem;
+        width: 15rem;
+        height: 3rem;
+        margin: .5rem;
+        margin-top: 1rem;
+        font-size: 1em;
+    }
 
-/*.logoSeleccion{
-    margin: 0px auto;
-    display: flex;
-    width: 122px;
-    height: 128px;
-    top: 63px;
-    left: 174px;
+    .fondo{
+    
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        display: flex;
+        margin-top: 4rem;
+    }
+   
 }
+
+/*movil mediano*/
+@media (min-width: 390px) and (max-width: 700px){
+    .textoComoIngresar{
+        margin-top: 2rem;
+        font-size: 1.5rem;
+    }
+    .logoSeleccion{
+        width: 15rem;
+    }
+    .bienvenida p{
+        text-align: center;
+        font-size: 2rem;
+        
+    }
+    .botonProfesional, .botonPaciente{
+        width: 10rem;
+        height: 3rem;
+        margin: .5rem;
+        margin-top: 1rem;
+        font-size: 2rem;
+    }
+    .fondo{
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        display: flex;
+        margin-top: 8rem;
+
+    }
+    
+}
+
+
+
+
 
