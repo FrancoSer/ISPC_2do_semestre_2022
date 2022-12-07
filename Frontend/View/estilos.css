@@ -210,8 +210,10 @@ order: 1;
     .textoComoIngresar{
         margin-top: 2rem;
         font-size: 1.5rem;
+        margin-top: 5rem;
     }
     .logoSeleccion{
+        margin-top: 4rem;
         width: 15rem;
     }
     .bienvenida p{
@@ -220,10 +222,11 @@ order: 1;
         
     }
     .botonProfesional, .botonPaciente{
+        padding: 1.5rem;
         width: 10rem;
         height: 3rem;
         margin: .5rem;
-        margin-top: 1rem;
+        margin-top: 2rem;
         font-size: 2rem;
     }
     .fondo{
@@ -233,7 +236,8 @@ order: 1;
         align-items: center;
         text-align: center;
         display: flex;
-        margin-top: 8rem;
+        margin-top: 2rem;
+        margin-bottom: 3rem;
 
     }
     
