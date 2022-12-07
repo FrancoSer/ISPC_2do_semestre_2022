@@ -1,5 +1,10 @@
 
-.fondoLogo{
+@font-face {
+    font-family:Playfair Display;
+    src: url(./fonts/PlayfairDisplay-Regular.ttf);
+}
+    
+    .fondoLogo{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,6 +43,7 @@ margin-top: 8%;
 }
 
 .bienvenida{
+font-family: Playfair Display;
 font-weight: 700;
 font-size: 150%;
 line-height: 23px;
@@ -86,52 +92,58 @@ border: 1px solid #ffffff00;
 }
 
 .textoComoIngresar{
+    font-family: Playfair Display;
     margin-top: 2%;
     justify-content: center;
     display: flex;
 }
 
 .botonPaciente{
-
-border: 1px groove black;
-margin: 5%;
+padding: 1rem;
 display: flex;
 justify-content: center;
 align-items: center;
-padding: 16px;
+text-align: center;
 background: #7DB9FF;
 border-radius: 4px;
-width: 115px;
-height: 23px;
-font-family: 'Raleway';
+width: 15rem;
+height: 1rem;
+
 font-style: normal;
 font-weight: 500;
-font-size: 24px;
-line-height: 23px;
+
+
 color: #FBFFFF;
 }
 
 .botonProfesional{
-border: 1px groove black;
-margin: 5%;
+
+
 display: flex;
 justify-content: center;
 align-items: center;
-    
+text-align: center;
 background: #01CDBB;
 border-radius: 4px;
     
-font-family: 'Raleway';
+
 font-style: normal;
 font-weight: 500;
-font-size: 24px;
-line-height: 23px;
+
+
 color: #FBFFFF;
-order: 1;
+
 }
 
 .botonPaciente, .botonProfesional{
-  margin-top: 20%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 1rem;
+  font-family: Playfair Display;
+  font-size: 1.5rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
   cursor: pointer;
   outline: none;
   box-shadow: 0 4px #999;
@@ -219,6 +231,7 @@ order: 1;
     .bienvenida p{
         text-align: center;
         font-size: 2rem;
+        margin-bottom: 5rem;
         
     }
     .botonProfesional, .botonPaciente{
@@ -227,7 +240,7 @@ order: 1;
         height: 3rem;
         margin: .5rem;
         margin-top: 2rem;
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
     .fondo{
         margin: 0;
