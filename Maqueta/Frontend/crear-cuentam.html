@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
+    <title>Crear cuenta médica</title>
+=======
+    <title>Crear cuenta medica</title>
+>>>>>>> 86b62af94381d9d2bd1dbbed73fd8069720c3c52
+    <link rel="stylesheet" href="style-crearcuenta.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <script src="funciones.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="register-box">
+<<<<<<< HEAD
+        <h2>CREAR CUENTA MÉDICA</h2>
+=======
+        <h2>CREAR CUENTA MEDICA</h2>
+>>>>>>> 86b62af94381d9d2bd1dbbed73fd8069720c3c52
+        <form class="needs-validation row g-3 " name='formulario' id='formulario' novalidate>
+            <div class="col-md-6">
+                <label class="form-label" for="nombre">Nombre: </label>
+                <input class="form-control atributos" type="text" name="nombre" id="nombre" maxlength="60"
+                    placeholder="Ingrese su nombre" required autofocus>
+                
+            </div>
+            <div class="col-md-6">
+                <label class="form-label" for="apellido">Apellido: </label>
+                <input class="form-control atributos" type="text" name="apellido" id="apellido" maxlength="55"
+                    placeholder="Ingrese su apellido" required>
+                
+            </div>
+
+            <div class="col-md-7">
+                <label class="form-label" for="cuil">CUIL: </label>
+                <input class="form-control atributos" type="number" name="cuil" id="cuil" min="10000000000"
+                    max="99999999999" placeholder="Ingrese su número de CUIL" required>
+                <div class="invalid-feedback">
+                    Ingrese un CUIL válido
+                </div>
+            </div>
+
+            <div class="col-md-5">
+                <label class="form-label" for="cuil">Matrícula: </label>
+                <input class="form-control atributos" type="number" name="matricula" id="matricula" min="10000000000"
+                    max="99999999999" placeholder="Ingrese su matricula" required>
+                <div class="invalid-feedback">
+                    Ingrese un nro. de matrícula válido
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <label class="form-label" for="email">Correo electronico: </label>
+                <input class="form-control atributos" type="email" name="email" id="email"
+                    placeholder="Ingrese su correo electronico" required>
+                <div class="invalid-feedback">
+                    Ingrese un email válido
+                </div>
+            </div>
+            <div class="col-md-12">
+                <label class="form-label" for=" contraseña">Crea tu contraseña: </label>
+                <input class=" form-control atributos" type="password" name="crearContrasena" id="crearContrasena"
+                    minlength="8" maxlength="25" placeholder="Ingrese su contraseña" required>
+                    <div class="invalid-feedback">
+                        La contraseña debe tener una longitud mínima de 8 caracteres.
+                    </div>
+            </div>
+            <div class="col-md-12">
+                <label class="form-label" for="contraseña">Confirma tu contraseña: </label>
+                <input class=" form-control atributos" type="password" name="confirmarContrasena"
+                    id="confirmarContrasena" minlength="8" maxlength="25" placeholder="Ingrese nuevamente la contraseña"
+                    required>
+                    <div class="invalid-feedback">
+                        Las contraseñas no coinciden
+                    </div>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label" for="nacimiento">Fecha de nacimiento: </label>
+                <input class=" form-control atributos" type="date" name="nacimiento" id="nacimiento" min="1907-01-01"
+                    max="2022-12-31" required>
+                <div class="invalid-feedback">
+                    Ingrese una fecha de nacimiento válida
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label atributos" for="sexo">Sexo</label>
+                <select class="atributos" name="sexo" id="sexo" required>
+                    <option selected disabled value="">Seleccione su sexo</option>
+                    <option value="mujer">Mujer</option>
+                    <option value="masculino">Hombre</option>
+                    <option value="otro">Otro</option>
+                </select>
+                <div class="invalid-feedback">
+                    Selecciona un sexo válido
+                </div>
+            </div>
+            <br>
+         
+                <input  id="botonEnviar" type="submit" value="Crear cuenta" onclick="comprobarContrasena()"><br>
+            
+            <a class="text-center" href="#">¿Ya tienes una cuenta?</a>
+            <script>
+                // Ejemplo de JavaScript inicial para deshabilitar el envío de formularios si hay campos no válidos
+                (function () {
+                    'use strict'
+
+                    // Obtener todos los formularios a los que queremos aplicar estilos de validación de Bootstrap personalizados
+                    var forms = document.querySelectorAll('.needs-validation')
+
+                    // Bucle sobre ellos y evitar el envío
+                    Array.prototype.slice.call(forms)
+                        .forEach(function (form) {
+                            form.addEventListener('submit', function (event) {
+                                if (!form.checkValidity()) {
+                                    event.preventDefault()
+                                    event.stopPropagation()
+                                }
+
+                                form.classList.add('was-validated')
+                            }, false)
+                        })
+                })()
+            </script>
+        </form>
+    </div>
+</body>
+
+</html>
