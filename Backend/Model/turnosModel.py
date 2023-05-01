@@ -1,4 +1,0 @@
-#registrarTurno()
-#modificarTurno()
-#eliminarTurno()
-#buscarTurno()

@@ -1,4 +1,0 @@
-#registrarHistorialClinico()
-#buscarHistorialClinico()
-#modificarHistorialClinico()
-#eliminarHistorialClinico()
