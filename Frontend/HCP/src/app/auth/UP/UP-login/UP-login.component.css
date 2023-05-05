@@ -1,0 +1,120 @@
+body {
+  
+    font-family: 'Raleway';
+    height: 100vh;
+    align-items: center;
+  }
+
+#bodyhtml {
+  background-color: #E5EFF7;
+  background-image:  radial-gradient(#7dbaff5e 2px, transparent 2px), radial-gradient(#7dbaff00 2px, #e5eff7 2px);
+  background-size: 80px 80px;
+ 
+}
+  
+  .register-box {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    position: relative;
+    align-items: center;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    padding: 50px 30px;
+   
+  }
+  
+  .register-box h2 {
+    margin: 0;
+    color: #7DB9FF;
+    padding: 0 0 20px;
+    text-align: center;
+   
+  }
+  
+  
+  
+  
+  
+  .atributos {
+    outline: none;
+    height: 25px;
+    color: #7DB9FF;
+  }
+
+  #sexo {
+    border-color: rgba(0, 0, 0, 0.075); 
+    color: #334241;
+    font-family: 'Raleway'; 
+    font-size: 15px;
+  }
+  
+  #botonEnviar{
+    border: 1px solid #01CDBB;
+    border-radius: 4px;
+    color: #01CDBB;
+    font-size: 18px;
+    width: 100%;
+    height: 10%;
+    background: #FBFFFF;
+  }
+  #botonIniciar{
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    font-family: "Raleway";
+    font-style: normal;
+    border-radius: 4px;
+    box-sizing: border-box;
+    border: 1px solid #01CDBB;
+    border-radius: 4px;
+    color: #01CDBB;
+    background-color: #FBFFFF;
+    font-size: 18px;
+    padding: 4px;
+    
+  }
+  #botonIniciar:hover{
+    cursor: pointer;
+    background: #7FE5DC;
+    color: #FBFFFF;
+  }
+  #botonEnviar:hover{
+    cursor: pointer;
+    background: #7FE5DC;
+    color: #FBFFFF;
+  }
+
+  .register-box input[type="submit"]:hover {
+    cursor: pointer;
+    background: #7FE5DC;
+    color: #FBFFFF;
+  }
+  
+  .register-box a {
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(0, 0, 0);
+  }
+  
+  .register-box a:hover {
+    color: rgb(93, 196, 190);
+  }
+
+  ::placeholder {
+    color: #7DB9FF;
+  }
+
+
+  
+   .boton_regreso{
+    color:white;
+    background-color: #7DB9FF;
+    
+  }
