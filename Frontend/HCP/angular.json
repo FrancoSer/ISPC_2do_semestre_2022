@@ -58,10 +58,6 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "HCP:build:production",
-            "port": 3000
-        },
           "configurations": {
             "production": {
               "browserTarget": "HCP:build:production"
