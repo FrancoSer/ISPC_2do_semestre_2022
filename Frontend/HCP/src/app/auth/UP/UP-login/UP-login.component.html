@@ -1,61 +1,9 @@
-<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-<script src="Frontend/HCP/src/app/utils/funciones.js"></script>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
+</head>
 
-
-<!-- <nav class="navbar navbar-expand-lg bg-light" id="navbar">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="https://francoser.github.io/ISPC_2do_semestre_2022">HCP</a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page"
-                href="https://francoser.github.io/ISPC_2do_semestre_2022">Inicio</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Registrarse
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="crear-cuentap.html">Como Paciente</a>
-                </li>
-                <li><a class="dropdown-item" href="crear-cuentam.html">Como Medico</a>
-                </li>
-              </ul>
-            </li>
-
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Iniciar sesión
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="inicio-sesionp.html">Como Paciente</a>
-                </li>
-                <li><a class="dropdown-item" href="inicio-sesionm.html">Como Medico</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Caracteristicas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="http://c1721711.ferozo.com/" target='_blank'>Acerca de nosotros</a>
-            </li>
-
-
-
-          </ul>
-        </div>
-      </div>
-    </nav> -->
 
 <body>
   <div class="container">
@@ -63,56 +11,36 @@
     <div class="register-box">
 
       <h2>INICIAR SESION COMO PACIENTE</h2>
-      <form class="needs-validation row g-3 " name='formulario' id='formulario' novalidate>
+      <form [formGroup]="form" class="row g-3" (ngSubmit)="iniciarSesion($event)" novalidate>
         <div class="col-md-12">
           <label class="form-label" for="cuil">CUIL: </label>
-          <input class="form-control atributos" type="number" name="cuil" id="cuil" min="10000000000" max="99999999999"
-            placeholder="Ingrese su número de CUIL" autofocus required>
-          <div class="invalid-feedback">
-            Ingrese un CUIL válido
-          </div>
+          <input class="form-control atributos" type="number" formControlName="cuil" name="cuil" id="cuil"
+            placeholder="Ingrese su número de CUIL"
+            [ngClass]="{'is-invalid':cuil?.errors && cuil?.touched , 'is-valid':!cuil?.errors}" autofocus required>
+          <div *ngIf="cuil?.hasError('required')" class="invalid-feedback">El número de cuil es requerido</div>
+          <div *ngIf="cuil?.hasError('min') && !cuil?.hasError('required')" class="invalid-feedback">El número de
+            cuil es inválido</div>
+
+
+
         </div>
         <div class="col-md-12">
-          <label class="form-label" for=" contraseña">Contraseña: </label>
-          <input class=" form-control atributos" type="password" name="crearContrasena" id="crearContrasena"
-            minlength="8" maxlength="25" placeholder="Ingrese su contraseña" required>
-          <div class="invalid-feedback">
-            Contraseña incorrecta
-          </div>
+          <label class="form-label" for="password">Contraseña: </label>
+          <input class=" form-control atributos" type="password" name="password" formControlName="password"
+            id="crearContrasena" minlength="8" maxlength="25" placeholder="Ingrese su contraseña"
+            [ngClass]="{'is-invalid':password?.errors && password?.touched  , 'is-valid':!password?.errors && password?.touched}"
+            required>
+
+          <div *ngIf="password?.hasError('required')" class="invalid-feedback">Ingrese su contraseña</div>
+          <div *ngIf="password?.hasError('minlength')" class="invalid-feedback">Ingrese una constraseña válida</div>
           <a href="#">¿Olvidaste tu contraseña?</a>
         </div>
         <br>
 
-        <button id="botonIniciar" type="submit">Iniciar sesión</button>
+        <button id="botonIniciar" class="btn" type="submit">Iniciar sesión</button>
 
         <a class="text-center" href="registro-up">¿No tienes una cuenta? Click aquí</a>
-        <script>
-          // Ejemplo de JavaScript inicial para deshabilitar el envío de formularios si hay campos no válidos
-          (function () {
-            'use strict'
 
-            // Obtener todos los formularios a los que queremos aplicar estilos de validación de Bootstrap personalizados
-            var forms = document.querySelectorAll('.needs-validation')
-
-            // Bucle sobre ellos y evitar el envío
-            Array.prototype.slice.call(forms)
-              .forEach(function (form) {
-                form.addEventListener('submit', function (event) {
-                  if (!form.checkValidity()) {
-                    event.preventDefault()
-                    event.stopPropagation()
-                  }
-                  else {
-
-                    event.preventDefault();
-                    window.location.href = "home.html";
-                  }
-
-                  form.classList.add('was-validated')
-                }, false)
-              })
-          })()
-        </script>
       </form>
     </div>
 
