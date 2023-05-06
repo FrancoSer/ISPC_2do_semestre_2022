@@ -9,12 +9,14 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
+
 @NgModule({
   declarations: [
     UMLoginComponent,
     UMRegistroComponent,
     UPLoginComponent,
     UPRegistroComponent
+  
 
   ],
   imports: [
