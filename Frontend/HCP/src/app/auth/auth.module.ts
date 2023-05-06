@@ -7,7 +7,6 @@ import { UMRegistroComponent } from './UM/UM-registro/UM-registro.component';
 import { UPRegistroComponent } from './UP/UP-registro/UP-registro.component';
 import { AuthRoutingModule } from './auth-routing.module';
 
-
 @NgModule({
   declarations: [
     UMLoginComponent,
@@ -18,8 +17,7 @@ import { AuthRoutingModule } from './auth-routing.module';
   ],
   imports: [
     CommonModule,
-    AuthRoutingModule
-    
+    AuthRoutingModule,    
   ]
 })
 export class AuthModule { }
