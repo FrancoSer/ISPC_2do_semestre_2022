@@ -7,6 +7,7 @@ import { UMHomeComponent } from './UM/pages/home/UM-home.component';
 import { UPHomeComponent } from './UP/pages/home/UP-home.component';
 import { SobreNosotrosComponent } from './shared/pages/sobre-nosotros/sobre-nosotros.component';
 
+
 const routes: Routes = [
 
 
