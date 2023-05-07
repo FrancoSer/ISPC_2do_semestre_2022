@@ -6,6 +6,7 @@ import { InicioComponent } from './shared/pages/inicio/inicio.component';
 import { UMHomeComponent } from './UM/pages/home/UM-home.component';
 import { UPHomeComponent } from './UP/pages/home/UP-home.component';
 import { SobreNosotrosComponent } from './shared/pages/sobre-nosotros/sobre-nosotros.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 
 const routes: Routes = [
@@ -39,12 +40,17 @@ const routes: Routes = [
     component: ErrorPageComponent
   },
 
+  
   {
 
     path: '**',
     redirectTo: ''
 
-  }
+  },
+  {
+    path: 'footer', component:FooterComponent 
+    
+  },
 
 ];
 
