@@ -7,7 +7,7 @@ import { UMHomeComponent } from './UM/pages/home/UM-home.component';
 import { UPHomeComponent } from './UP/pages/home/UP-home.component';
 import { SobreNosotrosComponent } from './shared/pages/sobre-nosotros/sobre-nosotros.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { NavbarComponent } from './shared/navbar/navbar.component';
+
 
 
 const routes: Routes = [
@@ -51,12 +51,7 @@ const routes: Routes = [
   {
     path: 'footer', component:FooterComponent 
     
-  },
-  
-  {
-    path: 'navbar', component:NavbarComponent
-  },
-
+  }
 ];
 
 @NgModule({
