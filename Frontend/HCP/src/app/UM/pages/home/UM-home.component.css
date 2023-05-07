@@ -4,6 +4,8 @@ app-header{
     top: 0%;
     height: 64px;
     z-index: 2;
+    background-color: rgb(245, 245, 245);
+    box-shadow: 0px 0px 0.5px rgba(0, 0, 0, 0.5);
 }
 
 main{
