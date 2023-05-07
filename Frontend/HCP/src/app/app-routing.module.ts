@@ -24,7 +24,10 @@ const routes: Routes = [
 
   {
     path: 'home-up',
-    component: UPHomeComponent
+    component: UPHomeComponent,
+    children: [
+      { path: 'up-historial', component: UMHistorialComponent }
+    ]
   },
 
   {

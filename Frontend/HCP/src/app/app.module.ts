@@ -5,10 +5,10 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { AuthModule } from './auth/auth.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-import { UPHomeComponent } from './UP/pages/home/UP-home.component';
 import { PlanPremiumComponent } from './UP/shop/plan-premium/plan-premium.component';
 import { UMModule } from './UM/um.module';
+
+import { UpModule } from './UP/up.module';
 
 
 
@@ -17,8 +17,8 @@ import { UMModule } from './UM/um.module';
 @NgModule({
   declarations: [	
     AppComponent,
-    UPHomeComponent,
-    PlanPremiumComponent
+    PlanPremiumComponent,
+    
    
    ],
   imports: [
@@ -28,7 +28,8 @@ import { UMModule } from './UM/um.module';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    UMModule
+    UMModule,
+    UpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
