@@ -6,6 +6,8 @@ import { InicioComponent } from './shared/pages/inicio/inicio.component';
 import { UMHomeComponent } from './UM/pages/home/UM-home.component';
 import { UPHomeComponent } from './UP/pages/home/UP-home.component';
 import { SobreNosotrosComponent } from './shared/pages/sobre-nosotros/sobre-nosotros.component';
+import { UMHistorialComponent } from './UM/pages/historial/um-historial.component';
+import { UMAgendaComponent } from './UM/pages/agenda/um-agenda.component';
 
 const routes: Routes = [
 
@@ -27,7 +29,12 @@ const routes: Routes = [
 
   {
     path: 'home-um',
-    component: UMHomeComponent
+    component: UMHomeComponent,
+    children:[
+      {path:'um-historial', component:UMHistorialComponent},
+      { path: 'um-agenda', component: UMAgendaComponent }
+
+    ]
   },
   {
     path: 'sobre-nosotros',
