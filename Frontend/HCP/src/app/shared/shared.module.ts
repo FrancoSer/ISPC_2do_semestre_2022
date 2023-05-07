@@ -5,6 +5,7 @@ import { InicioComponent } from './pages/inicio/inicio.component';
 import { SobreNosotrosComponent } from './pages/sobre-nosotros/sobre-nosotros.component';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -12,13 +13,14 @@ import { FooterComponent } from './footer/footer.component';
     InicioComponent,
     SobreNosotrosComponent,
     FooterComponent,
+    NavbarComponent,
   ],
   imports: [
     CommonModule,
     RouterModule
   ],
   exports: [
-
+    
   ]
 })
 export class SharedModule { }
