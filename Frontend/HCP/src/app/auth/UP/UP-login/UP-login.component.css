@@ -1,8 +1,13 @@
 body {
-  
+      
+    align-items: center;
+    position: relative;
+   
+    margin: 0;
+    padding: 0;
     font-family: 'Raleway';
     height: 100vh;
-    align-items: center;
+    
   }
 
 #bodyhtml {
@@ -116,5 +121,6 @@ body {
    .boton_regreso{
     color:white;
     background-color: #7DB9FF;
-    
+    left:20%;
+    position: relative;
   }

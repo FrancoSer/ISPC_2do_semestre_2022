@@ -1,4 +1,10 @@
 body {
+     
+    align-items: center;
+    position: center;
+   
+    margin: 0;
+    padding: 0;
     font-family: 'Raleway';
     height: 100vh;
   }
@@ -10,7 +16,7 @@ body {
   background-position: 0 0,40px 40px;
 }
   
-  .register-box {
+ .register-box {
     width: 100%;
     max-width: 700px;
     height: auto;
@@ -115,5 +121,9 @@ body {
    .boton_regreso{
     color:white;
     background-color: #7DB9FF;
+    
+    left: 25%;
+    position: relative;
+    
     
   }
