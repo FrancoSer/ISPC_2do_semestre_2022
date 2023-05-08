@@ -5,10 +5,7 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { AuthModule } from './auth/auth.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { PlanPremiumComponent } from './UP/shop/plan-premium/plan-premium.component';
-import { UMModule } from './UM/um.module';
-
-import { UpModule } from './UP/up.module';
+import { UsersModule } from './users/users.module';
 
 
 
@@ -16,8 +13,7 @@ import { UpModule } from './UP/up.module';
 
 @NgModule({
   declarations: [	
-    AppComponent,
-    PlanPremiumComponent,
+    AppComponent
     
    
    ],
@@ -28,8 +24,7 @@ import { UpModule } from './UP/up.module';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    UMModule,
-    UpModule
+    UsersModule
   ],
   providers: [],
   bootstrap: [AppComponent]
