@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./UP-home.component.css']
 })
 export class UPHomeComponent implements OnInit {
-
+  sideNavStatus2: boolean = true;
   constructor() { }
 
   ngOnInit() {
