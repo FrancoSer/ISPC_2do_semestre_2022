@@ -7,15 +7,9 @@ import { AuthModule } from './auth/auth.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UsersModule } from './users/users.module';
 
-
-
-
-
 @NgModule({
   declarations: [	
     AppComponent
-    
-   
    ],
   imports: [
     AuthModule,
