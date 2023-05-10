@@ -10,18 +10,25 @@ import { UMHomeComponent } from './UM/pages/home/UM-home.component';
 import { UPHeaderComponent } from './UP/components/up-header/up-header.component';
 import { UPSidebarComponent } from './UP/components/up-siderbar/up-sidebar.component';
 import { UPHomeComponent } from './UP/pages/home/UP-home.component';
+import { UMPerfilComponent } from './UM/pages/UM-perfil/UM-perfil.component';
+import { UPPerfilComponent } from './UP/pages/UP-perfil/UP-perfil.component';
 
 
 @NgModule({
   declarations: [
+
+    HeaderComponent,
+    PlanPremiumComponent,
+    SidebarComponent,
     UMHistorialComponent,
     UMHomeComponent,
-    HeaderComponent,
-    SidebarComponent,
+    UMPerfilComponent,
+    UPPerfilComponent,
     UPHeaderComponent,
     UPSidebarComponent,
     UPHomeComponent,
-    PlanPremiumComponent],
+       
+  ],
   imports: [
     CommonModule,
     UsersRoutingModule

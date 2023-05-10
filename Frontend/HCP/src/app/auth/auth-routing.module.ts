@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+
 import { UPLoginComponent } from './UP/UP-login/UP-login.component';
 import { UPRegistroComponent } from './UP/UP-registro/UP-registro.component';
 import { UMLoginComponent } from './UM/UM-login/UM-login.component';
