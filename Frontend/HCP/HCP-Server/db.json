@@ -1,0 +1,50 @@
+{
+    "up": [
+        {
+            "id": "34516738",
+            "usuario": "Nico",
+            "contrasena": "asf44wef",
+            "nombre": "Nicolás",
+            "apellido": "Loreto",
+            "email": "nicoloreto.dev@gmail.com",
+            "fecha-de-nacimiento": "30/01/1990",
+            "telefono": "25325643342"
+            
+        },
+        {
+            "id": "23678456",
+            "usuario": "Marito",
+            "contrasena": "r44wefe",
+            "nombre": "Mario",
+            "apellido": "Santos",
+            "email": "francisco.de.aguirre@gmail.com",
+            "fecha-de-nacimiento": "04/05/1970",
+            "telefono": "234523552"
+            
+        }
+    ],
+    "um": [
+        {
+            "id": "35352135",
+            "usuario": "Astor",
+            "contrasena": "f33f3rr",
+            "nombre": "Astor",
+            "apellido": "Piazzolla",
+            "email": "astor@gmail.com",
+            "fecha-de-nacimiento": "04/12/1940",
+            "telefono": "24431342"
+            
+        },
+        {
+            "id": "23421344",
+            "usuario": "Migue",
+            "contrasena": "r33t4",
+            "nombre": "Miguel",
+            "apellido": "Abuelo",
+            "email": "migue@gmail.com",
+            "fecha-de-nacimiento": "04/05/1960",
+            "telefono": "23454552"
+            
+        }
+    ]
+}
