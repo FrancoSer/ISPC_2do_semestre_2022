@@ -1,0 +1,10 @@
+.conteiner{
+    display: flex;
+    flex-direction: column;
+    background-color: rebeccapurple;
+}
+
+.box{
+    display: flex;
+    flex-direction: row;
+}
