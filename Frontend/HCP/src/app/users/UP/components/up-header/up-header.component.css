@@ -1,0 +1,29 @@
+
+nav {
+  height: 100%;
+  color: var(--main-text-color);
+  
+}
+
+.side-nav-button{
+
+justify-content: center;
+align-items: center;
+font-size: 1.7rem;
+cursor: pointer;
+color: var(--main-text-color);
+}
+
+.side-nav-button:hover{
+  background-color:rgba(23, 95, 26, 0.2);
+  border-radius: 30%; 
+}
+
+a{
+  color:var(--main-text-color);
+}
+
+#btn-iniciar{
+  color:var(--main-text-color);
+
+}
