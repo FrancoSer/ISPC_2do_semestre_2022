@@ -16,8 +16,6 @@ import { UsersModule } from './users/users.module';
     AuthModule,
     BrowserModule,
     SharedModule,
-    FormsModule,
-    ReactiveFormsModule,
     UsersModule
   ],
   providers: [],
