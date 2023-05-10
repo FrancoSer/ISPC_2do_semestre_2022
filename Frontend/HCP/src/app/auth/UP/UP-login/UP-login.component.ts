@@ -27,7 +27,7 @@ export class UPLoginComponent implements OnInit {
 
     if (this.form.valid) {
 
-      this.router.navigate(["home-up"]);
+      this.router.navigate(["users/home-up"]);
 
     }
   }

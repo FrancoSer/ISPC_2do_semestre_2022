@@ -22,19 +22,8 @@ const routes: Routes = [
   },
 
   {
-    path: 'home-up',
-    component: UPHomeComponent,
-    children: [
-      { path: 'up-historial', component: UMHistorialComponent }
-    ]
-  },
-
-  {
-    path: 'home-um',
-    component: UMHomeComponent,
-    children:[
-      {path:'um-historial', component:UMHistorialComponent}
-    ]
+    path: 'users',
+    loadChildren: () => import('./users/users.module').then(m => m.UsersModule)
   },
   {
     path: 'sobre-nosotros',

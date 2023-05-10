@@ -12,12 +12,12 @@ import { UsersModule } from './users/users.module';
     AppComponent
    ],
   imports: [
+    AppRoutingModule,
     AuthModule,
     BrowserModule,
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule,
     UsersModule
   ],
   providers: [],
