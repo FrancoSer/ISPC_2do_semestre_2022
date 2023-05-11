@@ -57,7 +57,7 @@ export interface Premium{
 export interface Medico{
 
     id?:                 string;
-    mastricula:          number;
+    matricula:           number;
     nombre:              string;
     apellido:            string;
     fecha_de_nacimiento: string;
