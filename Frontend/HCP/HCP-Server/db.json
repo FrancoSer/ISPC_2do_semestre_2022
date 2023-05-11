@@ -1,5 +1,44 @@
 {
-    "up": [
+    "paciente": [
+        {
+            "id": 1,
+            "cuil": "34614738",    
+            "nombre": "Nicolás",
+            "apellido": "Loreto",
+            "fecha_de_nacimiento": "30/01/1990",
+            "tel": "2477552940",
+            "direccion": "Ituzaingo 1234",
+            "email": "nicoloreto.dev@gmail.com",
+            "genero": "masculino", 
+            "premium?": "true", 
+            "historia_clinica": {
+
+                "id": 1,                
+                "fecha": "05/05/2023",              
+                "observaciones": "observaciones",     
+                "especialidad": "oftalmologia",      
+                "diagnostico": "reservado",      
+                "proxima_visita": "10/07/2023",    
+                "presion": "12 6",           
+                "peso": "72",              
+                "altura": "1,78",            
+                "prueba_diagnostica": "", 
+                "medicacion": "gotas oculares",        
+                "dieta": "Frutas y verduras",             
+                "vacuna": "completa",            
+                "adjunto": "",           
+                "tipo_sanguineo": "A+"   
+
+            },
+            "factura": {
+                "id": 1,
+                "total": 5000,
+                "alta": "11/05/2023",
+                "baja": "",
+                "extas": 200 
+            }           
+        },
+    
         {
             "id": "34516738",
             "usuario": "Nico",
