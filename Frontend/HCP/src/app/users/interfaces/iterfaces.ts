@@ -2,7 +2,7 @@ export interface HistoriaClinica{
 
     id:                   string;
     fecha?:               string;
-    obsercaciones?:       string;
+    observaciones?:       string;
     especialidad?:        string;
     diagnostico?:         string;
     proxima_visita?:      string;
