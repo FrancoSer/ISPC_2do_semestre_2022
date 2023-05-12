@@ -1,9 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UPHomeComponent } from './UP/pages/home/UP-home.component';
+
+
+import { UPHomeComponent } from './UP/pages/home/up-home.component';
 import { UMHistorialComponent } from './UM/pages/historial/um-historial.component';
 import { UMHomeComponent } from './UM/pages/home/UM-home.component';
 import { PlanPremiumComponent } from './UP/shop/plan-premium/plan-premium.component';
+import { UPPerfilComponent } from './UP/pages/UP-perfil/up-perfil.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PremiumPipe } from './premium.pipe';
 
 const routes: Routes = [
 
@@ -18,6 +23,10 @@ const routes: Routes = [
       {
         path: 'plan-premium',
         component: PlanPremiumComponent
+      },
+      {
+        path: 'up-perfil',
+        component: UPPerfilComponent
       }
     ]
   },
@@ -33,7 +42,13 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forChild(routes),
+    HttpClientModule
+  ],
+  exports: [RouterModule],
+   declarations: [
+   
+  ]
 })
 export class UsersRoutingModule { }

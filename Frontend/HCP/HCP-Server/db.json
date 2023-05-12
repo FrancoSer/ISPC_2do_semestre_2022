@@ -10,7 +10,7 @@
             "direccion": "Ituzaingo 1234",
             "email": "nicoloreto.dev@gmail.com",
             "genero": "masculino", 
-            "premium?": "true", 
+            "premium": true, 
             "historia_clinica": {
 
                 "id": 1,                
@@ -40,50 +40,42 @@
         },
     
         {
-            "id": "34516738",
-            "usuario": "Nico",
-            "contrasena": "asf44wef",
-            "nombre": "Nicolás",
-            "apellido": "Loreto",
-            "email": "nicoloreto.dev@gmail.com",
-            "fecha-de-nacimiento": "30/01/1990",
-            "telefono": "25325643342"
-            
-        },
-        {
-            "id": "23678456",
-            "usuario": "Marito",
-            "contrasena": "r44wefe",
-            "nombre": "Mario",
-            "apellido": "Santos",
-            "email": "francisco.de.aguirre@gmail.com",
-            "fecha-de-nacimiento": "04/05/1970",
-            "telefono": "234523552"
-            
-        }
-    ],
-    "um": [
-        {
-            "id": "35352135",
-            "usuario": "Astor",
-            "contrasena": "f33f3rr",
-            "nombre": "Astor",
-            "apellido": "Piazzolla",
-            "email": "astor@gmail.com",
-            "fecha-de-nacimiento": "04/12/1940",
-            "telefono": "24431342"
-            
-        },
-        {
-            "id": "23421344",
-            "usuario": "Migue",
-            "contrasena": "r33t4",
-            "nombre": "Miguel",
-            "apellido": "Abuelo",
-            "email": "migue@gmail.com",
-            "fecha-de-nacimiento": "04/05/1960",
-            "telefono": "23454552"
-            
-        }
+            "id": "XYZ789",
+            "cuil": "20-12345678-9",
+            "nombre": "Juan",
+            "apellido": "Gómez",
+            "fecha_de_nacimiento": "1990-03-15",
+            "tel": "1234567890",
+            "direccion": "Calle Principal 123",
+            "email": "juangomez@example.com",
+            "genero": "Masculino",
+            "premium": true,
+            "historia_clinica":{
+                "id": "ABC123",
+                "fecha": "2023-05-12",
+                "observaciones": "El paciente se queja de dolores en el pecho y dificultad para respirar.",
+                "especialidad": "Cardiología",
+                "diagnostico": "Posible angina de pecho. Se requieren pruebas adicionales para confirmar el diagnóstico.",
+                "proxima_visita": "2023-06-02",
+                "presion": 120,
+                "peso": 70.5,
+                "altura": 175,
+                "prueba_diagnostica": "Electrocardiograma",
+                "medicacion": "Aspirina 100mg diarios, nitroglicerina sublingual según necesidad.",
+                "dieta": "Recomendada reducción de sal y alimentos grasos.",
+                "vacuna": "Influenza",
+                "adjunto": "Resultados del electrocardiograma adjuntos.",
+                "tipo_sanguineo": "A+"
+              },
+              "factura":{
+                "id": "F001",
+                "total": 150.0,
+                "alta": "2023-05-01",
+                "baja": "2023-05-31",
+                "extras": 20.0
+              }              
+              
+          }
+          
     ]
 }

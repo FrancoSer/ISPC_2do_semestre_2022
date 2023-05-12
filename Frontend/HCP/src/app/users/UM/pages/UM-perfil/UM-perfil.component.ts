@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Paciente } from '../../../interfaces/interfaces';
 
 @Component({
   selector: 'app-UM-perfil',
-  templateUrl: './UM-perfil.component.html',
-  styleUrls: ['./UM-perfil.component.css']
+  templateUrl: './um-perfil.component.html',
+  styleUrls: ['./um-perfil.component.css']
 })
+
+
 export class UMPerfilComponent implements OnInit {
+
+  @Input() paciente!: Paciente;
 
   constructor() { }
 
   ngOnInit() {
   }
-
+  
 }

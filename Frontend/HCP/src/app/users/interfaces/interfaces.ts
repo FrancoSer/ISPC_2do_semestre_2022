@@ -1,3 +1,5 @@
+import { Type } from "@angular/compiler";
+
 export interface HistoriaClinica{
 
     id:                   string;
@@ -31,21 +33,21 @@ export interface Factura{
 export interface Paciente {
 
     id?:                 string;
-    cuil:                number;
+    cuil:                string;
     nombre:              string;
     apellido:            string;
     fecha_de_nacimiento: string;
-    tel:                 number;
+    tel:                 string;
     direccion:           string;
     email:               string;
     genero:              Genero ;
-    premium?:            Premium;
+    premium?:            boolean;
     historia_clinica?:   HistoriaClinica;
     factura:             Factura
 
 }
 
-export interface Premium{
+export type Premium = {
 
     id:                 string;
     nombre:             string;

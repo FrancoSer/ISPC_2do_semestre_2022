@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Paciente } from 'src/app/users/interfaces/interfaces';
+import { UsersService } from 'src/app/users/service/users.service';
 
 @Component({
   selector: 'app-um-historial',
@@ -6,5 +8,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./um-historial.component.css']
 })
 export class UMHistorialComponent {
+
+  constructor( private servicio: UsersService){}
+
+  paciente!: Paciente
+
+  ngOnInit(): void {
+
+
+     
+    
+  }
 
 }
