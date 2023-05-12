@@ -1,0 +1,102 @@
+
+
+<div class="container">
+
+  <mat-card class="card"  
+    fxLayout="column" 
+    fxLayoutAlign="center center" 
+    fxFlex="100%">
+
+      <mat-card-header 
+        class="header">
+
+        <mat-card-title 
+          class="title">
+        {{pacienteSeleccionado.nombre + ' ' + pacienteSeleccionado.apellido}}
+        </mat-card-title>
+        
+        <mat-card-subtitle class="subtitle">
+        {{pacienteSeleccionado.premium | premium}}
+        </mat-card-subtitle>
+      </mat-card-header>
+
+      <!-- <img 
+        mat-card-image height="300px"
+        [src]= 'pacienteSeleccionado | imagen' alt=""> -->
+  <!-- TODO : hacer pipe imagen -->
+
+  <mat-card-content class="content">
+    <p>
+      <strong>
+        Cuil:
+      </strong>
+          {{pacienteSeleccionado.cuil}}
+    </p>
+        <br>
+    <p>
+      <strong>
+        Fecha de Nacimiento:
+      </strong>
+          {{pacienteSeleccionado.fecha_de_nacimiento}}
+    </p>
+        <br>
+        <p>
+      <strong>
+        Teléfono:
+      </strong>
+          {{pacienteSeleccionado.tel}}
+    </p>
+        <br>
+    <p>
+      <strong>
+        Dirección:
+      </strong>
+          {{pacienteSeleccionado.direccion}}
+    </p>
+        <br>
+     <p>
+       <strong>
+         Email:
+       </strong>
+           {{pacienteSeleccionado.email}}
+     </p>
+         <br>
+     <p>
+       <strong>
+         Género:
+       </strong>
+           {{pacienteSeleccionado.genero}}
+     </p>
+         <br>
+         <p *ngIf="historiaClinica">
+       <strong>
+         Fecha de la visita:
+       </strong>
+           {{historiaClinica.fecha}}
+     </p>
+         <br>
+     <p *ngIf="historiaClinica">
+       <strong>
+         Observaciones:
+       </strong>
+           {{historiaClinica.observaciones}}
+     </p>
+          <br>
+    <p *ngIf="historiaClinica">
+      <strong>
+        Especialidad:
+      </strong>
+          {{historiaClinica.especialidad}}
+    </p>
+         <br>
+        <p *ngIf="historiaClinica">
+       <strong>
+         Observaciones:
+       </strong>
+           {{historiaClinica.observaciones}}
+     </p>        
+
+  </mat-card-content>
+
+</mat-card>
+</div>

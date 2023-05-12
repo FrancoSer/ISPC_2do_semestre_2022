@@ -1,0 +1,35 @@
+<div class="side-nav-content" id="sidebar">
+
+
+
+    <hr>
+    <ul class="nav-list" [ngClass]="{'nav-list-open':sideNavStatus}">
+        <li class="nav-list-item">
+            
+            <span>
+                <a  aria-current="page"><i class="bi bi-house-door-fill"></i>Inicio</a>
+            </span>
+        </li>
+    </ul>
+    <ul class="nav-list">
+        <li class="nav-list-item">
+            
+            <span>
+                <a routerLink="um-historial" aria-current="page"><i class="bi bi-clipboard-fill"></i>Historial</a>
+            </span>
+        </li>
+    </ul>
+    
+    <hr>
+    <ul class="nav-list">
+        <li class="nav-list-item">
+            <i class="bi bi-person-fill"></i>
+            <span>
+                <a href="#" aria-current="page">Mi Perfil</a>
+            </span>
+        </li>
+    </ul>
+
+    <hr>
+
+</div>
