@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { UMPerfilComponent } from './UM-perfil.component';
+import { UMPerfilComponent } from './um-perfil.component';
 
 describe('UMPerfilComponent', () => {
   let component: UMPerfilComponent;

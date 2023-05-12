@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { HistoriaClinica, Paciente } from 'src/app/users/interfaces/interfaces';
+import { UsersService } from 'src/app/users/service/users.service';
 
 @Component({
   selector: 'app-um-historial',
@@ -6,5 +8,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./um-historial.component.css']
 })
 export class UMHistorialComponent {
+
+  public pacientes: Paciente[] = [];
+
+  public pacienteSeleccionado!: Paciente
+
+  public historiaClinica: HistoriaClinica | undefined;
+
+  constructor(private pacienteService: UsersService) {}
+
+  ngOnInit() {
+    this.pacienteService.getPaciente()
+      .subscribe(pacientes => {
+        this.pacientes = pacientes;
+        this.pacienteSeleccionado = pacientes[7]
+        this.historiaClinica = this.pacienteSeleccionado.historia_clinica
+      });
+  }
 
 }
