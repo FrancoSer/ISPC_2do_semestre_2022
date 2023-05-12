@@ -16,7 +16,7 @@ export interface HistoriaClinica{
     dieta?:               string;
     vacuna?:              string;
     adjunto?:             string;
-    tipo_sanguineo?:      string;
+    
 
 }
 
@@ -41,6 +41,7 @@ export interface Paciente {
     direccion:           string;
     email:               string;
     genero:              Genero ;
+    tipo_sanguineo?:     string;
     premium?:            boolean;
     historia_clinica?:   HistoriaClinica;
     factura:             Factura

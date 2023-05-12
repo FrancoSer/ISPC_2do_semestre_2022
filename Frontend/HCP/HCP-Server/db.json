@@ -10,6 +10,7 @@
             "direccion": "Ituzaingo 1234",
             "email": "nicoloreto.dev@gmail.com",
             "genero": "masculino", 
+            "tipo_sanguineo": "A+",
             "premium": true, 
             "historia_clinica": {
 
@@ -26,8 +27,8 @@
                 "medicacion": "gotas oculares",        
                 "dieta": "Frutas y verduras",             
                 "vacuna": "completa",            
-                "adjunto": "",           
-                "tipo_sanguineo": "A+"   
+                "adjunto": ""       
+                
 
             },
             "factura": {
@@ -50,6 +51,7 @@
             "email": "juangomez@example.com",
             "genero": "Masculino",
             "premium": true,
+            "tipo_sanguineo": "A+",
             "historia_clinica":{
                 "id": "ABC123",
                 "fecha": "2023-05-12",
@@ -64,8 +66,8 @@
                 "medicacion": "Aspirina 100mg diarios, nitroglicerina sublingual según necesidad.",
                 "dieta": "Recomendada reducción de sal y alimentos grasos.",
                 "vacuna": "Influenza",
-                "adjunto": "Resultados del electrocardiograma adjuntos.",
-                "tipo_sanguineo": "A+"
+                "adjunto": "Resultados del electrocardiograma adjuntos."
+                
               },
               "factura":{
                 "id": "F001",
@@ -75,7 +77,235 @@
                 "extras": 20.0
               }              
               
-          }
+          },
+        {
+            "id": "ABC001",
+            "cuil": "27-98765432-1",
+            "nombre": "María",
+            "apellido": "López",
+            "fecha_de_nacimiento": "1985-09-10",
+            "tel": "0987654321",
+            "direccion": "Avenida Principal 456",
+            "email": "marialopez@example.com",
+            "genero": "Femenino",
+            "premium": false,
+            "tipo_sanguineo": "B+",
+            "historia_clinica": {
+                "id": "HC002",
+                "fecha": "2023-06-20",
+                "observaciones": "La paciente presenta dolor abdominal y diarrea",
+                "especialidad": "Gastroenterología",
+                "diagnostico": "Gastroenteritis aguda",
+                "proxima_visita": "2023-07-05",
+                "presion": 110,
+                "peso": 55.0,
+                "altura": 160,
+                "prueba_diagnostica": "Análisis de heces",
+                "medicacion": "Reposo y dieta líquida",
+                "dieta": "Recomendada evitar alimentos irritantes y grasos",
+                "vacuna": "N/A",
+                "adjunto": "N/A"
+                
+            },
+            "factura": {
+                "id": "F002",
+                "total": 80.0,
+                "alta": "2023-06-01",
+                "baja": "2023-06-30",
+                "extras": null
+            }
+          },
+        {
+  "id": "DEF002",
+  "cuil": "30-55555555-2",
+  "nombre": "Carlos",
+  "apellido": "Martínez",
+  "fecha_de_nacimiento": "1978-07-20",
+  "tel": "5555555555",
+  "direccion": "Calle Secundaria 789",
+  "email": "carlosmartinez@example.com",
+  "genero": "Masculino",
+  "premium": true,
+  "tipo_sanguineo": "O+",
+  "historia_clinica": {
+    "id": "HC003",
+    "fecha": "2023-07-10",
+    "observaciones": "El paciente presenta fiebre y tos persistente",
+    "especialidad": "Neumología",
+    "diagnostico": "Neumonía",
+    "proxima_visita": "2023-07-15",
+    "presion": 130,
+    "peso": 75.5,
+    "altura": 180,
+    "prueba_diagnostica": "Radiografía de tórax",
+    "medicacion": "Antibióticos y medicamentos para aliviar la tos",
+    "dieta": "N/A",
+    "vacuna": "N/A",
+    "adjunto": "N/A"
+    
+  },
+  "factura": {
+    "id": "F003",
+    "total": 200.0,
+    "alta": "2023-07-01",
+    "baja": "2023-07-31",
+    "extras": 30.0
+  }
+},
+{
+    "id": "ABC003",
+    "cuil": "30-12345678-9",
+    "nombre": "Laura",
+    "apellido": "González",
+    "fecha_de_nacimiento": "1995-02-12",
+    "tel": "9876543210",
+    "direccion": "Avenida Central 789",
+    "email": "lauragonzalez@example.com",
+    "genero": "Femenino",
+    "premium": true,
+    "tipo_sanguineo": "AB+",
+    "historia_clinica": {
+      "id": "HC004",
+      "fecha": "2023-08-05",
+      "observaciones": "La paciente presenta dolor en las articulaciones y fatiga",
+      "especialidad": "Reumatología",
+      "diagnostico": "Artritis reumatoide",
+      "proxima_visita": "2023-08-12",
+      "presion": 120,
+      "peso": 60.0,
+      "altura": 165,
+      "prueba_diagnostica": "Análisis de sangre (factor reumatoide)",
+      "medicacion": "Antiinflamatorios y medicamentos modificadores de la enfermedad",
+      "dieta": "N/A",
+      "vacuna": "N/A",
+      "adjunto": "N/A"
+      
+    },
+    "factura": {
+      "id": "F004",
+      "total": 150.0,
+      "alta": "2023-08-01",
+      "baja": "2023-08-31",
+      "extras": null
+    }
+  },
+  {
+    "id": "DEF004",
+    "cuil": "20-98765432-1",
+    "nombre": "Ana",
+    "apellido": "Pérez",
+    "fecha_de_nacimiento": "1980-11-25",
+    "tel": "1234567890",
+    "direccion": "Calle Principal 456",
+    "email": "anaperez@example.com",
+    "genero": "Femenino",
+    "premium": false,
+    "tipo_sanguineo": "A+",
+    "historia_clinica": {
+      "id": "HC005",
+      "fecha": "2023-09-10",
+      "observaciones": "La paciente se queja de dolores de cabeza intensos y mareos",
+      "especialidad": "Neurología",
+      "diagnostico": "Migraña",
+      "proxima_visita": "2023-09-20",
+      "presion": 110,
+      "peso": 65.0,
+      "altura": 170,
+      "prueba_diagnostica": "Historial clínico y síntomas característicos",
+      "medicacion": "Analgésicos específicos para migraña",
+      "dieta": "Recomendada evitar alimentos desencadenantes",
+      "vacuna": "N/A",
+      "adjunto": "N/A"      
+    },
+    "factura": {
+      "id": "F005",
+      "total": 100.0,
+      "alta": "2023-09-01",
+      "baja": "2023-09-30",
+      "extras": 10.0
+    }
+  },
+  {
+    "id": "GHI006",
+    "cuil": "27-55555555-2",
+    "nombre": "María",
+    "apellido": "López",
+    "fecha_de_nacimiento": "1992-09-08",
+    "tel": "5555555555",
+    "direccion": "Calle Secundaria 123",
+    "email": "marialopez@example.com",
+    "genero": "Femenino",
+    "premium": true,
+    "tipo_sanguineo": "O-",
+    "historia_clinica": {
+      "id": "HC007",
+      "fecha": "2023-10-15",
+      "observaciones": "La paciente presenta síntomas de ansiedad y dificultades para dormir",
+      "especialidad": "Psicología",
+      "diagnostico": "Trastorno de ansiedad",
+      "proxima_visita": "2023-10-25",
+      "presion": 120,
+      "peso": 55.0,
+      "altura": 160,
+      "prueba_diagnostica": "Evaluación clínica y entrevistas psicológicas",
+      "medicacion": "Antidepresivos y terapia cognitivo-conductual",
+      "dieta": "N/A",
+      "vacuna": "N/A",
+      "adjunto": "N/A"
+      
+    },
+    "factura": {
+      "id": "F006",
+      "total": 120.0,
+      "alta": "2023-10-01",
+      "baja": "2023-10-31",
+      "extras": null
+    }
+  },
+  {
+    "id": "JKL008",
+    "cuil": "30-98765432-1",
+    "nombre": "Roberto",
+    "apellido": "García",
+    "fecha_de_nacimiento": "1975-04-30",
+    "tel": "9876543210",
+    "direccion": "Avenida Central 456",
+    "email": "robertogarcia@example.com",
+    "genero": "Masculino",
+    "premium": false,
+    "tipo_sanguineo": "B+",
+    "historia_clinica": {
+      "id": "HC009",
+      "fecha": "2023-11-05",
+      "observaciones": "El paciente se presenta para un chequeo general de salud",
+      "especialidad": "Medicina General",
+      "diagnostico": "N/A",
+      "proxima_visita": "2024-05-05",
+      "presion": 130,
+      "peso": 80.0,
+      "altura": 175,
+      "prueba_diagnostica": "Exámenes de sangre, análisis de orina, control de signos vitales",
+      "medicacion": "N/A",
+      "dieta": "N/A",
+      "vacuna": "N/A",
+      "adjunto": "N/A"
+      
+    },
+    "factura": {
+      "id": "F007",
+      "total": 80.0,
+      "alta": "2023-11-01",
+      "baja": "2023-11-30",
+      "extras": null
+    }
+  }
+
+  
+  
+  
+  
+
+
           
     ]
 }

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Paciente } from 'src/app/users/interfaces/interfaces';
+import { HistoriaClinica, Paciente } from 'src/app/users/interfaces/interfaces';
 import { UsersService } from 'src/app/users/service/users.service';
 
 @Component({
@@ -9,15 +9,21 @@ import { UsersService } from 'src/app/users/service/users.service';
 })
 export class UMHistorialComponent {
 
-  constructor( private servicio: UsersService){}
+  public pacientes: Paciente[] = [];
 
-  paciente!: Paciente
+  public pacienteSeleccionado!: Paciente
 
-  ngOnInit(): void {
+  public historiaClinica: HistoriaClinica | undefined;
 
+  constructor(private pacienteService: UsersService) {}
 
-     
-    
+  ngOnInit() {
+    this.pacienteService.getPaciente()
+      .subscribe(pacientes => {
+        this.pacientes = pacientes;
+        this.pacienteSeleccionado = pacientes[7]
+        this.historiaClinica = this.pacienteSeleccionado.historia_clinica
+      });
   }
 
 }
