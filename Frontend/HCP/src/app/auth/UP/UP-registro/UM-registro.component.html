@@ -12,11 +12,7 @@
               <label class="form-label" for="apellido">Apellido: </label>
               <input class="form-control atributos" type="text" name="apellido" id="apellido" maxlength="55"
                   placeholder="Ingrese su apellido" required>
-
           </div>
-
-
-
           <div class="col-md-6">
               <label class="form-label" for="cuil">Matrícula: </label>
               <input class="form-control atributos" type="number" name="matricula" id="matricula"
@@ -25,7 +21,6 @@
                   Ingrese un nro. de matrícula válido.
               </div>
           </div>
-
           <div class="col-md-6">
               <label class="form-label" for="email">Correo electronico: </label>
               <input class="form-control atributos" type="email" name="email" id="email"
@@ -71,37 +66,8 @@
                   Selecciona un sexo válido
               </div>
           </div>
-          <br>
-
-          <input id="botonEnviar" type="submit" value="Crear cuenta" onclick="comprobarContrasena()"><br>
-
+          <input id="botonEnviar" type="submit" value="Crear cuenta" onclick="comprobarContrasena()">
           <a class="text-center" href="inicio-sesionm.html">¿Ya tienes una cuenta? Click aquí</a>
-          <!--<script>
-              // Ejemplo de JavaScript inicial para deshabilitar el envío de formularios si hay campos no válidos
-              (function () {
-                  'use strict'
-
-                  // Obtener todos los formularios a los que queremos aplicar estilos de validación de Bootstrap personalizados
-                  var forms = document.querySelectorAll('.needs-validation')
-
-                  // Bucle sobre ellos y evitar el envío
-                  Array.prototype.slice.call(forms)
-                      .forEach(function (form) {
-                          form.addEventListener('submit', function (event) {
-                              if (!form.checkValidity()) {
-                                  event.preventDefault()
-                                  event.stopPropagation()
-                              }
-                              else {
-
-                                  event.preventDefault();
-                                  window.location.href = "home.html";
-                              }
-                              form.classList.add('was-validated')
-                          }, false)
-                      })
-              })()
-          </script>-->
-      </form>
+          </form>
   </div>
 </section>
