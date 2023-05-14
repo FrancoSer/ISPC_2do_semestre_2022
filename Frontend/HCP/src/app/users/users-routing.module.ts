@@ -6,7 +6,7 @@ import { UPHomeComponent } from './UP/pages/home/up-home.component';
 import { UMHistorialComponent } from './UM/pages/historial/um-historial.component';
 import { UMHomeComponent } from './UM/pages/home/UM-home.component';
 import { PlanPremiumComponent } from './UP/shop/plan-premium/plan-premium.component';
-import { UPPerfilComponent } from './UP/pages/UP-perfil/up-perfil.component';
+import { UPPerfilComponent } from './UP/pages/UP-perfil/UP-perfil.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PremiumPipe } from './premium.pipe';
 
