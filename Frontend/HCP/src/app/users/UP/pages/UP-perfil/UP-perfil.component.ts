@@ -25,7 +25,7 @@ export class UPPerfilComponent implements OnInit {
     )
       .subscribe(pacientes => {
         this.pacientes = pacientes;
-        this.pacienteSeleccionado = pacientes[1]
+        this.pacienteSeleccionado = pacientes[3]
         this.historiaClinica = this.pacienteSeleccionado.historia_clinica
       });
   }
