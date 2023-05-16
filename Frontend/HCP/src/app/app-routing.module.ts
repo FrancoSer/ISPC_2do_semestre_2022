@@ -31,11 +31,13 @@ const routes: Routes = [
     component: ErrorPageComponent
   },
 
+  
   {
     path: '**',
     redirectTo: ''
-  }
 
+  },
+ 
 ];
 
 @NgModule({

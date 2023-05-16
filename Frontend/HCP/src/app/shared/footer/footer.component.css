@@ -1,0 +1,26 @@
+:root {
+
+    --bs-primary: #01CDBB !important;
+    --bs-secondary: #7DB9FF !important;
+    --bs-success: #82C619 !important;
+    --bs-info: #196AFC;
+    --bs-warning: #FFB600;
+    --bs-danger: #FF522A;
+    --bs-light: #FBFFFF !important;
+    --bs-dark: #334241 !important;
+    --bs-nav-pills-link-active-color: #FBFFFF !important;
+    --bs-nav-pills-link-active-bg: #01CDBB !important;
+
+    
+}
+
+.container {
+    color: var(--bs-primary);
+}
+
+.btn-search {
+    background: #01CDBB;
+    border-radius: 10px;
+    width: 100%;
+    height: 40px;
+}
