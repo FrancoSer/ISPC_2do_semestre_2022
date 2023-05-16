@@ -3,10 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ErrorPageComponent } from './shared/pages/error/error-page.component';
 import { InicioComponent } from './shared/pages/inicio/inicio.component';
 
-import { UMHomeComponent } from './users/UM/pages/home/UM-home.component';
-import { UPHomeComponent } from './users/UP/pages/home/up-home.component';
 import { SobreNosotrosComponent } from './shared/pages/sobre-nosotros/sobre-nosotros.component';
-import { UMHistorialComponent } from './users/UM/pages/historial/um-historial.component';
 
 const routes: Routes = [
 
