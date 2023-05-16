@@ -2,6 +2,15 @@
 
 <div class="container">
 
+  <mat-grid-list cols="1" 
+    *ngIf="!pacienteSeleccionado else divPaciente">
+    <mat-grid-tile>
+        <mat-spinner></mat-spinner>
+    </mat-grid-tile>
+
+</mat-grid-list>
+<ng-template #divPaciente>
+
   <mat-card class="card"  
     fxLayout="column" 
     fxLayoutAlign="center center" 
@@ -99,4 +108,6 @@
   </mat-card-content>
 
 </mat-card>
+</ng-template>
 </div>
+
