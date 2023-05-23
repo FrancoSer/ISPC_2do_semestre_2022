@@ -34,6 +34,7 @@ export interface Paciente {
 
     id?:                 string;
     cuil:                string;
+    contrasena:          string;
     nombre:              string;
     apellido:            string;
     fecha_de_nacimiento: string;
