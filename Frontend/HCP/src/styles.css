@@ -1,0 +1,17 @@
+:root {
+  --main-text-color: #01cdbb;
+}
+
+ body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #E5EFF7;
+
+} 
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

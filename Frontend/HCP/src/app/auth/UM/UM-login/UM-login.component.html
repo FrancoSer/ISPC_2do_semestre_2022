@@ -1,0 +1,60 @@
+<head>
+
+  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  
+
+
+</head>
+
+  <body>
+    <div class="container">
+    <a class="btn boton_regreso" href=" "><i class="bi bi-arrow-left">Volver</i></a>
+    <div class="register-box">
+
+      <h2>INICIAR SESION COMO MEDICO</h2>
+      <form [formGroup]="form" class="row g-3" (ngSubmit)="iniciarSesion($event)"  novalidate>
+       
+        <div class="col-md-12">
+          <label class="form-label" for="matricula">Matrícula: </label>
+          <input class="form-control atributos" type="number" formControlName="matricula" name="matricula" id="matricula" 
+             placeholder="Ingrese su matricula" autofocus 
+            [ngClass]="{'is-invalid':matricula?.errors && matricula?.touched , 'is-valid':!matricula?.errors}"
+                required>
+
+        <div *ngIf="matricula?.hasError('required')" class="invalid-feedback">El número de matrícula es requerido</div>
+        <div *ngIf="matricula?.hasError('min') && !matricula?.hasError('required')" class="invalid-feedback">El número de matrícula es inválido</div>
+
+                    
+          
+        </div>
+
+        <div class="col-md-12">
+          <label class="form-label" for="contraseña">Contraseña: </label>
+          <input class="form-control atributos" type="contraseña" formControlName="contraseña" name="contraseña" id="contraseña" minlength="8"
+            maxlength="25" placeholder="Ingrese su contraseña" 
+            [ngClass]="{'is-invalid':password?.errors && password?.touched  , 'is-valid':!password?.errors && password?.touched}" required>
+      <div *ngIf="password?.hasError('required')" class="invalid-feedback">ingrese su contraseña</div>
+      <div *ngIf="password?.hasError('minlength')" class="invalid-feedback">Ingrese una constraseña válida</div>
+
+
+        
+
+       
+
+          <a href="recuperar-contraseña.html">¿Olvidaste tu contraseña?</a>
+        </div>
+        <br>
+
+
+        <button class="btn" id="botonIniciar" type="submit">Iniciar sesión</button>
+        <a class="text-center" 
+        (click)="registro()">¿No tienes una cuenta? Click aquí</a>
+        <!-- TODO resolver routerLink y evitar el boton -->
+
+        
+        </form>
+       
+    </div>
+    </div>
+  </body>

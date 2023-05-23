@@ -1,0 +1,112 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #E5EFF7;
+
+}
+
+.container{
+    
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width:100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+
+ 
+}
+
+.container-logo{
+
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+
+}
+
+.bienvenida{
+    margin: 0;
+    padding: 0;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: #7DB9FF;
+    margin-bottom: 1rem;
+}
+
+.logo-img{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 14rem;
+}
+
+.texto-ingresar{
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    color: #01CDBB;
+    font-size: 1.5rem;
+
+}
+
+
+.botones{
+
+    margin: 0;
+    padding: 0;
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+    
+}
+
+
+.boton{
+
+    display: flex;
+    text-decoration: none;
+    border: 1px solid #ffffff00;
+    margin: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background: #7DB9FF;
+    color: #FBFFFF;
+    border-radius: 4px;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    
+}
+
+
+.boton:hover {
+    cursor: pointer;
+    background: #01CDBB;
+    color: #FBFFFF;
+}
+
