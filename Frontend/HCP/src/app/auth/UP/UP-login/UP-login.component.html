@@ -21,8 +21,6 @@
           <div *ngIf="cuil?.hasError('min') && !cuil?.hasError('required')" class="invalid-feedback">El número de
             cuil es inválido</div>
 
-
-
         </div>
         <div class="col-md-12">
           <label class="form-label" for="password">Contraseña: </label>
@@ -39,11 +37,10 @@
 
         <button id="botonIniciar" class="btn" type="submit">Iniciar sesión</button>
 
-        <a class="text-center" 
-        (click)="registro()">
+        <a class="text-center" (click)="registro()">
           ¿No tienes una cuenta? Click aquí
         </a>
-          <!-- TODO resolver routerLink y evitar el boton -->
+        <!-- TODO resolver routerLink y evitar el boton -->
 
       </form>
     </div>
@@ -51,4 +48,3 @@
   </div>
 
 </body>
-
