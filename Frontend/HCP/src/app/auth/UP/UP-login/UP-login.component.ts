@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { every } from 'rxjs';
 
 @Component({
   selector: 'app-UP-login',
@@ -27,9 +28,13 @@ export class UPLoginComponent implements OnInit {
 
     if (this.form.valid) {
 
-      this.router.navigate(["home-up"]);
+      this.router.navigate(["users/home-up"]);
 
     }
+  }
+
+  public registro(){ 
+    this.router.navigate(['auth/registro-up'])
   }
 
 }

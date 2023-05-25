@@ -1,13 +1,14 @@
-import { Component, Input } from '@angular/core';
-import { HistoriaClinica, Paciente } from 'src/app/users/interfaces/interfaces';
+import { Component, OnInit } from '@angular/core';
+import { delay, tap } from 'rxjs';
+import { Paciente, HistoriaClinica } from 'src/app/users/interfaces/interfaces';
 import { UsersService } from 'src/app/users/service/users.service';
 
 @Component({
-  selector: 'app-um-historial',
-  templateUrl: './um-historial.component.html',
-  styleUrls: ['./um-historial.component.css']
+  selector: 'app-UP-perfil',
+  templateUrl: './up-perfil.component.html',
+  styleUrls: ['./up-perfil.component.css']
 })
-export class UMHistorialComponent {
+export class UPPerfilComponent implements OnInit {
 
   public pacientes: Paciente[] = [];
 
@@ -19,11 +20,15 @@ export class UMHistorialComponent {
 
   ngOnInit() {
     this.pacienteService.getPaciente()
+    .pipe(
+      delay(2000)
+    )
       .subscribe(pacientes => {
         this.pacientes = pacientes;
-        this.pacienteSeleccionado = pacientes[7]
+        this.pacienteSeleccionado = pacientes[3]
         this.historiaClinica = this.pacienteSeleccionado.historia_clinica
       });
   }
+
 
 }

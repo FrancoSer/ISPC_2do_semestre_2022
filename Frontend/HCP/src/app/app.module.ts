@@ -4,27 +4,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { AuthModule } from './auth/auth.module';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UsersModule } from './users/users.module';
-
-
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
   declarations: [	
     AppComponent
-    
-   
    ],
   imports: [
+    AppRoutingModule,
     AuthModule,
     BrowserModule,
     SharedModule,
-    FormsModule,
-    ReactiveFormsModule,
-    AppRoutingModule,
-    UsersModule
+    UsersModule,
+    BrowserAnimationsModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

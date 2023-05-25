@@ -33,9 +33,13 @@ export class UMLoginComponent implements OnInit {
     if (this.form.valid) {
       //Aqui debería hacer las validaciones de usuario y contraseña
       console.log("Matricula: " + this.matricula + " - Password: " + this.password);
-      this.router.navigate(["home-um"]);
+      this.router.navigate(["users/home-um"]);
      
     }
+  }
+
+  public registro(){
+    this.router.navigate(['auth/registro-um'])
   }
 
 

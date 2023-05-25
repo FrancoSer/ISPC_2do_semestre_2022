@@ -33,7 +33,7 @@
             <section class="perfil-paciente" href="#">
                 <img src="\assets\perfil paciente.jpg" alt="foto de perfil del paciente"
                     class="d-inline-block align-text-top">
-                Isabel Gutierrez
+                {{pacienteSeleccionado.nombre + ' ' + pacienteSeleccionado.apellido}}
             </section>
         </div>
 
@@ -45,7 +45,7 @@
                 <div class="accordion-item">
 
                     <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        <button mat-raised-button color="primary"   class="accordion-button" type="button" data-bs-toggle="collapse"
                             data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
                             aria-controls="panelsStayOpen-collapseOne">
                             Datos Paciente
@@ -55,54 +55,153 @@
                         aria-labelledby="panelsStayOpen-headingOne">
                         <div class="accordion-body">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Isabel Gutierrez</li>
-                                <li class="list-group-item">56 años</li>
-                                <li class="list-group-item">DNI: 37.654.987</li>
-                                <li class="list-group-item">CUIL: 22-37654987-2</li>
-                                <li class="list-group-item">Río Negro</li>
+                                <p>
+                                    <strong>
+                                      Fecha de Nacimiento:
+                                    </strong>
+                                        {{pacienteSeleccionado.fecha_de_nacimiento}}
+                                  </p>
+                                      <br>
+                                      <p>
+                                    <strong>
+                                      Teléfono:
+                                    </strong>
+                                        {{pacienteSeleccionado.tel}}
+                                  </p>
+                                      <br>
+                                  <p>
+                                    <strong>
+                                      Dirección:
+                                    </strong>
+                                        {{pacienteSeleccionado.direccion}}
+                                  </p>
+                                      <br>
+                                   <p>
+                                     <strong>
+                                       Email:
+                                     </strong>
+                                         {{pacienteSeleccionado.email}}
+                                   </p>
+                                       <br>
+                                   <p>
+                                     <strong>
+                                       Género:
+                                     </strong>
+                                         {{pacienteSeleccionado.genero}}
+                                   </p>
+                                   <br>
+                                  <p>
+                                    <strong>
+                                      Grupo sanguineo:
+                                    </strong>
+                                        {{pacienteSeleccionado.tipo_sanguineo}}
+                                  </p>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        <button mat-raised-button color="primary" class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
                             aria-controls="panelsStayOpen-collapseTwo">
-                            Accordion Item #2
+                            Consulta
                         </button>
                     </h2>
                     <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
                         aria-labelledby="panelsStayOpen-headingTwo">
                         <div class="accordion-body">
-                            <strong>This is the second item's accordion body.</strong> It is hidden by
-                            default, until the collapse plugin adds the appropriate classes that we use to
-                            style each element. These classes control the overall appearance, as well as the
-                            showing and hiding via CSS transitions. You can modify any of this with custom
-                            CSS or overriding our default variables. It's also worth noting that just about
-                            any HTML can go within the <code>.accordion-body</code>, though the transition
-                            does limit overflow.
+                            <p *ngIf="historiaClinica">
+                                <strong>
+                                  Fecha de la visita:
+                                </strong>
+                                    {{historiaClinica.fecha}}
+                              </p>
+                                  <br>
+                                  <p *ngIf="historiaClinica">
+                                    <strong>
+                                      Especialidad:
+                                    </strong>
+                                        {{historiaClinica.especialidad}}
+                                  </p>
+                                       <br>
+                              <p *ngIf="historiaClinica">
+                                <strong>
+                                  Observaciones:
+                                </strong>
+                                    {{historiaClinica.observaciones}}
+                              </p>
+                                 <br>
+                                 <p *ngIf="historiaClinica">
+                                    <strong>
+                                      Diagnóstico:
+                                    </strong>
+                                        {{historiaClinica.diagnostico}}
+                                  </p>
+                                 <p *ngIf="historiaClinica">
+                                <strong>
+                                  Última presión arterial registrada:
+                                </strong>
+                                    {{historiaClinica.presion}}
+                              </p>
+                                   <br>
+                               <p *ngIf="historiaClinica">
+                                 <strong>
+                                   Último peso registrado:
+                                 </strong>
+                                     {{historiaClinica.peso}}
+                               </p>
+                                    <br>
+                                   <p *ngIf="historiaClinica">
+                                  <strong>
+                                    Última altura registrada:
+                                  </strong>
+                                      {{historiaClinica.altura}}
+                               </p>
+                                     <br>
+                         
+                               <p *ngIf="historiaClinica">
+                                 <strong>Medicación:</strong>
+                                 {{historiaClinica.medicacion}}
+                               </p>
+                               <br>
+                               <p *ngIf="historiaClinica">
+                                 <strong>Dieta:</strong>
+                                 {{historiaClinica.dieta}}
+                               </p>
+                               <br>
+                               <p *ngIf="historiaClinica">
+                                 <strong>Vacunación:</strong>
+                                 {{historiaClinica.vacuna}}
+                               </p>
+                               
                         </div>
                     </div>
                 </div>
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        <button mat-raised-button color="primary" class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
                             aria-controls="panelsStayOpen-collapseThree">
-                            Accordion Item #3
+                            Más datos
                         </button>
                     </h2>
                     <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
                         aria-labelledby="panelsStayOpen-headingThree">
                         <div class="accordion-body">
-                            <strong>This is the third item's accordion body.</strong> It is hidden by
-                            default, until the collapse plugin adds the appropriate classes that we use to
-                            style each element. These classes control the overall appearance, as well as the
-                            showing and hiding via CSS transitions. You can modify any of this with custom
-                            CSS or overriding our default variables. It's also worth noting that just about
-                            any HTML can go within the <code>.accordion-body</code>, though the transition
-                            does limit overflow.
+                            <br>
+                          
+                               <p *ngIf="historiaClinica">
+                                 <strong>Prueba diagnóstica:</strong>
+                                 {{historiaClinica.prueba_diagnostica}}
+                               </p>
+                               <br>
+                               <p *ngIf="historiaClinica">
+                                 <strong>Adjuntos:</strong>
+                                 {{historiaClinica.adjunto}}
+                               </p>
+                               <br>
+                               
                         </div>
                     </div>
                 </div>
