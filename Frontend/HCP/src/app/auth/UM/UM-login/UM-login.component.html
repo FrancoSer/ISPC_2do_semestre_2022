@@ -31,7 +31,7 @@
 
         <div class="col-md-12">
           <label class="form-label" for="contraseña">Contraseña: </label>
-          <input class="form-control atributos" type="contraseña" formControlName="contraseña" name="contraseña" id="contraseña" minlength="8"
+          <input class="form-control atributos" type=password formControlName="contraseña" name="contraseña" id="contraseña" minlength="8"
             maxlength="25" placeholder="Ingrese su contraseña" 
             [ngClass]="{'is-invalid':password?.errors && password?.touched  , 'is-valid':!password?.errors && password?.touched}" required>
       <div *ngIf="password?.hasError('required')" class="invalid-feedback">ingrese su contraseña</div>
