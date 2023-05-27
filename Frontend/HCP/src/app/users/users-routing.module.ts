@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 
-import { UPHomeComponent } from './UP/pages/home/up-home.component';
+import { UPHomeComponent } from './UP/pages/home/UP-home.component';
 import { UMHistorialComponent } from './UM/pages/historial/um-historial.component';
-import { UMHomeComponent } from './UM/pages/home/UM-home.component';
+import { UMHomeComponent } from './UM/pages/home/um-home.component';
 import { PlanPremiumComponent } from './UP/shop/plan-premium/plan-premium.component';
-import { UPPerfilComponent } from './UP/pages/UP-perfil/up-perfil.component';
+import { UPPerfilComponent } from './UP/pages/UP-perfil/UP-perfil.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PremiumPipe } from './premium.pipe';
 
