@@ -5,8 +5,8 @@ import { UsersService } from 'src/app/users/service/users.service';
 
 @Component({
   selector: 'app-UP-perfil',
-  templateUrl: './up-perfil.component.html',
-  styleUrls: ['./up-perfil.component.css']
+  templateUrl: './UP-perfil.component.html',
+  styleUrls: ['./UP-perfil.component.css']
 })
 export class UPPerfilComponent implements OnInit {
 
