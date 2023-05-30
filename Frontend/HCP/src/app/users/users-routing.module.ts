@@ -14,6 +14,7 @@ import { UPHistorialComponent } from './UP/pages/UP-historial/UP-historial.compo
 
 const routes: Routes = [
 
+
   {
     path: 'home-up',
     component: UPHomeComponent,
@@ -26,6 +27,7 @@ const routes: Routes = [
         path: 'up-welcome',
         component: UPWelcomeComponent
       },
+
       {
         path: 'plan-premium',
         component: PlanPremiumComponent
