@@ -16,7 +16,7 @@ export class UPLoginComponent implements OnInit {
       {
         cuil: new FormControl('', [Validators.required, Validators.minLength(10)]),
         password: new FormControl('', [Validators.required, Validators.minLength(8)])
-      })
+      });
   }
   get cuil() { return this.form.get("cuil"); }
   get password() { return this.form.get("password"); }
@@ -28,13 +28,13 @@ export class UPLoginComponent implements OnInit {
 
     if (this.form.valid) {
 
-      this.router.navigate(["users/home-up"]);
+      this.router.navigate(["users/home-up/up-welcome"]);
 
     }
   }
 
-  public registro(){ 
-    this.router.navigate(['auth/registro-up'])
+  public registro() {
+    this.router.navigate(['auth/registro-up']);
   }
 
 }

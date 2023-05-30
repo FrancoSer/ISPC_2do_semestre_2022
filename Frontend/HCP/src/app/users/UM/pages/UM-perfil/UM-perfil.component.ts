@@ -3,8 +3,8 @@ import { Paciente } from '../../../interfaces/interfaces';
 
 @Component({
   selector: 'app-UM-perfil',
-  templateUrl: './um-perfil.component.html',
-  styleUrls: ['./um-perfil.component.css']
+  templateUrl: './UM-perfil.component.html',
+
 })
 
 
