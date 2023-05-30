@@ -38,5 +38,9 @@ export class UMLoginComponent implements OnInit {
     }
   }
 
+  public registro(){
+    this.router.navigate(['auth/registro-um'])
+  }
+
 
 }
