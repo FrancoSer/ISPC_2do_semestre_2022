@@ -12,21 +12,21 @@ export class UPPerfilComponent implements OnInit {
 
   public pacientes: Paciente[] = [];
 
-  public pacienteSeleccionado!: Paciente
+  public pacienteSeleccionado!: Paciente;
 
   public historiaClinica: HistoriaClinica | undefined;
 
-  constructor(private pacienteService: UsersService) {}
+  constructor(private pacienteService: UsersService) { }
 
   ngOnInit() {
     this.pacienteService.getPaciente()
-    .pipe(
-      delay(2000)
-    )
+      .pipe(
+        delay(2000)
+      )
       .subscribe(pacientes => {
         this.pacientes = pacientes;
-        this.pacienteSeleccionado = pacientes[3]
-        this.historiaClinica = this.pacienteSeleccionado.historia_clinica
+        this.pacienteSeleccionado = pacientes[1];
+        this.historiaClinica = this.pacienteSeleccionado.historia_clinica;
       });
   }
 

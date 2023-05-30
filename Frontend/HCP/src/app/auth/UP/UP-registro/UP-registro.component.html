@@ -6,17 +6,16 @@
                 novalidate>
                 <div class="col-md-6">
                     <label class="form-label" for="nombre">Nombre: </label>
-                    <input class="form-control atributos" type="text" pattern="[A-Za-z]{2-60}"
-                        title="No es un nombre" name="nombre" id="nombre" placeholder="Ingrese su nombre" required
-                        autofocus>
+                    <input class="form-control atributos" type="text" pattern="[A-Za-z]{2-60}" title="No es un nombre"
+                        name="nombre" id="nombre" placeholder="Ingrese su nombre" required autofocus>
                     <div class="invalid-feedback">
                         Ingrese un nombre.
                     </div>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="apellido">Apellido: </label>
-                    <input class="form-control atributos" type="text" pattern="[A-Za-z]{2-60}"
-                        name="apellido" id="apellido" placeholder="Ingrese su apellido" required>
+                    <input class="form-control atributos" type="text" pattern="[A-Za-z]{2-60}" name="apellido"
+                        id="apellido" placeholder="Ingrese su apellido" required>
                     <div class="invalid-feedback">
                         Ingrese un apellido.
                     </div>
@@ -40,8 +39,8 @@
                 <div class="col-md-6">
                     <label class="form-label" for="crearContrasenaPaciente">Crea tu contraseña: </label>
                     <input class="form-control atributos" type="password" name="crearContrasenaPaciente"
-                        id="crearContrasenaPaciente" minlength="8" maxlength="25"
-                        placeholder="Ingrese su contraseña" required>
+                        id="crearContrasenaPaciente" minlength="8" maxlength="25" placeholder="Ingrese su contraseña"
+                        required>
                     <div class="invalid-feedback">
                         Ingrese una contraseña válida.
                     </div>
@@ -57,8 +56,8 @@
                 </div>
                 <div class="col-md-4">
                     <label class="form-label" for="nacimiento">Fecha de nacimiento: </label>
-                    <input class="form-control atributos" type="date" name="nacimiento" id="nacimiento"
-                        min="1907-01-01" max="2022-12-31" required>
+                    <input class="form-control atributos" type="date" name="nacimiento" id="nacimiento" min="1907-01-01"
+                        max="2022-12-31" required>
                     <div class="invalid-feedback">
                         Ingrese una fecha de nacimiento válida.
                     </div>
@@ -76,21 +75,23 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                  <label class="form-label" for="sangre">Grupo sanguineo</label>
-                  <select class="atributos" name="sangre" id="sangre" required>
-                      <option selected disabled value="">Seleccione grupo sanguineo</option>
-                      <option value="A+">A+</option>
-                      <option value="A-">A-</option>
-                      <option value="B+">B+</option>
-                      <option value="B-">B-</option>
-                      <option value="0+">0+</option>
-                      <option value="0-">0-</option>
-                      <option value="AB+">AB+</option>
-                      <option value="AB-">AB-</option> 
-                  </select>               
-                  <div class="invalid-feedback">
-                      Selecciona un grupo sanguineo.
-                  </div>
-                </div>               
-              <input id="botonEnviar" type="submit" value="Crear cuenta" onclick="comprobarContrasena2()">
-              <a class="text-center" href="inicio-sesionp.html">¿Ya tienes una cuenta? Click aquí</a>  
+                    <label class="form-label" for="sangre">Grupo sanguineo</label>
+                    <select class="atributos" name="sangre" id="sangre" required>
+                        <option selected disabled value="">Seleccione grupo sanguineo</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="0+">0+</option>
+                        <option value="0-">0-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Selecciona un grupo sanguineo.
+                    </div>
+                </div>
+                <input id="botonEnviar" type="submit" value="Crear cuenta" onclick="comprobarContrasena2()">
+                <a class="text-center" href="inicio-sesionp.html">¿Ya tienes una cuenta? Click aquí</a>
+
+                <!-- TODO formulario -->
