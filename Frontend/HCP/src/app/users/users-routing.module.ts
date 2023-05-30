@@ -10,6 +10,7 @@ import { UPPerfilComponent } from './UP/pages/UP-perfil/UP-perfil.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PremiumPipe } from './premium.pipe';
 import { UPWelcomeComponent } from './UP/components/UP-welcome/UP-welcome.component';
+import { UPHistorialComponent } from './UP/pages/UP-historial/UP-historial.component';
 
 const routes: Routes = [
 
@@ -19,7 +20,7 @@ const routes: Routes = [
     children: [
       {
         path: 'up-historial',
-        component: UMHistorialComponent,
+        component: UPHistorialComponent,
       },
       {
         path: 'up-welcome',
