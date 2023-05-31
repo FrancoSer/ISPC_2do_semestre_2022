@@ -1,7 +1,11 @@
 from django.contrib import admin
-from .models import Paciente, Medico, Historia, HistoriaClinica, Factura, Servicio
+from django.contrib.auth.admin import UserAdmin
+from .models import Paciente, Medico, Historia, HistoriaClinica, Factura, Servicio, CustomUser
 # Register your models here.
 
+
+
+admin.site.register(CustomUser,UserAdmin)
 admin.site.register(Paciente)
 admin.site.register(Medico)
 admin.site.register(Historia)
