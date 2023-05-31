@@ -3,19 +3,19 @@
 </head>
 
 <div class="container-fluid g-0 " id="contenedor">
-  
 
   <app-up-header (sideNavToggled2)="sideNavStatus2=$event;"></app-up-header>
 
   <main>
+
     <app-up-sidebar [sideNavStatus2]="sideNavStatus2" [ngClass]="{'app-sidebar-open':sideNavStatus2}"></app-up-sidebar>
     <div class="container-fluid display-area p-3" [ngClass]="{'display-area-shrink':sideNavStatus2}">
-    
-      <router-outlet>  
-       
+      <router-outlet>
+
       </router-outlet>
 
     </div>
+
   </main>
 
 
