@@ -74,8 +74,19 @@ export interface Medico {
 }
 
 export enum Genero {
-    masculino = 'Masculino',
-    femenino = 'Femenino',
+    masculino =  'Masculino',
+    femenino =   'Femenino',
     no_binario = 'No binario',
-    otro = ''
+    otro =       ''
+}
+
+export enum GrupoSanguineo{
+    Apositivo =     'A+',
+    Anegativo =     'A-',
+    Bpositivo =     "B+",
+    Bnegativo =     "B-", 
+    CeroPositivo =  "0+",
+    CeroNegativo =  "0-",
+    ABpositivo =    "AB+",
+    ABnegativo =    "AB-"
 }
