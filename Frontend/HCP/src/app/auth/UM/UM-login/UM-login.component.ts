@@ -12,8 +12,11 @@ export class UMLoginComponent implements OnInit {
   
   form: FormGroup;
   
-  constructor(private router:Router,
-    private formBuilder: FormBuilder) {
+  constructor(
+    private router:Router,
+    private formBuilder: FormBuilder
+    ) {
+      
     this.form = this.formBuilder.group(
       {
         matricula: new FormControl ('', [Validators.required, Validators.minLength(10)]),

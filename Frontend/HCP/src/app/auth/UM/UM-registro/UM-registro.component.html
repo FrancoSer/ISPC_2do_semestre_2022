@@ -5,6 +5,7 @@
             <form 
                 class="needs-validation row g-3 " 
                 [formGroup]="medicoForm"
+                (ngSubmit)="onSubmit()"
                 >
                 <div class="col-md-6">
                     <label class="form-label" for="nombre">Nombre: </label>
@@ -14,13 +15,14 @@
                         pattern="[A-Za-z]{2-60}" 
                         title="No es un nombre"
                         formControlName="username"
+    
                         placeholder="Ingrese su nombre" 
                         required 
-                        autofocus>
-                    <div class="invalid-feedback">
-                        Ingrese un nombre.
-                    </div>
+                        autofocus
+                        [ngClass]="{'is-invalid':username?.errors && username?.touched  , 'is-valid':!username?.errors && username?.touched}">
+                        <div *ngIf="username?.hasError('required')" class="invalid-feedback">Ingrese su nombre</div>
                 </div>
+               
                 <!-- <label for="">id
                     <input type="text"
                     formControlName="id">
@@ -49,23 +51,28 @@
                         formControlName="email"
                         placeholder="Ingrese su correo electrónico" 
                         required
-                        >
-                    <div class="invalid-feedback">
-                        Ingrese un email válido.
-                    </div>
+                        [ngClass]="{'is-invalid':email?.errors && email?.touched  , 'is-valid':!email?.errors && email?.touched}">
+                        
+                        <div *ngIf="email?.hasError('required')" class="invalid-feedback">Ingrese su email</div>
+                        <div *ngIf="email?.hasError('email')" class="invalid-feedback">Ingrese un email válido</div>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label">Crea tu contraseña: </label>
                     <input 
                         class="form-control atributos" 
                         type="password" 
-                        minlength="8" maxlength="25" 
+                       
                         formControlName="password"
                         placeholder="Ingrese su contraseña"
-                        required>
-                    <div class="invalid-feedback">
-                        Ingrese una contraseña válida.
-                    </div>
+                        required
+                        [ngClass]="{'is-invalid':password?.errors && password?.touched  , 'is-valid':!password?.errors && password?.touched}">
+                        <div *ngIf="password?.hasError('required')" class="invalid-feedback">Ingrese su contraseña</div>
+                        <div *ngIf="password?.hasError('maxlength')" class="invalid-feedback">La contraseña no puede ser mayor
+                            a {{maxChars}} caracteres
+                        </div>
+                        <div *ngIf="password?.hasError('minlength')" class="invalid-feedback">La contraseña no puede ser menor
+                            a {{minChars}} caracteres
+                        </div>
                 </div>
                 <!-- <div class="col-md-6">
                     <label class="form-label" for="confirmarContrasenaPaciente">Confirma tu contraseña: </label>
@@ -124,13 +131,16 @@
                         </mat-icon>
                     
                     </button>
+            </form>
+                <div class="button">
+                        <button
                     
-                                
-                <button
-                    mat-button color="succes"
-                    routerLink="/auth/login-um"
-                >
-                    ¿Ya tienes una cuenta? Click aquí
+                        mat-button color="succes"
+                        routerLink="/auth/login-um"
+                    >
+                        ¿Ya tienes una cuenta? Click aquí
                 </button>
+                     </div>           
+               
 
                 <!-- TODO formulario -->

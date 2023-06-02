@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Medico, MedicoRegistro } from 'src/app/users/interfaces/interfaces';
 import { AuthService } from '../../auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -15,13 +15,16 @@ import { MatDialog } from '@angular/material/dialog';
 
 export class UMRegistroComponent implements OnInit {
 
+  minChars: number = 9;
+  maxChars: number = 15;
+
   public medicoForm = new FormGroup({
 
-    username:          new FormControl<string>(''),
+    username:          new FormControl<string>('', [Validators.required]),
     // apellido:       new FormControl<string>(''),
     // cuil:           new FormControl<string>(''),
-    email:             new FormControl<string>(''),
-    password:          new FormControl<string>(''),
+    email:             new FormControl<string>('', [Validators.required, Validators.email]),
+    password:          new FormControl<string>('', [Validators.required, Validators.maxLength(this.maxChars), Validators.minLength(this.minChars)]),
     // passwordRepet:  new FormControl<string>(''),
     // nacimiento:     new FormControl<string>(''),
     // genero:         new FormControl<Genero>(Genero.masculino),
@@ -32,12 +35,12 @@ export class UMRegistroComponent implements OnInit {
   medico: MedicoRegistro = {
     
     username: '',
-    apellido: '',
-    matricula: '',
+    // apellido: '',
+    // matricula: '',
     email: '',
     password: '',
-    passwordRepeat: '',
-    nacimiento: '',
+    // passwordRepeat: '',
+    // nacimiento: '',
 
   }
 
@@ -52,9 +55,19 @@ export class UMRegistroComponent implements OnInit {
     
   ) {}
 
-  get medicoActual(): Medico{
+  get username() { 
+    return this.medicoForm.get("username"); 
+  }
+  get email() { 
+    return this.medicoForm.get("email"); 
+  }
 
-    const medico = this.medicoForm.value as Medico;
+  get password(){
+    return this.medicoForm.get('password')
+  }
+  get medicoActual(): MedicoRegistro{
+
+    const medico = this.medicoForm.value as MedicoRegistro;
     return medico
 
   }
@@ -68,7 +81,7 @@ export class UMRegistroComponent implements OnInit {
       .subscribe (medico => {
       // this.router.navigate(['home-up/up-perfil/', paciente]);
       // mensaje
-      this.mostrarSnack(`${this.medico.username} su perfil ha sido creado`)
+      this.mostrarSnack(`${this.medicoActual.username} su perfil ha sido creado con éxito`)
 
     });
     console.log(this.medicoActual)
@@ -82,7 +95,7 @@ export class UMRegistroComponent implements OnInit {
   
   mostrarSnack( mensaje: string ){
     this.snackBar.open( mensaje, 'data',{
-      duration: 2500,
+      duration: 100500,
     });
 }
   ngOnInit() {
