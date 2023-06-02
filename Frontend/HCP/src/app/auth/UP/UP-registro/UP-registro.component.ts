@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Genero, GrupoSanguineo, Paciente, PacienteRegistro } from 'src/app/users/interfaces/interfaces';
+import { Genero, GrupoSanguineo, PacienteRegistro } from 'src/app/users/interfaces/interfaces';
 import { UsersService } from 'src/app/users/service/users.service';
 import { AuthService } from '../../auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -112,6 +112,8 @@ export class UPRegistroComponent implements OnInit {
       return;
     }
 
+    if(this.pacienteForm.valid){
+
     this.pacienteServicio.registroPaciente(this.pacienteActual)
       .subscribe (paciente => {
       // this.router.navigate(['home-up/up-perfil/', paciente]);
@@ -124,13 +126,18 @@ export class UPRegistroComponent implements OnInit {
       formIsValid: this.pacienteForm.valid,
         valor: this.pacienteForm.value
       });
+    } else{
+      this.mostrarSnack(`${this.pacienteActual.username} El formulario no es válido`)
+      throw Error('El formulario no es válido')
+    }
+  
   }
 
 
   
   mostrarSnack( mensaje: string ){
     this.snackBar.open( mensaje, 'data',{
-      duration: 100500,
+      duration: 2500,
     });
 }
 

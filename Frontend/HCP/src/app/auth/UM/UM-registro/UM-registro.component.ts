@@ -77,6 +77,7 @@ export class UMRegistroComponent implements OnInit {
       return;
     }
 
+    if(this.medicoForm.valid){
     this.medicoServicio.registroMedico(this.medicoActual)
       .subscribe (medico => {
       // this.router.navigate(['home-up/up-perfil/', paciente]);
@@ -89,13 +90,17 @@ export class UMRegistroComponent implements OnInit {
       formIsValid: this.medicoForm.valid,
         valor: this.medicoForm.value
       });
+    }else{
+      this.mostrarSnack(`${this.medicoActual.username} El formulario no es válido`)
+      throw Error('El formulario no es válido')
+    }
   }
 
 
   
   mostrarSnack( mensaje: string ){
     this.snackBar.open( mensaje, 'data',{
-      duration: 100500,
+      duration: 2500,
     });
 }
   ngOnInit() {
