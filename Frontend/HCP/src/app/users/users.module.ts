@@ -17,13 +17,9 @@ import { UMPerfilComponent } from './UM/pages/UM-perfil/UM-perfil.component';
 import { UPPerfilComponent } from './UP/pages/UP-perfil/UP-perfil.component';
 
 import { PremiumPipe } from './premium.pipe';
-<<<<<<< HEAD
-
-
-=======
 import { GeneroPipe } from './UP/pipes/genero.pipe';
 import { UPWelcomeComponent } from './UP/components/UP-welcome/UP-welcome.component';
->>>>>>> 0af0bda94dc981a8e8384d580424cba60885958a
+import { UPSobrenosotrosComponent } from './UP/pages/up-sobrenosotros/up-sobrenosotros.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +37,8 @@ import { UPWelcomeComponent } from './UP/components/UP-welcome/UP-welcome.compon
     UPHomeComponent,
     UPWelcomeComponent,
     PlanPremiumComponent,
-    PremiumPipe
+    PremiumPipe,
+    UPSobrenosotrosComponent
 
   ],
   imports: [
