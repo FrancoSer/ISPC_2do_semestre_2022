@@ -7,7 +7,13 @@
 
 <body>
   <div class="container">
-    <a class="btn boton_regreso" href=" "><i class="bi bi-arrow-left">Volver</i></a>
+    <button 
+      mat-button color="primary"
+      routerLink="/">
+      <i class="bi bi-arrow-left">
+        Volver
+      </i>
+    </button>
     <div class="register-box">
 
       <h2>INICIAR SESION COMO PACIENTE</h2>
@@ -37,12 +43,13 @@
 
         <button id="botonIniciar" class="btn" type="submit">Iniciar sesión</button>
 
-        <a class="text-center" (click)="registro()">
-          ¿No tienes una cuenta? Click aquí
-        </a>
-        <!-- TODO resolver routerLink y evitar el boton -->
-
+        
       </form>
+      <button 
+          mat-button color="succes"
+          routerLink="/auth/registro-up">
+          ¿No tienes una cuenta? Click aquí
+        </button>
     </div>
 
   </div>

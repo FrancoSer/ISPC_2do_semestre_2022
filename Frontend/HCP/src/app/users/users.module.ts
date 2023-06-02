@@ -15,16 +15,17 @@ import { UPSidebarComponent } from './UP/components/UP-siderbar/UP-sidebar.compo
 import { UPHomeComponent } from './UP/pages/home/UP-home.component';
 import { UMPerfilComponent } from './UM/pages/UM-perfil/UM-perfil.component';
 import { UPPerfilComponent } from './UP/pages/UP-perfil/UP-perfil.component';
+
 import { PremiumPipe } from './premium.pipe';
-
-
-
+import { GeneroPipe } from './UP/pipes/genero.pipe';
+import { UPWelcomeComponent } from './UP/components/UP-welcome/UP-welcome.component';
 
 @NgModule({
   declarations: [
 
-    HeaderComponent,
     PlanPremiumComponent,
+    HeaderComponent,
+    GeneroPipe,
     SidebarComponent,
     UMHistorialComponent,
     UMHomeComponent,
@@ -33,8 +34,10 @@ import { PremiumPipe } from './premium.pipe';
     UPHeaderComponent,
     UPSidebarComponent,
     UPHomeComponent,
+    UPWelcomeComponent,
+    PlanPremiumComponent,
     PremiumPipe
-       
+
   ],
   imports: [
     CommonModule,

@@ -1,4 +1,6 @@
+
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-UP-home',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UPHomeComponent implements OnInit {
   sideNavStatus2: boolean = true;
+
+
   constructor() { }
 
+
+
+
   ngOnInit() {
+
   }
 
 }
