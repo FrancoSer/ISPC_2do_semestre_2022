@@ -31,22 +31,37 @@ export interface Factura {
 }
 
 export interface Paciente {
-    Genero: any;
 
     id?: string;
     cuil: string;
-    contrasena: string;
+    password: string;
     nombre: string;
     apellido: string;
     fecha_de_nacimiento: string;
     tel: string;
-    direccion: string;
+    direccion?: string;
     email: string;
     genero: Genero;
-    tipo_sanguineo?: string;
+    tipo_sanguineo?: GrupoSanguineo;
     premium?: boolean;
     historia_clinica?: HistoriaClinica;
-    factura: Factura;
+    factura?: Factura;
+
+}
+
+export interface PacienteRegistro {
+
+    id?: string,
+    username: string,
+    apellido?: string,
+    cuil?: string,
+    email: string,
+    password: string,
+    passwordRepeat?: string,
+    nacimiento?: string,
+    genero?: Genero.masculino,
+    grupoSanguineo?: GrupoSanguineo.Apositivo,
+    premium?: boolean
 
 }
 
@@ -73,9 +88,34 @@ export interface Medico {
 
 }
 
+export interface MedicoRegistro {
+
+    id?: string,
+    username: string,
+    apellido?: string,
+    matricula?: string,
+    email: string,
+    password: string,
+    passwordRepeat?: string,
+    nacimiento?: string,
+    genero?: Genero.masculino,
+
+}
+
 export enum Genero {
-    masculino = 'Masculino',
-    femenino = 'Femenino',
+    masculino =  'Masculino',
+    femenino =   'Femenino',
     no_binario = 'No binario',
-    otro = ''
+    otro =       ''
+}
+
+export enum GrupoSanguineo{
+    Apositivo =     'A+',
+    Anegativo =     'A-',
+    Bpositivo =     "B+",
+    Bnegativo =     "B-", 
+    CeroPositivo =  "0+",
+    CeroNegativo =  "0-",
+    ABpositivo =    "AB+",
+    ABnegativo =    "AB-"
 }

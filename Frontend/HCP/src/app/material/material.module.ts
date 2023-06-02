@@ -12,15 +12,21 @@ import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 // spinner
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+// snackbar
+import { MatSnackBarModule} from '@angular/material/snack-bar';
+// dialog
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
  exports: [
   
   MatButtonModule,
   MatCardModule,
+  MatDialogModule,
   MatGridListModule,
   MatListModule,
   MatIconModule,
+  MatSnackBarModule,
   MatProgressSpinnerModule
  ]
 })

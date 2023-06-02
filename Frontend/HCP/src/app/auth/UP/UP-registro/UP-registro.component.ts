@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Genero, GrupoSanguineo, PacienteRegistro } from 'src/app/users/interfaces/interfaces';
+import { UsersService } from 'src/app/users/service/users.service';
+import { AuthService } from '../../auth.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-UP-registro',
@@ -7,9 +14,131 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UPRegistroComponent implements OnInit {
 
-  constructor() { }
+  
+  minChars: number = 9;
+  maxChars: number = 15;
 
-  ngOnInit() {
+  public pacienteForm = new FormGroup({
+
+    username:          new FormControl<string>('', [Validators.required]),
+    // apellido:       new FormControl<string>(''),
+    // cuil:           new FormControl<string>(''),
+    // apellido:       new FormControl<string>(''),
+    // cuil:           new FormControl<string>(''),
+    email:             new FormControl<string>('', [Validators.required, Validators.email]),
+    password:          new FormControl<string>('', [Validators.required, Validators.maxLength(this.maxChars), Validators.minLength(this.minChars)]),
+    // passwordRepet:  new FormControl<string>(''),
+    // nacimiento:     new FormControl<string>(''),
+    // genero:         new FormControl<Genero>(Genero.masculino),
+    // grupoSanguineo: new FormControl<GrupoSanguineo>(GrupoSanguineo.Apositivo),
+    
+  });
+
+  genero = [
+    {
+      masculino: 'Masculino',
+      femenido:  'Femenino',
+      x: 'X',
+      otro: ''
+    }
+  ];
+
+  grupoSanguineo = [
+    {
+      Apositivo: 'A+',
+      Anegativo: 'A-',
+      Bpositivo: "B+",
+      Bnegativo: "B-", 
+      CeroPositivo: "0+",
+      CeroNegativo: "0-",
+      ABpositivo: "AB+",
+      ABnegativo: "AB-"
+    }
+  ];
+
+  paciente: PacienteRegistro = {
+    
+    username: '',
+    apellido: '',
+    cuil: '',
+    email: '',
+    password: '',
+    passwordRepeat: '',
+    nacimiento: '',
+    genero: Genero.masculino,
+    grupoSanguineo: GrupoSanguineo.Apositivo,
+    premium: false
+   
   }
+
+  constructor(
+
+    private pacienteServicio: AuthService,
+    private router: Router,
+    private activateRoute: ActivatedRoute,
+    private snackBar: MatSnackBar,
+    private dialog: MatDialog
+
+    
+  ) {}
+
+  
+  get username() { 
+    return this.pacienteForm.get("username"); 
+  }
+  get email() { 
+    return this.pacienteForm.get("email"); 
+  }
+
+  get password(){
+    return this.pacienteForm.get('password')
+  }
+
+  get pacienteActual(): PacienteRegistro{
+
+    const paciente = this.pacienteForm.value as PacienteRegistro;
+    return paciente
+
+  }
+
+  ngOnInit(): void {
+
+    
+  }
+
+
+  onSubmit(): void{
+    if(!this.pacienteActual){
+      return;
+    }
+
+    if(this.pacienteForm.valid){
+
+    this.pacienteServicio.registroPaciente(this.pacienteActual)
+      .subscribe (paciente => {
+      // this.router.navigate(['home-up/up-perfil/', paciente]);
+      // mensaje
+      this.mostrarSnack(`${this.pacienteActual.username} su perfil ha sido creado`)
+
+    });
+    console.log(this.pacienteActual)
+    console.log({
+      formIsValid: this.pacienteForm.valid,
+        valor: this.pacienteForm.value
+      });
+    } else{
+      this.mostrarSnack(`${this.pacienteActual.username} El formulario no es válido`)
+      throw Error('El formulario no es válido')
+    }
+  
+  }
+
+
+  
+  mostrarSnack( mensaje: string ){
+    this.snackBar.open( mensaje, 'data',{
+      duration: 2500,
+    });
+}
 
 }
