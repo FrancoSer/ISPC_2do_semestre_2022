@@ -90,3 +90,4 @@ class Factura(models.Model):
     id_servicio = models.ForeignKey(Servicio, on_delete=models.CASCADE)
     def __str__(self):
         return "{} {} {}".format(self.alta, self.id_servicio, self.id_paciente)
+    
