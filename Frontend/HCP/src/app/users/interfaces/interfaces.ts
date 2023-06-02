@@ -88,6 +88,20 @@ export interface Medico {
 
 }
 
+export interface MedicoRegistro {
+
+    id?: string,
+    username: string,
+    apellido?: string,
+    matricula?: string,
+    email: string,
+    password: string,
+    passwordRepeat?: string,
+    nacimiento?: string,
+    genero?: Genero.masculino,
+
+}
+
 export enum Genero {
     masculino =  'Masculino',
     femenino =   'Femenino',
