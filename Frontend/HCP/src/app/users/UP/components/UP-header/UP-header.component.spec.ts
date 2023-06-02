@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UPSidebarComponent } from './up-sidebar.component';
+import { UPHeaderComponent } from './UP-header.component';
 
-describe('UPSiderbarComponent', () => {
-  let component: UPSidebarComponent;
-  let fixture: ComponentFixture<UPSidebarComponent>;
+describe('UPHeaderComponent', () => {
+  let component: UPHeaderComponent;
+  let fixture: ComponentFixture<UPHeaderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UPSidebarComponent ]
+      declarations: [ UPHeaderComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(UPSidebarComponent);
+    fixture = TestBed.createComponent(UPHeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
