@@ -16,7 +16,6 @@ export class UPRegistroComponent implements OnInit {
 
   public pacienteForm = new FormGroup({
 
-    id: new FormControl <string>(''),
     username:       new FormControl<string>(''),
     // apellido:       new FormControl<string>(''),
     // cuil:           new FormControl<string>(''),
@@ -100,7 +99,7 @@ export class UPRegistroComponent implements OnInit {
       .subscribe (paciente => {
       // this.router.navigate(['home-up/up-perfil/', paciente]);
       // mensaje
-      this.mostrarSnack(`${this.paciente.username} perfil ha sido creado`)
+      this.mostrarSnack(`${this.paciente.username} su perfil ha sido creado`)
 
     });
     console.log(this.pacienteActual)

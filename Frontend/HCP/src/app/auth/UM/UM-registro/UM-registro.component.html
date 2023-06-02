@@ -4,7 +4,7 @@
             <h2>CREAR CUENTA MÉDICO</h2>
             <form 
                 class="needs-validation row g-3 " 
-               
+                [formGroup]="medicoForm"
                 >
                 <div class="col-md-6">
                     <label class="form-label" for="nombre">Nombre: </label>
@@ -116,6 +116,7 @@
 
                 <button mat-raised-button
                         color="primary"
+                        (click)="onSubmit()"
                        
                         >
                         <mat-icon>

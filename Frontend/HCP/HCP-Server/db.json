@@ -1,164 +1,24 @@
 {
   "paciente": [
-    {},
     {
-      "id": "as",
-      "email": "nicolasas@gmail.com",
-      "username": "nicoasdlas",
-      "password": "123asd456645234"
-    },
-    {
-      "id": "6vBjNwK",
-      "username": "",
-      "apellido": "",
-      "cuil": "",
-      "email": "",
-      "password": "",
-      "passwordRepeat": "",
-      "nacimiento": "",
-      "genero": "Masculino",
-      "grupoSanguineo": "A+",
-      "premium": false
-    },
-    {
-      "id": "uPwXEwH",
-      "username": "",
-      "apellido": "",
-      "cuil": "",
-      "email": "",
-      "password": "",
-      "passwordRepeat": "",
-      "nacimiento": "",
-      "genero": "Masculino",
-      "grupoSanguineo": "A+",
-      "premium": false
-    },
-    {
-      "id": "L8e12RR",
-      "username": "",
-      "apellido": "",
-      "cuil": "",
-      "email": "",
-      "password": "",
-      "passwordRepeat": "",
-      "nacimiento": "",
-      "genero": "Masculino",
-      "grupoSanguineo": "A+",
-      "premium": false
-    },
-    {
-      "id": "fQ--VEx",
-      "username": "",
-      "apellido": "",
-      "cuil": "",
-      "email": "",
-      "password": "",
-      "passwordRepeat": "",
-      "nacimiento": "",
-      "genero": "Masculino",
-      "grupoSanguineo": "A+",
-      "premium": false
-    },
-    {
-      "id": "NsEbE95",
-      "username": "",
-      "apellido": "",
-      "cuil": "",
-      "email": "",
-      "password": "",
-      "passwordRepeat": "",
-      "nacimiento": "",
-      "genero": "Masculino",
-      "grupoSanguineo": "A+",
-      "premium": false
-    },
-    {
-      "id": "oC_1bPf",
-      "username": "",
-      "apellido": "",
-      "cuil": "",
-      "email": "",
-      "password": "",
-      "passwordRepeat": "",
-      "nacimiento": "",
-      "genero": "Masculino",
-      "grupoSanguineo": "A+",
-      "premium": false
-    },
-    {
-      "id": "WX3xSR1",
+      "id": 1,
       "username": "nicolas",
-      "email": "nico@gmqil.com",
-      "password": "121412414"
+      "email": "nico@gmail.com",
+      "password": "qeqefqfqefqfe"
     },
     {
-      "id": "FS_WjoE",
+      "id": 2,
       "username": "nicolas",
-      "email": "nico@gmqil.com",
-      "password": "121412414"
-    },
-    {
-      "id": "XN-ina8",
-      "username": "123123",
-      "email": "123123",
-      "password": "123123"
-    },
-    {
-      "id": "MGRMRie",
-      "username": "123123",
-      "email": "123123",
-      "password": "123123"
-    },
-    {
-      "id": "asdasd",
-      "username": "asasd",
-      "email": "asdasd",
-      "password": "asasdas"
-    },
-    {
-      "id": "aasasd",
-      "username": "asdasda",
-      "email": "asdasd",
-      "password": "asdasda"
-    },
-    {
-      "email": "nico@maasil.com",
-      "username": "nicoaassas",
-      "password": "15as2323444",
-      "id": "SQZymDA"
-    },
-    {
-      "id": "qweqwe",
-      "username": "qwqwe",
-      "email": "qweqwe",
-      "password": "qweqwe"
-    },
-    {
-      "id": "iicEQci",
-      "username": "nicolas1",
-      "email": "nico123@gmail.com",
-      "password": "23e1212312312"
-    },
-    {
-      "id": "0ljx6Dv",
-      "username": "nicolas1",
-      "email": "nico123@gmail.com",
-      "password": "23e1212312312"
-    },
-    {
-      "id": "7GtDaWO",
-      "username": "llalla",
-      "email": "lalas@gmail.com",
-      "password": "asasasdasas"
-    },
-    {
-      "id": "9DVSHLM",
-      "username": "llalla",
-      "email": "lalas@gmail.com",
-      "password": "asasasdasas"
+      "email": "nico@gmail.com",
+      "password": "qeqefqfqefqfe"
     }
   ],
-  "medicos": [
-    
+  "medico": [
+    {
+      "username": "mario",
+      "email": "marito@gmail.com",
+      "password": "aecaeccacaaecea",
+      "id": 1
+    }
   ]
 }
