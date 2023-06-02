@@ -10,6 +10,8 @@ export class UPRegistroComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+    
   }
 
 }
