@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Genero, GrupoSanguineo, PacienteRegistro } from 'src/app/users/interfaces/interfaces';
-import { UsersService } from 'src/app/users/service/users.service';
+import { PacienteRegistro } from 'src/app/auth/interfaces/auth';
 import { AuthService } from '../../auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Genero, GrupoSanguineo } from 'src/app/users/interfaces/interfaces';
 
 @Component({
   selector: 'app-UP-registro',
@@ -116,7 +116,7 @@ export class UPRegistroComponent implements OnInit {
 
     this.pacienteServicio.registroPaciente(this.pacienteActual)
       .subscribe (paciente => {
-      // this.router.navigate(['home-up/up-perfil/', paciente]);
+      this.router.navigate(['users/home-up/up-perfil', paciente]);
       // mensaje
       this.mostrarSnack(`${this.pacienteActual.username} su perfil ha sido creado`)
 
