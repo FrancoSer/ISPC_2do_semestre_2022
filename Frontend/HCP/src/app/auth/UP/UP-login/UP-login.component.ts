@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { every } from 'rxjs';
+
+import { AuthService } from '../../auth.service';
+
+import { PacienteLogin } from '../../interfaces/auth';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-UP-login',
@@ -9,32 +13,86 @@ import { every } from 'rxjs';
   styleUrls: ['./UP-login.component.css']
 })
 export class UPLoginComponent implements OnInit {
-  form: FormGroup;
-  constructor(private router: Router,
-    private formBuilder: FormBuilder) {
-    this.form = this.formBuilder.group(
-      {
-        cuil: new FormControl('', [Validators.required, Validators.minLength(10)]),
-        password: new FormControl('', [Validators.required, Validators.minLength(8)])
-      })
+
+ 
+
+  public form = new FormGroup({
+    username: new FormControl<string>('', [Validators.required]),
+    email: new FormControl<string>('', [Validators.required]),
+    password: new FormControl<string>('', [Validators.required])
+  })
+
+  paciente: PacienteLogin = {
+    username: '',
+    email: '',
+    password: ''
   }
-  get cuil() { return this.form.get("cuil"); }
-  get password() { return this.form.get("password"); }
-  ngOnInit() {
+
+  constructor(
+
+    private http: AuthService,
+    private router: Router,
+    private snackBar: MatSnackBar,
+
+    ) 
+    
+    {}
+
+
+  get username() { 
+    return this.form.get("username"); 
+  }
+  get email(){
+    return this.form.get('email');
+  }
+  get password() { 
+    return this.form.get("password"); 
   }
 
-  public iniciarSesion(event: Event) {
-    event.preventDefault;
+get pacienteActual(): PacienteLogin{
+  const paciente = this.form.value as PacienteLogin;
+  return paciente
+}
 
-    if (this.form.valid) {
+  onSubmit(): void{
 
-      this.router.navigate(["users/home-up"]);
-
+    if(!this.pacienteActual){
+      return;
     }
+
+    if(this.form.valid){
+
+      this.http.loginPaciente(this.pacienteActual.username, this.pacienteActual.email, this.pacienteActual.password)
+        .subscribe (resp => {
+        // this.router.navigate(['home-up/up-perfil/', paciente]);
+        // mensaje
+        this.mostrarSnack(`Hola ${this.pacienteActual.username}, te damos nuevamente la bienvenida a HCP`)
+  
+      });
+      console.log(this.pacienteActual)
+      console.log({
+        formIsValid: this.form.valid,
+          valor: this.form.value
+        });
+      } else{
+        this.mostrarSnack(`${this.pacienteActual.username} Los datos ingresados no son válidos`)
+        throw Error('Los datos ingresados no son válidos')
+      }
+
   }
 
-  public registro(){ 
-    this.router.navigate(['auth/registro-up'])
-  }
+  mostrarSnack( mensaje: string ){
+    this.snackBar.open( mensaje, 'cerrar',{
+      duration: 2500,
+    });
+}
 
+public registro() {
+  this.router.navigate(['auth/registro-up']);
+}
+
+
+ngOnInit() {
+  
+}
 }

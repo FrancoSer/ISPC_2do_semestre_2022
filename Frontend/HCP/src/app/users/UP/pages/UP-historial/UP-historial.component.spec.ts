@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { UPPerfilComponent } from './UP-perfil.component';
+import { UPHistorialComponent } from './UP-historial.component';
 
-describe('UPPerfilComponent', () => {
-  let component: UPPerfilComponent;
-  let fixture: ComponentFixture<UPPerfilComponent>;
+describe('UPHistorialComponent', () => {
+  let component: UPHistorialComponent;
+  let fixture: ComponentFixture<UPHistorialComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UPPerfilComponent ]
+      declarations: [ UPHistorialComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UPPerfilComponent);
+    fixture = TestBed.createComponent(UPHistorialComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
