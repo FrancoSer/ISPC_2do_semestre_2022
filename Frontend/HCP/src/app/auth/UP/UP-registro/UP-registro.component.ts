@@ -116,7 +116,7 @@ export class UPRegistroComponent implements OnInit {
 
     this.pacienteServicio.registroPaciente(this.pacienteActual)
       .subscribe (paciente => {
-      this.router.navigate(['users/home-up/up-perfil', paciente]);
+      this.router.navigate(['auth/login-up', paciente]);
       // mensaje
       this.mostrarSnack(`${this.pacienteActual.username} su perfil ha sido creado`)
 
