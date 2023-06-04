@@ -67,8 +67,12 @@ get pacienteActual(): PacienteLogin{
         this.router.navigate(['users/home-up/up-perfil']);
         // mensaje
         this.mostrarSnack(`Hola ${this.pacienteActual.username}, te damos nuevamente la bienvenida a HCP`)
-  
-      });
+       
+      }, error => {
+        this.mostrarSnack('Los datos ingresados no corresponden a un usuario registrado')
+      }
+      
+      );
       console.log(this.pacienteActual)
       console.log({
         formIsValid: this.form.valid,
