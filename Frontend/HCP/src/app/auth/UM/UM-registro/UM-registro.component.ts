@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Medico, MedicoRegistro } from 'src/app/users/interfaces/interfaces';
+import { MedicoRegistro } from 'src/app/auth/interfaces/auth';
 import { AuthService } from '../../auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -80,7 +80,7 @@ export class UMRegistroComponent implements OnInit {
     if(this.medicoForm.valid){
     this.medicoServicio.registroMedico(this.medicoActual)
       .subscribe (medico => {
-      // this.router.navigate(['home-up/up-perfil/', paciente]);
+        this.router.navigate(['users/home-um/um-historial', medico]);
       // mensaje
       this.mostrarSnack(`${this.medicoActual.username} su perfil ha sido creado con éxito`)
 
@@ -99,7 +99,7 @@ export class UMRegistroComponent implements OnInit {
 
   
   mostrarSnack( mensaje: string ){
-    this.snackBar.open( mensaje, 'data',{
+    this.snackBar.open( mensaje, 'cerrar',{
       duration: 2500,
     });
 }

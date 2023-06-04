@@ -1,5 +1,3 @@
-import { Type } from "@angular/compiler";
-
 export interface HistoriaClinica {
 
     id: string;
@@ -49,22 +47,6 @@ export interface Paciente {
 
 }
 
-export interface PacienteRegistro {
-
-    id?: string,
-    username: string,
-    apellido?: string,
-    cuil?: string,
-    email: string,
-    password: string,
-    passwordRepeat?: string,
-    nacimiento?: string,
-    genero?: Genero.masculino,
-    grupoSanguineo?: GrupoSanguineo.Apositivo,
-    premium?: boolean
-
-}
-
 export type Premium = {
 
     id: string;
@@ -85,20 +67,6 @@ export interface Medico {
     direccion: string;
     email: string;
     genero: Genero;
-
-}
-
-export interface MedicoRegistro {
-
-    id?: string,
-    username: string,
-    apellido?: string,
-    matricula?: string,
-    email: string,
-    password: string,
-    passwordRepeat?: string,
-    nacimiento?: string,
-    genero?: Genero.masculino,
 
 }
 
