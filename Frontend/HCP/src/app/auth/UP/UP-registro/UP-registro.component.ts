@@ -5,7 +5,7 @@ import { AuthService } from '../../auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Genero, GrupoSanguineo } from 'src/app/users/interfaces/interfaces';
+import { Genero, GrupoSanguineo, Paciente } from 'src/app/users/interfaces/interfaces';
 
 @Component({
   selector: 'app-UP-registro',
@@ -20,12 +20,13 @@ export class UPRegistroComponent implements OnInit {
 
   public pacienteForm = new FormGroup({
 
-    username:          new FormControl<string>('', [Validators.required]),
+
     // apellido:       new FormControl<string>(''),
     // cuil:           new FormControl<string>(''),
     // apellido:       new FormControl<string>(''),
     // cuil:           new FormControl<string>(''),
     email:             new FormControl<string>('', [Validators.required, Validators.email]),
+    username:          new FormControl<string>('', [Validators.required]),
     password:          new FormControl<string>('', [Validators.required, Validators.maxLength(this.maxChars), Validators.minLength(this.minChars)]),
     // passwordRepet:  new FormControl<string>(''),
     // nacimiento:     new FormControl<string>(''),
@@ -115,8 +116,8 @@ export class UPRegistroComponent implements OnInit {
     if(this.pacienteForm.valid){
 
     this.pacienteServicio.registroPaciente(this.pacienteActual)
-      .subscribe (paciente => {
-      this.router.navigate(['users/home-up/up-perfil', paciente]);
+      .subscribe (() => {
+      this.router.navigate(['users/home-up/up-perfil']);
       // mensaje
       this.mostrarSnack(`${this.pacienteActual.username} su perfil ha sido creado`)
 

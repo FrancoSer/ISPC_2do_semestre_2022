@@ -14,7 +14,7 @@ export class UsersService {
 constructor( private http: HttpClient) { }
 
 getPaciente(): Observable<Paciente[]>{
-  return this.http.get<Paciente[]>(`${this.baseUrl}/paciente`)
+  return this.http.get<Paciente[]>(`${this.baseUrl}`)
 }
 
 }

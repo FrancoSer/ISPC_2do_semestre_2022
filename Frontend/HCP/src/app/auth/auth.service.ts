@@ -15,6 +15,7 @@ private baseUrl = environment.baseUrl
 constructor(private http: HttpClient) { }
 
 registroPaciente(paciente: PacienteRegistro): Observable<Paciente>{
+  console.log(`este es el error ${(paciente)}`)
   return this.http.post<Paciente>(`${this.baseUrl}/api/auth/signup/`, paciente)
 
 }
@@ -24,10 +25,9 @@ registroMedico(medico: MedicoRegistro): Observable<Medico>{
 
 }
 
-loginPaciente(username: string,email: string, password: string){
+loginPaciente(email: string, password: string){
 
   const body = {
-    username: username,
     email: email,
     password: password
   }
