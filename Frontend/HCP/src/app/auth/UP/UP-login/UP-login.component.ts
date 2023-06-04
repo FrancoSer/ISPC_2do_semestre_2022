@@ -64,7 +64,7 @@ get pacienteActual(): PacienteLogin{
 
       this.http.loginPaciente(this.pacienteActual.username, this.pacienteActual.email, this.pacienteActual.password)
         .subscribe (resp => {
-        // this.router.navigate(['home-up/up-perfil/', paciente]);
+        this.router.navigate(['users/home-up/up-perfil']);
         // mensaje
         this.mostrarSnack(`Hola ${this.pacienteActual.username}, te damos nuevamente la bienvenida a HCP`)
   
@@ -83,7 +83,7 @@ get pacienteActual(): PacienteLogin{
 
   mostrarSnack( mensaje: string ){
     this.snackBar.open( mensaje, 'cerrar',{
-      duration: 2500,
+      duration: 12500,
     });
 }
 
