@@ -62,7 +62,7 @@ get medicoActual(): MedicoLogin{
 
     if(this.form.valid){
 
-      this.http.loginPaciente(this.medicoActual.username, this.medicoActual.email, this.medicoActual.password)
+      this.http.loginPaciente(this.medicoActual.email, this.medicoActual.password)
         .subscribe (resp => {
         // this.router.navigate(['home-up/up-perfil/', paciente]);
         // mensaje

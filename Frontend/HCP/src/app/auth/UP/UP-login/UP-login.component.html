@@ -58,7 +58,7 @@
         <div class="col-md-12">
           <label class="form-label" for="password">Contraseña: </label>
           <input class=" form-control atributos" type="password" name="password" formControlName="password"
-            minlength="9" maxlength="25" placeholder="Ingrese su contraseña"
+            placeholder="Ingrese su contraseña"
             [ngClass]="{'is-invalid':password?.errors && password?.touched  , 'is-valid':!password?.errors && password?.touched}"
             required>
 
