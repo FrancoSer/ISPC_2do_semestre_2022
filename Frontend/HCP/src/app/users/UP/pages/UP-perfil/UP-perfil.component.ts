@@ -18,16 +18,18 @@ export class UPPerfilComponent implements OnInit {
 
   constructor(private pacienteService: UsersService) { }
 
+  // TODO
+  
   ngOnInit() {
-    this.pacienteService.getPaciente()
-      .pipe(
-        delay(2000)
-      )
-      .subscribe(pacientes => {
-        this.pacientes = pacientes;
-        this.pacienteSeleccionado = pacientes[1];
-        this.historiaClinica = this.pacienteSeleccionado.historia_clinica;
-      });
+    // this.pacienteService.getPaciente()
+    //   .pipe(
+    //     delay(2000)
+    //   )
+    //   .subscribe(pacientes => {
+    //     this.pacientes = pacientes;
+    //     this.pacienteSeleccionado = pacientes[1];
+    //     this.historiaClinica = this.pacienteSeleccionado.historia_clinica;
+    //   });
   }
 
 
