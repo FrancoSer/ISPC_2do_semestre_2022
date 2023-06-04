@@ -138,7 +138,7 @@ export class UPRegistroComponent implements OnInit {
   
   mostrarSnack( mensaje: string ){
     this.snackBar.open( mensaje, 'cerrar',{
-      duration: 2500,
+      duration: 12500,
     });
 }
 
