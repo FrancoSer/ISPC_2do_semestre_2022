@@ -1,74 +1,144 @@
 <section>
-    <div class="register-box">
-        <h2>CREAR CUENTA MEDICA</h2>
-        <form class="needs-validation row g-3 " name='formulario' id='formulario' novalidate>
-            <div class="col-md-6">
-                <label class="form-label" for="nombre">Nombre: </label>
-                <input class="form-control atributos" type="text" name="nombre" id="nombre" maxlength="60"
-                    placeholder="Ingrese su nombre" required autofocus>
-            </div>
-            <div class="col-md-6">
-                <label class="form-label" for="apellido">Apellido: </label>
-                <input class="form-control atributos" type="text" name="apellido" id="apellido" maxlength="55"
-                    placeholder="Ingrese su apellido" required>
-            </div>
-            <div class="col-md-6">
-                <label class="form-label" for="cuil">Matrícula: </label>
-                <input class="form-control atributos" type="number" name="matricula" id="matricula" min="10000000000"
-                    max="99999999999" placeholder="Ingrese matrícula sin puntos ni diagonales" required>
-                <div class="invalid-feedback">
-                    Ingrese un nro. de matrícula válido.
+    <div class="container">
+        <div class="register-box">
+            <h2>CREAR CUENTA MÉDICO</h2>
+            <form 
+                class="needs-validation row g-3 " 
+                [formGroup]="medicoForm"
+                (ngSubmit)="onSubmit()"
+                >
+                <div class="col-md-6">
+                    <label class="form-label" for="nombre">Nombre: </label>
+                    <input 
+                        class="form-control atributos" 
+                        type="text" 
+                        formControlName="username"
+    
+                        placeholder="Ingrese su nombre" 
+                        required 
+                        autofocus
+                        [ngClass]="{'is-invalid':username?.errors && username?.touched  , 'is-valid':!username?.errors && username?.touched}">
+                        <div *ngIf="username?.hasError('required')" class="invalid-feedback">Ingrese su nombre</div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <label class="form-label" for="email">Correo electronico: </label>
-                <input class="form-control atributos" type="email" name="email" id="email"
-                    placeholder="Ingrese su correo electronico" required>
-                <div class="invalid-feedback">
-                    Ingrese un email válido
+               
+                <!-- <label for="">id
+                    <input type="text"
+                    formControlName="id">
+                </label> -->
+                <div class="col-md-6">
+                    <label class="form-label" for="apellido">Apellido: </label>
+                    <input class="form-control atributos" type="text" pattern="[A-Za-z]{2-60}" name="apellido"
+                        id="apellido" placeholder="Ingrese su apellido" required>
+                    <div class="invalid-feedback">
+                        Ingrese un apellido.
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <label class="form-label" for=" contraseña">Crea tu contraseña: </label>
-                <input class=" form-control atributos" type="password" name="crearContrasena" id="crearContrasena"
-                    minlength="8" maxlength="25" placeholder="Ingrese su contraseña" required>
-                <div class="invalid-feedback">
-                    La contraseña debe tener una longitud mínima de 8 caracteres.
+                <div class="col-md-6">
+                    <label class="form-label" for="cuil">MATRÍCULA: </label>
+                    <input class="form-control atributos" type="number"  min="10000000000"
+                        max="99999999999" placeholder="Ingrese CUIL sin guiones ni puntos" required>
+                    <div class="invalid-feedback">
+                        Ingrese un CUIL válido.
+                    </div>
+                </div> 
+                <div class="col-md-6">
+                    <label class="form-label" for="email">Email: </label>
+                    <input 
+                        class="form-control atributos" 
+                        type="email" 
+                        formControlName="email"
+                        placeholder="Ingrese su correo electrónico" 
+                        required
+                        [ngClass]="{'is-invalid':email?.errors && email?.touched  , 'is-valid':!email?.errors && email?.touched}">
+                        
+                        <div *ngIf="email?.hasError('required')" class="invalid-feedback">Ingrese su email</div>
+                        <div *ngIf="email?.hasError('email')" class="invalid-feedback">Ingrese un email válido</div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <label class="form-label" for="contraseña">Confirma tu contraseña: </label>
-                <input class=" form-control atributos" type="password" name="confirmarContrasena"
-                    id="confirmarContrasena" minlength="8" maxlength="25" placeholder="Ingrese nuevamente la contraseña"
-                    required>
-                <div class="invalid-feedback">
-                    Las contraseñas no coinciden
+                <div class="col-md-6">
+                    <label class="form-label">Crea tu contraseña: </label>
+                    <input 
+                        class="form-control atributos" 
+                        type="password" 
+                       
+                        formControlName="password"
+                        placeholder="Ingrese su contraseña"
+                        required
+                        [ngClass]="{'is-invalid':password?.errors && password?.touched  , 'is-valid':!password?.errors && password?.touched}">
+                        <div *ngIf="password?.hasError('required')" class="invalid-feedback">Ingrese su contraseña</div>
+                        <div *ngIf="password?.hasError('maxlength')" class="invalid-feedback">La contraseña no puede ser mayor
+                            a {{maxChars}} caracteres
+                        </div>
+                        <div *ngIf="password?.hasError('minlength')" class="invalid-feedback">La contraseña no puede ser menor
+                            a {{minChars}} caracteres
+                        </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <label class="form-label" for="nacimiento">Fecha de nacimiento: </label>
-                <input class=" form-control atributos" type="date" name="nacimiento" id="nacimiento" min="1907-01-01"
-                    max="2022-12-31" required>
-                <div class="invalid-feedback">
-                    Ingrese una fecha de nacimiento válida
+                 <div class="col-md-6">
+                    <label class="form-label" for="confirmarContrasenaPaciente">Confirma tu contraseña: </label>
+                    <input class="form-control atributos" type="password" name="confirmarContrasenaPaciente"
+                        id="confirmarContrasenaPaciente" minlength="8" maxlength="25"
+                        placeholder="Ingrese nuevamente la contraseña" required>
+                    <div class="invalid-feedback">
+                        Las contraseñas no coinciden.
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <label class="form-label atributos" for="sexo">Sexo</label>
-                <select class="atributos" name="sexo" id="sexo" required>
-                    <option selected disabled value="">Seleccione su sexo</option>
-                    <option value="mujer">Mujer</option>
-                    <option value="masculino">Hombre</option>
-                    <option value="otro">Otro</option>
-                </select>
-                <div class="invalid-feedback">
-                    Selecciona un sexo válido
+                <div class="col-md-4">
+                    <label class="form-label" for="nacimiento">Fecha de nacimiento: </label>
+                    <input class="form-control atributos" type="date" name="nacimiento" id="nacimiento" min="1907-01-01"
+                        max="2022-12-31" required>
+                    <div class="invalid-feedback">
+                        Ingrese una fecha de nacimiento válida.
+                    </div>
                 </div>
-            </div>
-            <input id="botonEnviar" type="submit" value="Crear cuenta" onclick="comprobarContrasena()">
-            <a class="text-center" href="inicio-sesionm.html">¿Ya tienes una cuenta? Click aquí</a>
-        </form>
+                <div class="col-md-4">
+                    <label class="form-label" for="sexo">Sexo</label>
+                    <select class="atributos" name="sexo" id="sexo" required>
+                        <option selected disabled value="">Seleccione su sexo</option>
+                        <option value="mujer">Mujer</option>
+                        <option value="masculino">Hombre</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Selecciona su sexo.
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label" for="sangre">Grupo sanguineo</label>
+                    <select class="atributos" name="sangre" id="sangre" required>
+                        <option selected disabled value="">Seleccione grupo sanguineo</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="0+">0+</option>
+                        <option value="0-">0-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Selecciona un grupo sanguineo.
+                    </div>
+                </div> 
 
-        <!-- TODO formulario -->
-    </div>
-</section>
+                <button mat-raised-button
+                        color="primary"
+                        (click)="onSubmit()"
+                       
+                        >
+                        <mat-icon>
+                           send
+                        </mat-icon>
+                    
+                    </button>
+            </form>
+                <div class="button">
+                        <button
+                    
+                        mat-button color="succes"
+                        routerLink="/auth/login-um"
+                    >
+                        ¿Ya tienes una cuenta? Click aquí
+                </button>
+                     </div>           
+               
+
+                <!-- TODO formulario -->

@@ -7,6 +7,7 @@ import { UMRegistroComponent } from './UM/UM-registro/UM-registro.component';
 import { UPRegistroComponent } from './UP/UP-registro/UP-registro.component';
 import { AuthRoutingModule } from './auth-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from '../material/material.module';
 
 
 @NgModule({
@@ -15,14 +16,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     UMRegistroComponent,
     UPLoginComponent,
     UPRegistroComponent
-  
-
   ],
   imports: [
     CommonModule,
     AuthRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    MaterialModule
     
   ]
 })
