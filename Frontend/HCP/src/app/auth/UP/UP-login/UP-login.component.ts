@@ -64,16 +64,18 @@ get pacienteActual(): PacienteLogin{
 
       this.http.loginPaciente( this.pacienteActual.email, this.pacienteActual.password)
         .subscribe (resp => {
+          console.log(resp)
+          this.paciente = resp as PacienteLogin
         this.router.navigate(['users/home-up/up-perfil']);
         // mensaje
-        this.mostrarSnack(`Hola ${this.pacienteActual.username}, te damos nuevamente la bienvenida a HCP`)
+        this.mostrarSnack(`Hola ${this.paciente.username}, te damos nuevamente la bienvenida a HCP`)
        
       }, error => {
         this.mostrarSnack('Los datos ingresados no corresponden a un usuario registrado')
       }
       
       );
-      console.log(this.pacienteActual)
+      
       console.log({
         formIsValid: this.form.valid,
           valor: this.form.value
