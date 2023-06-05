@@ -19,7 +19,7 @@ import { UPPerfilComponent } from './UP/pages/UP-perfil/UP-perfil.component';
 import { PremiumPipe } from './premium.pipe';
 import { GeneroPipe } from './UP/pipes/genero.pipe';
 import { UPWelcomeComponent } from './UP/components/UP-welcome/UP-welcome.component';
-import { UPSobrenosotrosComponent } from './UP/pages/up-sobrenosotros/up-sobrenosotros.component';
+import { UPSobrenosotrosComponent } from './UP/pages/UP-sobrenosotros/up-sobrenosotros.component';
 
 @NgModule({
   declarations: [

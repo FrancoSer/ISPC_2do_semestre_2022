@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PremiumPipe } from './premium.pipe';
 import { UPWelcomeComponent } from './UP/components/UP-welcome/UP-welcome.component';
 import { UPHistorialComponent } from './UP/pages/UP-historial/UP-historial.component';
+import { UPSobrenosotrosComponent } from './UP/pages/UP-sobrenosotros/up-sobrenosotros.component';
 
 const routes: Routes = [
 
@@ -35,6 +36,10 @@ const routes: Routes = [
       {
         path: 'up-perfil',
         component: UPPerfilComponent
+      },
+      {
+        path: 'up-sobrenosotros',
+        component: UPSobrenosotrosComponent
       }
     ]
   },

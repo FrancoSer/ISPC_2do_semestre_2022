@@ -2,50 +2,37 @@
 
 <div class="container">
 
-  <mat-card class="card"  
-    fxLayout="column" 
-    fxLayoutAlign="top center" 
-    fxFlex="70% "
-    fxFlex.sm="100%">
-
-      <mat-card-header 
-        class="header" 
+  <div class="card-group">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <button type="button" class="btn btn-outline-primary">Primary</button>
+      </div>
+    </div>
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+        <button type="button" class="btn btn-outline-primary">Primary</button>
+      </div>
+    </div>
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
         
-        >
-        <mat-card-title 
-          class="title"
+        <form action="http://localhost:3000/checkout" method="POST">
+          <input type="hidden"name="title" value="Premium por 30 dias">
+          <input type="hidden"name="price" value="2500">
+          <input type="submit" class="btn btn-outline-primary" value="Obtener prueba gratis">
           
-          >
-          Hacete premium
         
-        </mat-card-title>
-        
-        <mat-card-subtitle class="subtitle">
-          Conseguí hoy mismo una suscripción</mat-card-subtitle>
-      </mat-card-header>
-      <mat-divider></mat-divider>
-      <!-- <img src="/assets/carpet.svg" class="img" alt="icon-carptet"> -->
-  <mat-card-content class="content"
-    fxLayout="colum" 
-    fxLayoutAlign="center" 
-    fxFlex="80%"
-    fxFlex.sm="20%">
-
-    <span class="span"
-   
-    >
-    Cargá imágenes y archivos de tus consultas
-    </span>
-    <mat-icon>cloud_upload</mat-icon>
-
-    
-  </mat-card-content>
-  <mat-card-footer class="footer">
-<button 
-  mat-button color="primary"
-  >
-  
-  Plan Premium</button>
-  </mat-card-footer>
-</mat-card>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
