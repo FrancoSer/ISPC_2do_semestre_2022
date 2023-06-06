@@ -2,7 +2,7 @@ from django.urls import path, include
 # from .views import LoginView
 from . import views
 from rest_framework import routers
-from .views import PacienteSignupView, MedicoSignupView
+from .views import PacienteSignupView, MedicoSignupView, LogoutView
 from .views import PacienteLoginView, MedicoLoginView
 
 router=routers.DefaultRouter()
@@ -13,5 +13,7 @@ urlpatterns = [
     path('paciente/login/', PacienteLoginView.as_view(), name='paciente_login'),
     path('medico/signup/', MedicoSignupView.as_view(), name='medico_signup'),
     path('medico/login/', MedicoLoginView.as_view(), name='medico_login'),
+    path('paciente/logout/', LogoutView.as_view(), name='paciente_logout'),
+    path('medico/logout/', LogoutView.as_view(), name='medico_logout'),
     path('',include(router.urls)),
 ]
