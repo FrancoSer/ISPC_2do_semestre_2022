@@ -10,7 +10,7 @@ mercadopago.configure({
 app.use(bodyParser.urlencoded({ extended: false}))
 
 //routes
-app.get('/checkout', (req, res) => {
+app.post('/checkout', (req, res) => {
     
 // Crea un objeto de preferencia
 let preference = {
