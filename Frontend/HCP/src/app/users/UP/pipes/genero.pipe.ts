@@ -1,26 +1,29 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { Genero } from '../../interfaces/interfaces';
-import { Paciente } from '../../interfaces/interfaces';
 
-
-@Pipe({
+@Pipe( {
   name: 'genero'
-})
-export class GeneroPipe implements PipeTransform {
+} )
+export class GeneroPipe implements PipeTransform
+{
 
 
 
-  transform(valor: Genero): string {
+  transform ( valor: Genero ): string
+  {
 
-    if (valor === 'Masculino') {
+    if ( valor === 'Masculino' )
+    {
       return 'Bienvenido';
     }
-    else if (valor === 'Femenino') {
+    else if ( valor === 'Femenino' )
+    {
       return 'Bienvenida';
     }
-    else if (valor === 'No binario') {
+    else
+    {
       return 'Bienvenide';
-    } return 'nada';
+    }
   }
 
 }

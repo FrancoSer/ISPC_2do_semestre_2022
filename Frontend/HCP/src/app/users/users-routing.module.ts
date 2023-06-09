@@ -8,7 +8,6 @@ import { UMHomeComponent } from './UM/pages/home/UM-home.component';
 import { PlanPremiumComponent } from './UP/shop/plan-premium/plan-premium.component';
 import { UPPerfilComponent } from './UP/pages/UP-perfil/UP-perfil.component';
 import { HttpClientModule } from '@angular/common/http';
-import { PremiumPipe } from './premium.pipe';
 import { UPWelcomeComponent } from './UP/components/UP-welcome/UP-welcome.component';
 import { UPHistorialComponent } from './UP/pages/UP-historial/UP-historial.component';
 
@@ -49,14 +48,14 @@ const routes: Routes = [
 
 ];
 
-@NgModule({
+@NgModule( {
   imports: [
-    RouterModule.forChild(routes),
+    RouterModule.forChild( routes ),
     HttpClientModule
   ],
-  exports: [RouterModule],
+  exports: [ RouterModule ],
   declarations: [
 
   ]
-})
+} )
 export class UsersRoutingModule { }

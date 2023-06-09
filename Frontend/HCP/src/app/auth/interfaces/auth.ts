@@ -1,28 +1,32 @@
 import { Genero, GrupoSanguineo } from "src/app/users/interfaces/interfaces";
 
-export interface PacienteRegistro {
+export interface PacienteRegistro
+{
 
-    id?: string,
-    username: string,
-    apellido?: string,
-    cuil?: string,
-    email: string,
+    cuil: string,
+    nacimiento_p: string,
+    nombre_p: string,
+    apellido_p: string,
+    telefono_p: string,
+    direccion_p: string,
+    mail_p: string,
+    genero_p: Genero,
+    sangre: GrupoSanguineo,
     password: string,
-    passwordRepeat?: string,
-    nacimiento?: string,
-    genero?: Genero.masculino,
-    grupoSanguineo?: GrupoSanguineo.Apositivo,
-    premium?: boolean
+    passwordRepeat: string,
+    premium: boolean;
 
 }
 
-export interface PacienteLogin{
+export interface PacienteLogin
+{
     username: string,
     email: string,
-    password: string
+    password: string;
 }
 
-export interface MedicoRegistro {
+export interface MedicoRegistro
+{
 
     id?: string,
     username: string,
@@ -36,9 +40,10 @@ export interface MedicoRegistro {
 
 }
 
-export interface MedicoLogin{
+export interface MedicoLogin
+{
     username: string,
     email: string,
-    password: string
+    password: string;
 }
 
