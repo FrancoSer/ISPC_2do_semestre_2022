@@ -17,8 +17,12 @@ export class AuthService
 
   registroPaciente ( paciente: PacienteRegistro ): Observable<Paciente>
   {
+<<<<<<< HEAD
     console.log( `este es el error ${ ( paciente ) }` );
     return this.http.post<Paciente>( `${ this.baseUrl }/api/auth/signup/`, paciente );
+=======
+    return this.http.post<Paciente>( `${ this.baseUrl }/api/paciente/signup/`, paciente );
+>>>>>>> f90cf24c17c15b1bbaea4072f8a4e9c3f24f6f2f
 
   }
 

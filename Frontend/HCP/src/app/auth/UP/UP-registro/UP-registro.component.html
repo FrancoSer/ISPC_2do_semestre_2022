@@ -5,106 +5,137 @@
             <form 
                 class="needs-validation row g-3 " 
                 [formGroup]="pacienteForm"
-                (ngSubmit)="onSubmit()"
+                
                 >
+                <!-- NOMBRE -->
                 <div class="col-md-6">
-                    <label class="form-label" for="nombre">Nombre: </label>
+                    <label class="form-label">Nombre: </label>
                     <input 
                         class="form-control atributos" 
                         type="text" 
-                        formControlName="username"
+                        formControlName="nombre_p"
                         placeholder="Ingrese su nombre" 
                         required 
                         autofocus
-                        [ngClass]="{'is-invalid':username?.errors && username?.touched  , 'is-valid':!username?.errors && username?.touched}">
-                        <div *ngIf="username?.hasError('required')" class="invalid-feedback">Ingrese su nombre</div>
+                        [ngClass]="{'is-invalid':nombre_p?.errors && nombre_p?.touched  , 'is-valid':!nombre_p?.errors && nombre_p?.touched}">
+                        <div *ngIf="nombre_p?.hasError('required')" class="invalid-feedback">Ingrese su nombre</div>
                   
                 </div>
-                <!-- <label for="">id
-                    <input type="text"
-                    formControlName="id">
-                </label> -->
+                <!-- APELLIDO -->
                  <div class="col-md-6">
-                    <label class="form-label" for="apellido">Apellido: </label>
-                    <input class="form-control atributos" type="text" pattern="[A-Za-z]{2-60}" name="apellido"
-                        id="apellido" placeholder="Ingrese su apellido" required>
-                    <div class="invalid-feedback">
-                        Ingrese un apellido.
-                    </div>
+                    <label class="form-label">Apellido: </label>
+                    <input 
+                        class="form-control atributos" 
+                        type="text"
+                        placeholder="Ingrese su apellido" 
+                        formControlName="apellido_p"
+                        required
+                        [ngClass]="{'is-invalid':apellido_p?.errors && apellido_p?.touched  , 'is-valid':!apellido_p?.errors && apellido_p?.touched}">
+                        <div *ngIf="apellido_p?.hasError('required')" class="invalid-feedback">Ingrese su apellido</div>
                 </div>
+                <!-- CUIL -->
                 <div class="col-md-6">
-                    <label class="form-label" for="cuil">CUIL: </label>
-                    <input class="form-control atributos" type="number" name="cuil" id="cuil" min="10000000000"
-                        max="99999999999" placeholder="Ingrese CUIL sin guiones ni puntos" required>
-                    <div class="invalid-feedback">
-                        Ingrese un CUIL válido.
-                    </div>
+                    <label class="form-label">CUIL: </label>
+                    <input 
+                        class="form-control atributos" 
+                        type="number"
+                        placeholder="Ingrese CUIL sin guiones ni puntos" 
+                        formControlName="cuil"
+                        required
+                        [ngClass]="{'is-invalid':cuil?.errors && cuil?.touched  , 'is-valid':!cuil?.errors && cuil?.touched}">
+                        <div *ngIf="cuil?.hasError('required')" class="invalid-feedback">Ingrese su CUIL</div>
+                        <div *ngIf="cuil?.hasError('cuil')" class="invalid-feedback">Ingrese un CUIL válido</div>
+                  
                 </div> 
                 <div class="col-md-6">
-                    <label class="form-label" for="email">Email: </label>
+                    <label class="form-label">Email: </label>
                     <input 
                         class="form-control atributos" 
                         type="email" 
-                        formControlName="email"
+                        formControlName="mail_p"
                         placeholder="Ingrese su correo electrónico" 
                         required
-                        [ngClass]="{'is-invalid':email?.errors && email?.touched  , 'is-valid':!email?.errors && email?.touched}">
+                        [ngClass]="{'is-invalid':mail_p?.errors && mail_p?.touched  , 'is-valid':!mail_p?.errors && mail_p?.touched}">
                         
-                        <div *ngIf="email?.hasError('required')" class="invalid-feedback">Ingrese su email</div>
-                        <div *ngIf="email?.hasError('email')" class="invalid-feedback">Ingrese un email válido</div>
+                        <div *ngIf="mail_p?.hasError('required')" class="invalid-feedback">Ingrese su email</div>
+                        <div *ngIf="mail_p?.hasError('email')" class="invalid-feedback">Ingrese un email válido</div>
                    
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Teléfono: </label>
+                    <input 
+                        class="form-control atributos" 
+                        type="number" 
+                        formControlName="telefono_p"
+                        placeholder="Ingrese su teléfono"
+                        formControlName="telefono_p" >
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Dirección: </label>
+                    <input 
+                        class="form-control atributos" 
+                        type="text" 
+                        formControlName="direccion_p"
+                        placeholder="Ingrese su dirección"
+                        >
                 </div>
                 <div class="col-md-6">
                     <label class="form-label">Crea tu contraseña: </label>
                     <input 
                         class="form-control atributos" 
                         type="password" 
-                        minlength="8" maxlength="25" 
-                        formControlName="password"
+                        
+                        formControlName="password_p"
                         placeholder="Ingrese su contraseña"
                         required
-                        [ngClass]="{'is-invalid':password?.errors && password?.touched  , 'is-valid':!password?.errors && password?.touched}">
-                        <div *ngIf="password?.hasError('required')" class="invalid-feedback">Ingrese su contraseña</div>
-                        <div *ngIf="password?.hasError('maxlength')" class="invalid-feedback">La contraseña no puede ser mayor
+                        [ngClass]="{'is-invalid':password_p?.errors && password_p?.touched  , 'is-valid':!password_p?.errors && password_p?.touched}">
+                        <div *ngIf="password_p?.hasError('required')" class="invalid-feedback">Ingrese su contraseña</div>
+                        <div *ngIf="password_p?.hasError('maxlength')" class="invalid-feedback">La contraseña no puede ser mayor
                             a {{maxChars}} caracteres
                         </div>
-                        <div *ngIf="password?.hasError('minlength')" class="invalid-feedback">La contraseña no puede ser menor
+                        <div *ngIf="password_p?.hasError('minlength')" class="invalid-feedback">La contraseña no puede ser menor
                             a {{minChars}} caracteres
                         </div>
                    
                 </div>
                  <div class="col-md-6">
-                    <label class="form-label" for="confirmarContrasenaPaciente">Confirma tu contraseña: </label>
-                    <input class="form-control atributos" type="password" name="confirmarContrasenaPaciente"
-                        id="confirmarContrasenaPaciente" minlength="8" maxlength="25"
-                        placeholder="Ingrese nuevamente la contraseña" required>
-                    <div class="invalid-feedback">
-                        Las contraseñas no coinciden.
-                    </div>
+                    <label class="form-label">Confirma tu contraseña: </label>
+                    <input class="form-control atributos" 
+                           type="password"
+                           placeholder="Ingrese nuevamente la contraseña" 
+                           formControlName="password_p_repeat"
+                           required>
+                           <div *ngIf="password_p_repeat !== password_p" class="invalid-feedback">Las contraseñas no coinciden</div>
                 </div>
                 <div class="col-md-4">
                     <label class="form-label" for="nacimiento">Fecha de nacimiento: </label>
-                    <input class="form-control atributos" type="date" name="nacimiento" id="nacimiento" min="1907-01-01"
-                        max="2022-12-31" required>
-                    <div class="invalid-feedback">
-                        Ingrese una fecha de nacimiento válida.
-                    </div>
+                    <input 
+                    class="form-control atributos" 
+                    type="date"
+                    formControlName="nacimiento_p"
+                    required>
+                    <div *ngIf="nacimiento_p?.hasError('required')" class="invalid-feedback">Ingrese su fecha de nacimiento</div>
+        
                 </div>
                 <div class="col-md-4">
-                    <label class="form-label" for="sexo">Sexo</label>
-                    <select class="atributos" name="sexo" id="sexo" required>
-                        <option selected disabled value="">Seleccione su sexo</option>
-                        <option value="mujer">Mujer</option>
-                        <option value="masculino">Hombre</option>
-                        <option value="otro">Otro</option>
+                    <label class="form-label" for="sexo">Género</label>
+                    <select 
+                    class="atributos"
+                    formControlName="genero_p"
+                     >
+                        <option selected disabled value="">Seleccione su género</option>
+                        <option value="Femenino">Femenino</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="x">X</option>
                     </select>
-                    <div class="invalid-feedback">
-                        Selecciona su sexo.
-                    </div>
+        
                 </div>
                 <div class="col-md-4">
                     <label class="form-label" for="sangre">Grupo sanguineo</label>
-                    <select class="atributos" name="sangre" id="sangre" required>
+                    <select 
+                        class="atributos" 
+                        formControlName="sangre" 
+                        required>
                         <option selected disabled value="">Seleccione grupo sanguineo</option>
                         <option value="A+">A+</option>
                         <option value="A-">A-</option>
@@ -115,9 +146,6 @@
                         <option value="AB+">AB+</option>
                         <option value="AB-">AB-</option>
                     </select>
-                    <div class="invalid-feedback">
-                        Selecciona un grupo sanguineo.
-                    </div>
                 </div>
 
                 <button mat-raised-button
@@ -138,5 +166,3 @@
                     ¿Ya tienes una cuenta? Click aquí
                 </button>
             </div> 
-
-                <!-- TODO formulario -->

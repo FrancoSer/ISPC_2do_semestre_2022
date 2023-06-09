@@ -1,4 +1,5 @@
-export interface HistoriaClinica {
+export interface HistoriaClinica
+{
 
     id: string;
     fecha?: string;
@@ -18,7 +19,8 @@ export interface HistoriaClinica {
 
 }
 
-export interface Factura {
+export interface Factura
+{
 
     id: string;
     total: number;
@@ -28,7 +30,8 @@ export interface Factura {
 
 }
 
-export interface Paciente {
+export interface Paciente
+{
 
     id?: string;
     cuil: string;
@@ -56,7 +59,8 @@ export type Premium = {
 
 };
 
-export interface Medico {
+export interface Medico
+{
 
     id?: string;
     matricula: number;
@@ -70,20 +74,21 @@ export interface Medico {
 
 }
 
-export enum Genero {
-    masculino =  'Masculino',
-    femenino =   'Femenino',
-    no_binario = 'No binario',
-    otro =       ''
+export enum Genero
+{
+    masculino = 'Masculino',
+    femenino = 'Femenino',
+    otro = 'Otro'
 }
 
-export enum GrupoSanguineo{
-    Apositivo =     'A+',
-    Anegativo =     'A-',
-    Bpositivo =     "B+",
-    Bnegativo =     "B-", 
-    CeroPositivo =  "0+",
-    CeroNegativo =  "0-",
-    ABpositivo =    "AB+",
-    ABnegativo =    "AB-"
+export enum GrupoSanguineo
+{
+    Apositivo = 'A+',
+    Anegativo = 'A-',
+    Bpositivo = "B+",
+    Bnegativo = "B-",
+    CeroPositivo = "0+",
+    CeroNegativo = "0-",
+    ABpositivo = "AB+",
+    ABnegativo = "AB-"
 }
