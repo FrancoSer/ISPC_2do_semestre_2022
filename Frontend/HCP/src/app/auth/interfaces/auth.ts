@@ -12,38 +12,39 @@ export interface PacienteRegistro
     mail_p: string,
     genero_p: Genero,
     sangre: GrupoSanguineo,
-    password: string,
-    passwordRepeat: string,
+    password_p: string,
+    password_p_repeat: string,
     premium: boolean;
 
 }
 
 export interface PacienteLogin
 {
-    username: string,
-    email: string,
-    password: string;
+    cuil: string,
+    password_p: string;
 }
 
 export interface MedicoRegistro
 {
 
-    id?: string,
-    username: string,
-    apellido?: string,
-    matricula?: string,
-    email: string,
-    password: string,
-    passwordRepeat?: string,
-    nacimiento?: string,
-    genero?: Genero.masculino,
+    matricula: string,
+    nacimiento_m: string,
+    nombre_m: string,
+    apellido_m: string,
+    telefono_m: string,
+    direccion_m: string,
+    mail_m: string,
+    password_m: string,
+    password_m_repeat: string,
+    genero_m: Genero,
+
+
 
 }
 
 export interface MedicoLogin
 {
-    username: string,
-    email: string,
-    password: string;
+    matricula: string,
+    password_m: string;
 }
 

@@ -2,7 +2,7 @@ export interface HistoriaClinica
 {
 
     id: string;
-    fecha?: string;
+    fecha: string;
     observaciones?: string;
     especialidad?: string;
     diagnostico?: string;
@@ -33,17 +33,18 @@ export interface Factura
 export interface Paciente
 {
 
-    id?: string;
-    cuil: string;
-    password: string;
-    nombre: string;
-    apellido: string;
-    fecha_de_nacimiento: string;
-    tel: string;
-    direccion?: string;
-    email: string;
-    genero: Genero;
-    tipo_sanguineo?: GrupoSanguineo;
+    id: string;
+    cuil: string,
+    nacimiento_p?: string,
+    nombre_p?: string,
+    apellido_p?: string,
+    telefono_p?: string,
+    direccion_p?: string,
+    mail_p?: string,
+    genero_p: Genero,
+    sangre?: GrupoSanguineo,
+    password_p: string,
+    password_p_repeat?: string,
     premium?: boolean;
     historia_clinica?: HistoriaClinica;
     factura?: Factura;
@@ -63,14 +64,16 @@ export interface Medico
 {
 
     id?: string;
-    matricula: number;
-    nombre: string;
-    apellido: string;
-    fecha_de_nacimiento: string;
-    tel: number;
-    direccion: string;
-    email: string;
-    genero: Genero;
+    matricula: string,
+    nacimiento_m?: string,
+    nombre_m?: string,
+    apellido_m?: string,
+    telefono_m?: string,
+    direccion_m?: string,
+    mail_m?: string,
+    password_m: string,
+    password_m_repeat?: string,
+    genero_m: Genero,
 
 }
 

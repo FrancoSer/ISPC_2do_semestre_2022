@@ -10,6 +10,7 @@ import { UPPerfilComponent } from './UP/pages/UP-perfil/UP-perfil.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UPWelcomeComponent } from './UP/components/UP-welcome/UP-welcome.component';
 import { UPHistorialComponent } from './UP/pages/UP-historial/UP-historial.component';
+import { NuevoHistorialComponent } from './UM/pages/nuevo-historial/nuevo-historial.component';
 
 const routes: Routes = [
 
@@ -32,7 +33,7 @@ const routes: Routes = [
         component: PlanPremiumComponent
       },
       {
-        path: 'up-perfil',
+        path: 'up-perfil/:id',
         component: UPPerfilComponent
       }
     ]
@@ -42,7 +43,12 @@ const routes: Routes = [
     path: 'home-um',
     component: UMHomeComponent,
     children: [
-      { path: 'um-historial', component: UMHistorialComponent }
+      {
+        path: 'um-historial', component: UMHistorialComponent
+      },
+      {
+        path: 'nuevo-historial/:id', component: NuevoHistorialComponent
+      }
     ]
   },
 

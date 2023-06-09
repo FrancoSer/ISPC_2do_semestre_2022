@@ -3,13 +3,13 @@
 <div class="container">
 
   <mat-grid-list cols="1" 
-    *ngIf="!pacienteSeleccionado else divPaciente">
+    *ngIf="!pacientes else divPacientes">
     <mat-grid-tile>
         <mat-spinner></mat-spinner>
     </mat-grid-tile>
 
 </mat-grid-list>
-<ng-template #divPaciente>
+<ng-template #divPacientes>
 
   <mat-card class="card"  
     fxLayout="column" 
@@ -20,61 +20,62 @@
         class="header">
 
         <mat-card-title 
-          class="title">
-        {{pacienteSeleccionado.nombre + ' ' + pacienteSeleccionado.apellido}}
+          class="title"
+          *ngFor="let paciente of pacientes">
+        {{paciente.nombre_p}}
         </mat-card-title>
         
-        <mat-card-subtitle class="subtitle">
-        {{pacienteSeleccionado.premium | premium}}
+        <!-- <mat-card-subtitle class="subtitle">
+        {{pacientes.premium | premium}}
         </mat-card-subtitle>
-      </mat-card-header>
+      </mat-card-header> -->
 
       <!-- <img 
         mat-card-image height="300px"
-        [src]= 'pacienteSeleccionado | imagen' alt=""> -->
+        [src]= 'pacientes | imagen' alt=""> -->
   <!-- TODO : hacer pipe imagen -->
 
-  <mat-card-content class="content">
+  <!-- <mat-card-content class="content">
     <p>
       <strong>
         Cuil:
       </strong>
-          {{pacienteSeleccionado.cuil}}
+          {{pacientes.cuil}}
     </p>
         <br>
     <p>
       <strong>
         Fecha de Nacimiento:
       </strong>
-          {{pacienteSeleccionado.fecha_de_nacimiento}}
+          {{pacientes.nacimiento_p}}
     </p>
         <br>
         <p>
       <strong>
         Teléfono:
       </strong>
-          {{pacienteSeleccionado.tel}}
+          {{pacientes.telefono_p}}
     </p>
         <br>
     <p>
       <strong>
         Dirección:
       </strong>
-          {{pacienteSeleccionado.direccion}}
+          {{pacientes.direccion_p}}
     </p>
         <br>
      <p>
        <strong>
          Email:
        </strong>
-           {{pacienteSeleccionado.email}}
+           {{pacientes.mail_p}}
      </p>
          <br>
      <p>
        <strong>
          Género:
        </strong>
-           {{pacienteSeleccionado.genero}}
+           {{pacientes.genero_p}}
      </p>
          <br>
          <p *ngIf="historiaClinica">
@@ -109,5 +110,5 @@
 
 </mat-card>
 </ng-template>
-</div>
+</div> -->
 
