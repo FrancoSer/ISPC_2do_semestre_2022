@@ -1,45 +1,45 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Genero, GrupoSanguineo, PacienteRegistro } from 'src/app/users/interfaces/interfaces';
-import { UsersService } from 'src/app/users/service/users.service';
+import { PacienteRegistro } from 'src/app/auth/interfaces/auth';
 import { AuthService } from '../../auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Genero, GrupoSanguineo, Paciente } from 'src/app/users/interfaces/interfaces';
 
-@Component({
+@Component( {
   selector: 'app-UP-registro',
   templateUrl: './UP-registro.component.html',
-  styleUrls: ['./UP-registro.component.css']
-})
-export class UPRegistroComponent implements OnInit {
+  styleUrls: [ './UP-registro.component.css' ]
+} )
+export class UPRegistroComponent implements OnInit
+{
 
-  
+
   minChars: number = 9;
   maxChars: number = 15;
 
-  public pacienteForm = new FormGroup({
+  public pacienteForm = new FormGroup( {
 
-    username:          new FormControl<string>('', [Validators.required]),
-    // apellido:       new FormControl<string>(''),
-    // cuil:           new FormControl<string>(''),
-    // apellido:       new FormControl<string>(''),
-    // cuil:           new FormControl<string>(''),
-    email:             new FormControl<string>('', [Validators.required, Validators.email]),
-    password:          new FormControl<string>('', [Validators.required, Validators.maxLength(this.maxChars), Validators.minLength(this.minChars)]),
-    // passwordRepet:  new FormControl<string>(''),
-    // nacimiento:     new FormControl<string>(''),
-    // genero:         new FormControl<Genero>(Genero.masculino),
-    // grupoSanguineo: new FormControl<GrupoSanguineo>(GrupoSanguineo.Apositivo),
-    
-  });
+    cuil: new FormControl<string>( '', [ Validators.required ] ),
+    nacimiento_p: new FormControl<string>( '', [ Validators.required ] ),
+    nombre_p: new FormControl<string>( '', [ Validators.required ] ),
+    apellido_p: new FormControl<string>( '', [ Validators.required ] ),
+    telefono_p: new FormControl<string>( '' ),
+    direccion_p: new FormControl<string>( '' ),
+    mail_p: new FormControl<string>( '', [ Validators.required, Validators.email ] ),
+    genero_p: new FormControl<string>( '' ),
+    sangre: new FormControl<string>( '', [ Validators.required ] ),
+    password_p: new FormControl<string>( '', [ Validators.required, Validators.maxLength( this.maxChars ), Validators.minLength( this.minChars ) ] ),
+    password_p_repeat: new FormControl<string>( '', [ Validators.required, Validators.maxLength( this.maxChars ), Validators.minLength( this.minChars ) ] ),
+
+  } );
 
   genero = [
     {
-      masculino: 'Masculino',
-      femenido:  'Femenino',
-      x: 'X',
-      otro: ''
+      Fasculino: 'Masculino',
+      Femenino: 'Femenino',
+      Otro: 'Otro'
     }
   ];
 
@@ -48,7 +48,7 @@ export class UPRegistroComponent implements OnInit {
       Apositivo: 'A+',
       Anegativo: 'A-',
       Bpositivo: "B+",
-      Bnegativo: "B-", 
+      Bnegativo: "B-",
       CeroPositivo: "0+",
       CeroNegativo: "0-",
       ABpositivo: "AB+",
@@ -57,21 +57,23 @@ export class UPRegistroComponent implements OnInit {
   ];
 
   paciente: PacienteRegistro = {
-    
-    username: '',
-    apellido: '',
+
     cuil: '',
-    email: '',
+    nacimiento_p: '',
+    nombre_p: '',
+    apellido_p: '',
+    telefono_p: '',
+    direccion_p: '',
+    mail_p: '',
+    genero_p: Genero.masculino,
+    sangre: GrupoSanguineo.Apositivo,
     password: '',
     passwordRepeat: '',
-    nacimiento: '',
-    genero: Genero.masculino,
-    grupoSanguineo: GrupoSanguineo.Apositivo,
     premium: false
-   
-  }
 
-  constructor(
+  };
+
+  constructor (
 
     private pacienteServicio: AuthService,
     private router: Router,
@@ -79,66 +81,102 @@ export class UPRegistroComponent implements OnInit {
     private snackBar: MatSnackBar,
     private dialog: MatDialog
 
-    
-  ) {}
 
-  
-  get username() { 
-    return this.pacienteForm.get("username"); 
+  ) { }
+
+
+  get nombre_p ()
+  {
+    return this.pacienteForm.get( "nombre_p" );
   }
-  get email() { 
-    return this.pacienteForm.get("email"); 
+  get apellido_p ()
+  {
+    return this.pacienteForm.get( "apellido_p" );
+  }
+  get mail_p ()
+  {
+    return this.pacienteForm.get( "mail_p" );
+  }
+  get cuil ()
+  {
+    return this.pacienteForm.get( "cuil" );
   }
 
-  get password(){
-    return this.pacienteForm.get('password')
+  get password_p ()
+  {
+    return this.pacienteForm.get( 'password_p' );
+  }
+  get password_p_repeat ()
+  {
+    return this.pacienteForm.get( 'password_p_repeat' );
   }
 
-  get pacienteActual(): PacienteRegistro{
+  get nacimiento_p ()
+  {
+    return this.pacienteForm.get( 'nacimiento_p' );
+  }
+
+  get telefono_p ()
+  {
+    return this.pacienteForm.get( 'telefono_p' );
+  }
+
+  // PACIENTE ACTUAL
+
+  get pacienteActual (): PacienteRegistro
+  {
 
     const paciente = this.pacienteForm.value as PacienteRegistro;
-    return paciente
+    return paciente;
 
   }
 
-  ngOnInit(): void {
+  ngOnInit (): void
+  {
 
-    
+
   }
 
 
-  onSubmit(): void{
-    if(!this.pacienteActual){
+  onSubmit (): void
+  {
+    if ( !this.pacienteActual )
+    {
       return;
     }
 
-    if(this.pacienteForm.valid){
+    if ( this.pacienteForm.valid )
+    {
 
-    this.pacienteServicio.registroPaciente(this.pacienteActual)
-      .subscribe (paciente => {
-      // this.router.navigate(['home-up/up-perfil/', paciente]);
-      // mensaje
-      this.mostrarSnack(`${this.pacienteActual.username} su perfil ha sido creado`)
+      this.pacienteServicio.registroPaciente( this.pacienteActual )
+        .subscribe( paciente =>
+        {
+          this.router.navigate( [ 'auth/login-up' ] );
+          // mensaje
+          this.mostrarSnack( `${ this.pacienteActual.nombre_p } su perfil ha sido creado` );
 
-    });
-    console.log(this.pacienteActual)
-    console.log({
-      formIsValid: this.pacienteForm.valid,
-        valor: this.pacienteForm.value
-      });
-    } else{
-      this.mostrarSnack(`${this.pacienteActual.username} El formulario no es válido`)
-      throw Error('El formulario no es válido')
+        } );
+      // console.log( this.pacienteActual );
+      // console.log( {
+      //   formIsValid: this.pacienteForm.valid,
+      //   valor: this.pacienteForm.value
+      // } );
+    } else
+    {
+      console.log( this.pacienteActual );
+      this.mostrarSnack( `${ this.pacienteActual.nombre_p } El formulario no es válido` );
+      throw Error( 'El formulario no es válido' );
     }
-  
+
   }
 
 
-  
-  mostrarSnack( mensaje: string ){
-    this.snackBar.open( mensaje, 'data',{
-      duration: 2500,
-    });
-}
+
+  mostrarSnack ( mensaje: string )
+  {
+    this.snackBar.open( mensaje, 'cerrar', {
+      duration: 12500,
+    } );
+  }
 
 }

@@ -17,13 +17,13 @@ export class UMHistorialComponent {
 
   constructor(private pacienteService: UsersService) {}
 
-  ngOnInit() {
-    this.pacienteService.getPaciente()
-      .subscribe(pacientes => {
-        this.pacientes = pacientes;
-        this.pacienteSeleccionado = pacientes[7]
-        this.historiaClinica = this.pacienteSeleccionado.historia_clinica
-      });
-  }
+  // ngOnInit() {
+  //   this.pacienteService.getPaciente()
+  //     .subscribe(pacientes => {
+  //       this.pacientes = pacientes;
+  //       this.pacienteSeleccionado = pacientes[0]
+  //       this.historiaClinica = this.pacienteSeleccionado.historia_clinica
+  //     });
+  // }
 
 }

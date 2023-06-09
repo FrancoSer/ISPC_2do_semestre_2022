@@ -17,28 +17,48 @@
     <div class="register-box">
 
       <h2>INICIAR SESION COMO MÉDICO</h2>
-      <form [formGroup]="form" 
-      class="row g-3" 
-      (ngSubmit)="iniciarSesion($event)" 
-      novalidate
-      >
+      <form 
+        [formGroup]="form" 
+        class="row g-3" 
+        (ngSubmit)="onSubmit()" 
+        novalidate>
         <div class="col-md-12">
-          <label class="form-label" for="cuil">MATRÍCULA: </label>
-          <input class="form-control atributos" type="number" formControlName="matricula"
-            placeholder="Ingrese su número de MATRÍCULA"
-            [ngClass]="{'is-invalid':matricula?.errors && matricula?.touched , 'is-valid':!matricula?.errors}" autofocus required>
-          <div *ngIf="matricula?.hasError('required')" class="invalid-feedback">El número de matrícula es requerido</div>
-          <div *ngIf="matricula?.hasError('min') && !matricula?.hasError('required')" class="invalid-feedback">El número de
-            matrícula es inválido</div>
+          <!-- <label class="form-label" for="cuil">CUIL: </label>
+          <input class="form-control atributos" type="number" formControlName="cuil" name="cuil" id="cuil"
+            placeholder="Ingrese su número de CUIL"
+            [ngClass]="{'is-invalid':cuil?.errors && cuil?.touched , 'is-valid':!cuil?.errors}" autofocus required>
+          <div *ngIf="cuil?.hasError('required')" class="invalid-feedback">El número de cuil es requerido</div>
+          <div *ngIf="cuil?.hasError('min') && !cuil?.hasError('required')" class="invalid-feedback">El número de
+            cuil es inválido</div>
+
+        </div> -->
+
+        <label class="form-label" for="username">Nombre: </label>
+          <input 
+            class="form-control atributos" 
+            formControlName="username" 
+            placeholder="Ingrese su nombre de usuario"
+            [ngClass]="{'is-invalid':username?.errors && username?.touched , 'is-valid':!username?.errors}" autofocus required>
+          <div *ngIf="username?.hasError('required')" class="invalid-feedback">El nombre de usuario es requerido</div>
+          <div *ngIf="username?.hasError('min') && !username?.hasError('required')" class="invalid-feedback">El nombre de
+            usuario es inválido</div>
 
         </div>
+
+        <div class="col-md-12">
+          <label class="form-label" for="email">Email: </label>
+          <input class=" form-control atributos" type="email" name="email" formControlName="email"
+            placeholder="Ingrese su email"
+            [ngClass]="{'is-invalid':email?.errors && email?.touched  , 'is-valid':!email?.errors && email?.touched}"
+            required>
+
+          <div *ngIf="email?.hasError('required')" class="invalid-feedback">Ingrese su email</div>
+        </div>
+        
         <div class="col-md-12">
           <label class="form-label" for="password">Contraseña: </label>
-          <input 
-            class=" form-control atributos" 
-            type="password"
-            formControlName="password"
-            placeholder="Ingrese su contraseña"
+          <input class=" form-control atributos" type="password" name="password" formControlName="password"
+            minlength="9" maxlength="25" placeholder="Ingrese su contraseña"
             [ngClass]="{'is-invalid':password?.errors && password?.touched  , 'is-valid':!password?.errors && password?.touched}"
             required>
 

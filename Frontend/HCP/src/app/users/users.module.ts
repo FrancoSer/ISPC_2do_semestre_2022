@@ -20,7 +20,7 @@ import { PremiumPipe } from './premium.pipe';
 import { GeneroPipe } from './UP/pipes/genero.pipe';
 import { UPWelcomeComponent } from './UP/components/UP-welcome/UP-welcome.component';
 
-@NgModule({
+@NgModule( {
   declarations: [
 
     PlanPremiumComponent,
@@ -47,5 +47,5 @@ import { UPWelcomeComponent } from './UP/components/UP-welcome/UP-welcome.compon
 
 
   ]
-})
+} )
 export class UsersModule { }

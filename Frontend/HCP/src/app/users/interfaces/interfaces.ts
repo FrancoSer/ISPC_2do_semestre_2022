@@ -1,6 +1,5 @@
-import { Type } from "@angular/compiler";
-
-export interface HistoriaClinica {
+export interface HistoriaClinica
+{
 
     id: string;
     fecha?: string;
@@ -20,7 +19,8 @@ export interface HistoriaClinica {
 
 }
 
-export interface Factura {
+export interface Factura
+{
 
     id: string;
     total: number;
@@ -30,7 +30,8 @@ export interface Factura {
 
 }
 
-export interface Paciente {
+export interface Paciente
+{
 
     id?: string;
     cuil: string;
@@ -49,22 +50,6 @@ export interface Paciente {
 
 }
 
-export interface PacienteRegistro {
-
-    id?: string,
-    username: string,
-    apellido?: string,
-    cuil?: string,
-    email: string,
-    password: string,
-    passwordRepeat?: string,
-    nacimiento?: string,
-    genero?: Genero.masculino,
-    grupoSanguineo?: GrupoSanguineo.Apositivo,
-    premium?: boolean
-
-}
-
 export type Premium = {
 
     id: string;
@@ -74,7 +59,8 @@ export type Premium = {
 
 };
 
-export interface Medico {
+export interface Medico
+{
 
     id?: string;
     matricula: number;
@@ -88,34 +74,21 @@ export interface Medico {
 
 }
 
-export interface MedicoRegistro {
-
-    id?: string,
-    username: string,
-    apellido?: string,
-    matricula?: string,
-    email: string,
-    password: string,
-    passwordRepeat?: string,
-    nacimiento?: string,
-    genero?: Genero.masculino,
-
+export enum Genero
+{
+    masculino = 'Masculino',
+    femenino = 'Femenino',
+    otro = 'Otro'
 }
 
-export enum Genero {
-    masculino =  'Masculino',
-    femenino =   'Femenino',
-    no_binario = 'No binario',
-    otro =       ''
-}
-
-export enum GrupoSanguineo{
-    Apositivo =     'A+',
-    Anegativo =     'A-',
-    Bpositivo =     "B+",
-    Bnegativo =     "B-", 
-    CeroPositivo =  "0+",
-    CeroNegativo =  "0-",
-    ABpositivo =    "AB+",
-    ABnegativo =    "AB-"
+export enum GrupoSanguineo
+{
+    Apositivo = 'A+',
+    Anegativo = 'A-',
+    Bpositivo = "B+",
+    Bnegativo = "B-",
+    CeroPositivo = "0+",
+    CeroNegativo = "0-",
+    ABpositivo = "AB+",
+    ABnegativo = "AB-"
 }

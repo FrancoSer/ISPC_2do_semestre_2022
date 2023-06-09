@@ -15,12 +15,13 @@ export class UPWelcomeComponent implements OnInit {
 
   ngOnInit() {
 
+// TODO 
 
-    this.homeService.getPaciente()
-      .subscribe((homePaciente: Paciente[]) => {
-        this.paciente = homePaciente[4];
+    // this.homeService.getPaciente()
+    //   .subscribe((homePaciente: Paciente[]) => {
+    //     this.paciente = homePaciente[4];
 
-      });
+    //   });
   }
 
 }
