@@ -6,88 +6,95 @@ import { AuthService } from '../../auth.service';
 
 import { MedicoLogin } from '../../interfaces/auth';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Medico } from 'src/app/users/interfaces/interfaces';
 
-@Component({
+@Component( {
   selector: 'app-UM-login',
   templateUrl: './UM-login.component.html',
-  styleUrls: ['./UM-login.component.css']
-})
-export class UMLoginComponent implements OnInit {
+  styleUrls: [ './UM-login.component.css' ]
+} )
+export class UMLoginComponent implements OnInit
+{
 
- 
 
-  public form = new FormGroup({
-    username: new FormControl<string>('', [Validators.required]),
-    email: new FormControl<string>('', [Validators.required]),
-    password: new FormControl<string>('', [Validators.required])
-  })
+
+  public form = new FormGroup( {
+    matricula: new FormControl<string>( '', [ Validators.required ] ),
+    password_m: new FormControl<string>( '', [ Validators.required ] )
+  } );
 
   medico: MedicoLogin = {
-    username: '',
-    email: '',
-    password: ''
-  }
+    matricula: '',
+    password_m: ''
+  };
 
-  constructor(
+  constructor (
 
     private http: AuthService,
     private router: Router,
     private snackBar: MatSnackBar,
 
-    ) 
-    
-    {}
+  )
+
+  { }
 
 
-  get username() { 
-    return this.form.get("username"); 
+  get matricula ()
+  {
+    return this.form.get( "matricula" );
   }
-  get email(){
-    return this.form.get('email');
-  }
-  get password() { 
-    return this.form.get("password"); 
+  get password_m ()
+  {
+    return this.form.get( "password_m" );
   }
 
-get medicoActual(): MedicoLogin{
-  const medico = this.form.value as MedicoLogin;
-  return medico
-}
+  get medicoActual (): Medico
+  {
+    const medico = this.form.value as Medico;
+    return medico;
+  }
 
-  onSubmit(): void{
+  onSubmit (): void
+  {
 
-    if(!this.medicoActual){
+    if ( !this.medicoActual )
+    {
       return;
     }
 
-    if(this.form.valid){
+    if ( this.form.valid )
+    {
 
-      this.http.loginPaciente(this.medicoActual.email, this.medicoActual.password)
-        .subscribe (resp => {
-        // this.router.navigate(['home-up/up-perfil/', paciente]);
-        // mensaje
-        this.mostrarSnack(`Hola ${this.medicoActual.username}, te damos nuevamente la bienvenida a HCP`)
-  
-      });
-      console.log(this.medicoActual)
-      console.log({
+      this.http.loginPaciente( this.medicoActual.matricula, this.medicoActual.password_m )
+        .subscribe( resp =>
+        {
+          // this.router.navigate(['home-up/up-perfil/', paciente]);
+          // mensaje
+          this.mostrarSnack( `Hola ${ this.medicoActual.nombre_m }, te damos nuevamente la bienvenida a HCP` );
+
+        } );
+      console.log( this.medicoActual );
+      console.log( {
         formIsValid: this.form.valid,
-          valor: this.form.value
-        });
-      } else{
-        this.mostrarSnack(`${this.medicoActual.username} Los datos ingresados no son válidos`)
-        throw Error('Los datos ingresados no son válidos')
-      }
+        valor: this.form.value
+      } );
+    } else
+    {
+      this.mostrarSnack( `${ this.medicoActual.nombre_m } Los datos ingresados no son válidos` );
+      throw Error( 'Los datos ingresados no son válidos' );
+    }
 
   }
 
-  mostrarSnack( mensaje: string ){
-    this.snackBar.open( mensaje, 'cerrar',{
+  mostrarSnack ( mensaje: string )
+  {
+    this.snackBar.open( mensaje, 'cerrar', {
       duration: 2500,
-    });
-}
+    } );
+  }
 
-ngOnInit() {
-  
-}
+  ngOnInit ()
+  {
+
+  }
 }

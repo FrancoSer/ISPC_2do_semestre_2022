@@ -57,7 +57,8 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
-CORS_ORIGIN_WHITELIST = ["http://localhost:3000", "http://localhost:4200"]
+CORS_ORIGIN_WHITELIST = ["http://localhost:3000",
+                         "http://localhost:4200"]
 
 CORS_ALLOW_CREDENTIALS = True
 

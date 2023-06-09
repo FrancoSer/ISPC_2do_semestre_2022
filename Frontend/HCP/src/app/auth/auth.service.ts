@@ -17,40 +17,34 @@ export class AuthService
 
   registroPaciente ( paciente: PacienteRegistro ): Observable<Paciente>
   {
-<<<<<<< HEAD
-    console.log( `este es el error ${ ( paciente ) }` );
-    return this.http.post<Paciente>( `${ this.baseUrl }/api/auth/signup/`, paciente );
-=======
     return this.http.post<Paciente>( `${ this.baseUrl }/api/paciente/signup/`, paciente );
->>>>>>> f90cf24c17c15b1bbaea4072f8a4e9c3f24f6f2f
 
   }
 
   registroMedico ( medico: MedicoRegistro ): Observable<Medico>
   {
-    return this.http.post<Medico>( `${ this.baseUrl }/api/auth/signup/`, medico );
+    return this.http.post<Medico>( `${ this.baseUrl }/api/medico/signup/`, medico );
 
   }
 
-  loginPaciente ( email: string, password: string )
+  loginPaciente ( cuil: string, password_p: string )
   {
 
     const body = {
-      email: email,
-      password: password
+      cuil: cuil,
+      password_p: password_p
     };
-    return this.http.post( `${ this.baseUrl }/api/auth/login/`, body );
+    return this.http.post( `${ this.baseUrl }/api/paciente/login/`, body );
   }
 
-  loginMedico ( username: string, email: string, password: string )
+  loginMedico ( matricula: string, password_m: string )
   {
 
     const body = {
-      username: username,
-      email: email,
-      password: password
+      matricula: matricula,
+      password_m: password_m
     };
-    return this.http.post( `${ this.baseUrl }/api/auth/login/`, body );
+    return this.http.post( `${ this.baseUrl }/api/medico/login/`, body );
   }
 
 }

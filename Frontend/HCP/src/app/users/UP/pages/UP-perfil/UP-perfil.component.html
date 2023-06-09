@@ -21,7 +21,7 @@
 
         <mat-card-title 
           class="title">
-        {{pacienteSeleccionado.nombre + ' ' + pacienteSeleccionado.apellido}}
+        {{pacienteSeleccionado.nombre_p + ' ' + pacienteSeleccionado.apellido_p}}
         </mat-card-title>
         
         <mat-card-subtitle class="subtitle">
@@ -46,35 +46,35 @@
       <strong>
         Fecha de Nacimiento:
       </strong>
-          {{pacienteSeleccionado.fecha_de_nacimiento}}
+          {{pacienteSeleccionado.nacimiento_p}}
     </p>
         <br>
         <p>
       <strong>
         Teléfono:
       </strong>
-          {{pacienteSeleccionado.tel}}
+          {{pacienteSeleccionado.telefono_p}}
     </p>
         <br>
     <p>
       <strong>
         Dirección:
       </strong>
-          {{pacienteSeleccionado.direccion}}
+          {{pacienteSeleccionado.direccion_p}}
     </p>
         <br>
      <p>
        <strong>
          Email:
        </strong>
-           {{pacienteSeleccionado.email}}
+           {{pacienteSeleccionado.mail_p}}
      </p>
          <br>
      <p>
        <strong>
          Género:
        </strong>
-           {{pacienteSeleccionado.genero}}
+           {{pacienteSeleccionado.genero_p}}
      </p>
          <br>
          <p *ngIf="historiaClinica">

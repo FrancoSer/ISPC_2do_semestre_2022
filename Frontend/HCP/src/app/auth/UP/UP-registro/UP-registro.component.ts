@@ -67,8 +67,8 @@ export class UPRegistroComponent implements OnInit
     mail_p: '',
     genero_p: Genero.masculino,
     sangre: GrupoSanguineo.Apositivo,
-    password: '',
-    passwordRepeat: '',
+    password_p: '',
+    password_p_repeat: '',
     premium: false
 
   };
