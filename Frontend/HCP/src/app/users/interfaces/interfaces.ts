@@ -65,14 +65,14 @@ export interface Medico
 
     id?: string;
     matricula: string,
-    nacimiento_m: string,
-    nombre_m: string,
-    apellido_m: string,
-    telefono_m: string,
-    direccion_m: string,
-    mail_m: string,
+    nacimiento_m?: string,
+    nombre_m?: string,
+    apellido_m?: string,
+    telefono_m?: string,
+    direccion_m?: string,
+    mail_m?: string,
     password_m: string,
-    password_m_repeat: string,
+    password_m_repeat?: string,
     genero_m: Genero,
 
 }

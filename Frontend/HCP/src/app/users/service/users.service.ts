@@ -4,18 +4,20 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environment/envaironment';
 import { Paciente } from '../interfaces/interfaces';
 
-@Injectable({
+@Injectable( {
   providedIn: 'root'
-})
-export class UsersService {
+} )
+export class UsersService
+{
 
-  private baseUrl = environment.baseUrl
+  private baseUrl = environment.baseUrl;
 
-constructor( private http: HttpClient) { }
+  constructor ( private http: HttpClient ) { }
 
-// TODO mostrar pacientes 
-// getPaciente(): Observable<Paciente[]>{
-//   return this.http.get<Paciente[]>(`${this.baseUrl}`)
-// }
+  // TODO mostrar pacientes 
+  getPaciente (): Observable<Paciente[]>
+  {
+    return this.http.get<Paciente[]>( `${ this.baseUrl }/api/paciente/1` );
+  }
 
 }

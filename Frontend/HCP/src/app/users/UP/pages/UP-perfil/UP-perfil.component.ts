@@ -3,12 +3,13 @@ import { delay, tap } from 'rxjs';
 import { Paciente, HistoriaClinica } from 'src/app/users/interfaces/interfaces';
 import { UsersService } from 'src/app/users/service/users.service';
 
-@Component({
+@Component( {
   selector: 'app-UP-perfil',
   templateUrl: './UP-perfil.component.html',
-  styleUrls: ['./UP-perfil.component.css']
-})
-export class UPPerfilComponent implements OnInit {
+  styleUrls: [ './UP-perfil.component.css' ]
+} )
+export class UPPerfilComponent implements OnInit
+{
 
   public pacientes: Paciente[] = [];
 
@@ -16,11 +17,12 @@ export class UPPerfilComponent implements OnInit {
 
   public historiaClinica: HistoriaClinica | undefined;
 
-  constructor(private pacienteService: UsersService) { }
+  constructor ( private pacienteService: UsersService ) { }
 
   // TODO
-  
-  ngOnInit() {
+
+  ngOnInit ()
+  {
     // this.pacienteService.getPaciente()
     //   .pipe(
     //     delay(2000)

@@ -35,6 +35,7 @@ export class AuthService
       password_p: password_p
     };
     return this.http.post( `${ this.baseUrl }/api/paciente/login/`, body );
+
   }
 
   loginMedico ( matricula: string, password_m: string )

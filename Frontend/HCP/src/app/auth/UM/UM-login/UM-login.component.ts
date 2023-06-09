@@ -6,7 +6,7 @@ import { AuthService } from '../../auth.service';
 
 import { MedicoLogin } from '../../interfaces/auth';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Medico } from 'src/app/users/interfaces/interfaces';
+import { Genero, Medico } from 'src/app/users/interfaces/interfaces';
 
 @Component( {
   selector: 'app-UM-login',
@@ -23,9 +23,10 @@ export class UMLoginComponent implements OnInit
     password_m: new FormControl<string>( '', [ Validators.required ] )
   } );
 
-  medico: MedicoLogin = {
+  medico: Medico = {
     matricula: '',
-    password_m: ''
+    password_m: '',
+    genero_m: Genero.femenino
   };
 
   constructor (
@@ -65,12 +66,14 @@ export class UMLoginComponent implements OnInit
     if ( this.form.valid )
     {
 
-      this.http.loginPaciente( this.medicoActual.matricula, this.medicoActual.password_m )
+      this.http.loginMedico( this.medicoActual.matricula, this.medicoActual.password_m )
         .subscribe( resp =>
         {
-          // this.router.navigate(['home-up/up-perfil/', paciente]);
+
+          this.medico = resp as Medico;
+          this.router.navigate( [ 'users/home-um/um-historial' ] );
           // mensaje
-          this.mostrarSnack( `Hola ${ this.medicoActual.nombre_m }, te damos nuevamente la bienvenida a HCP` );
+          this.mostrarSnack( `Hola ${ this.medico.nombre_m }, te damos nuevamente la bienvenida a HCP` );
 
         } );
       console.log( this.medicoActual );

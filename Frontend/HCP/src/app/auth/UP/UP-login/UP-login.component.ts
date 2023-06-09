@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-
 import { AuthService } from '../../auth.service';
-
 import { PacienteLogin } from '../../interfaces/auth';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Paciente } from 'src/app/users/interfaces/interfaces';
+import { Genero, Paciente } from 'src/app/users/interfaces/interfaces';
 
 @Component( {
   selector: 'app-UP-login',
@@ -15,17 +13,15 @@ import { Paciente } from 'src/app/users/interfaces/interfaces';
 } )
 export class UPLoginComponent implements OnInit
 {
-
-
-
   public form = new FormGroup( {
     cuil: new FormControl<string>( '', [ Validators.required ] ),
     password_p: new FormControl<string>( '', [ Validators.required ] )
   } );
 
-  paciente: PacienteLogin = {
+  paciente: Paciente = {
     cuil: '',
-    password_p: ''
+    password_p: '',
+    genero_p: Genero.femenino
   };
 
   constructor (
@@ -72,7 +68,7 @@ export class UPLoginComponent implements OnInit
           this.paciente = paciente as Paciente;
           this.router.navigate( [ 'users/home-up/up-perfil' ] );
           // mensaje
-          this.mostrarSnack( `Hola ${ this.paciente.cuil }, te damos nuevamente la bienvenida a HCP` );
+          this.mostrarSnack( `Hola ${ this.paciente.nombre_p }, te damos nuevamente la bienvenida a HCP` );
 
         }, error =>
         {
