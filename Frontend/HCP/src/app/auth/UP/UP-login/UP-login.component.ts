@@ -21,7 +21,8 @@ export class UPLoginComponent implements OnInit
   paciente: Paciente = {
     cuil: '',
     password_p: '',
-    genero_p: Genero.femenino
+    genero_p: Genero.femenino,
+    id: ''
   };
 
   constructor (
@@ -64,11 +65,11 @@ export class UPLoginComponent implements OnInit
       this.http.loginPaciente( this.pacienteActual.cuil, this.pacienteActual.password_p )
         .subscribe( paciente =>
         {
-          console.log( paciente );
+          // console.log( paciente );
           this.paciente = paciente as Paciente;
-          this.router.navigate( [ 'users/home-up/up-perfil' ] );
+          this.router.navigate( [ 'users/home-up/up-perfil', this.paciente.id ] );
           // mensaje
-          this.mostrarSnack( `Hola ${ this.paciente.nombre_p }, te damos nuevamente la bienvenida a HCP` );
+          this.mostrarSnack( `Hola ${ this.paciente.nombre_p }, te damos la bienvenida a HCP` );
 
         }, error =>
         {
@@ -77,10 +78,10 @@ export class UPLoginComponent implements OnInit
 
         );
 
-      console.log( {
-        formIsValid: this.form.valid,
-        valor: this.form.value
-      } );
+      // console.log( {
+      //   formIsValid: this.form.valid,
+      //   valor: this.form.value
+      // } );
     } else
     {
       this.mostrarSnack( `${ this.pacienteActual.nombre_p } Los datos ingresados no son válidos` );

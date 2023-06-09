@@ -14,10 +14,27 @@ export class UsersService
 
   constructor ( private http: HttpClient ) { }
 
-  // TODO mostrar pacientes 
-  getPaciente (): Observable<Paciente[]>
+  // buscar pacientes
+
+  getBuscarPaciente ( termino: string ): Observable<Paciente[]>
   {
-    return this.http.get<Paciente[]>( `${ this.baseUrl }/api/paciente/1` );
+
+    return this.http.get<Paciente[]>( `${ this.baseUrl }/api/paciente/?q=${ termino }` );
+
+  }
+
+  // mostrar por ID
+
+  getPacientePorId ( id: string ): Observable<Paciente>
+  {
+    return this.http.get<Paciente>( `${ this.baseUrl }/api/paciente/${ id }` );
+  }
+
+  // mostrar pacientes
+
+  getPacientes (): Observable<Paciente[]>
+  {
+    return this.http.get<Paciente[]>( `${ this.baseUrl }/api/paciente/` );
   }
 
 }

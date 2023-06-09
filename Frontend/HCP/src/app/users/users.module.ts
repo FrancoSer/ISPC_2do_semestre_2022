@@ -19,13 +19,16 @@ import { UPPerfilComponent } from './UP/pages/UP-perfil/UP-perfil.component';
 import { PremiumPipe } from './premium.pipe';
 import { GeneroPipe } from './UP/pipes/genero.pipe';
 import { UPWelcomeComponent } from './UP/components/UP-welcome/UP-welcome.component';
+import { BuscarComponent } from './UM/components/buscar/buscar.component';
+import { NuevoHistorialComponent } from './UM/pages/nuevo-historial/nuevo-historial.component';
 
 @NgModule( {
   declarations: [
 
-    PlanPremiumComponent,
-    HeaderComponent,
+    BuscarComponent,
     GeneroPipe,
+    HeaderComponent,
+    NuevoHistorialComponent,
     SidebarComponent,
     UMHistorialComponent,
     UMHomeComponent,

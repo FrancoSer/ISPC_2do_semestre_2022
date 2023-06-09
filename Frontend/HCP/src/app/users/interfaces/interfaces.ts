@@ -2,7 +2,7 @@ export interface HistoriaClinica
 {
 
     id: string;
-    fecha?: string;
+    fecha: string;
     observaciones?: string;
     especialidad?: string;
     diagnostico?: string;
@@ -33,7 +33,7 @@ export interface Factura
 export interface Paciente
 {
 
-    id?: string;
+    id: string;
     cuil: string,
     nacimiento_p?: string,
     nombre_p?: string,
