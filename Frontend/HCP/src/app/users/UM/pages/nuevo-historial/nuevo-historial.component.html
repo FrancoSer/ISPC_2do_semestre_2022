@@ -1,3 +1,223 @@
-<p>
-  nuevo-historial works!
-</p>
+<!-- aca voy a realizar un CRUD a traves de un formulario sencillo -->
+<div class="container">
+  <h1>
+    Historial Clínico de US
+    <!-- {{heroeActual.id ? 'Editar' : 'Crear'}} -->
+    <small>
+
+    </small>
+  </h1>
+
+
+
+  <form
+    class="form"
+    fxLayout="column"
+  >
+
+    <div
+      fxLayout="row"
+      fxLayoutGap="40px"
+      class="encabezado"
+    >
+      <!-- Aca deberia mostrarlo pero no
+      poder llenarlo -->
+      <mat-form-field
+        fxflex
+        class="field"
+      >
+        <mat-label>
+          Nombre
+        </mat-label>
+        <input
+          matInput
+          type="text"
+          disabled
+        >
+      </mat-form-field>
+
+      <mat-form-field
+        fxflex
+        class="field"
+      >
+        <mat-label>
+          Apellido
+        </mat-label>
+        <input
+          matInput
+          type="text"
+          disabled
+        >
+      </mat-form-field>
+    </div>
+
+
+    <mat-form-field class="field">
+      <mat-label>
+        Fecha
+      </mat-label>
+      <input
+        matInput
+        type="text"
+        disabled
+      >
+    </mat-form-field>
+    <mat-form-field class="field">
+      <mat-label>
+        Referencia
+      </mat-label>
+      <input
+        matInput
+        type="text"
+        formControlName="referencia_h"
+      >
+    </mat-form-field>
+    <mat-form-field class="field">
+      <mat-label>
+        Especialidad
+      </mat-label>
+      <input
+        matInput
+        type="text"
+        formControlName="especialidad"
+      >
+    </mat-form-field>
+
+    <mat-form-field class="field">
+      <mat-label>
+        Diagnóstico
+      </mat-label>
+      <input
+        matInput
+        type="text"
+        formControlName="diagnositco"
+      >
+    </mat-form-field>
+    <mat-form-field class="field">
+      <mat-label>
+        Antecedentes
+      </mat-label>
+      <input
+        matInput
+        type="text"
+        formControlName="antecedenter"
+      >
+    </mat-form-field>
+    <mat-form-field class="field">
+      <mat-label>
+        Presión
+      </mat-label>
+      <input
+        matInput
+        type="text"
+        formControlName="presion"
+      >
+    </mat-form-field>
+
+
+    <mat-form-field class="field">
+      <mat-label>
+        Altura
+      </mat-label>
+      <input
+        matInput
+        type="text"
+        formControlName="altura"
+      >
+    </mat-form-field>
+    <mat-form-field class="field">
+      <mat-label>
+        Prueba diagnóstica
+      </mat-label>
+      <input
+        matInput
+        type="text"
+        formControlName="prueba_diagnostica"
+      >
+    </mat-form-field>
+    <mat-form-field class="field">
+      <mat-label>
+        Medicación
+      </mat-label>
+      <input
+        matInput
+        type="text"
+        formControlName="medicacion"
+      >
+    </mat-form-field>
+    <mat-form-field class="field">
+      <mat-label>
+        Dieta
+      </mat-label>
+      <input
+        matInput
+        type="text"
+        formControlName="dieta"
+      >
+    </mat-form-field>
+    <mat-form-field class="field">
+      <mat-label>
+        Vacuna
+      </mat-label>
+      <input
+        matInput
+        type="text"
+        formControlName="vacuna"
+      >
+    </mat-form-field>
+    <mat-form-field class="field">
+      <mat-label>
+        Próxima visita
+      </mat-label>
+      <input
+        matInput
+        type="text"
+        formControlName="proxima_visita"
+      >
+    </mat-form-field>
+    <mat-form-field class="field">
+      <mat-label>
+        Observaciones
+      </mat-label>
+      <input
+        matInput
+        type="text"
+        formControlName="observaciones"
+      >
+    </mat-form-field>
+    <mat-form-field class="field">
+      <mat-label>
+        Adjunto
+      </mat-label>
+      <input
+        class="mat-input-element custom-input"
+        matInput
+        type="
+          text"
+        formControlName="adjunto"
+      >
+    </mat-form-field>
+    <br>
+
+
+    <div class="flex">
+
+      <br>
+      <button
+        mat-raised-button
+        color="primary"
+      >
+        <mat-icon>send</mat-icon>
+        Enviar
+      </button>
+    </div>
+
+    <div
+      class="field"
+      fxLayout="50%"
+      class="img"
+    >
+      <img>
+    </div>
+  </form>
+</div>

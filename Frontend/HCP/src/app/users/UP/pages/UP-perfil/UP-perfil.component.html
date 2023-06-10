@@ -1,41 +1,43 @@
-
-
 <div class="container">
 
-  <mat-grid-list cols="1" 
-    *ngIf="!pacientes else divPacientes">
+  <mat-grid-list
+    cols="1"
+    *ngIf="!pacientes else divPacientes"
+  >
     <mat-grid-tile>
-        <mat-spinner></mat-spinner>
+      <mat-spinner></mat-spinner>
     </mat-grid-tile>
 
-</mat-grid-list>
-<ng-template #divPacientes>
+  </mat-grid-list>
+  <ng-template #divPacientes>
 
-  <mat-card class="card"  
-    fxLayout="column" 
-    fxLayoutAlign="center center" 
-    fxFlex="100%">
+    <mat-card
+      class="card"
+      fxLayout="column"
+      fxLayoutAlign="center center"
+      fxFlex="100%"
+    >
 
-      <mat-card-header 
-        class="header">
+      <mat-card-header class="header">
 
-        <mat-card-title 
+        <mat-card-title
           class="title"
-          *ngFor="let paciente of pacientes">
-        {{paciente.nombre_p}}
+          *ngFor="let paciente of pacientes"
+        >
+          {{paciente.nombre_p}}
         </mat-card-title>
-        
+
         <!-- <mat-card-subtitle class="subtitle">
         {{pacientes.premium | premium}}
         </mat-card-subtitle>
       </mat-card-header> -->
 
-      <!-- <img 
+        <!-- <img 
         mat-card-image height="300px"
         [src]= 'pacientes | imagen' alt=""> -->
-  <!-- TODO : hacer pipe imagen -->
+        <!-- TODO : hacer pipe imagen -->
 
-  <!-- <mat-card-content class="content">
+        <!-- <mat-card-content class="content">
     <p>
       <strong>
         Cuil:
@@ -111,4 +113,3 @@
 </mat-card>
 </ng-template>
 </div> -->
-

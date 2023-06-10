@@ -14,8 +14,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatGridListModule } from '@angular/material/grid-list';
 // list
 import { MatListModule } from '@angular/material/list';
+// select
+import { MatSelectModule } from '@angular/material/select';
 // icon
 import { MatIconModule } from '@angular/material/icon';
+//input para autocomplete
+import { MatInputModule } from '@angular/material/input';
 // spinner
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 // snackbar
@@ -34,6 +38,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
         MatGridListModule,
         MatListModule,
         MatIconModule,
+        MatInputModule,
+        MatSelectModule,
         MatSnackBarModule,
         MatProgressSpinnerModule,
         MatToolbarModule
