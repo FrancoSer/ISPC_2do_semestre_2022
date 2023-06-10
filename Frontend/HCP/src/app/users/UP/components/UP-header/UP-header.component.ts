@@ -2,8 +2,8 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-up-header',
-  templateUrl: './up-header.component.html',
-  styleUrls: ['./up-header.component.css']
+  templateUrl: './UP-header.component.html',
+  styleUrls: ['./UP-header.component.css']
 })
 export class UPHeaderComponent implements OnInit {
   ngOnInit(): void {
