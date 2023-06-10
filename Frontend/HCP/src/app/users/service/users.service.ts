@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, catchError, of } from 'rxjs';
 import { environment } from 'src/environment/envaironment';
 import { Paciente } from '../interfaces/interfaces';
 
@@ -25,10 +25,14 @@ export class UsersService
 
   // mostrar por ID
 
-  getPacientePorId ( id: string ): Observable<Paciente>
+  getPacientePorId ( id: string ): Observable<Paciente | undefined>
   {
-    return this.http.get<Paciente>( `${ this.baseUrl }/api/paciente/${ id }` );
+    return this.http.get<Paciente>( `${ this.baseUrl }/api/paciente/${ id }/` )
+      .pipe(
+        catchError( error => of( undefined ) )
+      );
   }
+
 
   // mostrar pacientes
 

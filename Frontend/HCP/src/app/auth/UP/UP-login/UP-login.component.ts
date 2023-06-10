@@ -22,7 +22,8 @@ export class UPLoginComponent implements OnInit
     cuil: '',
     password_p: '',
     genero_p: Genero.femenino,
-    id: ''
+    id: '',
+    nombre_p: ''
   };
 
   constructor (
@@ -84,7 +85,7 @@ export class UPLoginComponent implements OnInit
       // } );
     } else
     {
-      this.mostrarSnack( `${ this.pacienteActual.nombre_p } Los datos ingresados no son válidos` );
+      this.mostrarSnack( `Los datos ingresados no son válidos` );
       throw Error( 'Los datos ingresados no son válidos' );
     }
 

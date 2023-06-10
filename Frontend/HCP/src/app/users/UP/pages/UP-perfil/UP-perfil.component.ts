@@ -12,49 +12,31 @@ import { UsersService } from 'src/app/users/service/users.service';
 export class UPPerfilComponent implements OnInit
 {
 
-  public paciente!: Paciente;
-
-  public pacientes!: Paciente[];
-
-  public historiaClinica: HistoriaClinica | undefined;
+  public paciente?: Paciente;
 
   constructor (
     private pacienteService: UsersService,
     private activeRoute: ActivatedRoute,
-    private route: Router ) { }
+    private router: Router ) { }
 
-  // TODO
-
-
-  ngOnInit ()
+  ngOnInit (): void
   {
-
-    this.pacienteService.getPacientes()
+    this.activeRoute.params
       .pipe(
-        tap( resp =>
-        {
-          console.log( resp );
-        } )
+
+        switchMap( ( { id } ) => this.pacienteService.getPacientePorId( id ) ),
+
       )
-      .subscribe( p =>
+      .subscribe( paciente =>
       {
-        this.pacientes = p;
+        if ( !paciente ) return this.router.navigate( [ 'users/up-home/up-perfil/' ] );
+
+        console.log( paciente );
+
+        this.paciente = paciente;
+        return;
+
       } );
-
-
-
-    // me suscribo a los cambios que haya en la url de las rutas, recibo el 
-    // parametro 
-    // por desestructuracion tomo solo el id, es decir dejo solo
-    // el valor
-
-    // this.activeRoute.params
-    // desestructuro el params
-    // .pipe(
-    //   switchMap( ( { id } ) => this.pacienteService.getPacientePorId( id ) ),
-    //   tap( ( resp ) => console.log( resp ) )
-    // )
-    // .subscribe( paciente => this.paciente = paciente );
   }
 
 

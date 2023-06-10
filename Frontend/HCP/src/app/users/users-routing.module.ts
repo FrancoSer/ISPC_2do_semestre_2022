@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UPWelcomeComponent } from './UP/components/UP-welcome/UP-welcome.component';
 import { UPHistorialComponent } from './UP/pages/UP-historial/UP-historial.component';
 import { NuevoHistorialComponent } from './UM/pages/nuevo-historial/nuevo-historial.component';
+import { UMPerfilComponent } from './UM/pages/UM-perfil/UM-perfil.component';
 
 const routes: Routes = [
 
@@ -45,6 +46,9 @@ const routes: Routes = [
     children: [
       {
         path: 'um-historial', component: UMHistorialComponent
+      },
+      {
+        path: 'um-perfil', component: UMPerfilComponent
       },
       {
         path: 'nuevo-historial/:id', component: NuevoHistorialComponent
