@@ -19,6 +19,8 @@ export class UPPerfilComponent implements OnInit
     private activeRoute: ActivatedRoute,
     private router: Router ) { }
 
+
+
   ngOnInit (): void
   {
     this.activeRoute.params

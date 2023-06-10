@@ -7,64 +7,68 @@ Al utilizar [] y (), se establece un enlace unidireccional de datos entre el com
 
 <!-- con (input) escucho lo que el usuario escribe y llamo al metodo buscando() -->
 
-     <mat-toolbar
-     color = "primary">
-     <mat-toolbar-row>
-        <span class="title"> 
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <span class="title">
             Ingrese el nombre del paciente
         </span>
-    
+
     </mat-toolbar-row>
-    </mat-toolbar> 
+</mat-toolbar>
 
-  <div fxLayout="column">
+<div fxLayout="column">
 
-      <mat-form-field>
-          <mat-label>Nombre</mat-label>
-          
-          <input 
-              type="text"
-              placeholder="Buscar paciente"
-              aria-label="Number"
-              matInput
-              formControlName="termino"
-              
-              [matAutocomplete]="auto"
-              >
-              <!-- cada vez que se ejecute el metodo va a traer a los 
+    <mat-form-field>
+        <mat-label>Nombre</mat-label>
+
+        <input
+            type="text"
+            placeholder="Buscar paciente"
+            aria-label="Number"
+            matInput
+            formControlName="termino"
+            [matAutocomplete]="auto"
+        >
+        <!-- cada vez que se ejecute el metodo va a traer a los 
               heroes del arreglo en mat-option -->
 
-              <!-- opcionSelected es de autocomplete
+        <!-- opcionSelected es de autocomplete
               permite escuchar un evento para ser selecionado -->
-          <mat-autocomplete 
-              autoActiveFirstOption 
-              #auto="matAutocomplete"
-              (optionSelected)="opcionSeleccionada( $event )">
-              <!--  en value va lo que quiero obtener -->
-              <mat-option *ngFor="let paciente of pacientes" [value]="paciente">
-                  {{ paciente.nombre_p }}
-              </mat-option>
+        <mat-autocomplete
+            autoActiveFirstOption
+            #auto="matAutocomplete"
+            (optionSelected)="opcionSeleccionada( $event )"
+        >
+            <!--  en value va lo que quiero obtener -->
+            <mat-option
+                *ngFor="let paciente of pacientes"
+                [value]="paciente"
+            >
+                {{ paciente.nombre_p }}
+            </mat-option>
 
-              <mat-option value=""
-              *ngIf="pacientes.length === 0 && termino"
-              >
-      No se encontró nada con el término {{termino}}
-  </mat-option>
-                        
-          </mat-autocomplete>
-      </mat-form-field>
-  </div>
-  
+            <mat-option
+                value=""
+                *ngIf="pacientes.length === 0 && termino"
+            >
+                No se encontró nada con el término {{termino}}
+            </mat-option>
+
+        </mat-autocomplete>
+    </mat-form-field>
+</div>
+
 
 <div>
-  <!-- <pre>
+    <!-- <pre>
       {{heroeSeleccionado | json}}
   </pre> -->
 
-  <div *ngIf="pacienteSeleccionado"
-       
-       fxFlex="20">
-      <!-- el [heroe] viene del componente de heroe-tarjeta -->
-      <!-- <app-UP-perfil [paciente] = "pacienteSeleccionado"></app-UP-perfil> -->
-  </div>
+    <div
+        *ngIf="pacienteSeleccionado"
+        fxFlex="20"
+    >
+        <!-- el [heroe] viene del componente de heroe-tarjeta -->
+        <!-- <app-UP-perfil [paciente] = "pacienteSeleccionado"></app-UP-perfil> -->
+    </div>
 </div>

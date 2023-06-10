@@ -48,7 +48,8 @@ import { InfoComponent } from './info/info.component';
     CommonModule,
     MaterialModule,
     UsersRoutingModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+
 
 
   ]

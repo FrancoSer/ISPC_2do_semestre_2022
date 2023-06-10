@@ -9,10 +9,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 
 
-@NgModule({
-  declarations: [	
+@NgModule( {
+  declarations: [
     AppComponent
-   ],
+  ],
   imports: [
     AppRoutingModule,
     AuthModule,
@@ -23,6 +23,6 @@ import { RouterModule } from '@angular/router';
     RouterModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
-})
+  bootstrap: [ AppComponent ]
+} )
 export class AppModule { }

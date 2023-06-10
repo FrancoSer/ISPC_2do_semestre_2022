@@ -33,6 +33,8 @@ export class UsersService
       );
   }
 
+  // get id
+  idActual: string = '';
 
   // mostrar pacientes
 

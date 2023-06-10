@@ -1,15 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Paciente } from 'src/app/users/interfaces/interfaces';
+import { UsersService } from 'src/app/users/service/users.service';
 
-@Component({
+@Component( {
   selector: 'app-UP-historial',
   templateUrl: './UP-historial.component.html',
-  styleUrls: ['./UP-historial.component.css']
-})
-export class UPHistorialComponent implements OnInit {
+  styleUrls: [ './UP-historial.component.css' ]
+} )
+export class UPHistorialComponent implements OnInit
+{
 
-  constructor() { }
+  constructor ( private servicio: UsersService ) { }
 
-  ngOnInit() {
+  @Input() paciente?: Paciente;
+  ngOnInit ()
+  {
+
+
+
   }
 
 }
