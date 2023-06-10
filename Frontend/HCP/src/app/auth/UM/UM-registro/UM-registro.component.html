@@ -1,128 +1,140 @@
 <section>
     <div class="container">
         <div class="register-box">
-            <h2>CREAR CUENTA MÉDICO</h2>
+            <h2>CREAR CUENTA PACIENTE</h2>
             <form 
                 class="needs-validation row g-3 " 
                 [formGroup]="medicoForm"
-                (ngSubmit)="onSubmit()"
+                
                 >
+                <!-- NOMBRE -->
                 <div class="col-md-6">
-                    <label class="form-label" for="nombre">Nombre: </label>
+                    <label class="form-label">Nombre: </label>
                     <input 
                         class="form-control atributos" 
                         type="text" 
-                        formControlName="username"
-    
+                        formControlName="nombre_m"
                         placeholder="Ingrese su nombre" 
                         required 
                         autofocus
-                        [ngClass]="{'is-invalid':username?.errors && username?.touched  , 'is-valid':!username?.errors && username?.touched}">
-                        <div *ngIf="username?.hasError('required')" class="invalid-feedback">Ingrese su nombre</div>
+                        [ngClass]="{'is-invalid':nombre_m?.errors && nombre_m?.touched  , 'is-valid':!nombre_m?.errors && nombre_m?.touched}">
+                        <div *ngIf="nombre_m?.hasError('required')" class="invalid-feedback">Ingrese su nombre</div>
+                  
                 </div>
-               
-                <!-- <label for="">id
-                    <input type="text"
-                    formControlName="id">
-                </label> -->
-                <div class="col-md-6">
-                    <label class="form-label" for="apellido">Apellido: </label>
-                    <input class="form-control atributos" type="text" pattern="[A-Za-z]{2-60}" name="apellido"
-                        id="apellido" placeholder="Ingrese su apellido" required>
-                    <div class="invalid-feedback">
-                        Ingrese un apellido.
-                    </div>
+                <!-- APELLIDO -->
+                 <div class="col-md-6">
+                    <label class="form-label">Apellido: </label>
+                    <input 
+                        class="form-control atributos" 
+                        type="text"
+                        placeholder="Ingrese su apellido" 
+                        formControlName="apellido_m"
+                        required
+                        [ngClass]="{'is-invalid':apellido_m?.errors && apellido_m?.touched  , 'is-valid':!apellido_m?.errors && apellido_m?.touched}">
+                        <div *ngIf="apellido_m?.hasError('required')" class="invalid-feedback">Ingrese su apellido</div>
                 </div>
+                <!-- matricula -->
                 <div class="col-md-6">
-                    <label class="form-label" for="cuil">MATRÍCULA: </label>
-                    <input class="form-control atributos" type="number"  min="10000000000"
-                        max="99999999999" placeholder="Ingrese CUIL sin guiones ni puntos" required>
-                    <div class="invalid-feedback">
-                        Ingrese un CUIL válido.
-                    </div>
+                    <label class="form-label">MATRÍCULA: </label>
+                    <input 
+                        class="form-control atributos" 
+                        type="number"
+                        placeholder="Ingrese matricula sin guiones ni puntos" 
+                        formControlName="matricula"
+                        required
+                        [ngClass]="{'is-invalid':matricula?.errors && matricula?.touched  , 'is-valid':!matricula?.errors && matricula?.touched}">
+                        <div *ngIf="matricula?.hasError('required')" class="invalid-feedback">Ingrese su matricula</div>
+                        <div *ngIf="matricula?.hasError('maxlength')" class="invalid-feedback">El número de matrícula no puede ser mayor a 10 caracteres</div>
+                        <div *ngIf="matricula?.hasError('matricula')" class="invalid-feedback">Ingrese un matricula válido</div>
+                  
                 </div> 
                 <div class="col-md-6">
-                    <label class="form-label" for="email">Email: </label>
+                    <label class="form-label">Email: </label>
                     <input 
                         class="form-control atributos" 
                         type="email" 
-                        formControlName="email"
+                        formControlName="mail_m"
                         placeholder="Ingrese su correo electrónico" 
                         required
-                        [ngClass]="{'is-invalid':email?.errors && email?.touched  , 'is-valid':!email?.errors && email?.touched}">
+                        [ngClass]="{'is-invalid':mail_m?.errors && mail_m?.touched  , 'is-valid':!mail_m?.errors && mail_m?.touched}">
                         
-                        <div *ngIf="email?.hasError('required')" class="invalid-feedback">Ingrese su email</div>
-                        <div *ngIf="email?.hasError('email')" class="invalid-feedback">Ingrese un email válido</div>
+                        <div *ngIf="mail_m?.hasError('required')" class="invalid-feedback">Ingrese su email</div>
+                        <div *ngIf="mail_m?.hasError('email')" class="invalid-feedback">Ingrese un email válido</div>
+                   
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Teléfono: </label>
+                    <input 
+                        class="form-control atributos" 
+                        type="number" 
+                        formControlName="telefono_m"
+                        placeholder="Ingrese su teléfono"
+                        formControlName="telefono_m" >
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Dirección: </label>
+                    <input 
+                        class="form-control atributos" 
+                        type="text" 
+                        formControlName="direccion_m"
+                        placeholder="Ingrese su dirección"
+                        >
                 </div>
                 <div class="col-md-6">
                     <label class="form-label">Crea tu contraseña: </label>
                     <input 
                         class="form-control atributos" 
                         type="password" 
-                       
-                        formControlName="password"
+                        
+                        formControlName="password_m"
                         placeholder="Ingrese su contraseña"
                         required
-                        [ngClass]="{'is-invalid':password?.errors && password?.touched  , 'is-valid':!password?.errors && password?.touched}">
-                        <div *ngIf="password?.hasError('required')" class="invalid-feedback">Ingrese su contraseña</div>
-                        <div *ngIf="password?.hasError('maxlength')" class="invalid-feedback">La contraseña no puede ser mayor
+                        [ngClass]="{'is-invalid':password_m?.errors && password_m?.touched  , 'is-valid':!password_m?.errors && password_m?.touched}">
+                        <div *ngIf="password_m?.hasError('required')" class="invalid-feedback">Ingrese su contraseña</div>
+                        <div *ngIf="password_m?.hasError('maxlength')" class="invalid-feedback">La contraseña no puede ser mayor
                             a {{maxChars}} caracteres
                         </div>
-                        <div *ngIf="password?.hasError('minlength')" class="invalid-feedback">La contraseña no puede ser menor
+                        <div *ngIf="password_m?.hasError('minlength')" class="invalid-feedback">La contraseña no puede ser menor
                             a {{minChars}} caracteres
                         </div>
+                   
                 </div>
                  <div class="col-md-6">
-                    <label class="form-label" for="confirmarContrasenaPaciente">Confirma tu contraseña: </label>
-                    <input class="form-control atributos" type="password" name="confirmarContrasenaPaciente"
-                        id="confirmarContrasenaPaciente" minlength="8" maxlength="25"
-                        placeholder="Ingrese nuevamente la contraseña" required>
-                    <div class="invalid-feedback">
-                        Las contraseñas no coinciden.
-                    </div>
+                    <label class="form-label">Confirma tu contraseña: </label>
+                    <input class="form-control atributos" 
+                           type="password"
+                           placeholder="Ingrese nuevamente la contraseña" 
+                           formControlName="password_m_repeat"
+                           required>
+                           <div *ngIf="password_m_repeat !== password_m" class="invalid-feedback">Las contraseñas no coinciden</div>
                 </div>
                 <div class="col-md-4">
                     <label class="form-label" for="nacimiento">Fecha de nacimiento: </label>
-                    <input class="form-control atributos" type="date" name="nacimiento" id="nacimiento" min="1907-01-01"
-                        max="2022-12-31" required>
-                    <div class="invalid-feedback">
-                        Ingrese una fecha de nacimiento válida.
-                    </div>
+                    <input 
+                    class="form-control atributos" 
+                    type="date"
+                    formControlName="nacimiento_m"
+                    required>
+                    <div *ngIf="nacimiento_m?.hasError('required')" class="invalid-feedback">Ingrese su fecha de nacimiento</div>
+        
                 </div>
                 <div class="col-md-4">
-                    <label class="form-label" for="sexo">Sexo</label>
-                    <select class="atributos" name="sexo" id="sexo" required>
-                        <option selected disabled value="">Seleccione su sexo</option>
-                        <option value="mujer">Mujer</option>
-                        <option value="masculino">Hombre</option>
-                        <option value="otro">Otro</option>
+                    <label class="form-label" for="sexo">Género</label>
+                    <select 
+                    class="atributos"
+                    formControlName="genero_m"
+                     >
+                        <option selected disabled value="">Seleccione su género</option>
+                        <option value="Femenino">Femenino</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="x">X</option>
                     </select>
-                    <div class="invalid-feedback">
-                        Selecciona su sexo.
-                    </div>
+        
                 </div>
-                <div class="col-md-4">
-                    <label class="form-label" for="sangre">Grupo sanguineo</label>
-                    <select class="atributos" name="sangre" id="sangre" required>
-                        <option selected disabled value="">Seleccione grupo sanguineo</option>
-                        <option value="A+">A+</option>
-                        <option value="A-">A-</option>
-                        <option value="B+">B+</option>
-                        <option value="B-">B-</option>
-                        <option value="0+">0+</option>
-                        <option value="0-">0-</option>
-                        <option value="AB+">AB+</option>
-                        <option value="AB-">AB-</option>
-                    </select>
-                    <div class="invalid-feedback">
-                        Selecciona un grupo sanguineo.
-                    </div>
-                </div> 
 
                 <button mat-raised-button
                         color="primary"
                         (click)="onSubmit()"
-                       
                         >
                         <mat-icon>
                            send
@@ -130,15 +142,11 @@
                     
                     </button>
             </form>
-                <div class="button">
-                        <button
-                    
-                        mat-button color="succes"
-                        routerLink="/auth/login-um"
-                    >
-                        ¿Ya tienes una cuenta? Click aquí
+            <div class="button">       
+                <button
+                    mat-button color="succes"
+                    routerLink="/auth/login-um"
+                >
+                    ¿Ya tienes una cuenta? Click aquí
                 </button>
-                     </div>           
-               
-
-                <!-- TODO formulario -->
+            </div> 

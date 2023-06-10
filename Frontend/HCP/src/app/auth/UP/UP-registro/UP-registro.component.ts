@@ -67,8 +67,8 @@ export class UPRegistroComponent implements OnInit
     mail_p: '',
     genero_p: Genero.masculino,
     sangre: GrupoSanguineo.Apositivo,
-    password: '',
-    passwordRepeat: '',
+    password_p: '',
+    password_p_repeat: '',
     premium: false
 
   };
@@ -153,7 +153,7 @@ export class UPRegistroComponent implements OnInit
         {
           this.router.navigate( [ 'auth/login-up' ] );
           // mensaje
-          this.mostrarSnack( `${ this.pacienteActual.nombre_p } su perfil ha sido creado` );
+          this.mostrarSnack( `${ this.pacienteActual.nombre_p } su perfil ha sido creado con éxito` );
 
         } );
       // console.log( this.pacienteActual );
