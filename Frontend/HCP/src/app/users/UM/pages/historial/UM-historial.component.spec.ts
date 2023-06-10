@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UMHistorialComponent } from './um-historial.component';
+import { UMHistorialComponent } from './UM-historial.component';
 
 describe('UmHistorialComponent', () => {
   let component: UMHistorialComponent;
