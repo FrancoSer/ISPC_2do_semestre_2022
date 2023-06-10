@@ -15,8 +15,6 @@ export class UMHistorialComponent
 
   public pacienteSeleccionado!: Paciente;
 
-  public historiaClinica: HistoriaClinica | undefined;
-
   constructor (
     private pacienteService: UsersService,
 
@@ -29,7 +27,7 @@ export class UMHistorialComponent
       {
 
         this.pacientes = pacientes;
-        this.historiaClinica = this.pacienteSeleccionado.historia_clinica;
+
       } );
   }
 
