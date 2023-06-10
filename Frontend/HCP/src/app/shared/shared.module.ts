@@ -7,20 +7,21 @@ import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 
 
-@NgModule({
+@NgModule( {
   declarations: [
     ErrorPageComponent,
     InicioComponent,
     SobreNosotrosComponent,
     FooterComponent,
-   
+
+
   ],
   imports: [
     CommonModule,
     RouterModule
   ],
   exports: [
-    
+
   ]
-})
+} )
 export class SharedModule { }

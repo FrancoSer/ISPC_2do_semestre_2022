@@ -21,6 +21,7 @@ import { GeneroPipe } from './UP/pipes/genero.pipe';
 import { UPWelcomeComponent } from './UP/components/UP-welcome/UP-welcome.component';
 import { BuscarComponent } from './UM/components/buscar/buscar.component';
 import { NuevoHistorialComponent } from './UM/pages/nuevo-historial/nuevo-historial.component';
+import { InfoComponent } from './info/info.component';
 
 @NgModule( {
   declarations: [
@@ -28,6 +29,7 @@ import { NuevoHistorialComponent } from './UM/pages/nuevo-historial/nuevo-histor
     BuscarComponent,
     GeneroPipe,
     HeaderComponent,
+    InfoComponent,
     NuevoHistorialComponent,
     SidebarComponent,
     UMHistorialComponent,
