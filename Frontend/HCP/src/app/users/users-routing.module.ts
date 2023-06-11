@@ -23,7 +23,7 @@ const routes: Routes = [
     component: UPHomeComponent,
     children: [
       {
-        path: 'up-historial/:id',
+        path: 'up-historial',
         component: UPHistorialComponent,
       },
       {
@@ -36,7 +36,7 @@ const routes: Routes = [
         component: PlanPremiumComponent
       },
       {
-        path: 'up-perfil/:id',
+        path: 'up-perfil',
         component: UPPerfilComponent
       },
       {

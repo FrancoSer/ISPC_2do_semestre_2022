@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environment/envaironment';
 import { Paciente } from '../users/interfaces/interfaces';
 import { PacienteRegistro } from './interfaces/auth';
-import { Observable, tap } from 'rxjs';
+import { Observable, of, tap, map, catchError } from 'rxjs';
 
 @Injectable( {
   providedIn: 'root'
@@ -48,6 +48,24 @@ export class AuthUpService
         tap( paciente => localStorage.setItem( 'token', paciente.id.toString() )
         )
       );
+  }
+
+  // check auth
+
+  checkAuth (): Observable<boolean>
+  {
+
+    if ( !localStorage.getItem( 'token' ) ) return of( false );
+
+    const token = localStorage.getItem( 'token' );
+
+    return this.http.get<Paciente>( `${ this.baseUrl }/api/paciente/${ token }` )
+      .pipe(
+        tap( paciente => this.paciente = paciente ),
+        map( paciente => !!paciente ),
+        catchError( err => of( false ) )
+      );
+
   }
 
   // logout

@@ -68,15 +68,15 @@ export class UPLoginComponent implements OnInit
         {
           // console.log( paciente );
           this.paciente = paciente as Paciente;
-          this.router.navigate( [ 'users/home-up/up-perfil', this.paciente.id ] );
+          this.router.navigate( [ 'users/home-up/up-perfil' ] );
           // mensaje
           this.mostrarSnack( `Hola ${ this.paciente.nombre_p }, te damos la bienvenida a HCP` );
 
         },
-          // error =>
-          // {
-          //   this.mostrarSnack( 'Los datos ingresados no corresponden a un usuario registrado' );
-          // }
+          error =>
+          {
+            this.mostrarSnack( 'Los datos ingresados no corresponden a un usuario registrado' );
+          }
 
         );
 

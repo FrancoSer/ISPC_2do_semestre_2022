@@ -1,3 +1,75 @@
-<h1 class="h1">
-  hola {{paciente?.nombre_p}}
-</h1>
+<ng-container *ngIf="paciente">
+  <div class="container">
+    <mat-card class="card">
+      <mat-card-title class="title">{{paciente.genero_p | genero}} {{paciente.nombre_p}}</mat-card-title>
+      <mat-card-subtitle class="subtitle">Estos son tus datos</mat-card-subtitle>
+      <mat-list>
+        <mat-list-item>
+          <mat-icon class="mat-list-icon text">bloodtype</mat-icon>
+          <span class="text">Grupo Sanguíneo:</span>
+          <span class="data">{{ paciente.sangre }}</span>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon class="mat-list-icon text">person</mat-icon>
+          <span class="text">Nombre:</span>
+          <span class="data">{{ paciente.nombre_p }}</span>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon class="mat-list-icon text">person</mat-icon>
+          <span class="text">Apellido:</span>
+          <span class="data">{{ paciente.apellido_p }}</span>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon class="mat-list-icon text">assignment_ind</mat-icon>
+          <span class="text">CUIL:</span>
+          <span class="data">{{ paciente.cuil }}</span>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon class="mat-list-icon text">cake</mat-icon>
+          <span class="text">Fecha de Nacimiento:</span>
+          <span class="data">{{ paciente.nacimiento_p }}</span>
+        </mat-list-item>
+
+        <mat-list-item>
+          <mat-icon class="mat-list-icon text">phone</mat-icon>
+          <span class="text">Teléfono:</span>
+          <span class="data">{{ paciente.telefono_p }}</span>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon class="mat-list-icon text">location_on</mat-icon>
+          <span class="text">Dirección:</span>
+          <span class="data">{{ paciente.direccion_p }}</span>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon class="mat-list-icon text">email</mat-icon>
+          <span class="text">Email:</span>
+          <span class="data">{{ paciente.mail_p }}</span>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon class="mat-list-icon text">person_outline</mat-icon>
+          <span class="text">Género:</span>
+          <span class="data">{{ paciente.genero_p }}</span>
+        </mat-list-item>
+
+      </mat-list>
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="abrirEditarUp()"
+      >Editar Usuario</button>
+      <br>
+      <button
+        mat-raised-button
+        color="warn"
+        (click)="eliminarUp()"
+      >Eliminar Usuario</button>
+    </mat-card>
+    <ng-container *ngIf="editar">
+
+      <mat-card class="card">
+
+        fomulario para editar
+      </mat-card>
+    </ng-container>
+  </div>
+</ng-container>

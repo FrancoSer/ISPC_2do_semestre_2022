@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthUpService } from 'src/app/auth/auth-up.service';
 import { Paciente } from 'src/app/users/interfaces/interfaces';
 
@@ -11,7 +12,8 @@ export class UPHeaderComponent implements OnInit
 {
 
   constructor (
-    private http: AuthUpService
+    private http: AuthUpService,
+    private route: Router
   ) { }
 
   // get paciente
@@ -25,6 +27,7 @@ export class UPHeaderComponent implements OnInit
   {
 
     this.http.logoutPaciente();
+    this.route.navigate( [ '/auth/login-up' ] );
 
   }
 

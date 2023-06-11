@@ -1,32 +1,37 @@
-.container{
-    display: flex;
-    margin: 0;
-    padding: 0;
-    flex-direction: column;
+.text
+{
+    margin-left: .5rem;
+    color: #333;
+    font-weight: 500;
 }
 
 .card{
-    /* background: saddlebrown; */
-    margin: 0;
-    padding: 0;
-
+    margin: 1rem;
+    width: 50%;
+    background-color: white;
 }
 
-.header{
+.container{
     display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
+    flex-direction: row;
 }
 
-.content{
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    /* background: indianred; */
-
-
+.title{
+    font-size: 2rem;
+    margin: 1rem
 }
+
+.subtitle{
+    margin: 1rem;
+    font-size: 1rem;
+    color: #333;
+}
+
+.data{
+    margin-left: .5rem;
+    color: #333;
+}
+
+
+
 
