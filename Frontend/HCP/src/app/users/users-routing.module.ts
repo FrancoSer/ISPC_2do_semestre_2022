@@ -70,7 +70,9 @@ const routes: Routes = [
         path: 'sobre-hcp',
         component: InfoComponent
       }
-    ]
+    ],
+    canActivate: [ AuthUpGuard ],
+    canMatch: [ AuthUpGuard ]
   },
 
 ];
