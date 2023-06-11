@@ -24,6 +24,7 @@ export class UMLoginComponent implements OnInit
   } );
 
   medico: Medico = {
+    id: '',
     matricula: '',
     password_m: '',
     genero_m: Genero.femenino

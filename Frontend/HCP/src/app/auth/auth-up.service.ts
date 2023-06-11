@@ -43,16 +43,11 @@ export class AuthUpService
     return this.http.post<Paciente>( `${ this.baseUrl }/api/paciente/login/`, body )
       .pipe(
         tap(
-          paciente =>
-          {
-
-            this.paciente = paciente as Paciente;
-            localStorage.setItem( 'token', paciente.id.toString() );
-
-          }
+          paciente => this.paciente = paciente as Paciente
+        ),
+        tap( paciente => localStorage.setItem( 'token', paciente.id.toString() )
         )
       );
-
   }
 
   // registro

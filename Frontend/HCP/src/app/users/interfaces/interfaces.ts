@@ -63,7 +63,7 @@ export type Premium = {
 export interface Medico
 {
 
-    id?: string;
+    id: string;
     matricula: string,
     nacimiento_m?: string,
     nombre_m?: string,
