@@ -46,13 +46,15 @@
 
 
             <div class="profile-login dropstart">
+                {{paciente?.nombre_p}}
+
                 <button
                     class="btn  dropdown-toggle"
                     id="btn-iniciar"
                     data-bs-toggle="dropdown"
-                    routerLink="/users/home-up/up-perfil/:id"
+                    (click)="logOutUp()"
                 >
-                    Mi cuenta
+                    Cerrar Sesión
                 </button>
                 <ul class="dropdown-menu dropdown-menu-dark">
                     <li>

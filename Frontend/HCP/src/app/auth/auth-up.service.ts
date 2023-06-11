@@ -50,6 +50,14 @@ export class AuthUpService
       );
   }
 
+  // logout
+
+  logoutPaciente ()
+  {
+    this.paciente = undefined;
+    localStorage.clear();
+  }
+
   // registro
 
   registroPaciente ( paciente: PacienteRegistro ): Observable<Paciente>
