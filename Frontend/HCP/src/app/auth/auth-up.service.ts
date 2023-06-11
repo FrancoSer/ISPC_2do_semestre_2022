@@ -59,7 +59,9 @@ export class AuthUpService
 
     const token = localStorage.getItem( 'token' );
 
-    return this.http.get<Paciente>( `${ this.baseUrl }/api/paciente/${ token }` )
+    console.log( token );
+
+    return this.http.get<Paciente>( `${ this.baseUrl }/api/paciente/${ token }/` )
       .pipe(
         tap( paciente => this.paciente = paciente ),
         map( paciente => !!paciente ),
