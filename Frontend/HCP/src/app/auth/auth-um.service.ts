@@ -8,6 +8,7 @@ import { Observable, catchError, map, of, tap } from 'rxjs';
 @Injectable( {
   providedIn: 'root'
 } )
+
 export class AuthUmService
 {
 
@@ -67,6 +68,14 @@ export class AuthUmService
         catchError( err => of( false ) )
       );
 
+  }
+
+  // logout
+
+  logoutMedico ()
+  {
+    this.medico = undefined;
+    localStorage.clear();
   }
 
   // registro
