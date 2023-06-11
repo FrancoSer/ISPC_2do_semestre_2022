@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { PacienteRegistro } from 'src/app/auth/interfaces/auth';
-import { AuthService } from '../../auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Genero, GrupoSanguineo, Paciente } from 'src/app/users/interfaces/interfaces';
+import { AuthUpService } from '../../auth-up.service';
 
 @Component( {
   selector: 'app-UP-registro',
@@ -75,7 +75,7 @@ export class UPRegistroComponent implements OnInit
 
   constructor (
 
-    private pacienteServicio: AuthService,
+    private pacienteServicio: AuthUpService,
     private router: Router,
     private activateRoute: ActivatedRoute,
     private snackBar: MatSnackBar,

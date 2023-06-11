@@ -23,7 +23,7 @@ const routes: Routes = [
     component: UPHomeComponent,
     children: [
       {
-        path: 'up-historial',
+        path: 'up-historial/:id',
         component: UPHistorialComponent,
       },
       {

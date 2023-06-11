@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { AuthService } from '../../auth.service';
+import { AuthUmService } from '../../auth-um.service';
 
 import { MedicoLogin } from '../../interfaces/auth';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -31,7 +31,7 @@ export class UMLoginComponent implements OnInit
 
   constructor (
 
-    private http: AuthService,
+    private http: AuthUmService,
     private router: Router,
     private snackBar: MatSnackBar,
 

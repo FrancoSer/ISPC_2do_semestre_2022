@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../../auth.service';
-import { PacienteLogin } from '../../interfaces/auth';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Genero, Paciente } from 'src/app/users/interfaces/interfaces';
+import { AuthUpService } from '../../auth-up.service';
+import { PacienteLogin } from '../../interfaces/auth';
 
 @Component( {
   selector: 'app-UP-login',
@@ -28,7 +28,7 @@ export class UPLoginComponent implements OnInit
 
   constructor (
 
-    private http: AuthService,
+    private http: AuthUpService,
     private router: Router,
     private snackBar: MatSnackBar,
 
@@ -64,7 +64,7 @@ export class UPLoginComponent implements OnInit
     {
 
       this.http.loginPaciente( this.pacienteActual.cuil, this.pacienteActual.password_p )
-        .subscribe( paciente =>
+        .subscribe( ( paciente: Paciente ) =>
         {
           // console.log( paciente );
           this.paciente = paciente as Paciente;
@@ -72,10 +72,11 @@ export class UPLoginComponent implements OnInit
           // mensaje
           this.mostrarSnack( `Hola ${ this.paciente.nombre_p }, te damos la bienvenida a HCP` );
 
-        }, error =>
-        {
-          this.mostrarSnack( 'Los datos ingresados no corresponden a un usuario registrado' );
-        }
+        },
+          // error =>
+          // {
+          //   this.mostrarSnack( 'Los datos ingresados no corresponden a un usuario registrado' );
+          // }
 
         );
 

@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { switchMap } from 'rxjs';
 import { Paciente } from 'src/app/users/interfaces/interfaces';
 import { UsersService } from 'src/app/users/service/users.service';
 
@@ -10,14 +12,34 @@ import { UsersService } from 'src/app/users/service/users.service';
 export class UPHistorialComponent implements OnInit
 {
 
-  constructor ( private servicio: UsersService ) { }
+  public paciente?: Paciente;
 
-  @Input() paciente?: Paciente;
-  ngOnInit ()
+  constructor (
+    private pacienteService: UsersService,
+    private activeRoute: ActivatedRoute,
+    private router: Router ) { }
+
+
+
+  ngOnInit (): void
   {
+    this.activeRoute.params
+      .pipe(
 
+        switchMap( ( { id } ) => this.pacienteService.getPacientePorId( id ) ),
 
+      )
+      .subscribe( paciente =>
+      {
+        if ( !paciente ) return this.router.navigate( [ 'users/up-home/up-perfil/:id' ] );
 
+        console.log( paciente );
+
+        this.paciente = paciente;
+        return;
+
+      } );
   }
+
 
 }
