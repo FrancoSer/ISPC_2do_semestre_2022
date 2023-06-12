@@ -1,142 +1,200 @@
 <section>
     <div class="container">
-        <div class="register-box">
+        <section class="register-box">
             <h2>CREAR CUENTA PACIENTE</h2>
-            <form 
-                class="needs-validation row g-3 " 
+            <form
+                class="needs-validation row g-3 "
                 [formGroup]="pacienteForm"
-                
-                >
+            >
                 <!-- NOMBRE -->
                 <div class="col-md-6">
                     <label class="form-label">Nombre: </label>
-                    <input 
-                        class="form-control atributos" 
-                        type="text" 
+                    <input
+                        class="form-control atributos"
+                        type="text"
                         formControlName="nombre_p"
-                        placeholder="Ingrese su nombre" 
-                        required 
+                        placeholder="Ingrese su nombre"
+                        required
                         autofocus
-                        [ngClass]="{'is-invalid':nombre_p?.errors && nombre_p?.touched  , 'is-valid':!nombre_p?.errors && nombre_p?.touched}">
-                        <div *ngIf="nombre_p?.hasError('required')" class="invalid-feedback">Ingrese su nombre</div>
-                  
+                        [ngClass]="{'is-invalid':nombre_p?.errors && nombre_p?.touched  , 'is-valid':!nombre_p?.errors && nombre_p?.touched}"
+                    >
+                    <div
+                        *ngIf="nombre_p?.hasError('required')"
+                        class="invalid-feedback"
+                    >Ingrese su nombre</div>
+
                 </div>
                 <!-- APELLIDO -->
-                 <div class="col-md-6">
+                <div class="col-md-6">
                     <label class="form-label">Apellido: </label>
-                    <input 
-                        class="form-control atributos" 
+                    <input
+                        class="form-control atributos"
                         type="text"
-                        placeholder="Ingrese su apellido" 
+                        placeholder="Ingrese su apellido"
                         formControlName="apellido_p"
                         required
-                        [ngClass]="{'is-invalid':apellido_p?.errors && apellido_p?.touched  , 'is-valid':!apellido_p?.errors && apellido_p?.touched}">
-                        <div *ngIf="apellido_p?.hasError('required')" class="invalid-feedback">Ingrese su apellido</div>
+                        [ngClass]="{'is-invalid':apellido_p?.errors && apellido_p?.touched  , 'is-valid':!apellido_p?.errors && apellido_p?.touched}"
+                    >
+                    <div
+                        *ngIf="apellido_p?.hasError('required')"
+                        class="invalid-feedback"
+                    >Ingrese su apellido</div>
                 </div>
                 <!-- CUIL -->
                 <div class="col-md-6">
                     <label class="form-label">CUIL: </label>
-                    <input 
-                        class="form-control atributos" 
+                    <input
+                        class="form-control atributos"
                         type="number"
-                        placeholder="Ingrese CUIL sin guiones ni puntos" 
+                        placeholder="Ingrese CUIL sin guiones ni puntos"
                         formControlName="cuil"
                         required
-                        [ngClass]="{'is-invalid':cuil?.errors && cuil?.touched  , 'is-valid':!cuil?.errors && cuil?.touched}">
-                        <div *ngIf="cuil?.hasError('required')" class="invalid-feedback">Ingrese su CUIL</div>
-                        <div *ngIf="cuil?.hasError('cuil')" class="invalid-feedback">Ingrese un CUIL válido</div>
-                  
-                </div> 
+                        [ngClass]="{'is-invalid':cuil?.errors && cuil?.touched  , 'is-valid':!cuil?.errors && cuil?.touched}"
+                    >
+                    <div
+                        *ngIf="cuil?.hasError('required')"
+                        class="invalid-feedback"
+                    >Ingrese su CUIL</div>
+                    <div
+                        *ngIf="cuil?.hasError('cuil')"
+                        class="invalid-feedback"
+                    >Ingrese un CUIL válido</div>
+
+                </div>
                 <div class="col-md-6">
                     <label class="form-label">Email: </label>
-                    <input 
-                        class="form-control atributos" 
-                        type="email" 
+                    <input
+                        class="form-control atributos"
+                        type="email"
                         formControlName="mail_p"
-                        placeholder="Ingrese su correo electrónico" 
+                        placeholder="Ingrese su correo electrónico"
                         required
-                        [ngClass]="{'is-invalid':mail_p?.errors && mail_p?.touched  , 'is-valid':!mail_p?.errors && mail_p?.touched}">
-                        
-                        <div *ngIf="mail_p?.hasError('required')" class="invalid-feedback">Ingrese su email</div>
-                        <div *ngIf="mail_p?.hasError('email')" class="invalid-feedback">Ingrese un email válido</div>
-                   
+                        [ngClass]="{'is-invalid':mail_p?.errors && mail_p?.touched  , 'is-valid':!mail_p?.errors && mail_p?.touched}"
+                    >
+
+                    <div
+                        *ngIf="mail_p?.hasError('required')"
+                        class="invalid-feedback"
+                    >Ingrese su email</div>
+                    <div
+                        *ngIf="mail_p?.hasError('email')"
+                        class="invalid-feedback"
+                    >Ingrese un email válido</div>
+
                 </div>
                 <div class="col-md-6">
                     <label class="form-label">Teléfono: </label>
-                    <input 
-                        class="form-control atributos" 
-                        type="number" 
+                    <input
+                        class="form-control atributos"
+                        type="number"
                         formControlName="telefono_p"
                         placeholder="Ingrese su teléfono"
-                        formControlName="telefono_p" >
+                        formControlName="telefono_p"
+                    >
                 </div>
                 <div class="col-md-6">
                     <label class="form-label">Dirección: </label>
-                    <input 
-                        class="form-control atributos" 
-                        type="text" 
+                    <input
+                        class="form-control atributos"
+                        type="text"
                         formControlName="direccion_p"
                         placeholder="Ingrese su dirección"
-                        >
+                    >
                 </div>
                 <div class="col-md-6">
                     <label class="form-label">Crea tu contraseña: </label>
-                    <input 
-                        class="form-control atributos" 
-                        type="password" 
-                        
+                    <input
+                        class="form-control atributos"
+                        type="password"
                         formControlName="password_p"
                         placeholder="Ingrese su contraseña"
                         required
-                        [ngClass]="{'is-invalid':password_p?.errors && password_p?.touched  , 'is-valid':!password_p?.errors && password_p?.touched}">
-                        <div *ngIf="password_p?.hasError('required')" class="invalid-feedback">Ingrese su contraseña</div>
-                        <div *ngIf="password_p?.hasError('maxlength')" class="invalid-feedback">La contraseña no puede ser mayor
-                            a {{maxChars}} caracteres
-                        </div>
-                        <div *ngIf="password_p?.hasError('minlength')" class="invalid-feedback">La contraseña no puede ser menor
-                            a {{minChars}} caracteres
-                        </div>
-                   
+                        [ngClass]="{'is-invalid':password_p?.errors && password_p?.touched  , 'is-valid':!password_p?.errors && password_p?.touched}"
+                    >
+                    <div
+                        *ngIf="password_p?.hasError('required')"
+                        class="invalid-feedback"
+                    >Ingrese su contraseña</div>
+                    <div
+                        *ngIf="password_p?.hasError('maxlength')"
+                        class="invalid-feedback"
+                    >La contraseña no puede ser mayor
+                        a {{maxChars}} caracteres
+                    </div>
+                    <div
+                        *ngIf="password_p?.hasError('minlength')"
+                        class="invalid-feedback"
+                    >La contraseña no puede ser menor
+                        a {{minChars}} caracteres
+                    </div>
+
                 </div>
-                 <div class="col-md-6">
+                <div class="col-md-6">
                     <label class="form-label">Confirma tu contraseña: </label>
-                    <input class="form-control atributos" 
-                           type="password"
-                           placeholder="Ingrese nuevamente la contraseña" 
-                           formControlName="password_p_repeat"
-                           required>
-                           <div *ngIf="password_p_repeat !== password_p" class="invalid-feedback">Las contraseñas no coinciden</div>
+                    <input
+                        class="form-control atributos"
+                        type="password"
+                        placeholder="Ingrese nuevamente la contraseña"
+                        formControlName="password_p_repeat"
+                        required
+                    >
+                    <div
+                        *ngIf="password_p_repeat !== password_p"
+                        class="invalid-feedback"
+                    >Las contraseñas no coinciden</div>
                 </div>
                 <div class="col-md-4">
-                    <label class="form-label" for="nacimiento">Fecha de nacimiento: </label>
-                    <input 
-                    class="form-control atributos" 
-                    type="date"
-                    formControlName="nacimiento_p"
-                    required>
-                    <div *ngIf="nacimiento_p?.hasError('required')" class="invalid-feedback">Ingrese su fecha de nacimiento</div>
-        
+                    <label
+                        class="form-label"
+                        for="nacimiento"
+                    >Fecha de nacimiento: </label>
+                    <input
+                        class="form-control atributos"
+                        type="date"
+                        formControlName="nacimiento_p"
+                        required
+                    >
+                    <div
+                        *ngIf="nacimiento_p?.hasError('required')"
+                        class="invalid-feedback"
+                    >Ingrese su fecha de nacimiento</div>
+
                 </div>
                 <div class="col-md-4">
-                    <label class="form-label" for="sexo">Género</label>
-                    <select 
-                    class="atributos"
-                    formControlName="genero_p"
-                     >
-                        <option selected disabled value="">Seleccione su género</option>
+                    <label
+                        class="form-label"
+                        for="sexo"
+                    >Género</label>
+                    <select
+                        class="atributos"
+                        formControlName="genero_p"
+                    >
+                        <option
+                            selected
+                            disabled
+                            value=""
+                        >Seleccione su género</option>
                         <option value="Femenino">Femenino</option>
                         <option value="Masculino">Masculino</option>
                         <option value="x">X</option>
                     </select>
-        
+
                 </div>
                 <div class="col-md-4">
-                    <label class="form-label" for="sangre">Grupo sanguineo</label>
-                    <select 
-                        class="atributos" 
-                        formControlName="sangre" 
-                        required>
-                        <option selected disabled value="">Seleccione grupo sanguineo</option>
+                    <label
+                        class="form-label"
+                        for="sangre"
+                    >Grupo sanguineo</label>
+                    <select
+                        class="atributos"
+                        formControlName="sangre"
+                        required
+                    >
+                        <option
+                            selected
+                            disabled
+                            value=""
+                        >Seleccione grupo sanguineo</option>
                         <option value="A+">A+</option>
                         <option value="A-">A-</option>
                         <option value="B+">B+</option>
@@ -148,21 +206,24 @@
                     </select>
                 </div>
 
-                <button mat-raised-button
-                        color="primary"
-                        (click)="onSubmit()"
-                        >
-                        <mat-icon>
-                           send
-                        </mat-icon>
-                    
-                    </button>
-            </form>
-            <div class="button">       
                 <button
-                    mat-button color="succes"
+                    mat-raised-button
+                    color="primary"
+                    (click)="onSubmit()"
+                >
+                    <mat-icon>
+                        send
+                    </mat-icon>
+
+                </button>
+            </form>
+            <div class="button">
+                <button
+                    mat-button
+                    color="succes"
                     routerLink="/auth/login-up"
                 >
                     ¿Ya tienes una cuenta? Click aquí
                 </button>
-            </div> 
+            </div>
+        </section>

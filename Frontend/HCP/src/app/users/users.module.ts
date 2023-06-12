@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { UsersRoutingModule } from './users-routing.module';
 import { MaterialModule } from '../material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -18,10 +20,13 @@ import { UPPerfilComponent } from './UP/pages/UP-perfil/UP-perfil.component';
 
 import { PremiumPipe } from './premium.pipe';
 import { GeneroPipe } from './UP/pipes/genero.pipe';
+
 import { UPWelcomeComponent } from './UP/components/UP-welcome/UP-welcome.component';
 import { BuscarComponent } from './UM/components/buscar/buscar.component';
 import { NuevoHistorialComponent } from './UM/pages/nuevo-historial/nuevo-historial.component';
 import { InfoComponent } from './info/info.component';
+
+
 
 @NgModule( {
   declarations: [
@@ -49,9 +54,7 @@ import { InfoComponent } from './info/info.component';
     MaterialModule,
     UsersRoutingModule,
     FlexLayoutModule,
-
-
-
+    ReactiveFormsModule
   ]
 } )
 export class UsersModule { }

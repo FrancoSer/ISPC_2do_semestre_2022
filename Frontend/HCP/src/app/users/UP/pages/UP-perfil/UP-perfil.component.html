@@ -65,10 +65,208 @@
       >Eliminar Usuario</button>
     </mat-card>
     <ng-container *ngIf="editar">
+      <mat-card class="card form">
+        <section class="register-box">
+          <h2>Editar mi cuenta</h2>
+          <form
+            class="needs-validation row g-3 "
+            [formGroup]="pacienteForm"
+          >
+            <!-- NOMBRE -->
+            <div class="col-md-6">
+              <label class="form-label">Nombre: </label>
+              <input
+                class="form-control atributos"
+                type="text"
+                value="nombre_p"
+                formControlName="nombre_p"
+                placeholder="Ingrese su nombre"
+                required
+                autofocus
+                [ngClass]="{'is-invalid':nombre_p?.errors && nombre_p?.touched  , 'is-valid':!nombre_p?.errors && nombre_p?.touched}"
+              >
+              <div
+                *ngIf="nombre_p?.hasError('required')"
+                class="invalid-feedback"
+              >Ingrese su nombre</div>
 
-      <mat-card class="card">
+            </div>
+            <!-- APELLIDO -->
+            <div class="col-md-6">
+              <label class="form-label">Apellido: </label>
+              <input
+                class="form-control atributos"
+                type="text"
+                placeholder="Ingrese su apellido"
+                formControlName="apellido_p"
+                required
+                [ngClass]="{'is-invalid':apellido_p?.errors && apellido_p?.touched  , 'is-valid':!apellido_p?.errors && apellido_p?.touched}"
+              >
+              <div
+                *ngIf="apellido_p?.hasError('required')"
+                class="invalid-feedback"
+              >Ingrese su apellido</div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Email: </label>
+              <input
+                class="form-control atributos"
+                type="email"
+                formControlName="mail_p"
+                placeholder="Ingrese su correo electrónico"
+                required
+                [ngClass]="{'is-invalid':mail_p?.errors && mail_p?.touched  , 'is-valid':!mail_p?.errors && mail_p?.touched}"
+              >
 
-        fomulario para editar
+              <div
+                *ngIf="mail_p?.hasError('required')"
+                class="invalid-feedback"
+              >Ingrese su email</div>
+              <div
+                *ngIf="mail_p?.hasError('email')"
+                class="invalid-feedback"
+              >Ingrese un email válido</div>
+
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Teléfono: </label>
+              <input
+                class="form-control atributos"
+                type="number"
+                formControlName="telefono_p"
+                placeholder="Ingrese su teléfono"
+                formControlName="telefono_p"
+              >
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Dirección: </label>
+              <input
+                class="form-control atributos"
+                type="text"
+                formControlName="direccion_p"
+                placeholder="Ingrese su dirección"
+              >
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Nueva contraseña: </label>
+              <input
+                class="form-control atributos"
+                type="password"
+                formControlName="password_p"
+                placeholder="Ingrese su contraseña"
+                required
+                [ngClass]="{'is-invalid':password_p?.errors && password_p?.touched  , 'is-valid':!password_p?.errors && password_p?.touched}"
+              >
+              <div
+                *ngIf="password_p?.hasError('required')"
+                class="invalid-feedback"
+              >Ingrese su contraseña</div>
+              <div
+                *ngIf="password_p?.hasError('maxlength')"
+                class="invalid-feedback"
+              >La contraseña no puede ser mayor
+                a {{maxChars}} caracteres
+              </div>
+              <div
+                *ngIf="password_p?.hasError('minlength')"
+                class="invalid-feedback"
+              >La contraseña no puede ser menor
+                a {{minChars}} caracteres
+              </div>
+
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Confirme su contraseña: </label>
+              <input
+                class="form-control atributos"
+                type="password"
+                placeholder="Ingrese nuevamente la contraseña"
+                formControlName="password_p_repeat"
+                required
+              >
+              <div
+                *ngIf="password_p_repeat !== password_p"
+                class="invalid-feedback"
+              >Las contraseñas no coinciden</div>
+            </div>
+            <div class="col-md-4">
+              <label
+                class="form-label"
+                for="nacimiento"
+              >Fecha de nacimiento: </label>
+              <input
+                class="form-control atributos"
+                type="date"
+                formControlName="nacimiento_p"
+                required
+              >
+              <div
+                *ngIf="nacimiento_p?.hasError('required')"
+                class="invalid-feedback"
+              >Ingrese su fecha de nacimiento</div>
+
+            </div>
+            <div class="col-md-4">
+              <label
+                class="form-label"
+                for="sexo"
+              >Género</label>
+              <select
+                class="atributos"
+                formControlName="genero_p"
+              >
+                <option
+                  selected
+                  disabled
+                  value=""
+                >Seleccione su género</option>
+                <option value="Femenino">Femenino</option>
+                <option value="Masculino">Masculino</option>
+                <option value="x">X</option>
+              </select>
+
+            </div>
+            <div class="col-md-4">
+              <label
+                class="form-label"
+                for="sangre"
+              >Grupo sanguineo</label>
+              <select
+                class="atributos"
+                formControlName="sangre"
+                required
+              >
+                <option
+                  selected
+                  disabled
+                  value=""
+                >Seleccione grupo sanguineo</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="0+">0+</option>
+                <option value="0-">0-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+              </select>
+            </div>
+
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="onSubmit()"
+            >
+              <mat-icon>
+                send
+              </mat-icon>
+
+            </button>
+          </form>
+          <div class="button">
+          </div>
+        </section>
+
       </mat-card>
     </ng-container>
   </div>
