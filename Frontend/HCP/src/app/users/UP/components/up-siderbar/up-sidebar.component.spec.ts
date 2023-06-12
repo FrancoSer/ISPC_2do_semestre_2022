@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UPSidebarComponent } from './UP-sidebar.component';
+import { UPSidebarComponent } from './up-sidebar.component';
 
 describe( 'UPSiderbarComponent', () =>
 {

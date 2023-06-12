@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UPHeaderComponent } from './UP-header.component';
+import { UPHeaderComponent } from './up-header.component';
 
 describe('UPHeaderComponent', () => {
   let component: UPHeaderComponent;
