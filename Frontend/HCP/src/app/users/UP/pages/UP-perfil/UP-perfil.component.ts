@@ -19,7 +19,7 @@ export class UPPerfilComponent implements OnInit
 
   public paciente?: Paciente;
 
-  public editar = false;
+  public editar = true;
 
   // form
 
@@ -35,8 +35,6 @@ export class UPPerfilComponent implements OnInit
     mail_p: new FormControl<string>( '', [ Validators.required, Validators.email ] ),
     genero_p: new FormControl<string>( '' ),
     sangre: new FormControl<string>( '', [ Validators.required ] ),
-    password_p: new FormControl<string>( '', [ Validators.required, Validators.maxLength( this.maxChars ), Validators.minLength( this.minChars ) ] ),
-    password_p_repeat: new FormControl<string>( '', [ Validators.required, Validators.maxLength( this.maxChars ), Validators.minLength( this.minChars ) ] ),
 
   } );
 
@@ -50,9 +48,6 @@ export class UPPerfilComponent implements OnInit
     mail_p: '',
     genero_p: Genero.masculino,
     sangre: GrupoSanguineo.Apositivo,
-    password_p: '',
-    password_p_repeat: '',
-    premium: false
 
   };
 
