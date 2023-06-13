@@ -2,9 +2,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Genero } from '../../interfaces/interfaces';
 
 @Pipe( {
-  name: 'genero'
+  name: 'bienvenida'
 } )
-export class GeneroPipe implements PipeTransform
+export class BienvenidaPipe implements PipeTransform
 {
 
 

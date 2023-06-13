@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Pipe } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -9,8 +9,8 @@ import { Genero, Paciente } from 'src/app/users/interfaces/interfaces';
 import { GrupoSanguineo } from '../../../interfaces/interfaces';
 import { UsersService } from 'src/app/users/service/users.service';
 
-import { ConfirmDialogComponent } from 'src/app/users/components/confirm-dialog/confirm-dialog.component';
-import { filter, switchMap, tap } from 'rxjs';
+import { ConfirmDialogComponent } from 'src/app/users/UP/components/confirm-dialog/confirm-dialog.component';
+import { catchError, delay, filter, switchMap, tap, pipe } from 'rxjs';
 
 @Component( {
   selector: 'app-UP-perfil',
@@ -22,7 +22,7 @@ export class UPPerfilComponent implements OnInit
 
   public paciente?: Paciente;
 
-  public editar = true;
+  public editar = false;
 
   // form
 
@@ -116,27 +116,28 @@ export class UPPerfilComponent implements OnInit
   confirmarEliminar ()
   {
 
-    console.log( localStorage.getItem( 'token' ) );
-    this.pacienteService.eliminarPaciente();
 
-    // const dialogRef = this.dialog.open( ConfirmDialogComponent, {
-    //   data: { name: this.paciente?.nombre_p },
-    // } );
 
-    // dialogRef.afterClosed().
-    //   pipe(
-    // si no esta eliminado pasa
-    //   filter( ( result: boolean ) => true ),
-    //   tap( () => this.pacienteService.eliminarPaciente()
-
-    //   )
-
-    // );
 
   }
 
   eliminarUp ()
   {
+
+    const dialogRef = this.dialog.open( ConfirmDialogComponent );
+
+    dialogRef.afterClosed().
+      subscribe( resp =>
+      {
+        if ( !resp ) return;
+
+        this.pacienteService.eliminarPaciente()
+          .subscribe( resp =>
+          {
+
+          } );
+      } );
+
 
   }
 
@@ -150,12 +151,18 @@ export class UPPerfilComponent implements OnInit
     if ( this.pacienteForm.valid )
     {
 
-      this.pacienteService.editarPaciente( this.pacienteActual )
+      this.pacienteService.editarPaciente( this.pacienteActual ).
+        pipe(
+          tap( paciente => this.mostrarSnack( `${ paciente.nombre_p } su perfil ha sido modificado` ) )
+        )
         .subscribe( paciente =>
         {
-          this.mostrarSnack( `${ paciente.nombre_p } su perfil ha sido modificado` );
+          this.abrirEditarUp();
+          location.reload();
 
-        } );
+        }
+
+        );
     } else
     {
       console.log( this.pacienteActual );

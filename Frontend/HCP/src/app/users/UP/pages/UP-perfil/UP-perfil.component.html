@@ -1,7 +1,7 @@
 <ng-container *ngIf="paciente">
   <div class="container">
     <mat-card class="card">
-      <mat-card-title class="title">{{paciente.genero_p | genero}} {{paciente.nombre_p}}</mat-card-title>
+      <mat-card-title class="title">{{paciente.genero_p | bienvenida}} {{paciente.nombre_p}}</mat-card-title>
       <mat-card-subtitle class="subtitle">Estos son tus datos</mat-card-subtitle>
       <mat-list>
         <mat-list-item>
@@ -57,12 +57,16 @@
         color="primary"
         (click)="abrirEditarUp()"
       >Editar Usuario</button>
+
       <br>
+
+
       <button
         mat-raised-button
         color="warn"
-        (click)="confirmarEliminar()"
+        (click)="eliminarUp()"
       >Eliminar Usuario</button>
+
     </mat-card>
     <ng-container *ngIf="editar">
       <mat-card class="card form">
@@ -235,4 +239,5 @@
       </mat-card>
     </ng-container>
   </div>
+
 </ng-container>

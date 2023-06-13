@@ -1,11 +1,11 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async } from '@angular/core/testing';
-import { GeneroPipe } from './genero.pipe';
+import { SeguroPipe } from './seguro.pipe';
 
-describe('Pipe: Generoe', () => {
+describe('Pipe: Seguroe', () => {
   it('create an instance', () => {
-    let pipe = new GeneroPipe();
+    let pipe = new SeguroPipe();
     expect(pipe).toBeTruthy();
   });
 });

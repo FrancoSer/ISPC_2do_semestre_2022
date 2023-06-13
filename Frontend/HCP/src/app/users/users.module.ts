@@ -19,25 +19,27 @@ import { UMPerfilComponent } from './UM/pages/UM-perfil/UM-perfil.component';
 import { UPPerfilComponent } from './UP/pages/UP-perfil/UP-perfil.component';
 
 import { PremiumPipe } from './premium.pipe';
-import { GeneroPipe } from './UP/pipes/genero.pipe';
+import { BienvenidaPipe } from './UP/pipes/bienvenida.pipe';
 
 import { UPWelcomeComponent } from './UP/components/UP-welcome/UP-welcome.component';
 import { BuscarComponent } from './UM/components/buscar/buscar.component';
 import { NuevoHistorialComponent } from './UM/pages/nuevo-historial/nuevo-historial.component';
 import { InfoComponent } from './components/info/info.component';
-import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
+import { ConfirmDialogComponent } from './UP/components/confirm-dialog/confirm-dialog.component';
+import { SeguroPipe } from './UP/pipes/seguro.pipe';
 
 
 
 @NgModule( {
   declarations: [
 
+    BienvenidaPipe,
     BuscarComponent,
     ConfirmDialogComponent,
-    GeneroPipe,
     HeaderComponent,
     InfoComponent,
     NuevoHistorialComponent,
+    SeguroPipe,
     SidebarComponent,
     UMHistorialComponent,
     UMHomeComponent,
