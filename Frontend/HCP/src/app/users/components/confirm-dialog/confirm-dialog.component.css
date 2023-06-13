@@ -1,0 +1,15 @@
+.container{
+    background: white;
+    display: flex;
+    flex-direction: column;
+  
+
+}
+
+.spacer{
+    display: flex;
+    justify-content: space-between;
+}
+.text{
+    color: #333;
+}

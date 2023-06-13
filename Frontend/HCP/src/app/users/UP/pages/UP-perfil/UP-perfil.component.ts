@@ -10,6 +10,7 @@ import { GrupoSanguineo } from '../../../interfaces/interfaces';
 import { UsersService } from 'src/app/users/service/users.service';
 
 import { ConfirmDialogComponent } from 'src/app/users/components/confirm-dialog/confirm-dialog.component';
+import { filter, switchMap, tap } from 'rxjs';
 
 @Component( {
   selector: 'app-UP-perfil',
@@ -115,15 +116,22 @@ export class UPPerfilComponent implements OnInit
   confirmarEliminar ()
   {
 
-    const dialogRef = this.dialog.open( ConfirmDialogComponent, {
-      data: { name: this.paciente?.nombre_p },
-    } );
+    console.log( localStorage.getItem( 'token' ) );
+    this.pacienteService.eliminarPaciente();
 
-    dialogRef.afterClosed().subscribe( result =>
-    {
-      console.log( 'The dialog was closed' );
-      console.log( result );
-    } );
+    // const dialogRef = this.dialog.open( ConfirmDialogComponent, {
+    //   data: { name: this.paciente?.nombre_p },
+    // } );
+
+    // dialogRef.afterClosed().
+    //   pipe(
+    // si no esta eliminado pasa
+    //   filter( ( result: boolean ) => true ),
+    //   tap( () => this.pacienteService.eliminarPaciente()
+
+    //   )
+
+    // );
 
   }
 

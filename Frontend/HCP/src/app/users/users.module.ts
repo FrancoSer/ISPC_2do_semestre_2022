@@ -25,6 +25,7 @@ import { UPWelcomeComponent } from './UP/components/UP-welcome/UP-welcome.compon
 import { BuscarComponent } from './UM/components/buscar/buscar.component';
 import { NuevoHistorialComponent } from './UM/pages/nuevo-historial/nuevo-historial.component';
 import { InfoComponent } from './components/info/info.component';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 
 
 
@@ -32,6 +33,7 @@ import { InfoComponent } from './components/info/info.component';
   declarations: [
 
     BuscarComponent,
+    ConfirmDialogComponent,
     GeneroPipe,
     HeaderComponent,
     InfoComponent,

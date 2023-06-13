@@ -50,5 +50,13 @@ export class UsersService
     return this.http.patch<Paciente>( `${ this.baseUrl }/api/paciente/${ localStorage.getItem( 'token' ) }/`, paciente );
   }
 
+  // eliminar paciente
+
+  eliminarPaciente ()
+  {
+
+    return this.http.delete( `${ this.baseUrl }/api/paciente/${ localStorage.getItem( 'token' ) }/` );
+
+  }
 
 }
