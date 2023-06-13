@@ -46,25 +46,18 @@
 
 
             <div class="profile-login dropstart">
+                <div class="estado">
+                    <span>{{paciente?.nombre_p}}</span>
+                    <span>{{paciente?.premium | premium}}</span>
+                </div>
                 <button
                     class="btn  dropdown-toggle"
                     id="btn-iniciar"
                     data-bs-toggle="dropdown"
-                    routerLink="/users/home-up/up-perfil/:id"
+                    (click)="logOutUp()"
                 >
-                    Mi cuenta
+                    Cerrar Sesión
                 </button>
-                <ul class="dropdown-menu dropdown-menu-dark">
-                    <li>
-                        <a class="dropdown-item">
-                            Registrarme
-                        </a>
-                    </li>
-                    <li><a class="dropdown-item">Iniciar Sesión</a></li>
-                    <li><a class="dropdown-item">Cambiar Contraseña</a></li>
-                    <li><a class="dropdown-item">Cerrar Sesión</a></li>
-
-                </ul>
             </div>
         </div>
     </div>

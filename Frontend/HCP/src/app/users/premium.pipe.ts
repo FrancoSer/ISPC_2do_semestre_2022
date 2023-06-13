@@ -1,16 +1,19 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({
+@Pipe( {
   name: 'premium'
-})
-export class PremiumPipe implements PipeTransform {
+} )
+export class PremiumPipe implements PipeTransform
+{
 
-  transform(value: boolean | undefined): string {
+  transform ( value: boolean | undefined ): string | undefined
+  {
 
-    if(value === true){
-      return 'Usuario Premium'
+    if ( value === true )
+    {
+      return 'Usuario Premium';
     }
-    return 'Cuenta gratuita'
+    return 'Cuenta gratuita';
   }
 
 }

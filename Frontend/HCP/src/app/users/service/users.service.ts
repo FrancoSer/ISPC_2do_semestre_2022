@@ -33,6 +33,8 @@ export class UsersService
       );
   }
 
+  // get id
+  idActual: string = '';
 
   // mostrar pacientes
 
@@ -40,5 +42,13 @@ export class UsersService
   {
     return this.http.get<Paciente[]>( `${ this.baseUrl }/api/paciente/` );
   }
+
+  // editar paciente
+
+  editarPaciente ( paciente: any )
+  {
+    return this.http.patch<Paciente>( `${ this.baseUrl }/api/paciente/${ localStorage.getItem( 'token' ) }/`, paciente );
+  }
+
 
 }

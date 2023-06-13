@@ -27,3 +27,14 @@ a{
   color:var(--main-text-color);
 
 }
+
+.estado{
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-login{
+
+  display: flex;
+
+}

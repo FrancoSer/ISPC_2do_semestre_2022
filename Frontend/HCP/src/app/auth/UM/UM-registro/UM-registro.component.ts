@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MedicoRegistro } from 'src/app/auth/interfaces/auth';
-import { AuthService } from '../../auth.service';
+import { AuthUmService } from '../../auth-um.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
@@ -54,7 +54,7 @@ export class UMRegistroComponent implements OnInit
 
   constructor (
 
-    private medicoServicio: AuthService,
+    private medicoServicio: AuthUmService,
     private router: Router,
     private activateRoute: ActivatedRoute,
     private snackBar: MatSnackBar,
