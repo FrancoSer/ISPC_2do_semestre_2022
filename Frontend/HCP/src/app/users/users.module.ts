@@ -24,7 +24,7 @@ import { GeneroPipe } from './UP/pipes/genero.pipe';
 import { UPWelcomeComponent } from './UP/components/UP-welcome/UP-welcome.component';
 import { BuscarComponent } from './UM/components/buscar/buscar.component';
 import { NuevoHistorialComponent } from './UM/pages/nuevo-historial/nuevo-historial.component';
-import { InfoComponent } from './info/info.component';
+import { InfoComponent } from './components/info/info.component';
 
 
 

@@ -9,6 +9,8 @@ import { Genero, Paciente } from 'src/app/users/interfaces/interfaces';
 import { GrupoSanguineo } from '../../../interfaces/interfaces';
 import { UsersService } from 'src/app/users/service/users.service';
 
+import { ConfirmDialogComponent } from 'src/app/users/components/confirm-dialog/confirm-dialog.component';
+
 @Component( {
   selector: 'app-UP-perfil',
   templateUrl: './UP-perfil.component.html',
@@ -105,6 +107,23 @@ export class UPPerfilComponent implements OnInit
   {
 
     this.editar = !this.editar;
+
+  }
+
+  // dialog
+
+  confirmarEliminar ()
+  {
+
+    const dialogRef = this.dialog.open( ConfirmDialogComponent, {
+      data: { name: this.paciente?.nombre_p },
+    } );
+
+    dialogRef.afterClosed().subscribe( result =>
+    {
+      console.log( 'The dialog was closed' );
+      console.log( result );
+    } );
 
   }
 

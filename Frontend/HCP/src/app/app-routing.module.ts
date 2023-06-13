@@ -4,7 +4,7 @@ import { ErrorPageComponent } from './shared/pages/error/error-page.component';
 import { InicioComponent } from './shared/pages/inicio/inicio.component';
 
 import { SobreNosotrosComponent } from './shared/pages/sobre-nosotros/sobre-nosotros.component';
-import { InfoComponent } from './users/info/info.component';
+import { InfoComponent } from './users/components/info/info.component';
 import { AuthUpGuard } from './auth/guards/auth-up.guard';
 
 const routes: Routes = [
