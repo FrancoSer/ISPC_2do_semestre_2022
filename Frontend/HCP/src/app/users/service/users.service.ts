@@ -58,7 +58,10 @@ export class UsersService
     return this.http.delete( `${ this.baseUrl }/api/paciente/${ localStorage.getItem( 'token' ) }/` )
       .pipe(
         catchError( err => of( false ) ),
-        map( resp => true )
+        map(
+          resp => true,
+          location.reload()
+        ),
       );
 
   }
