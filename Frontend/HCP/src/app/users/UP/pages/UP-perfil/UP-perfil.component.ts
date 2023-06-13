@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Pipe } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -8,6 +8,9 @@ import { PacienteRegistro } from 'src/app/auth/interfaces/auth';
 import { Genero, Paciente } from 'src/app/users/interfaces/interfaces';
 import { GrupoSanguineo } from '../../../interfaces/interfaces';
 import { UsersService } from 'src/app/users/service/users.service';
+
+import { ConfirmDialogComponent } from 'src/app/users/UP/components/confirm-dialog/confirm-dialog.component';
+import { catchError, delay, filter, switchMap, tap, pipe } from 'rxjs';
 
 @Component( {
   selector: 'app-UP-perfil',
@@ -35,8 +38,6 @@ export class UPPerfilComponent implements OnInit
     mail_p: new FormControl<string>( '', [ Validators.required, Validators.email ] ),
     genero_p: new FormControl<string>( '' ),
     sangre: new FormControl<string>( '', [ Validators.required ] ),
-    password_p: new FormControl<string>( '', [ Validators.required, Validators.maxLength( this.maxChars ), Validators.minLength( this.minChars ) ] ),
-    password_p_repeat: new FormControl<string>( '', [ Validators.required, Validators.maxLength( this.maxChars ), Validators.minLength( this.minChars ) ] ),
 
   } );
 
@@ -50,9 +51,6 @@ export class UPPerfilComponent implements OnInit
     mail_p: '',
     genero_p: Genero.masculino,
     sangre: GrupoSanguineo.Apositivo,
-    password_p: '',
-    password_p_repeat: '',
-    premium: false
 
   };
 
@@ -113,8 +111,33 @@ export class UPPerfilComponent implements OnInit
 
   }
 
+  // dialog
+
+  confirmarEliminar ()
+  {
+
+
+
+
+  }
+
   eliminarUp ()
   {
+
+    const dialogRef = this.dialog.open( ConfirmDialogComponent );
+
+    dialogRef.afterClosed().
+      subscribe( resp =>
+      {
+        if ( !resp ) return;
+
+        this.pacienteService.eliminarPaciente()
+          .subscribe( resp =>
+          {
+
+          } );
+      } );
+
 
   }
 
@@ -128,12 +151,18 @@ export class UPPerfilComponent implements OnInit
     if ( this.pacienteForm.valid )
     {
 
-      this.pacienteService.editarPaciente( this.pacienteActual )
+      this.pacienteService.editarPaciente( this.pacienteActual ).
+        pipe(
+          tap( paciente => this.mostrarSnack( `${ paciente.nombre_p } su perfil ha sido modificado` ) )
+        )
         .subscribe( paciente =>
         {
-          this.mostrarSnack( `${ paciente.nombre_p } su perfil ha sido modificado` );
+          this.abrirEditarUp();
+          location.reload();
 
-        } );
+        }
+
+        );
     } else
     {
       console.log( this.pacienteActual );

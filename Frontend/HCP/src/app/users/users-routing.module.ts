@@ -12,7 +12,7 @@ import { UPWelcomeComponent } from './UP/components/UP-welcome/UP-welcome.compon
 import { UPHistorialComponent } from './UP/pages/UP-historial/UP-historial.component';
 import { NuevoHistorialComponent } from './UM/pages/nuevo-historial/nuevo-historial.component';
 import { UMPerfilComponent } from './UM/pages/UM-perfil/UM-perfil.component';
-import { InfoComponent } from './info/info.component';
+import { InfoComponent } from './components/info/info.component';
 import { AuthUpGuard } from '../auth/guards/auth-up.guard';
 
 const routes: Routes = [

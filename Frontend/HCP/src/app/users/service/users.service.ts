@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, catchError, of } from 'rxjs';
+import { Observable, catchError, map, of } from 'rxjs';
 import { environment } from 'src/environment/envaironment';
 import { Paciente } from '../interfaces/interfaces';
 
@@ -50,5 +50,17 @@ export class UsersService
     return this.http.patch<Paciente>( `${ this.baseUrl }/api/paciente/${ localStorage.getItem( 'token' ) }/`, paciente );
   }
 
+  // eliminar paciente
+
+  eliminarPaciente ()
+  {
+
+    return this.http.delete( `${ this.baseUrl }/api/paciente/${ localStorage.getItem( 'token' ) }/` )
+      .pipe(
+        catchError( err => of( false ) ),
+        map( resp => true )
+      );
+
+  }
 
 }

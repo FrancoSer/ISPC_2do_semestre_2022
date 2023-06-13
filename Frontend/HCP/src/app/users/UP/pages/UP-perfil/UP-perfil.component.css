@@ -34,8 +34,32 @@
 }
 
 .form{
+    
     padding: 2rem;
 }
 
+.register-box{
+    display: flex;
+    flex-direction: column;
+}
+
+.box{
+    display: flex;
+    justify-content: space-between;
+}
+
+.check-box{
+    width: 70%;
+    position: relative;
+    display: flex;
+
+}
+
+.button{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
 
 
