@@ -52,7 +52,7 @@ export class UsersService
 
   // eliminar paciente
 
-  eliminarPaciente ()
+  eliminarPaciente (): Observable<boolean>
   {
 
     return this.http.delete( `${ this.baseUrl }/api/paciente/${ localStorage.getItem( 'token' ) }/` )
