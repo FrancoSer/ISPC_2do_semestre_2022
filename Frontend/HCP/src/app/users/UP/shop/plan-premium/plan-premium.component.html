@@ -1,4 +1,8 @@
-<div container>
+<div
+  class="box"
+  [ngClass]="{box: pasarela}"
+>
+
   <div class="Header">
     <h1>HCP PREMIUM</h1>
     <p>Con nuestro servicio premium, podrás subir a nuestro servidor, tus diagnósticos por imagen o analisis clínicos
@@ -17,6 +21,7 @@
       <button
         type="button"
         class="btn btn-light"
+        (click)="abrirPasarela()"
       >Prueba 1 MES</button>
     </div>
     <div class="card rounded">
@@ -45,3 +50,9 @@
     </div>
   </div>
 </div>
+
+<ng-container *ngIf="pasarela">
+
+  <app-pasarela-de-pago class="credit-card"></app-pasarela-de-pago>
+
+</ng-container>

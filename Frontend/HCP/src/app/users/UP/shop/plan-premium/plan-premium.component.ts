@@ -1,15 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 
-@Component({
+@Component( {
   selector: 'app-plan-premium',
   templateUrl: './plan-premium.component.html',
-  styleUrls: ['./plan-premium.component.css']
-})
-export class PlanPremiumComponent implements OnInit {
+  styleUrls: [ './plan-premium.component.css' ]
+} )
+export class PlanPremiumComponent implements OnInit
+{
 
-  constructor() { }
+  public pasarela: boolean = false;
 
-  ngOnInit() {
+  constructor () { }
+
+  abrirPasarela ()
+  {
+
+    this.pasarela = !this.pasarela;
+
+  }
+
+  ngOnInit ()
+  {
   }
 
 }
