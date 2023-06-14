@@ -20,7 +20,7 @@ import { RouterModule } from '@angular/router';
     SharedModule,
     UsersModule,
     BrowserAnimationsModule,
-    RouterModule
+    RouterModule,
   ],
   providers: [],
   bootstrap: [ AppComponent ]

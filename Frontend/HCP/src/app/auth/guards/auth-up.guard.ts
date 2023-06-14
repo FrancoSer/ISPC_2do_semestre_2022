@@ -18,10 +18,10 @@ export class AuthUpGuard implements CanMatch, CanActivate
 
         return this.servicio.checkAuth()
             .pipe(
-                tap( isAuthenticated => console.log( 'Authenticated:', isAuthenticated ) ),
-                tap( isAuthenticated =>
+                tap( pacienteAutenticado => console.log( 'Authenticated:', pacienteAutenticado ) ),
+                tap( pacienteAutenticado =>
                 {
-                    if ( !isAuthenticated )
+                    if ( !pacienteAutenticado )
                     {
                         this.router.navigate( [ './auth/login-up' ] );
                     }
