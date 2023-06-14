@@ -113,14 +113,6 @@ export class UPPerfilComponent implements OnInit
 
   // dialog
 
-  confirmarEliminar ()
-  {
-
-
-
-
-  }
-
   eliminarUp ()
   {
 
@@ -238,12 +230,6 @@ export class UPPerfilComponent implements OnInit
     this.pacienteForm.patchValue( {
       nacimiento_p: nacimiento
     } );
-
-
-
-
-
-
 
   }
 
