@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgModule, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+
 
 @Component( {
   selector: 'app-nuevo-historial',
   templateUrl: './nuevo-historial.component.html',
   styleUrls: [ './nuevo-historial.component.css' ]
 } )
+
+
 export class NuevoHistorialComponent implements OnInit
 {
 
-  private form = new FormGroup( {
+  public form = new FormGroup( {
 
     referencia_p: new FormControl<string>( '' ),
     especialidad: new FormControl<string>( '' ),
@@ -29,8 +33,9 @@ export class NuevoHistorialComponent implements OnInit
 
   constructor () { }
 
-  ngOnInit ()
+  ngOnInit (): void
   {
+
   }
 
 }

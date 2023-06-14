@@ -4,7 +4,7 @@ import { PacienteRegistro } from 'src/app/auth/interfaces/auth';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Genero, GrupoSanguineo, Paciente } from 'src/app/users/interfaces/interfaces';
+import { Genero, GrupoSanguineo } from 'src/app/users/interfaces/interfaces';
 import { AuthUpService } from '../../auth-up.service';
 
 @Component( {
@@ -77,9 +77,7 @@ export class UPRegistroComponent implements OnInit
 
     private pacienteServicio: AuthUpService,
     private router: Router,
-    private activateRoute: ActivatedRoute,
     private snackBar: MatSnackBar,
-    private dialog: MatDialog
 
 
   ) { }
