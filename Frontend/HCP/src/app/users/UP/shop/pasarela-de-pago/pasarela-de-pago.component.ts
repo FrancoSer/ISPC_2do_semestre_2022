@@ -1,15 +1,43 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthUpService } from 'src/app/auth/auth-up.service';
+import { Paciente } from 'src/app/users/interfaces/interfaces';
+import { PremiumService } from '../premium.service';
 
-@Component({
+@Component( {
   selector: 'app-pasarela-de-pago',
   templateUrl: './pasarela-de-pago.component.html',
-  styleUrls: ['./pasarela-de-pago.component.css']
-})
-export class PasarelaDePagoComponent implements OnInit {
+  styleUrls: [ './pasarela-de-pago.component.css' ]
+} )
+export class PasarelaDePagoComponent implements OnInit
+{
 
-  constructor() { }
+  public paciente?: Paciente;
 
-  ngOnInit() {
+  pacientePremium: any = {
+    "premium": true
+  };
+
+  constructor (
+
+    private http: AuthUpService,
+
+    private servicePremium: PremiumService
+
+  ) { }
+
+  comprarServicio ()
+  {
+    this.servicePremium.premium( this.pacientePremium )
+      .subscribe( resp => console.log( resp ) );
+  }
+
+
+
+  ngOnInit ()
+  {
+
+    this.paciente = this.http.getPacienteActual();
+
   }
 
 }
