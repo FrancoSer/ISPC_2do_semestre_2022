@@ -30,6 +30,7 @@ import { PasarelaDePagoComponent } from './UP/shop/pasarela-de-pago/pasarela-de-
 
 
 
+
 @NgModule( {
   declarations: [
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthUpService } from 'src/app/auth/auth-up.service';
 import { Paciente } from 'src/app/users/interfaces/interfaces';
 import { PremiumService } from '../premium.service';
+import { tap } from 'rxjs';
 
 @Component( {
   selector: 'app-pasarela-de-pago',
@@ -13,7 +14,16 @@ export class PasarelaDePagoComponent implements OnInit
 
   public paciente?: Paciente;
 
-  pacientePremium: any = {
+  public pasarela: boolean = true;
+
+  public agradecimiento: boolean = false;
+
+  cerrarMens ()
+  {
+    this.agradecimiento = false;
+  }
+
+  pacientePremium: {} = {
     "premium": true
   };
 
@@ -28,7 +38,16 @@ export class PasarelaDePagoComponent implements OnInit
   comprarServicio ()
   {
     this.servicePremium.premium( this.pacientePremium )
-      .subscribe( resp => console.log( resp ) );
+      .pipe(
+        tap( resp => this.agradecimiento = true ),
+        tap( resp => this.pasarela = false ),
+        tap( resp => location.reload() ),
+      )
+      .subscribe(
+        resp => console.log( resp ),
+
+      );
+
   }
 
 
