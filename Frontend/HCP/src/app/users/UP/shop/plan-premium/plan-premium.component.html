@@ -1,51 +1,60 @@
+<div
+  class="box"
+  [ngClass]="{box: pasarela}"
+>
 
+  <div class="Header">
+    <h1>HCP PREMIUM</h1>
+    <p>Con nuestro servicio premium, podrás subir a nuestro servidor, tus diagnósticos por imagen o analisis clínicos
+      para tenerlos seguros a tu alcance.<br>
+      Recibirás notificaciones y novedades de HCP antes que cualquier otra persona.<br>
+    </p>
+  </div>
+  <div class="card-group">
+    <div class="card rounded">
 
-<div class="container">
+      <div class="card-body">
+        <h5 class="card-title">HCP Premium Gratis!!!</h5>
+        <p class="card-text">Durante 1 mes, tendrás la posibilidad de conocer nuestro servicio.</p>
 
-  <mat-card class="card"  
-    fxLayout="column" 
-    fxLayoutAlign="top center" 
-    fxFlex="70% "
-    fxFlex.sm="100%">
+      </div>
+      <button
+        type="button"
+        class="btn btn-light"
+        (click)="abrirGratis()"
+      >Prueba 1 MES</button>
+    </div>
+    <div class="card rounded">
 
-      <mat-card-header 
-        class="header" 
-        
-        >
-        <mat-card-title 
-          class="title"
-          
-          >
-          Hacete premium
-        
-        </mat-card-title>
-        
-        <mat-card-subtitle class="subtitle">
-          Conseguí hoy mismo una suscripción</mat-card-subtitle>
-      </mat-card-header>
-      <mat-divider></mat-divider>
-      <!-- <img src="/assets/carpet.svg" class="img" alt="icon-carptet"> -->
-  <mat-card-content class="content"
-    fxLayout="colum" 
-    fxLayoutAlign="center" 
-    fxFlex="80%"
-    fxFlex.sm="20%">
+      <div class="card-body">
+        <h5 class="card-title">HCP 6 MESES</h5>
+        <p class="card-text">Aprovecha nuetra suscripcón semestral y ahorra un 20%.</p>
 
-    <span class="span"
-   
-    >
-    Cargá imágenes y archivos de tus consultas
-    </span>
-    <mat-icon>cloud_upload</mat-icon>
+      </div>
+      <button
+        type="button"
+        class="btn btn-light"
+        (click)="abrirSeisMeses()"
+      >Suscríbete</button>
+    </div>
+    <div class="card rounded">
 
-    
-  </mat-card-content>
-  <mat-card-footer class="footer">
-<button 
-  mat-button color="primary"
-  >
-  
-  Plan Premium</button>
-  </mat-card-footer>
-</mat-card>
+      <div class="card-body">
+        <h5 class="card-title">HCP Anual</h5>
+        <p class="card-text">Pensado para que tu historial clínico esté a resguardado y al alcance de tu mano</p>
+
+      </div>
+      <button
+        type="button"
+        class="btn btn-light"
+        (click)="abrirAnual()"
+      >Suscríbete</button>
+    </div>
+  </div>
 </div>
+
+<ng-container *ngIf="pasarela">
+
+  <app-pasarela-de-pago class="credit-card"></app-pasarela-de-pago>
+
+</ng-container>

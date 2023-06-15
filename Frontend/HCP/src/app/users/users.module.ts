@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { UsersRoutingModule } from './users-routing.module';
 import { MaterialModule } from '../material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-
-import { PlanPremiumComponent } from './UP/shop/plan-premium/plan-premium.component';
 import { HeaderComponent } from './UM/components/header/header.component';
 import { SidebarComponent } from './UM/components/sidebar/sidebar.component';
 import { UMHistorialComponent } from './UM/pages/historial/um-historial.component';
@@ -17,15 +17,29 @@ import { UMPerfilComponent } from './UM/pages/UM-perfil/UM-perfil.component';
 import { UPPerfilComponent } from './UP/pages/UP-perfil/UP-perfil.component';
 
 import { PremiumPipe } from './premium.pipe';
-import { GeneroPipe } from './UP/pipes/genero.pipe';
+import { BienvenidaPipe } from './UP/pipes/bienvenida.pipe';
+
 import { UPWelcomeComponent } from './UP/components/UP-welcome/UP-welcome.component';
 
-@NgModule({
+import { NuevoHistorialComponent } from './UM/pages/nuevo-historial/nuevo-historial.component';
+import { InfoComponent } from './components/info/info.component';
+import { ConfirmDialogComponent } from './UP/components/confirm-dialog/confirm-dialog.component';
+import { SeguroPipe } from './UP/pipes/seguro.pipe';
+import { PlanPremiumComponent } from './UP/shop/plan-premium/plan-premium.component';
+import { PasarelaDePagoComponent } from './UP/shop/pasarela-de-pago/pasarela-de-pago.component';
+
+
+
+
+@NgModule( {
   declarations: [
 
-    PlanPremiumComponent,
+    BienvenidaPipe,
+    ConfirmDialogComponent,
     HeaderComponent,
-    GeneroPipe,
+    InfoComponent,
+    NuevoHistorialComponent,
+    SeguroPipe,
     SidebarComponent,
     UMHistorialComponent,
     UMHomeComponent,
@@ -35,6 +49,7 @@ import { UPWelcomeComponent } from './UP/components/UP-welcome/UP-welcome.compon
     UPSidebarComponent,
     UPHomeComponent,
     UPWelcomeComponent,
+    PasarelaDePagoComponent,
     PlanPremiumComponent,
     PremiumPipe
 
@@ -43,9 +58,8 @@ import { UPWelcomeComponent } from './UP/components/UP-welcome/UP-welcome.compon
     CommonModule,
     MaterialModule,
     UsersRoutingModule,
-    FlexLayoutModule
-
-
+    FlexLayoutModule,
+    ReactiveFormsModule
   ]
-})
+} )
 export class UsersModule { }

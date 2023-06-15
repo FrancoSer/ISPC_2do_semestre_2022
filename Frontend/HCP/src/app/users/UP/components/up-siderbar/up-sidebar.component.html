@@ -1,26 +1,48 @@
-<div class="side-nav-content" id="sidebar">
+<div
+    class="side-nav-content"
+    id="sidebar"
+>
 
 
 
     <hr>
-    <ul class="nav-list" [ngClass]="{'nav-list-open':sideNavStatus2}">
-       
+    <ul
+        class="nav-list"
+        [ngClass]="{'nav-list-open':sideNavStatus2}"
+    >
+
     </ul>
     <ul class="nav-list">
         <li class="nav-list-item">
 
             <span>
-                <a routerLink="up-historial" aria-current="page"><i class="bi bi-clipboard-fill"></i>Mi Historial</a>
+                <a
+                    aria-current="page"
+                    routerLink="sobre-hcp"
+                ><i class="bi bi-house-door-fill"></i>Inicio</a>
+            </span>
+        </li>
+        <hr>
+        <li class="nav-list-item">
+
+            <span>
+                <a
+                    routerLink="up-historial"
+                    aria-current="page"
+                ><i class="bi bi-clipboard-fill"></i>Mi Historial</a>
             </span>
         </li>
     </ul>
-    
+
     <hr>
     <ul class="nav-list">
         <li class="nav-list-item">
             <i class="bi bi-person-fill"></i>
             <span>
-                <a routerLink="up-perfil" aria-current="page">Mi perfil</a>
+                <a
+                    aria-current="page"
+                    routerLink="up-perfil"
+                >Mi perfil</a>
             </span>
         </li>
     </ul>
@@ -29,7 +51,10 @@
         <li class="nav-list-item">
             <i class="bi bi-bookmark-star-fill"></i>
             <span>
-                <a routerLink="plan-premium" aria-current="page">Premium</a>
+                <a
+                    routerLink="plan-premium"
+                    aria-current="page"
+                >Premium</a>
             </span>
         </li>
     </ul>

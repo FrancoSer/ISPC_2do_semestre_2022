@@ -1,7 +1,8 @@
-export interface HistoriaClinica {
+export interface HistoriaClinica
+{
 
     id: string;
-    fecha?: string;
+    fecha: string;
     observaciones?: string;
     especialidad?: string;
     diagnostico?: string;
@@ -18,7 +19,8 @@ export interface HistoriaClinica {
 
 }
 
-export interface Factura {
+export interface Factura
+{
 
     id: string;
     total: number;
@@ -28,19 +30,21 @@ export interface Factura {
 
 }
 
-export interface Paciente {
+export interface Paciente
+{
 
-    id?: string;
-    cuil: string;
-    password: string;
-    nombre: string;
-    apellido: string;
-    fecha_de_nacimiento: string;
-    tel: string;
-    direccion?: string;
-    email: string;
-    genero: Genero;
-    tipo_sanguineo?: GrupoSanguineo;
+    id: string;
+    cuil: string,
+    nacimiento_p?: string,
+    nombre_p?: string,
+    apellido_p?: string,
+    telefono_p?: string,
+    direccion_p?: string,
+    mail_p?: string,
+    genero_p: Genero,
+    sangre?: GrupoSanguineo,
+    password_p: string,
+    password_p_repeat?: string,
     premium?: boolean;
     historia_clinica?: HistoriaClinica;
     factura?: Factura;
@@ -56,34 +60,38 @@ export type Premium = {
 
 };
 
-export interface Medico {
+export interface Medico
+{
 
-    id?: string;
-    matricula: number;
-    nombre: string;
-    apellido: string;
-    fecha_de_nacimiento: string;
-    tel: number;
-    direccion: string;
-    email: string;
-    genero: Genero;
+    id: string;
+    matricula: string,
+    nacimiento_m?: string,
+    nombre_m?: string,
+    apellido_m?: string,
+    telefono_m?: string,
+    direccion_m?: string,
+    mail_m?: string,
+    password_m: string,
+    password_m_repeat?: string,
+    genero_m: Genero,
 
 }
 
-export enum Genero {
-    masculino =  'Masculino',
-    femenino =   'Femenino',
-    no_binario = 'No binario',
-    otro =       ''
+export enum Genero
+{
+    masculino = 'Masculino',
+    femenino = 'Femenino',
+    otro = 'Otro'
 }
 
-export enum GrupoSanguineo{
-    Apositivo =     'A+',
-    Anegativo =     'A-',
-    Bpositivo =     "B+",
-    Bnegativo =     "B-", 
-    CeroPositivo =  "0+",
-    CeroNegativo =  "0-",
-    ABpositivo =    "AB+",
-    ABnegativo =    "AB-"
+export enum GrupoSanguineo
+{
+    Apositivo = 'A+',
+    Anegativo = 'A-',
+    Bpositivo = "B+",
+    Bnegativo = "B-",
+    CeroPositivo = "0+",
+    CeroNegativo = "0-",
+    ABpositivo = "AB+",
+    ABnegativo = "AB-"
 }

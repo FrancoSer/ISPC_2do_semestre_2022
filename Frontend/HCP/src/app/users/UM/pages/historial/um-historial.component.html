@@ -1,43 +1,148 @@
-<head>
+<div class="container">
+  <!-- <app-buscar></app-buscar> -->
+
+  <mat-card
+    color="primary"
+    class="card"
+    *ngFor="let paciente of pacientes"
+  >
+    <mat-card-header>
+      <mat-card-title>
+        {{paciente.apellido_p}}
+      </mat-card-title>
+      <mat-card-subtitle class="subtitle">
+        {{paciente.nombre_p}}
+      </mat-card-subtitle>
+    </mat-card-header>
+
+    <!-- el id es igual al nombre de la img -->
+    <!-- <img 
+      mat-card-image height="300px"
+      [src]= 'paciente | imagen' alt=""> -->
+
+    <mat-card-content>
+      <h3>
+        {{paciente.mail_p}}
+      </h3>
+      <p>
+        <strong>
+          Fecha de nacimiento
+        </strong>
+        {{paciente.nacimiento_p}}
+        <br>
+        <strong>
+          Grupo sanguineo
+        </strong>
+        {{paciente.sangre}}
+      </p>
+    </mat-card-content>
+
+    <!-- para botones -->
+
+    <!-- [routerLink]="['/pacientes', paciente.id]" 
+      defino las propiedades para las rutas, armo la matriz -->
+
+    <mat-card-actions>
+      <button
+        mat-button
+        color="primary"
+        [routerLink]="['/users/home-um/nuevo-historial', paciente.id]"
+      >
+        Agregar consulta
+
+      </button>
+
+      <!-- <button mat-button color="info"
+          [routerLink]="['/pacientes/editar', paciente.id]" >
+          Editar
+      </button> -->
+    </mat-card-actions>
+
+  </mat-card>
 
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700;800&family=Roboto:wght@100;400;700;900&display=swap"
-        rel="stylesheet">
-
-</head>
-
-<div class="container-fluid p-3 ">
-
-    <div class="row p-3">
-        <form class="buscador input-group " novalidate>
-            <div class="buscador-input  mb-3">
-                <label class="incuil" for="incuil">Cuil</label>
-                <div class="input-cont">
-                    <i class="bi-buscar bi bi-search"></i>
-                    <input type="*" class="form-control" aria-label="Sizing example input"
-                        aria-describedby="inputGroup-sizing-default">
-                </div>
-                <label class="help-text" for="input">Ingresar números sin guiones.</label>
-                <button class="boton btn" type="submit">BUSCAR</button>
-
-            </div>
-
-        </form>
+</div>
 
 
-        <div class="container-fluid">
-            <section class="perfil-paciente" href="#">
-                <img src="\assets\perfil paciente.jpg" alt="foto de perfil del paciente"
-                    class="d-inline-block align-text-top">
-                {{pacienteSeleccionado.nombre + ' ' + pacienteSeleccionado.apellido}}
-            </section>
-        </div>
 
-        <div class="contenido col">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="contenido col">
 
 
 
@@ -51,50 +156,54 @@
                             Datos Paciente
                         </button>
                     </h2>
-                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
-                        aria-labelledby="panelsStayOpen-headingOne">
+                    <div 
+                            id="panelsStayOpen-collapseOne" 
+                            class="accordion-collapse collapse show"
+                            aria-labelledby="panelsStayOpen-headingOne"
+                            *ngFor="let paciente of pacientes">
+
                         <div class="accordion-body">
                             <ul class="list-group list-group-flush">
                                 <p>
                                     <strong>
                                       Fecha de Nacimiento:
                                     </strong>
-                                        {{pacienteSeleccionado.fecha_de_nacimiento}}
+                                        {{paciente.nacimiento_p}}
                                   </p>
                                       <br>
                                       <p>
                                     <strong>
                                       Teléfono:
                                     </strong>
-                                        {{pacienteSeleccionado.tel}}
+                                        {{paciente.telefono_p}}
                                   </p>
                                       <br>
                                   <p>
                                     <strong>
                                       Dirección:
                                     </strong>
-                                        {{pacienteSeleccionado.direccion}}
+                                        {{paciente.direccion_p}}
                                   </p>
                                       <br>
                                    <p>
                                      <strong>
                                        Email:
                                      </strong>
-                                         {{pacienteSeleccionado.email}}
+                                         {{paciente.mail_p}}
                                    </p>
                                        <br>
                                    <p>
                                      <strong>
                                        Género:
                                      </strong>
-                                         {{pacienteSeleccionado.genero}}
+                                         {{paciente.genero_p}}
                                    </p>
                                    <br>
                                   <p>
                                     <strong>
                                       Grupo sanguineo:
                                     </strong>
-                                        {{pacienteSeleccionado.tipo_sanguineo}}
+                                        {{paciente.sangre}}
                                   </p>
                             </ul>
                         </div>
@@ -108,8 +217,8 @@
                             Consulta
                         </button>
                     </h2>
-                    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
-                        aria-labelledby="panelsStayOpen-headingTwo">
+                    <div 
+                        >
                         <div class="accordion-body">
                             <p *ngIf="historiaClinica">
                                 <strong>
@@ -209,8 +318,8 @@
 
 
         </div>
-
+    </div>
     </div>
 
 
-</div>
+</div> -->

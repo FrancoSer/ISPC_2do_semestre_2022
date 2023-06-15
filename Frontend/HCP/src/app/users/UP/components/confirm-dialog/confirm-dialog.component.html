@@ -1,0 +1,38 @@
+<ng-container *ngIf="paciente">
+
+  <div class="container">
+    <h1
+      mat-dialog-title
+      class="text"
+    >
+      ¿{{paciente.nombre_p}} estás {{paciente.genero_p| seguro}} de eliminar tu cuenta ?
+    </h1>
+    <div
+      mat-dialog-content
+      class="text"
+    >
+      Este proceso es irreversible, al tocar "OK" usted será redirigido fuera de la aplicación
+      y ya no tendrá acceso a esta cuenta
+    </div>
+
+    <div
+      mat-dialog-actions
+      class="spacer"
+    >
+      <button
+        mat-raised-button
+        (click)="onNoClick()"
+      >
+        No, gracias
+      </button>
+
+      <button
+        mat-button
+        color="warn"
+        (click)="onConfirm()"
+        cdkFocusInitial
+      >
+        Ok
+
+      </button>
+    </div>
