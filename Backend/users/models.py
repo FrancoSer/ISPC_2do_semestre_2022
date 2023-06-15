@@ -100,6 +100,17 @@ class Servicio(models.Model):
     def __str__(self):
         return "{}".format(self.nombre)
 
+class Carrito(models.Model):
+    paciente = models.ForeignKey(Paciente, on_delete=models.SET_NULL, null=True, blank=True)
+    servicio = models.ForeignKey(Servicio, on_delete=models.SET_NULL, null=True, blank=True)    
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return "{} - {} - {} - {} - {}".format(self.paciente,
+                                               self.servicio,                                               
+                                               self.created_at,
+                                               self.updated_at)
 
 class Factura(models.Model):
     total = models.FloatField()
