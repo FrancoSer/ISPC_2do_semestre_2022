@@ -14,6 +14,8 @@ export class PlanPremiumComponent implements OnInit
 
   public pasarela: boolean = false;
 
+  public agradecimiento: boolean = false;
+
   public gratis: boolean = false;
 
   public seisMeses: boolean = false;

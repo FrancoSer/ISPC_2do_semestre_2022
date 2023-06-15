@@ -18,7 +18,7 @@ export class PremiumService
 
   ) { }
 
-  premium ( premium: string )
+  premium ( premium: {} )
   {
     return this.http.patch<Paciente>( `${ this.baseUrl }/api/paciente/${ localStorage.getItem( 'token' ) }/`, premium );
   }
