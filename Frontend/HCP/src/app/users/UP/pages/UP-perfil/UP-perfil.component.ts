@@ -113,14 +113,6 @@ export class UPPerfilComponent implements OnInit
 
   // dialog
 
-  confirmarEliminar ()
-  {
-
-
-
-
-  }
-
   eliminarUp ()
   {
 
@@ -134,7 +126,6 @@ export class UPPerfilComponent implements OnInit
         this.pacienteService.eliminarPaciente()
           .subscribe( resp =>
           {
-
 
 
           } );
@@ -160,7 +151,6 @@ export class UPPerfilComponent implements OnInit
         .subscribe( paciente =>
         {
           this.abrirEditarUp();
-          location.reload();
 
         }
 
@@ -239,12 +229,6 @@ export class UPPerfilComponent implements OnInit
     this.pacienteForm.patchValue( {
       nacimiento_p: nacimiento
     } );
-
-
-
-
-
-
 
   }
 

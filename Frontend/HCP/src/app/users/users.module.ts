@@ -6,8 +6,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { UsersRoutingModule } from './users-routing.module';
 import { MaterialModule } from '../material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-
-import { PlanPremiumComponent } from './UP/shop/plan-premium/plan-premium.component';
 import { HeaderComponent } from './UM/components/header/header.component';
 import { SidebarComponent } from './UM/components/sidebar/sidebar.component';
 import { UMHistorialComponent } from './UM/pages/historial/um-historial.component';
@@ -18,15 +16,18 @@ import { UPHomeComponent } from './UP/pages/home/UP-home.component';
 import { UMPerfilComponent } from './UM/pages/UM-perfil/UM-perfil.component';
 import { UPPerfilComponent } from './UP/pages/UP-perfil/UP-perfil.component';
 
-import { PremiumPipe } from './premium.pipe';
+import { PremiumPipe } from './UP/shop/pipes/premium.pipe';
 import { BienvenidaPipe } from './UP/pipes/bienvenida.pipe';
 
 import { UPWelcomeComponent } from './UP/components/UP-welcome/UP-welcome.component';
-import { BuscarComponent } from './UM/components/buscar/buscar.component';
+
 import { NuevoHistorialComponent } from './UM/pages/nuevo-historial/nuevo-historial.component';
 import { InfoComponent } from './components/info/info.component';
 import { ConfirmDialogComponent } from './UP/components/confirm-dialog/confirm-dialog.component';
 import { SeguroPipe } from './UP/pipes/seguro.pipe';
+import { PlanPremiumComponent } from './UP/shop/plan-premium/plan-premium.component';
+import { PasarelaDePagoComponent } from './UP/shop/pasarela-de-pago/pasarela-de-pago.component';
+
 
 
 
@@ -34,7 +35,6 @@ import { SeguroPipe } from './UP/pipes/seguro.pipe';
   declarations: [
 
     BienvenidaPipe,
-    BuscarComponent,
     ConfirmDialogComponent,
     HeaderComponent,
     InfoComponent,
@@ -49,6 +49,7 @@ import { SeguroPipe } from './UP/pipes/seguro.pipe';
     UPSidebarComponent,
     UPHomeComponent,
     UPWelcomeComponent,
+    PasarelaDePagoComponent,
     PlanPremiumComponent,
     PremiumPipe
 

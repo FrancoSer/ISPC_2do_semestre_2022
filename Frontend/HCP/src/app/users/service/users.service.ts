@@ -33,9 +33,6 @@ export class UsersService
       );
   }
 
-  // get id
-  idActual: string = '';
-
   // mostrar pacientes
 
   getPacientes (): Observable<Paciente[]>
@@ -52,7 +49,7 @@ export class UsersService
 
   // eliminar paciente
 
-  eliminarPaciente ()
+  eliminarPaciente (): Observable<boolean>
   {
 
     return this.http.delete( `${ this.baseUrl }/api/paciente/${ localStorage.getItem( 'token' ) }/` )

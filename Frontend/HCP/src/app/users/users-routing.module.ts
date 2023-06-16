@@ -71,8 +71,8 @@ const routes: Routes = [
         component: InfoComponent
       }
     ],
-    canActivate: [ AuthUpGuard ],
-    canMatch: [ AuthUpGuard ]
+    // canActivate: [ AuthUpGuard ],
+    // canMatch: [ AuthUpGuard ]
   },
 
 ];

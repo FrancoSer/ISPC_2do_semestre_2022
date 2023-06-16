@@ -1,152 +1,207 @@
 <section>
     <div class="container">
         <div class="register-box">
-            <h2>CREAR CUENTA PACIENTE</h2>
-            <form 
-                class="needs-validation row g-3 " 
+            <h2>CREAR CUENTA MÉDICO</h2>
+            <form
+                class="needs-validation row g-3 "
                 [formGroup]="medicoForm"
-                
-                >
+            >
                 <!-- NOMBRE -->
                 <div class="col-md-6">
                     <label class="form-label">Nombre: </label>
-                    <input 
-                        class="form-control atributos" 
-                        type="text" 
+                    <input
+                        class="form-control atributos"
+                        type="text"
                         formControlName="nombre_m"
-                        placeholder="Ingrese su nombre" 
-                        required 
+                        placeholder="Ingrese su nombre"
+                        required
                         autofocus
-                        [ngClass]="{'is-invalid':nombre_m?.errors && nombre_m?.touched  , 'is-valid':!nombre_m?.errors && nombre_m?.touched}">
-                        <div *ngIf="nombre_m?.hasError('required')" class="invalid-feedback">Ingrese su nombre</div>
-                  
+                        [ngClass]="{'is-invalid':nombre_m?.errors && nombre_m?.touched  , 'is-valid':!nombre_m?.errors && nombre_m?.touched}"
+                    >
+                    <div
+                        *ngIf="nombre_m?.hasError('required')"
+                        class="invalid-feedback"
+                    >Ingrese su nombre</div>
+
                 </div>
                 <!-- APELLIDO -->
-                 <div class="col-md-6">
+                <div class="col-md-6">
                     <label class="form-label">Apellido: </label>
-                    <input 
-                        class="form-control atributos" 
+                    <input
+                        class="form-control atributos"
                         type="text"
-                        placeholder="Ingrese su apellido" 
+                        placeholder="Ingrese su apellido"
                         formControlName="apellido_m"
                         required
-                        [ngClass]="{'is-invalid':apellido_m?.errors && apellido_m?.touched  , 'is-valid':!apellido_m?.errors && apellido_m?.touched}">
-                        <div *ngIf="apellido_m?.hasError('required')" class="invalid-feedback">Ingrese su apellido</div>
+                        [ngClass]="{'is-invalid':apellido_m?.errors && apellido_m?.touched  , 'is-valid':!apellido_m?.errors && apellido_m?.touched}"
+                    >
+                    <div
+                        *ngIf="apellido_m?.hasError('required')"
+                        class="invalid-feedback"
+                    >Ingrese su apellido</div>
                 </div>
                 <!-- matricula -->
                 <div class="col-md-6">
                     <label class="form-label">MATRÍCULA: </label>
-                    <input 
-                        class="form-control atributos" 
+                    <input
+                        class="form-control atributos"
                         type="number"
-                        placeholder="Ingrese matricula sin guiones ni puntos" 
+                        placeholder="Ingrese matricula sin guiones ni puntos"
                         formControlName="matricula"
                         required
-                        [ngClass]="{'is-invalid':matricula?.errors && matricula?.touched  , 'is-valid':!matricula?.errors && matricula?.touched}">
-                        <div *ngIf="matricula?.hasError('required')" class="invalid-feedback">Ingrese su matricula</div>
-                        <div *ngIf="matricula?.hasError('maxlength')" class="invalid-feedback">El número de matrícula no puede ser mayor a 10 caracteres</div>
-                        <div *ngIf="matricula?.hasError('matricula')" class="invalid-feedback">Ingrese un matricula válido</div>
-                  
-                </div> 
+                        [ngClass]="{'is-invalid':matricula?.errors && matricula?.touched  , 'is-valid':!matricula?.errors && matricula?.touched}"
+                    >
+                    <div
+                        *ngIf="matricula?.hasError('required')"
+                        class="invalid-feedback"
+                    >Ingrese su matricula</div>
+                    <div
+                        *ngIf="matricula?.hasError('maxlength')"
+                        class="invalid-feedback"
+                    >El número de matrícula no puede ser mayor a 10 caracteres</div>
+                    <div
+                        *ngIf="matricula?.hasError('matricula')"
+                        class="invalid-feedback"
+                    >Ingrese un matricula válido</div>
+
+                </div>
                 <div class="col-md-6">
                     <label class="form-label">Email: </label>
-                    <input 
-                        class="form-control atributos" 
-                        type="email" 
+                    <input
+                        class="form-control atributos"
+                        type="email"
                         formControlName="mail_m"
-                        placeholder="Ingrese su correo electrónico" 
+                        placeholder="Ingrese su correo electrónico"
                         required
-                        [ngClass]="{'is-invalid':mail_m?.errors && mail_m?.touched  , 'is-valid':!mail_m?.errors && mail_m?.touched}">
-                        
-                        <div *ngIf="mail_m?.hasError('required')" class="invalid-feedback">Ingrese su email</div>
-                        <div *ngIf="mail_m?.hasError('email')" class="invalid-feedback">Ingrese un email válido</div>
-                   
+                        [ngClass]="{'is-invalid':mail_m?.errors && mail_m?.touched  , 'is-valid':!mail_m?.errors && mail_m?.touched}"
+                    >
+
+                    <div
+                        *ngIf="mail_m?.hasError('required')"
+                        class="invalid-feedback"
+                    >Ingrese su email</div>
+                    <div
+                        *ngIf="mail_m?.hasError('email')"
+                        class="invalid-feedback"
+                    >Ingrese un email válido</div>
+
                 </div>
                 <div class="col-md-6">
                     <label class="form-label">Teléfono: </label>
-                    <input 
-                        class="form-control atributos" 
-                        type="number" 
+                    <input
+                        class="form-control atributos"
+                        type="number"
                         formControlName="telefono_m"
                         placeholder="Ingrese su teléfono"
-                        formControlName="telefono_m" >
+                        formControlName="telefono_m"
+                    >
                 </div>
                 <div class="col-md-6">
                     <label class="form-label">Dirección: </label>
-                    <input 
-                        class="form-control atributos" 
-                        type="text" 
+                    <input
+                        class="form-control atributos"
+                        type="text"
                         formControlName="direccion_m"
                         placeholder="Ingrese su dirección"
-                        >
+                    >
                 </div>
                 <div class="col-md-6">
                     <label class="form-label">Crea tu contraseña: </label>
-                    <input 
-                        class="form-control atributos" 
-                        type="password" 
-                        
+                    <input
+                        class="form-control atributos"
+                        type="password"
                         formControlName="password_m"
                         placeholder="Ingrese su contraseña"
                         required
-                        [ngClass]="{'is-invalid':password_m?.errors && password_m?.touched  , 'is-valid':!password_m?.errors && password_m?.touched}">
-                        <div *ngIf="password_m?.hasError('required')" class="invalid-feedback">Ingrese su contraseña</div>
-                        <div *ngIf="password_m?.hasError('maxlength')" class="invalid-feedback">La contraseña no puede ser mayor
-                            a {{maxChars}} caracteres
-                        </div>
-                        <div *ngIf="password_m?.hasError('minlength')" class="invalid-feedback">La contraseña no puede ser menor
-                            a {{minChars}} caracteres
-                        </div>
-                   
+                        [ngClass]="{'is-invalid':password_m?.errors && password_m?.touched  , 'is-valid':!password_m?.errors && password_m?.touched}"
+                    >
+                    <div
+                        *ngIf="password_m?.hasError('required')"
+                        class="invalid-feedback"
+                    >Ingrese su contraseña</div>
+                    <div
+                        *ngIf="password_m?.hasError('maxlength')"
+                        class="invalid-feedback"
+                    >La contraseña no puede ser mayor
+                        a {{maxChars}} caracteres
+                    </div>
+                    <div
+                        *ngIf="password_m?.hasError('minlength')"
+                        class="invalid-feedback"
+                    >La contraseña no puede ser menor
+                        a {{minChars}} caracteres
+                    </div>
+
                 </div>
-                 <div class="col-md-6">
+                <div class="col-md-6">
                     <label class="form-label">Confirma tu contraseña: </label>
-                    <input class="form-control atributos" 
-                           type="password"
-                           placeholder="Ingrese nuevamente la contraseña" 
-                           formControlName="password_m_repeat"
-                           required>
-                           <div *ngIf="password_m_repeat !== password_m" class="invalid-feedback">Las contraseñas no coinciden</div>
+                    <input
+                        class="form-control atributos"
+                        type="password"
+                        placeholder="Ingrese nuevamente la contraseña"
+                        formControlName="password_m_repeat"
+                        required
+                    >
+                    <div
+                        *ngIf="password_m_repeat !== password_m"
+                        class="invalid-feedback"
+                    >Las contraseñas no coinciden</div>
                 </div>
                 <div class="col-md-4">
-                    <label class="form-label" for="nacimiento">Fecha de nacimiento: </label>
-                    <input 
-                    class="form-control atributos" 
-                    type="date"
-                    formControlName="nacimiento_m"
-                    required>
-                    <div *ngIf="nacimiento_m?.hasError('required')" class="invalid-feedback">Ingrese su fecha de nacimiento</div>
-        
+                    <label
+                        class="form-label"
+                        for="nacimiento"
+                    >Fecha de nacimiento: </label>
+                    <input
+                        class="form-control atributos"
+                        type="date"
+                        formControlName="nacimiento_m"
+                        required
+                    >
+                    <div
+                        *ngIf="nacimiento_m?.hasError('required')"
+                        class="invalid-feedback"
+                    >Ingrese su fecha de nacimiento</div>
+
                 </div>
                 <div class="col-md-4">
-                    <label class="form-label" for="sexo">Género</label>
-                    <select 
-                    class="atributos"
-                    formControlName="genero_m"
-                     >
-                        <option selected disabled value="">Seleccione su género</option>
+                    <label
+                        class="form-label"
+                        for="sexo"
+                    >Género</label>
+                    <select
+                        class="atributos"
+                        formControlName="genero_m"
+                    >
+                        <option
+                            selected
+                            disabled
+                            value=""
+                        >Seleccione su género</option>
                         <option value="Femenino">Femenino</option>
                         <option value="Masculino">Masculino</option>
                         <option value="x">X</option>
                     </select>
-        
+
                 </div>
 
-                <button mat-raised-button
-                        color="primary"
-                        (click)="onSubmit()"
-                        >
-                        <mat-icon>
-                           send
-                        </mat-icon>
-                    
-                    </button>
-            </form>
-            <div class="button">       
                 <button
-                    mat-button color="succes"
+                    mat-raised-button
+                    color="primary"
+                    (click)="onSubmit()"
+                >
+                    <mat-icon>
+                        send
+                    </mat-icon>
+
+                </button>
+            </form>
+            <div class="button">
+                <button
+                    mat-button
+                    color="succes"
                     routerLink="/auth/login-um"
                 >
                     ¿Ya tienes una cuenta? Click aquí
                 </button>
-            </div> 
+            </div>
