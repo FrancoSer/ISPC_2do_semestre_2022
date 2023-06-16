@@ -79,7 +79,7 @@ class LogoutView(views.APIView):
         logout(request)
         return Response({'message': "Logout successful"})
 
-class FacturaViewSet(views.APIView):
+class FacturaViewSet(viewsets.ModelViewSet):
     queryset = Factura.objects.all()
     serializer_class = FacturaSerializer
     

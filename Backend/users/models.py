@@ -115,7 +115,7 @@ class Carrito(models.Model):
 class Factura(models.Model):
     total = models.FloatField()
     extras = models.FloatField(blank=True)
-    alta = models.DateField(default=datetime.now)
+    alta = models.DateTimeField(auto_now_add=True)
     id_paciente = models.ForeignKey(Paciente, on_delete=models.CASCADE)
     id_servicio = models.ForeignKey(Servicio, on_delete=models.CASCADE)
 
