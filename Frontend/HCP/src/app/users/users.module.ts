@@ -26,7 +26,6 @@ import { InfoComponent } from './components/info/info.component';
 import { ConfirmDialogComponent } from './UP/components/confirm-dialog/confirm-dialog.component';
 import { SeguroPipe } from './UP/pipes/seguro.pipe';
 import { PlanPremiumComponent } from './UP/shop/plan-premium/plan-premium.component';
-import { PasarelaDePagoComponent } from './UP/shop/pasarela-de-pago/pasarela-de-pago.component';
 
 
 
@@ -49,7 +48,6 @@ import { PasarelaDePagoComponent } from './UP/shop/pasarela-de-pago/pasarela-de-
     UPSidebarComponent,
     UPHomeComponent,
     UPWelcomeComponent,
-    PasarelaDePagoComponent,
     PlanPremiumComponent,
     PremiumPipe
 

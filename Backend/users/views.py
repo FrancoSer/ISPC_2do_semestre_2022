@@ -5,11 +5,20 @@ from rest_framework.views import APIView
 from rest_framework import status
 from .models import Paciente
 from .models import Medico
+from .models import Factura
+# from .models import Carrito
 from .serializers import PacienteSerializer
 from .serializers import MedicoSerializer
+from .serializers import FacturaSerializer
+# from .serializers import CarritoSerializer
+from .serializers import FacturadorSerializer
 from django.contrib.auth.hashers import make_password, check_password
 from django.contrib.auth import logout
 from rest_framework import views
+from rest_framework import generics
+from rest_framework.decorators import action
+# from .helpers import CartHelper
+
 
 # Register API ==> http://127.0.0.1:8000/api/paciente/signup/
 class PacienteSignupView(APIView):    
@@ -72,40 +81,38 @@ class LogoutView(views.APIView):
     def post(self, request):
         logout(request)
         return Response({'message': "Logout successful"})
-####################################################################
-############################## OLD #################################
-####################################################################
+
+# ==> http://127.0.0.1:8000/api/factura/
+class FacturaViewSet(viewsets.ModelViewSet):
+    queryset = Factura.objects.all()
+    serializer_class = FacturaSerializer
+
+
+class FacturaView(generics.RetrieveAPIView):
+    serializer_class = FacturadorSerializer
+                
+    def get_queryset(self):
+        return Factura.objects.filter(id=self.kwargs["pk"])
     
-## Vistas antiguas
+# # ==> http://127.0.0.1:8000/api/carrito/
+# class CarritoViewSet(viewsets.ModelViewSet):
+#     queryset = Carrito.objects.all().order_by('id')
+#     serializer_class = CarritoSerializer
 
-# class LogoutView(APIView):
-#     def post(self, request):
-#         logout(request)
+#     @action(methods=['get'], detail=False, url_path='checkout/(?P<userId>[^/.]+)', url_name='checkout')
+#     def checkout(self, request, *args, **kwargs):
 
-#         return Response(status=status.HTTP_200_OK)
+#         try:
+#             user = Paciente.objects.get(pk=int(kwargs.get('userId')))
+#         except Exception as e:
+#             return Response(status=status.HTTP_404_NOT_FOUND,
+#                             data={'Error': str(e)})
 
-# class LoginView(APIView):
-#     permission_classes = [AllowAny]
-#     def post(self, request):
-#         # Recuperamos las credenciales y autenticamos al usuario
-#         cuil = request.data.get('cuil', None)
-#         password = request.data.get('password_p', None)
-#         user = authenticate(cuil=cuil, password=password)
-#         # Si es correcto añadimos a la request la información de sesión
-#         if user:
-#             login(request, user)
-#             return Response(
-#                 PacienteSerializer(user).data,
-#                 status=status.HTTP_200_OK)
-#         # Si no es correcto devolvemos un error en la petición
-#         return Response(
-#             status=status.HTTP_404_NOT_FOUND)
-    
-# # class LogoutView(APIView):
-# #     def post(self, request):
-# #         logout(request)
+#         cart_helper = CartHelper(user)
+#         checkout_details = cart_helper.prepare_cart_for_checkout()
 
-# #         return Response(status=status.HTTP_200_OK)
+#         if not checkout_details:
+#             return Response(status=status.HTTP_404_NOT_FOUND,
+#                             data={'error': 'Carrito Vacio.'})
 
-# # class SignupView(generics.CreateAPIView):
-# #     serializer_class = UserSerializer
+#         return Response(status=status.HTTP_200_OK, data={'checkout_details': checkout_details})    
