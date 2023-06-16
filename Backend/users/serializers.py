@@ -21,28 +21,12 @@ class FacturaSerializer(serializers.ModelSerializer):
         model = Factura
         fields = '__all__'
         
+class FacturadorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Factura
+        fields = '__all__'
+        
 class CarritoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Carrito
         fields = ['id', 'paciente', 'servicio', 'created_at', 'updated_at']
-
-####################################################################
-############################## OLD #################################
-####################################################################
-
-# class PacienteSerializer(serializers.ModelSerializer):
-#     # mail_p = serializers.EmailField(required=True)
-#     # password = serializers.CharField(min_length=8)
-#     # cuil = serializers.CharField(required=False, allow_blank=True, max_length=100)
-    
-#     class Meta:
-#         model = Paciente
-#         fields = '__all__'
-        
-#     # def validate_password(self, value):
-#     #     return make_password(value)
-
-# Paciente Serializer
-
-
-

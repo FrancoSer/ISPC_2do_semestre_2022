@@ -107,10 +107,10 @@ class Carrito(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return "{} - {} - {} - {} - {}".format(self.paciente,
-                                               self.servicio,                                               
-                                               self.created_at,
-                                               self.updated_at)
+        return "Paciente: {} -Servicio: {} -Precio: {} -Duracion: {}".format(self.paciente.cuil,
+                                               self.servicio.id,                                               
+                                               self.servicio.valor,
+                                               self.servicio.duracion)
 
 class Factura(models.Model):
     total = models.FloatField()
@@ -118,6 +118,7 @@ class Factura(models.Model):
     alta = models.DateTimeField(auto_now_add=True)
     id_paciente = models.ForeignKey(Paciente, on_delete=models.CASCADE)
     id_servicio = models.ForeignKey(Servicio, on_delete=models.CASCADE)
+    id_carrito = models.ForeignKey(Carrito, on_delete=models.CASCADE)
 
     def __str__(self):
         return "{} {} {}".format(self.alta, self.id_servicio, self.id_paciente)

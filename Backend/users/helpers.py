@@ -3,15 +3,7 @@ from .models import Carrito
 class CartHelper:
 
     def __init__(self, user):
-        self.user = user
-        self.cart_base_total_amount = 0
-        self.cart_final_total_amount = 0
-        self.campaign_discount_amounts = []
-        self.campaign_discount_amount = 0
-        self.coupon_discount_amount = 0
-        self.delivery_cost = 0
-        self.cart_items = []
-        self.discounts = {}
+        self.user = user        
         self.checkout_details = {'servicios': [], 'total': [], 'amount': []}
 
     def prepare_cart_for_checkout(self):
@@ -25,19 +17,6 @@ class CartHelper:
 
         return self.checkout_details    
 
-    # def calculate_cart_base_total_amount(self):
-    #     for cart_item in self.cart_items:
-    #         self.cart_base_total_amount += cart_item.item.price * cart_item.quantity  
-
-    # def get_total_amount_after_discounts(self):
-
-    #     if len(self.campaign_discount_amounts) > 0:
-    #         self.campaign_discount_amount = max(self.campaign_discount_amounts)
-
-    #     self.cart_final_total_amount = self.cart_base_total_amount - (
-    #                 self.campaign_discount_amount + self.coupon_discount_amount)
-
-    #     return self.cart_final_total_amount
 
     def prepare_checkout_details(self):
         for cart_item in self.cart_items:
@@ -48,9 +27,3 @@ class CartHelper:
                                                       'descripcion': cart_item.servicio.descripcion,                                                      
                                                       })
 
-        # self.checkout_details['total'].append({'total_price': self.cart_base_total_amount,
-        #                                        'total_discount':
-        #                                            self.campaign_discount_amount + self.coupon_discount_amount})
-
-        # self.checkout_details['amount'].append({'total_amount': self.cart_final_total_amount,
-        #                                         'delivery_cost': self.delivery_cost})
