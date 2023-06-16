@@ -16,7 +16,7 @@ import { UPHomeComponent } from './UP/pages/home/UP-home.component';
 import { UMPerfilComponent } from './UM/pages/UM-perfil/UM-perfil.component';
 import { UPPerfilComponent } from './UP/pages/UP-perfil/UP-perfil.component';
 
-import { PremiumPipe } from './premium.pipe';
+import { PremiumPipe } from './UP/shop/pipes/premium.pipe';
 import { BienvenidaPipe } from './UP/pipes/bienvenida.pipe';
 
 import { UPWelcomeComponent } from './UP/components/UP-welcome/UP-welcome.component';
