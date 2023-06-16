@@ -151,7 +151,6 @@ export class UPPerfilComponent implements OnInit
         .subscribe( paciente =>
         {
           this.abrirEditarUp();
-          location.reload();
 
         }
 
