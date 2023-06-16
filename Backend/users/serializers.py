@@ -2,7 +2,7 @@ from rest_framework import serializers
 from .models import Paciente
 from .models import Medico
 from .models import Factura
-from .models import Carrito
+# from .models import Carrito
 from django.contrib.auth.hashers import make_password
 
 
@@ -26,7 +26,7 @@ class FacturadorSerializer(serializers.ModelSerializer):
         model = Factura
         fields = '__all__'
         
-class CarritoSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Carrito
-        fields = ['id', 'paciente', 'servicio', 'created_at', 'updated_at']
+# class CarritoSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Carrito
+#         fields = ['id', 'paciente', 'servicio', 'created_at', 'updated_at']

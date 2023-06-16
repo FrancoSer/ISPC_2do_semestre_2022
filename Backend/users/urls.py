@@ -8,7 +8,7 @@ from .views import PacienteLoginView, MedicoLoginView, FacturaViewSet, FacturaVi
 router = routers.DefaultRouter()
 router.register(r'paciente', views.PacienteViewSet)
 router.register(r'medico', views.MedicoViewSet)
-router.register(r'carrito', views.CarritoViewSet)
+# router.register(r'carrito', views.CarritoViewSet)
 router.register(r'factura', views.FacturaViewSet)
 
 urlpatterns = [
