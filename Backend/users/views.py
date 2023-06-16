@@ -5,11 +5,17 @@ from rest_framework.views import APIView
 from rest_framework import status
 from .models import Paciente
 from .models import Medico
+from .models import Factura
+from .models import Carrito
 from .serializers import PacienteSerializer
 from .serializers import MedicoSerializer
+from .serializers import FacturaSerializer
+from .serializers import CarritoSerializer
 from django.contrib.auth.hashers import make_password, check_password
 from django.contrib.auth import logout
 from rest_framework import views
+from rest_framework.decorators import action
+from .helpers import CartHelper
 
 # Register API ==> http://127.0.0.1:8000/api/paciente/signup/
 class PacienteSignupView(APIView):    
@@ -72,6 +78,33 @@ class LogoutView(views.APIView):
     def post(self, request):
         logout(request)
         return Response({'message': "Logout successful"})
+
+class FacturaViewSet(viewsets.ModelViewSet):
+    queryset = Factura.objects.all()
+    serializer_class = FacturaSerializer
+    
+class CarritoViewSet(viewsets.ModelViewSet):
+    queryset = Carrito.objects.all().order_by('id')
+    serializer_class = CarritoSerializer
+
+    @action(methods=['get'], detail=False, url_path='checkout/(?P<userId>[^/.]+)', url_name='checkout')
+    def checkout(self, request, *args, **kwargs):
+
+        try:
+            user = Paciente.objects.get(pk=int(kwargs.get('userId')))
+        except Exception as e:
+            return Response(status=status.HTTP_404_NOT_FOUND,
+                            data={'Error': str(e)})
+
+        cart_helper = CartHelper(user)
+        checkout_details = cart_helper.prepare_cart_for_checkout()
+
+        if not checkout_details:
+            return Response(status=status.HTTP_404_NOT_FOUND,
+                            data={'error': 'Carrito Vacio.'})
+
+        return Response(status=status.HTTP_200_OK, data={'checkout_details': checkout_details})
+    
 ####################################################################
 ############################## OLD #################################
 ####################################################################
