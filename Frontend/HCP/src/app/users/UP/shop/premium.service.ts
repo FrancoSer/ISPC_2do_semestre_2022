@@ -23,5 +23,12 @@ export class PremiumService
     return this.http.patch<Paciente>( `${ this.baseUrl }/api/paciente/${ localStorage.getItem( 'token' ) }/`, premium );
   }
 
+  factura ( factura: {} )
+  {
+
+    return this.http.post( `${ this.baseUrl }/api/factura/`, factura );
+
+  }
+
 
 }
