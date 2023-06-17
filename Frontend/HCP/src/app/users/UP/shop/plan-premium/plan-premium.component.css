@@ -1,5 +1,15 @@
 
-    .box{
+.content{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+   
+   .box{
       filter: blur(5px);
     }
   .credit-card{
@@ -96,3 +106,6 @@
     background-color:  #01CDBB;
     color: #fff;
   }
+
+
+

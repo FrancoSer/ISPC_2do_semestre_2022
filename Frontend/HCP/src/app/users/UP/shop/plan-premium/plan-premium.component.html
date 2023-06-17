@@ -1,6 +1,6 @@
 <div
   class="box"
-  [ngClass]="{box: pasarela}"
+  [ngClass]="{box: pasarelaGratis || pasarelaSemestral || pasarelaAnual}"
 >
 
   <div class="Header">
@@ -34,7 +34,7 @@
       <button
         type="button"
         class="btn btn-light"
-        (click)="abrirSeisMeses()"
+        (click)="abrirSemestral()"
       >Suscríbete</button>
     </div>
     <div class="card rounded">
@@ -53,8 +53,134 @@
   </div>
 </div>
 
-<ng-container *ngIf="pasarela">
+<mat-card-content
+  class="content"
+  *ngIf="pasarelaGratis"
+>
+  <h2>Pago con tarjeta de crédito</h2>
 
-  <app-pasarela-de-pago class="credit-card"></app-pasarela-de-pago>
+  <mat-form-field class="form">
+    <input
+      matInput
+      placeholder="Número de tarjeta"
+      maxlength="16"
+    >
+  </mat-form-field>
 
-</ng-container>
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Fecha de vencimiento (MM/AA)"
+    >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Código de seguridad"
+    >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Nombre del titular"
+    >
+  </mat-form-field>
+
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="gratis()"
+  >Realizar pago</button>
+</mat-card-content>
+
+<mat-card-content
+  class="content"
+  *ngIf="pasarelaSemestral"
+>
+  <h2>Pago con tarjeta de crédito</h2>
+
+  <mat-form-field class="form">
+    <input
+      matInput
+      placeholder="Número de tarjeta"
+      maxlength="16"
+    >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Fecha de vencimiento (MM/AA)"
+    >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Código de seguridad"
+    >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Nombre del titular"
+    >
+  </mat-form-field>
+
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="semestral()"
+  >Realizar pago</button>
+</mat-card-content>
+
+<mat-card-content
+  class="content"
+  *ngIf="pasarelaAnual"
+>
+  <h2>Pago con tarjeta de crédito</h2>
+
+  <mat-form-field class="form">
+    <input
+      matInput
+      placeholder="Número de tarjeta"
+      maxlength="16"
+    >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Fecha de vencimiento (MM/AA)"
+    >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Código de seguridad"
+    >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Nombre del titular"
+    >
+  </mat-form-field>
+
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="anual()"
+  >Realizar pago</button>
+</mat-card-content>
+
+
+<!-- <app-pasarela-de-pago
+  class="credit-card"
+  *ngIf="pasarelaGratis || pasarelaSemestral || pasarelaAnual"
+></app-pasarela-de-pago> -->
