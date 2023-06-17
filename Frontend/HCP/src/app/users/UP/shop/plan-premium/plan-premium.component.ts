@@ -3,6 +3,7 @@ import { AuthUpService } from 'src/app/auth/auth-up.service';
 import { Paciente } from 'src/app/users/interfaces/interfaces';
 import { PremiumService } from '../premium.service';
 import { tap } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component( {
   selector: 'app-plan-premium',
@@ -21,6 +22,17 @@ export class PlanPremiumComponent implements OnInit
   public pasarelaAnual: boolean = false;
 
   public agradecimiento: boolean = false;
+
+
+  public form = new FormGroup( {
+
+    numero: new FormControl<string>( '', [ Validators.required, Validators.maxLength( 16 ) ] ),
+    vencimiento: new FormControl<string>( '', [ Validators.required, Validators.maxLength( 5 ) ] ),
+    codigo: new FormControl<string>( '', [ Validators.required, Validators.maxLength( 3 ) ] ),
+    nombre: new FormControl<string>( '', [ Validators.required ] )
+
+
+  } );
 
   facturaGratis: {} = {
 

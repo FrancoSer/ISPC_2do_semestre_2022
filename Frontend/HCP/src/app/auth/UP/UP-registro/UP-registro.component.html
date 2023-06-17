@@ -14,7 +14,6 @@
                         type="text"
                         formControlName="nombre_p"
                         placeholder="Ingrese su nombre"
-                        required
                         autofocus
                         [ngClass]="{'is-invalid':nombre_p?.errors && nombre_p?.touched  , 'is-valid':!nombre_p?.errors && nombre_p?.touched}"
                     >
@@ -32,7 +31,6 @@
                         type="text"
                         placeholder="Ingrese su apellido"
                         formControlName="apellido_p"
-                        required
                         [ngClass]="{'is-invalid':apellido_p?.errors && apellido_p?.touched  , 'is-valid':!apellido_p?.errors && apellido_p?.touched}"
                     >
                     <div
@@ -48,7 +46,6 @@
                         type="number"
                         placeholder="Ingrese CUIL sin guiones ni puntos"
                         formControlName="cuil"
-                        required
                         [ngClass]="{'is-invalid':cuil?.errors && cuil?.touched  , 'is-valid':!cuil?.errors && cuil?.touched}"
                     >
                     <div
@@ -68,7 +65,6 @@
                         type="email"
                         formControlName="mail_p"
                         placeholder="Ingrese su correo electrónico"
-                        required
                         [ngClass]="{'is-invalid':mail_p?.errors && mail_p?.touched  , 'is-valid':!mail_p?.errors && mail_p?.touched}"
                     >
 
@@ -89,7 +85,6 @@
                         type="number"
                         formControlName="telefono_p"
                         placeholder="Ingrese su teléfono"
-                        formControlName="telefono_p"
                     >
                 </div>
                 <div class="col-md-6">
@@ -108,7 +103,6 @@
                         type="password"
                         formControlName="password_p"
                         placeholder="Ingrese su contraseña"
-                        required
                         [ngClass]="{'is-invalid':password_p?.errors && password_p?.touched  , 'is-valid':!password_p?.errors && password_p?.touched}"
                     >
                     <div
@@ -136,7 +130,6 @@
                         type="password"
                         placeholder="Ingrese nuevamente la contraseña"
                         formControlName="password_p_repeat"
-                        required
                     >
                     <div
                         *ngIf="password_p_repeat !== password_p"
@@ -152,7 +145,6 @@
                         class="form-control atributos"
                         type="date"
                         formControlName="nacimiento_p"
-                        required
                     >
                     <div
                         *ngIf="nacimiento_p?.hasError('required')"
@@ -188,7 +180,6 @@
                     <select
                         class="atributos"
                         formControlName="sangre"
-                        required
                     >
                         <option
                             selected

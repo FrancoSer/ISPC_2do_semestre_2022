@@ -14,7 +14,6 @@
                         type="text"
                         formControlName="nombre_m"
                         placeholder="Ingrese su nombre"
-                        required
                         autofocus
                         [ngClass]="{'is-invalid':nombre_m?.errors && nombre_m?.touched  , 'is-valid':!nombre_m?.errors && nombre_m?.touched}"
                     >
@@ -32,7 +31,6 @@
                         type="text"
                         placeholder="Ingrese su apellido"
                         formControlName="apellido_m"
-                        required
                         [ngClass]="{'is-invalid':apellido_m?.errors && apellido_m?.touched  , 'is-valid':!apellido_m?.errors && apellido_m?.touched}"
                     >
                     <div
@@ -48,7 +46,6 @@
                         type="number"
                         placeholder="Ingrese matricula sin guiones ni puntos"
                         formControlName="matricula"
-                        required
                         [ngClass]="{'is-invalid':matricula?.errors && matricula?.touched  , 'is-valid':!matricula?.errors && matricula?.touched}"
                     >
                     <div
@@ -72,7 +69,6 @@
                         type="email"
                         formControlName="mail_m"
                         placeholder="Ingrese su correo electrónico"
-                        required
                         [ngClass]="{'is-invalid':mail_m?.errors && mail_m?.touched  , 'is-valid':!mail_m?.errors && mail_m?.touched}"
                     >
 
@@ -112,7 +108,6 @@
                         type="password"
                         formControlName="password_m"
                         placeholder="Ingrese su contraseña"
-                        required
                         [ngClass]="{'is-invalid':password_m?.errors && password_m?.touched  , 'is-valid':!password_m?.errors && password_m?.touched}"
                     >
                     <div
@@ -140,7 +135,6 @@
                         type="password"
                         placeholder="Ingrese nuevamente la contraseña"
                         formControlName="password_m_repeat"
-                        required
                     >
                     <div
                         *ngIf="password_m_repeat !== password_m"
@@ -156,7 +150,6 @@
                         class="form-control atributos"
                         type="date"
                         formControlName="nacimiento_m"
-                        required
                     >
                     <div
                         *ngIf="nacimiento_m?.hasError('required')"

@@ -1,15 +1,10 @@
-<head>
-  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
-</head>
-
-
 <body>
   <div class="container">
-    <button 
-      mat-button color="primary"
-      routerLink="/">
+    <button
+      mat-button
+      color="primary"
+      routerLink="/"
+    >
       <i class="bi bi-arrow-left">
         Volver
       </i>
@@ -17,57 +12,76 @@
     <div class="register-box">
 
       <h2>INICIAR SESIÓN COMO MÉDICO</h2>
-      <form 
-        [formGroup]="form" 
-        class="row g-3" 
-        (ngSubmit)="onSubmit()" 
-        novalidate>
+      <form
+        [formGroup]="form"
+        class="row g-3"
+        (ngSubmit)="onSubmit()"
+      >
         <div class="col-md-12">
-          <label class="form-label" for="matricula">MATRÍCULA: </label>
-          <input 
-            class="form-control atributos" 
-            type="number" 
-            formControlName="matricula" 
+          <label
+            class="form-label"
+            for="matricula"
+          >MATRÍCULA: </label>
+          <input
+            class="form-control atributos"
+            type="number"
+            formControlName="matricula"
             placeholder="Ingrese su número de matricula"
-            [ngClass]="{'is-invalid':matricula?.errors && matricula?.touched , 'is-valid':!matricula?.errors}" autofocus required>
-          <div *ngIf="matricula?.hasError('required')" class="invalid-feedback">El número de matrícula es requerido</div>
-          <div *ngIf="matricula?.hasError('min') && !matricula?.hasError('required')" class="invalid-feedback">El número de
+            [ngClass]="{'is-invalid':matricula?.errors && matricula?.touched , 'is-valid':!matricula?.errors}"
+            autofocus
+          >
+          <div
+            *ngIf="matricula?.hasError('required')"
+            class="invalid-feedback"
+          >El número de matrícula es requerido</div>
+          <div
+            *ngIf="matricula?.hasError('min') && !matricula?.hasError('required')"
+            class="invalid-feedback"
+          >El número de
             matrícula es inválido</div>
 
-        </div> 
+        </div>
 
-        
+
         <div class="col-md-12">
           <label class="form-label">Contraseña: </label>
-          <input 
-            class=" form-control atributos" 
-            type="password" 
+          <input
+            class=" form-control atributos"
+            type="password"
             formControlName="password_m"
             placeholder="Ingrese su contraseña"
             [ngClass]="{'is-invalid':password_m?.errors && password_m?.touched  , 'is-valid':!password_m?.errors && password_m?.touched}"
-            required>
+          >
 
-          <div *ngIf="password_m?.hasError('required')" class="invalid-feedback">Ingrese su contraseña</div>
-          <div *ngIf="password_m?.hasError('minlength')" class="invalid-feedback">Ingrese una constraseña válida</div>
+          <div
+            *ngIf="password_m?.hasError('required')"
+            class="invalid-feedback"
+          >Ingrese su contraseña</div>
+          <div
+            *ngIf="password_m?.hasError('minlength')"
+            class="invalid-feedback"
+          >Ingrese una constraseña válida</div>
           <a href="#">¿Olvidaste tu contraseña?</a>
         </div>
         <br>
 
-        <button 
-        id="botonIniciar" 
-        class="btn" 
-        type="submit"
+        <button
+          id="botonIniciar"
+          class="btn"
+          type="submit"
         >
           Iniciar sesión
         </button>
 
-        
+
       </form>
-      <button 
-          mat-button color="succes"
-          routerLink="/auth/registro-um">
-          ¿No tienes una cuenta? Click aquí
-        </button>
+      <button
+        mat-button
+        color="succes"
+        routerLink="/auth/registro-um"
+      >
+        ¿No tienes una cuenta? Click aquí
+      </button>
     </div>
 
   </div>

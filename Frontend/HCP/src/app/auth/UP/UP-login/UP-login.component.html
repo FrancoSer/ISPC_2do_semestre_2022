@@ -1,15 +1,10 @@
-<head>
-  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
-</head>
-
-
 <body>
   <div class="container">
-    <button 
-      mat-button color="primary"
-      routerLink="/">
+    <button
+      mat-button
+      color="primary"
+      routerLink="/"
+    >
       <i class="bi bi-arrow-left">
         Volver
       </i>
@@ -17,51 +12,74 @@
     <div class="register-box">
 
       <h2>INICIAR SESION COMO PACIENTE</h2>
-      <form 
-        [formGroup]="form" 
-        class="row g-3" 
-        (ngSubmit)="onSubmit()" 
-        novalidate>
+      <form
+        [formGroup]="form"
+        class="row g-3"
+        (ngSubmit)="onSubmit()"
+      >
         <div class="col-md-12">
           <label class="form-label">CUIL: </label>
-          <input 
-          class="form-control atributos" 
-          type="number" 
-          formControlName="cuil" 
-          placeholder="Ingrese su número de CUIL"
-          [ngClass]="{'is-invalid':cuil?.errors && cuil?.touched , 'is-valid':!cuil?.errors}" autofocus required>
-          <div *ngIf="cuil?.hasError('required')" class="invalid-feedback">El número de cuil es requerido</div>
-          <div *ngIf="cuil?.hasError('min') && !cuil?.hasError('required')" class="invalid-feedback">El número de
+          <input
+            class="form-control atributos"
+            type="number"
+            formControlName="cuil"
+            placeholder="Ingrese su número de CUIL"
+            [ngClass]="{'is-invalid':cuil?.errors && cuil?.touched , 'is-valid':!cuil?.errors}"
+            autofocus
+          >
+          <div
+            *ngIf="cuil?.hasError('required')"
+            class="invalid-feedback"
+          >El número de cuil es requerido</div>
+          <div
+            *ngIf="cuil?.hasError('min') && !cuil?.hasError('required')"
+            class="invalid-feedback"
+          >El número de
             cuil es inválido</div>
 
-        </div> 
+        </div>
 
-        
+
         <div class="col-md-12">
-          <label class="form-label" for="password_p">Contraseña: </label>
-          <input 
-          class=" form-control atributos" 
-          type="password" 
-          formControlName="password_p"
+          <label
+            class="form-label"
+            for="password_p"
+          >Contraseña: </label>
+          <input
+            class=" form-control atributos"
+            type="password"
+            formControlName="password_p"
             placeholder="Ingrese su contraseña"
             [ngClass]="{'is-invalid':password_p?.errors && password_p?.touched  , 'is-valid':!password_p?.errors && password_p?.touched}"
-            required>
+          >
 
-          <div *ngIf="password_p?.hasError('required')" class="invalid-feedback">Ingrese su contraseña</div>
-          <div *ngIf="password_p?.hasError('minlength')" class="invalid-feedback">Ingrese una constraseña válida</div>
+          <div
+            *ngIf="password_p?.hasError('required')"
+            class="invalid-feedback"
+          >Ingrese su contraseña</div>
+          <div
+            *ngIf="password_p?.hasError('minlength')"
+            class="invalid-feedback"
+          >Ingrese una constraseña válida</div>
           <a href="#">¿Olvidaste tu contraseña?</a>
         </div>
         <br>
 
-        <button id="botonIniciar" class="btn" type="submit">Iniciar sesión</button>
+        <button
+          id="botonIniciar"
+          class="btn"
+          type="submit"
+        >Iniciar sesión</button>
 
-        
+
       </form>
-      <button 
-          mat-button color="succes"
-          routerLink="/auth/registro-up">
-          ¿No tienes una cuenta? Click aquí
-        </button>
+      <button
+        mat-button
+        color="succes"
+        routerLink="/auth/registro-up"
+      >
+        ¿No tienes una cuenta? Click aquí
+      </button>
     </div>
 
   </div>

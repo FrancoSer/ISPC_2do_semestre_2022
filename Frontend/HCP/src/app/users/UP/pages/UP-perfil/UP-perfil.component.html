@@ -82,10 +82,7 @@
               <input
                 class="form-control atributos"
                 type="text"
-                value="nombre_p"
                 formControlName="nombre_p"
-                placeholder="Ingrese su nombre"
-                required
                 autofocus
                 [ngClass]="{'is-invalid':nombre_p?.errors && nombre_p?.touched  , 'is-valid':!nombre_p?.errors && nombre_p?.touched}"
               >
@@ -101,9 +98,7 @@
               <input
                 class="form-control atributos"
                 type="text"
-                placeholder="Ingrese su apellido"
                 formControlName="apellido_p"
-                required
                 [ngClass]="{'is-invalid':apellido_p?.errors && apellido_p?.touched  , 'is-valid':!apellido_p?.errors && apellido_p?.touched}"
               >
               <div
@@ -117,8 +112,6 @@
                 class="form-control atributos"
                 type="email"
                 formControlName="mail_p"
-                placeholder="Ingrese su correo electrónico"
-                required
                 [ngClass]="{'is-invalid':mail_p?.errors && mail_p?.touched  , 'is-valid':!mail_p?.errors && mail_p?.touched}"
               >
 
@@ -138,8 +131,6 @@
                 class="form-control atributos"
                 type="number"
                 formControlName="telefono_p"
-                placeholder="Ingrese su teléfono"
-                formControlName="telefono_p"
               >
             </div>
             <div class="col-md-6">
@@ -148,7 +139,6 @@
                 class="form-control atributos"
                 type="text"
                 formControlName="direccion_p"
-                placeholder="Ingrese su dirección"
               >
             </div>
 
@@ -163,7 +153,6 @@
                 class="form-control atributos"
                 type="date"
                 formControlName="nacimiento_p"
-                required
               >
               <div
                 *ngIf="nacimiento_p?.hasError('required')"
@@ -200,7 +189,6 @@
                 <select
                   class="atributos check-box"
                   formControlName="sangre"
-                  required
                 >
                   <option
                     selected

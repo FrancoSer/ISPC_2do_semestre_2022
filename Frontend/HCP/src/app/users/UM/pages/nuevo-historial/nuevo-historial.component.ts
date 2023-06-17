@@ -15,7 +15,7 @@ export class NuevoHistorialComponent implements OnInit
 
   public form = new FormGroup( {
 
-    referencia_p: new FormControl<string>( '' ),
+    referencia_h: new FormControl<string>( '' ),
     especialidad: new FormControl<string>( '' ),
     diagnositico: new FormControl<string>( '' ),
     antecedentes: new FormControl<string>( '' ),
