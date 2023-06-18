@@ -68,7 +68,21 @@
         matInput
         placeholder="Número de tarjeta"
         formControlName="numero"
+        [ngClass]="{'is-invalid':numero?.errors && numero?.touched  , 'is-valid':!numero?.errors && numero?.touched}"
       >
+      <div
+        *ngIf="numero?.hasError('required')"
+        class="invalid-feedback"
+      >Ingrese el número de tarjeta
+      </div>
+
+      <div
+        *ngIf="numero?.hasError('maxlength')"
+        class="invalid-feedback"
+      >El número de tarjeta no puede ser mayor a 16
+      </div>
+
+
     </mat-form-field>
 
     <mat-form-field>
@@ -76,7 +90,20 @@
         matInput
         placeholder="Fecha de vencimiento (MM/AA)"
         formControlName="vencimiento"
+        [ngClass]="{'is-invalid':vencimiento?.errors && vencimiento?.touched  , 'is-valid':!vencimiento?.errors && vencimiento?.touched}"
       >
+      <div
+        *ngIf="vencimiento?.hasError('required')"
+        class="invalid-feedback"
+      >Ingrese la fecha de vencimiento
+      </div>
+
+      <div
+        *ngIf="vencimiento?.hasError('maxlength')"
+        class="invalid-feedback"
+      >La fecha de vencimiento no puede ser mayor a 5 caracteres
+      </div>
+
     </mat-form-field>
 
     <mat-form-field>
@@ -84,7 +111,20 @@
         matInput
         placeholder="Código de seguridad"
         formControlName="codigo"
+        [ngClass]="{'is-invalid':codigo?.errors && codigo?.touched  , 'is-valid':!codigo?.errors && codigo?.touched}"
       >
+      <div
+        *ngIf="codigo?.hasError('required')"
+        class="invalid-feedback"
+      >Ingrese el codigo
+      </div>
+
+      <div
+        *ngIf="codigo?.hasError('maxlength')"
+        class="invalid-feedback"
+      >No puede superar los 3 caracteres
+      </div>
+
     </mat-form-field>
 
     <mat-form-field>
@@ -92,7 +132,14 @@
         matInput
         placeholder="Nombre del titular"
         formControlName="nombre"
+        [ngClass]="{'is-invalid':nombre?.errors && nombre?.touched  , 'is-valid':!nombre?.errors && nombre?.touched}"
       >
+      <div
+        *ngIf="nombre?.hasError('required')"
+        class="invalid-feedback"
+      >Ingrese su nombre
+      </div>
+
     </mat-form-field>
 
     <button
@@ -115,7 +162,20 @@
         matInput
         placeholder="Número de tarjeta"
         formControlName="numero"
+        [ngClass]="{'is-invalid':numero?.errors && numero?.touched  , 'is-valid':!numero?.errors && numero?.touched}"
       >
+      <div
+        *ngIf="numero?.hasError('required')"
+        class="invalid-feedback"
+      >Ingrese el número de tarjeta
+      </div>
+
+      <div
+        *ngIf="numero?.hasError('maxlength')"
+        class="invalid-feedback"
+      >El número de tarjeta no puede ser mayor a 16
+      </div>
+
     </mat-form-field>
 
     <mat-form-field>
@@ -123,7 +183,20 @@
         matInput
         placeholder="Fecha de vencimiento (MM/AA)"
         formControlName="vencimiento"
+        [ngClass]="{'is-invalid':vencimiento?.errors && vencimiento?.touched  , 'is-valid':!vencimiento?.errors && vencimiento?.touched}"
       >
+      <div
+        *ngIf="vencimiento?.hasError('required')"
+        class="invalid-feedback"
+      >Ingrese la fecha de vencimiento
+      </div>
+
+      <div
+        *ngIf="vencimiento?.hasError('maxlength')"
+        class="invalid-feedback"
+      >La fecha de vencimiento no puede ser mayor a 5 caracteres
+      </div>
+
     </mat-form-field>
 
     <mat-form-field>
@@ -131,7 +204,20 @@
         matInput
         placeholder="Código de seguridad"
         formControlName="codigo"
+        [ngClass]="{'is-invalid':codigo?.errors && codigo?.touched  , 'is-valid':!codigo?.errors && codigo?.touched}"
       >
+      <div
+        *ngIf="codigo?.hasError('required')"
+        class="invalid-feedback"
+      >Ingrese el codigo
+      </div>
+
+      <div
+        *ngIf="codigo?.hasError('maxlength')"
+        class="invalid-feedback"
+      >No puede superar los 3 caracteres
+      </div>
+
     </mat-form-field>
 
     <mat-form-field>
@@ -139,7 +225,14 @@
         matInput
         placeholder="Nombre del titular"
         formControlName="nombre"
+        [ngClass]="{'is-invalid':nombre?.errors && nombre?.touched  , 'is-valid':!nombre?.errors && nombre?.touched}"
       >
+      <div
+        *ngIf="nombre?.hasError('required')"
+        class="invalid-feedback"
+      >Ingrese su nombre
+      </div>
+
     </mat-form-field>
 
     <button
@@ -161,7 +254,21 @@
         matInput
         placeholder="Número de tarjeta"
         formControlName="numero"
+        [ngClass]="{'is-invalid':numero?.errors && numero?.touched  , 'is-valid':!numero?.errors && numero?.touched}"
       >
+      <div
+        *ngIf="numero?.hasError('required')"
+        class="invalid-feedback"
+      >Ingrese el número de tarjeta
+      </div>
+
+      <div
+        *ngIf="numero?.hasError('maxlength')"
+        class="invalid-feedback"
+      >El número de tarjeta no puede ser mayor a 16
+      </div>
+
+
     </mat-form-field>
 
     <mat-form-field>
@@ -169,7 +276,20 @@
         matInput
         placeholder="Fecha de vencimiento (MM/AA)"
         formControlName="vencimiento"
+        [ngClass]="{'is-invalid':vencimiento?.errors && vencimiento?.touched  , 'is-valid':!vencimiento?.errors && vencimiento?.touched}"
       >
+      <div
+        *ngIf="vencimiento?.hasError('required')"
+        class="invalid-feedback"
+      >Ingrese la fecha de vencimiento
+      </div>
+
+      <div
+        *ngIf="vencimiento?.hasError('maxlength')"
+        class="invalid-feedback"
+      >La fecha de vencimiento no puede ser mayor a 5 caracteres
+      </div>
+
     </mat-form-field>
 
     <mat-form-field>
@@ -177,7 +297,22 @@
         matInput
         placeholder="Código de seguridad"
         formControlName="codigo"
+        formControlName="codigo"
+        [ngClass]="{'is-invalid':codigo?.errors && codigo?.touched  , 'is-valid':!codigo?.errors && codigo?.touched}"
       >
+      <div
+        *ngIf="codigo?.hasError('required')"
+        class="invalid-feedback"
+      >Ingrese el codigo
+      </div>
+
+      <div
+        *ngIf="codigo?.hasError('maxlength')"
+        class="invalid-feedback"
+      >No puede superar los 3 caracteres
+      </div>
+
+
     </mat-form-field>
 
     <mat-form-field>
@@ -185,7 +320,14 @@
         matInput
         placeholder="Nombre del titular"
         formControlName="nombre"
+        [ngClass]="{'is-invalid':nombre?.errors && nombre?.touched  , 'is-valid':!nombre?.errors && nombre?.touched}"
       >
+      <div
+        *ngIf="nombre?.hasError('required')"
+        class="invalid-feedback"
+      >Ingrese su nombre
+      </div>
+
     </mat-form-field>
 
     <button

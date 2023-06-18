@@ -34,6 +34,34 @@ export class PlanPremiumComponent implements OnInit
 
   } );
 
+
+
+  get numero ()
+  {
+    return this.form.get( "numero" );
+  }
+
+  get vencimiento ()
+  {
+    return this.form.get( "vencimiento" );
+  }
+
+  get codigo ()
+  {
+    return this.form.get( "codigo" );
+  }
+
+  get nombre ()
+  {
+    return this.form.get( "nombre" );
+  }
+
+  get pasarelaActual ()
+  {
+    const pasarela = this.form.value;
+    return pasarela;
+  }
+
   facturaGratis: {} = {
 
     "total": "0",
@@ -100,63 +128,73 @@ export class PlanPremiumComponent implements OnInit
   gratis ()
   {
 
-    this.servicePremium.factura( this.facturaGratis )
-      .subscribe(
-        resp => console.log( resp )
-      );
+    if ( this.form.valid )
+    {
 
-    this.servicePremium.premium( this.pacientePremium )
-      .pipe(
-        tap( resp => this.agradecimiento = true ),
-        tap( resp => this.pasarelaGratis = false ),
-        tap( resp => location.reload() ),
-      )
-      .subscribe(
-        resp => console.log( resp ),
+      this.servicePremium.factura( this.facturaGratis )
+        .subscribe(
+          resp => console.log( resp )
+        );
 
-      );
+      this.servicePremium.premium( this.pacientePremium )
+        .pipe(
+          tap( resp => this.agradecimiento = true ),
+          tap( resp => this.pasarelaGratis = false ),
+          tap( resp => location.reload() ),
+        )
+        .subscribe(
+          resp => console.log( resp ),
+
+        );
+    }
 
   }
 
   semestral ()
   {
 
-    this.servicePremium.factura( this.facturaSemestral )
-      .subscribe(
-        resp => console.log( resp )
-      );
+    if ( this.form.valid )
+    {
 
-    this.servicePremium.premium( this.pacientePremium )
-      .pipe(
-        tap( resp => this.agradecimiento = true ),
-        tap( resp => this.pasarelaGratis = false ),
-        tap( resp => location.reload() ),
-      )
-      .subscribe(
-        resp => console.log( resp ),
+      this.servicePremium.factura( this.facturaSemestral )
+        .subscribe(
+          resp => console.log( resp )
+        );
 
-      );
+      this.servicePremium.premium( this.pacientePremium )
+        .pipe(
+          tap( resp => this.agradecimiento = true ),
+          tap( resp => this.pasarelaGratis = false ),
+          tap( resp => location.reload() ),
+        )
+        .subscribe(
+          resp => console.log( resp ),
+
+        );
+    }
 
   }
 
   anual ()
   {
+    if ( this.form.valid )
+    {
+      this.servicePremium.factura( this.facturaAnual )
+        .subscribe(
+          resp => console.log( resp )
+        );
 
-    this.servicePremium.factura( this.facturaAnual )
-      .subscribe(
-        resp => console.log( resp )
-      );
+      this.servicePremium.premium( this.pacientePremium )
+        .pipe(
+          tap( resp => this.agradecimiento = true ),
+          tap( resp => this.pasarelaGratis = false ),
+          tap( resp => location.reload() ),
+        )
+        .subscribe(
+          resp => console.log( resp ),
 
-    this.servicePremium.premium( this.pacientePremium )
-      .pipe(
-        tap( resp => this.agradecimiento = true ),
-        tap( resp => this.pasarelaGratis = false ),
-        tap( resp => location.reload() ),
-      )
-      .subscribe(
-        resp => console.log( resp ),
-
-      );
+        );
+    }
 
   }
 
