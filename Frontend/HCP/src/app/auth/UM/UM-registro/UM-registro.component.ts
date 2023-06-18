@@ -56,10 +56,7 @@ export class UMRegistroComponent implements OnInit
 
     private medicoServicio: AuthUmService,
     private router: Router,
-    private activateRoute: ActivatedRoute,
     private snackBar: MatSnackBar,
-    private dialog: MatDialog
-
 
   ) { }
 
@@ -127,11 +124,11 @@ export class UMRegistroComponent implements OnInit
           this.mostrarSnack( `${ this.medicoActual.nombre_m } su perfil ha sido creado con éxito` );
 
         } );
-      console.log( this.medicoActual );
-      console.log( {
-        formIsValid: this.medicoForm.valid,
-        valor: this.medicoForm.value
-      } );
+      // console.log( this.medicoActual );
+      // console.log( {
+      //   formIsValid: this.medicoForm.valid,
+      //   valor: this.medicoForm.value
+      // } );
     } else
     {
       this.mostrarSnack( `${ this.medicoActual.nombre_m } El formulario no es válido` );
